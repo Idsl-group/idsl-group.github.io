@@ -26,7 +26,7 @@ export default function Header({}: Props) {
           objectFit="cover"
           quality={90}
           priority
-          className="brightness-50" // Slightly darken the image for better text readability
+          className="brightness-50 opacity-50"
         />
       </div>
 
