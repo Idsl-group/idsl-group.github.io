@@ -1,14 +1,11 @@
-import React from "react";
-import Header from "@/components/header";
-import Navbar from "@/components/navbar";
+"use client";
 
-type Props = {};
+import JohnDoePortfolioPage from "./portfolio/page";
 
-export default function Page({}: Props) {
+export default function Page() {
   return (
     <main className="flex flex-col items-center">
-      <Header />
-      <Navbar />
+      <JohnDoePortfolioPage />
     </main>
   );
 }
