@@ -1,0 +1,80 @@
+// app/page.tsx
+import { BentoDemo } from "@/components/bento-features";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { Container } from "@/components/container";
+import { HeroHeader, ResearchEnvironmentCarousel, TestimonialsCarousel } from "@/components/hero";
+import { carouselData, testimonials } from "@/constants/data";
+
+export default function HeroPage() {
+  return (
+    <>
+      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-20">
+        <HeroHeader />
+        
+        <Container className="relative rounded-xl flex flex-col items-center text-center lg:max-w-[1000px] overflow-hidden p-6 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
+          <CompanyDescription />
+          <BorderBeam size={250} />
+        </Container>
+      </section>
+
+      <ResearchEnvironmentSection />
+      <TestimonialsSection />
+      <ProjectsSection />
+      <OpenSourceSection />
+    </>
+  );
+}
+
+const CompanyDescription = () => (
+  <>
+    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+      NEURALX-AI: Solving Real-World Problems with AI
+    </h2>
+    <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+      NeuralX-AI is an innovation-driven company specializing in cutting-edge AI solutions...
+    </p>
+  </>
+);
+
+const ResearchEnvironmentSection = () => (
+  <Container className="py-12 md:py-16 lg:py-24">
+    <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-12">
+      Our Research Environment
+    </h2>
+    <ResearchEnvironmentCarousel data={carouselData} />
+    <p className="mt-8 text-center text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+      Embrace our innovative remote culture...
+    </p>
+  </Container>
+);
+
+const TestimonialsSection = () => (
+  <Container className="py-12 md:py-16 lg:py-24">
+    <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-12">
+      Trusted by Industry Leaders
+    </h2>
+    <TestimonialsCarousel testimonials={testimonials} />
+  </Container>
+);
+
+const ProjectsSection = () => (
+  <section id="projects" className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-10">
+    <Container className="max-w-[58rem]">
+      <h3 className="text-center text-sm font-semibold text-gray-500 pb-2">
+        UPCOMING PROJECTS
+      </h3>
+      <BentoDemo />
+    </Container>
+  </section>
+);
+
+const OpenSourceSection = () => (
+  <Container className="py-8 md:py-12 lg:py-24 text-center">
+    <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+      AI-powered cybersecurity to transform businesses.
+    </h2>
+    <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 mt-4">
+      Stay Tuned...
+    </p>
+  </Container>
+);

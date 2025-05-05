@@ -1,0 +1,1261 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+import {
+  FaLinkedin,
+  FaResearchgate,
+  FaUniversity,
+  FaEnvelope,
+  FaPhone,
+  FaGlobe,
+  FaBook,
+  FaAward,
+  FaGraduationCap,
+  FaChevronLeft,
+  FaChevronRight,
+  FaLink,
+  FaAddressCard,
+  FaExternalLinkAlt,
+  FaCopy,
+  FaBriefcase,
+  FaCheck,
+} from "react-icons/fa";
+import { SiOrcid, SiGooglescholar } from "react-icons/si";
+import Image from "next/image";
+import resume from "@/data/resume";
+import { useSwipeable } from "react-swipeable";
+
+export default function AboutMePage() {
+  const contactLinks = [
+    {
+      icon: <FaEnvelope className="text-purple-600" />,
+      text: "mkjha101@hotmail.com",
+      href: "mailto:mkjha101@hotmail.com",
+    },
+    {
+      icon: <FaPhone className="text-purple-600" />,
+      text: "(240) 712-2489",
+      href: "tel:+12407122489",
+    },
+    {
+      icon: <FaGlobe className="text-purple-600" />,
+      text: "Personal Website",
+      href: "http://mkjhaconsult.com/about-dr-jha",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <FaLinkedin className="text-blue-600" />,
+      text: "LinkedIn Profile",
+      href: "https://www.linkedin.com/in/mkjhaphd/",
+    },
+    {
+      icon: <SiOrcid className="text-green-600" />,
+      text: "ORCiD",
+      href: "https://orcid.org/0000-0001-7351-4764",
+    },
+    {
+      icon: <SiGooglescholar className="text-red-600" />,
+      text: "Google Scholar",
+      href: "https://scholar.google.com/citations?user=P5t_XZIAAAAJ&hl=en&oi=ao",
+    },
+    {
+      icon: <FaResearchgate className="text-green-700" />,
+      text: "ResearchGate",
+      href: "https://www.researchgate.net/profile/Manoj-Jha-8",
+    },
+  ];
+
+  const sections = [
+    { id: "profile", label: "Profile" },
+    { id: "work-experience", label: "Work Experience" },
+    { id: "education", label: "Education" },
+    { id: "courses", label: "Courses" },
+    { id: "funded-projects", label: "Funded Projects" },
+    { id: "publications", label: "Publications" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("profile");
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Account for fixed navigation and potential padding
+      const offset = 80; // Adjust this value based on your fixed header height
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+
+      // Update active section
+      setActiveSection(sectionId);
+    }
+  };
+
+  // Intersection Observer for Section Tracking
+  useEffect(() => {
+    const sections = [
+      "profile",
+      "work-experience",
+      "education",
+      "courses",
+      "funded-projects",
+      "publications",
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    sections.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) observer.observe(section);
+    });
+
+    // Cleanup
+    return () => {
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  const [journalPapersCurrentPage, setJournalPapersCurrentPage] = useState(1);
+  const [
+    conferenceProceedingsCurrentPage,
+    setConferenceProceedingsCurrentPage,
+  ] = useState(1);
+  const itemsPerPage = 5; // Number of items to show per page
+
+  const paginateItems = (items: any[], currentPage: number) => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return items.slice(startIndex, endIndex);
+  };
+
+  const PaginationControls = ({
+    items,
+    currentPage,
+    setCurrentPage,
+    itemType,
+  }: {
+    items: any[];
+    currentPage: number;
+    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+    itemType: string;
+  }) => {
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+
+    // Swipe handlers
+    const handlers = useSwipeable({
+      onSwipedLeft: () => {
+        if (currentPage < totalPages) {
+          setCurrentPage((prev) => prev + 1);
+        }
+      },
+      onSwipedRight: () => {
+        if (currentPage > 1) {
+          setCurrentPage((prev) => prev - 1);
+        }
+      },
+      preventScrollOnSwipe: true,
+    });
+
+    return (
+      <div {...handlers} className="touch-pan-y">
+        <div className="flex justify-center items-center mt-6 space-x-2">
+          <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full border border-purple-100 dark:border-purple-900 shadow-sm">
+            <button
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <FaChevronLeft className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+            </button>
+
+            <span className="text-sm font-medium text-purple-600 dark:text-purple-300">
+              {currentPage} / {totalPages}
+            </span>
+
+            <button
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+              }
+              disabled={currentPage === totalPages}
+              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <FaChevronRight className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const [currentWorkExpPage, setCurrentWorkExpPage] = useState(1);
+  const workExpPerPage = 5;
+
+  const WorkExpPaginationControls = ({
+    items,
+    currentPage,
+    setCurrentPage,
+  }: {
+    items: any[];
+    currentPage: number;
+    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  }) => {
+    const totalPages = Math.ceil(items.length / workExpPerPage);
+
+    // Swipe handlers
+    const handlers = useSwipeable({
+      onSwipedLeft: () => {
+        if (currentPage < totalPages) {
+          setCurrentPage((prev) => prev + 1);
+        }
+      },
+      onSwipedRight: () => {
+        if (currentPage > 1) {
+          setCurrentPage((prev) => prev - 1);
+        }
+      },
+      preventScrollOnSwipe: true,
+    });
+
+    return (
+      <div {...handlers} className="touch-pan-y">
+        <div className="flex justify-center items-center mt-6 space-x-2">
+          <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full border border-purple-100 dark:border-purple-900 shadow-sm">
+            <button
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <FaChevronLeft className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+            </button>
+
+            <span className="text-sm font-medium text-purple-600 dark:text-purple-300">
+              {currentPage} / {totalPages}
+            </span>
+
+            <button
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+              }
+              disabled={currentPage === totalPages}
+              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <FaChevronRight className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  // track the index of the item that was copied
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+  const items = [
+    {
+      icon: (
+        <FaGlobe className="w-4 h-4 mr-2 text-green-600 dark:text-green-400" />
+      ),
+      content: "419 Blairfield Court, Severn, MD 21144",
+      type: "address",
+    },
+    {
+      icon: (
+        <FaEnvelope className="w-4 h-4 mr-2 text-green-600 dark:text-green-400" />
+      ),
+      content: "mkjha@mkjhaconsult.com",
+      type: "email",
+    },
+  ];
+
+  const handleCopy = (text: string, index: number) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIndex(index);
+    // reset icon after 2 seconds
+    setTimeout(() => setCopiedIndex(null), 2000);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="w-full py-8">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-transparent"
+        >
+          {/* Cover Banner */}
+          <div className="relative w-screen -mx-[50vw] left-1/2 right-1/2 h-[450px] overflow-hidden -mt-20">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-40 dark:opacity-60 
+             object-cover object-center 
+             sm:bg-cover md:bg-cover lg:bg-cover 
+             w-full h-full quality-100 "
+              style={{
+                backgroundImage:
+                  "linear-gradient(to bottom, rgba(255, 215, 0, 0.4), rgba(255, 255, 255, 0.1)), url('/banner.jpg')",
+              }}
+            ></div>
+            <div className="relative z-10 flex items-end justify-center h-full px-8 py-6 max-w-7xl mx-auto -translate-y-36 md:-translate-y-24 lg:translate-y-0">
+              <div className="flex items-center space-x-6 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div
+                  className="text-gray-700 dark:text-gray-100 
+                  w-full 
+                  md:max-w-[50%] 
+                  lg:max-w-[60%] 
+                  space-y-2 
+                  text-center md:text-left 
+                  bg-black/30 md:bg-transparent 
+                  p-4 md:p-0 
+                  rounded-lg md:rounded-none"
+                >
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-2xl md:text-3xl font-bold mb-2"
+                  >
+                    AI, ML, CYBERSECURITY & DATA SCIENCE
+                  </motion.h1>
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="text-2xl md:text-3xl font-bold mb-2"
+                  >
+                    PRANAV K JHA
+                  </motion.h1>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    className="text-xs md:text-sm text-gray-700 dark:text-gray-300"
+                  >
+                    AI, ML, Cybersecurity & Data Science Solutions
+                  </motion.p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="my-[-130px] px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            {/* Sticky Side Navigation */}
+            <nav className="hidden lg:block fixed right-4 top-1/2 -translate-y-1/2 z-50">
+              <div className="bg-transparent dark:bg-transparent p-1">
+                <div className="flex flex-col space-y-2">
+                  {[
+                    { id: "profile", label: "Profile", icon: "👤" },
+                    { id: "education", label: "Education", icon: "🎓" },
+                    { id: "work-experience", label: "Work", icon: "💼" },
+                    { id: "courses", label: "Courses", icon: "📚" },
+                    { id: "funded-projects", label: "Projects", icon: "🔬" },
+                    { id: "publications", label: "Papers", icon: "📝" },
+                  ].map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => {
+                        const element = document.getElementById(section.id);
+                        if (element) {
+                          // Smooth scroll with custom easing
+                          const startPosition = window.pageYOffset;
+                          const targetPosition =
+                            element.getBoundingClientRect().top +
+                            window.pageYOffset -
+                            80;
+                          const distance = targetPosition - startPosition;
+                          const duration = 1000; // Adjust duration as needed
+                          let start: number | null = null;
+
+                          const animation = (currentTime: number) => {
+                            if (start === null) start = currentTime;
+                            const timeElapsed = currentTime - start;
+                            const run = ease(
+                              timeElapsed,
+                              startPosition,
+                              distance,
+                              duration
+                            );
+                            window.scrollTo(0, run);
+                            if (timeElapsed < duration) {
+                              requestAnimationFrame(animation);
+                            }
+                          };
+
+                          // Easing function for smooth scroll
+                          const ease = (
+                            t: number,
+                            b: number,
+                            c: number,
+                            d: number
+                          ) => {
+                            t /= d / 2;
+                            if (t < 1) return (c / 2) * t * t + b;
+                            t--;
+                            return (-c / 2) * (t * (t - 2) - 1) + b;
+                          };
+
+                          requestAnimationFrame(animation);
+                        }
+                      }}
+                      className={`
+                        flex items-center 
+                        px-3 py-2 
+                        rounded-full 
+                        text-[0.7rem]
+                        font-medium 
+                        transition-all 
+                        duration-300 
+                        group
+                        ${
+                          activeSection === section.id
+                            ? "bg-purple-600 text-white"
+                            : "text-purple-700 dark:text-purple-300 hover:bg-purple-100/50 dark:hover:bg-gray-700/50"
+                        }
+                      `}
+                      aria-label={`Navigate to ${section.label} section`}
+                    >
+                      <span
+                        className={`
+                          mr-2 
+                          opacity-70 
+                          group-hover:opacity-100 
+                          transition-opacity 
+                          duration-300
+                          ${
+                            activeSection === section.id
+                              ? "opacity-100"
+                              : "opacity-50"
+                          }
+                        `}
+                      >
+                        {section.icon}
+                      </span>
+                      <span
+                        className={`
+                          whitespace-nowrap 
+                          ${
+                            activeSection === section.id
+                              ? "text-white"
+                              : "text-purple-700 dark:text-purple-300"
+                          }
+                        `}
+                      >
+                        {section.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </nav>
+
+            {/* Header Section */}
+            <div
+              id="profile"
+              className="text-center mb-8 space-y-4 text-sm leading-relaxed"
+            >
+              <div className="flex flex-col items-center mb-6">
+                <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-purple-100 dark:border-indigo-950 shadow-2xl mb-4">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Pranav Jha"
+                    width={256}
+                    height={256}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+              <h1 className="text-4xl font-bold text-purple-800 dark:text-purple-200 mb-3">
+                Pranav Jha
+              </h1>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                AI, ML, Cybersecurity & Data Science Solutions
+              </p>
+              <p className="text-gray-800 dark:text-gray-200 max-w-5xl mx-auto leading-relaxed tracking-wide bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
+                <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                  With over 5 years of expertise
+                </span>{" "}
+                in artificial intelligence, machine learning, operations
+                research, optimization, and data science, Dr. Jha brings a{" "}
+                <span className="italic text-blue-600 dark:text-blue-300">
+                  wealth of knowledge and leadership
+                </span>{" "}
+                to the field of advanced analytics. His proficiency spans
+                <span className="font-medium text-emerald-700 dark:text-emerald-400">
+                  {" "}
+                  statistical regression, Bayesian hierarchical modeling
+                </span>
+                , and programming in Python and R. As the Director of Advanced
+                Analytics and Data Science at{" "}
+                <a
+                  href="https://thebritegroup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-purple-700 dark:text-purple-400 hover:underline"
+                >
+                  The Brite Group
+                </a>
+                , Dr. Jha leads multiple large-scale federal initiatives focused
+                on AI, ML, and Big Data. His work combines deep technical
+                insight with strategic vision to deliver{" "}
+                <span className="font-bold text-gray-900 dark:text-white">
+                  impactful, data-driven solutions
+                </span>{" "}
+                for complex challenges.
+              </p>
+            </div>
+
+            {/* Professional Summary */}
+            <div
+              id="profile"
+              className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8"
+            >
+              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+                Professional Profile
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Expertise and Experience */}
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-900">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full mr-4">
+                      <FaBook className="w-6 h-6 text-purple-600 dark:text-purple-300" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-200">
+                      Expertise
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    Over 25 years of experience in:
+                  </p>
+                  <ul className="list-disc list-inside text-sm space-y-1 mt-2 text-gray-600 dark:text-gray-400">
+                    <li>Artificial Intelligence</li>
+                    <li>Machine Learning</li>
+                    <li>Operations Research</li>
+                    <li>Data Science</li>
+                    <li>Statistical Regression</li>
+                    <li>Bayesian Hierarchical Modeling</li>
+                  </ul>
+                  <p className="text-xs mt-3 italic text-gray-500 dark:text-gray-500">
+                    Proficient in Python, R, and advanced algorithms
+                  </p>
+                </div>
+
+                {/* Academic Positions */}
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-900">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                      <FaUniversity className="w-6 h-6 text-green-600 dark:text-green-300" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-green-800 dark:text-green-200">
+                      Academic Roles
+                    </h3>
+                  </div>
+                  <ul className="list-disc list-inside text-sm space-y-2 text-gray-600 dark:text-gray-400">
+                    <li>
+                      <a
+                        href="https://www.gwu.edu/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                      >
+                        George Washington University
+                      </a>
+                      <div className="text-gray-600 dark:text-gray-400">
+                        Adjunct Professor, Civil & Environmental Engineering
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.umgc.edu/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                      >
+                        University of Maryland, Global Campus
+                      </a>
+                      <div className="text-gray-600 dark:text-gray-400">
+                        Adjunct Associate Professor, Data Science
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.bits-pilani.ac.in/hyderabad/manoj-k-jha/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                      >
+                        BITS-Pilani, Hyderabad Campus
+                      </a>
+                      <div className="text-gray-600 dark:text-gray-400">
+                        Professor of Practice, Computer Science & Information
+                        Systems
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.morgan.edu/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                      >
+                        Morgan State University
+                      </a>
+                      <div className="text-gray-600 dark:text-gray-400">
+                        Tenured Professor (13 Years), Civil Engineering
+                      </div>
+                    </li>
+                  </ul>
+
+                  <p className="text-xs mt-3 italic text-gray-500 dark:text-gray-500">
+                    Teaching over 15 graduate and undergraduate courses across
+                    multiple disciplines
+                  </p>
+                </div>
+
+                {/* Professional Contributions */}
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-900">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                      <FaAward className="w-6 h-6 text-blue-600 dark:text-blue-300" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200">
+                      Professional Impact
+                    </h3>
+                  </div>
+                  <div className="text-xs space-y-3 text-gray-600 dark:text-gray-400">
+                    <div>
+                      <p className="font-semibold mb-1">Editorial Roles</p>
+                      <ul className="list-disc list-inside">
+                        <li>
+                          Associate Editor of{" "}
+                          <a
+                            href="https://www.igi-global.com/journal/international-journal-artificial-intelligence/334185"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            International Journal of Artificial Intelligence
+                            (AI) in Business and Management (IJAIBM)
+                          </a>
+                        </li>
+                        <li>
+                          Associate Editor of{" "}
+                          <a
+                            href="https://ojs.bonviewpress.com/index.php/JCCE/EBMembers"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            Journal of Computational and Cognitive Engineering
+                          </a>
+                        </li>
+                        <li>
+                          Guest Editor –{" "}
+                          <a
+                            href="https://www.mdpi.com/journal/applsci/special_issues/I6N43Q512B"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            Applied Sciences: Special Issue on “Innovations in
+                            Autonomous Driving and Vehicle Intelligence”
+                          </a>
+                        </li>
+                        <li>
+                          Editorial Board Member of{" "}
+                          <a
+                            href="https://www.igi-global.com/journal/international-journal-operations-research-information/1141"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            International Journal of Operations Research and
+                            Information Systems
+                          </a>
+                        </li>
+                        <li>
+                          Editorial Board Member of{" "}
+                          <a
+                            href="https://ojs.bonviewpress.com/index.php/jdsis/edb"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            Journal of Data Science and Intelligent Systems
+                          </a>
+                        </li>
+                        <li>
+                          Editorial Committee Member of{" "}
+                          <a
+                            href="https://www.vectmag.com/post/meet-the-editorial-committee-dr-manoj-jha-george-washington-university-usa?utm_campaign=4373e9d0-6fd4-4128-8501-0299f5e0d662&utm_source=so&utm_medium=mail"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            VectMag Virtual Conference Series
+                          </a>
+                        </li>
+                        <li>
+                          Member of{" "}
+                          <a
+                            href="https://www.asiacis.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            Asia Computational Intelligence Society
+                          </a>
+                        </li>
+                        <li>
+                          Technical Program Chair –{" "}
+                          <a
+                            href="https://www.iccsaia.org/#:~:text=International%20Conference%20on%20Computer%20Science%20and%20Artificial%20Intelligence%20Applications%20(CSAIA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            International Conference on Computer Science and
+                            Artificial Intelligence Applications 2025
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold mb-1">
+                        Professional Achievements
+                      </p>
+                      <ul className="list-disc list-inside">
+                        <li>200+ Technical Papers Published</li>
+                        <li>
+                          Technical Program Chair, CS & AI Conference 2025
+                        </li>
+                        <li>Member, Asia Computational Intelligence Society</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p className="text-xs mt-3 italic text-gray-500 dark:text-gray-500">
+                    Currently leading advanced data science projects
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact, Links, and Positions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+              }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8"
+            >
+              {/* Professional Links Column */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate="visible"
+                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-purple-100 dark:border-purple-900 hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                  <div className="bg-purple-100 dark:bg-purple-900 p-2 rounded-full mr-3">
+                    <FaLink className="w-5 h-5 text-purple-600 dark:text-purple-300" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 group-hover:text-purple-900 dark:group-hover:text-purple-100 transition-colors">
+                    Professional Links
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {socialLinks.map((link, index) => (
+                    <motion.a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: index * 0.1,
+                        duration: 0.3,
+                      }}
+                      whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.2 },
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center text-sm text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-purple-100 transition-colors duration-300  rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30"
+                    >
+                      <span className="mr-3 bg-purple-100 dark:bg-purple-900 p-2 rounded-full">
+                        {link.icon}
+                      </span>
+                      {link.text}
+                      <FaExternalLinkAlt className="ml-auto text-purple-400 dark:text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Contact Information Column */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate="visible"
+                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-purple-100 dark:border-purple-900 hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                  <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-3">
+                    <FaAddressCard className="w-5 h-5 text-green-600 dark:text-green-300" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 group-hover:text-purple-900 dark:group-hover:text-purple-100 transition-colors">
+                    Contact Information
+                  </h3>
+                </div>
+                <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                  {items.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: index * 0.1,
+                        duration: 0.3,
+                      }}
+                      className="flex items-center rounded-lg hover:bg-green-50 dark:hover:bg-green-900/30 group"
+                    >
+                      {item.icon}
+                      <span className="group-hover:text-green-900 dark:group-hover:text-green-100 transition-colors">
+                        {item.content}
+                      </span>
+                      {item.type === "email" && (
+                        <button
+                          className="ml-auto focus:outline-none"
+                          onClick={() => handleCopy(item.content, index)}
+                        >
+                          {copiedIndex === index ? (
+                            <FaCheck className="text-green-500 w-4 h-4 transition-opacity" />
+                          ) : (
+                            <FaCopy className="text-green-400 dark:text-green-600 w-4 h-4 transition-opacity opacity-0 group-hover:opacity-100" />
+                          )}
+                        </button>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Current Positions Column */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate="visible"
+                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-purple-100 dark:border-purple-900 hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                  <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-full mr-3">
+                    <FaBriefcase className="w-5 h-5 text-blue-600 dark:text-blue-300" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 group-hover:text-purple-900 dark:group-hover:text-purple-100 transition-colors">
+                    Current Positions
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {resume.currentPositions.map((position, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: index * 0.1,
+                        duration: 0.3,
+                      }}
+                      whileHover={{
+                        scale: 1.02,
+                        transition: { duration: 0.2 },
+                      }}
+                      className="text-sm text-gray-700 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 group"
+                    >
+                      <h4 className="text-xs font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
+                        {position}
+                      </h4>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Education */}
+            <div id="education" className="my-8">
+              <h2 className="text-xl font-bold text-purple-800 dark:text-purple-200 mb-3 border-b-2 border-purple-200 pb-1">
+                Education
+              </h2>
+              <div className="space-y-4 text-gray-700 dark:text-gray-300">
+                {resume.education.map((edu, index) => (
+                  <div key={index} className="flex items-start">
+                    <FaGraduationCap className="mr-3 mt-1 text-purple-600 dark:text-purple-400 w-5 h-5" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-purple-700 dark:text-purple-300">
+                        {edu.degree}
+                      </h3>
+                      <div className="text-xs">
+                        <span>{edu.institution}</span>
+                        {edu.year && (
+                          <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                            {edu.year}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Work Experience */}
+            <div id="work-experience" className="my-8">
+              <h2 className="text-xl font-bold text-purple-800 dark:text-purple-200 mb-3 border-b-2 border-purple-200 pb-1">
+                Work Experience
+              </h2>
+              <div className="grid gap-4 text-gray-700 dark:text-gray-300 grid-rows-5 min-h-[300px]">
+                {Array(5)
+                  .fill(null)
+                  .map((_, index) => {
+                    const job = resume.workExperience.slice(
+                      (currentWorkExpPage - 1) * workExpPerPage,
+                      currentWorkExpPage * workExpPerPage
+                    )[index];
+
+                    return job ? (
+                      <div
+                        key={index}
+                        className="group relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-purple-500 before:rounded-full before:border-2 before:border-purple-200 dark:before:border-purple-800 after:absolute after:left-[5px] after:top-2 after:bottom-0 after:w-0.5 after:bg-purple-100 dark:after:bg-purple-800 last:after:hidden"
+                      >
+                        <div className="flex justify-between items-start mb-1">
+                          <div>
+                            <h3 className="text-sm font-semibold text-purple-700 dark:text-purple-300">
+                              {job.title}
+                            </h3>
+                            <div className="text-xs text-gray-600 dark:text-gray-400">
+                              {job.company}
+                              {job.location && ` • ${job.location}`}
+                            </div>
+                          </div>
+                          {job.period && (
+                            <span className="text-xs text-gray-500 dark:text-gray-500">
+                              {job.period}
+                            </span>
+                          )}
+                        </div>
+                        {job.description && (
+                          <p className="text-xs text-gray-700 dark:text-gray-300 mt-1">
+                            {job.description}
+                          </p>
+                        )}
+                      </div>
+                    ) : (
+                      <div
+                        key={index}
+                        className="opacity-0 pointer-events-none h-full"
+                      ></div>
+                    );
+                  })}
+              </div>
+              {/* Pagination Controls */}
+              {resume.workExperience.length > workExpPerPage && (
+                <WorkExpPaginationControls
+                  items={resume.workExperience}
+                  currentPage={currentWorkExpPage}
+                  setCurrentPage={setCurrentWorkExpPage}
+                />
+              )}
+            </div>
+
+            {/* Professional Achievements */}
+            <div
+              id="professional-achievements"
+              className="mb-8 space-y-6 relative"
+            >
+              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+                Professional Achievements
+              </h2>
+
+              <div className="space-y-4">
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">
+                    Professional Certifications
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                    <li>
+                      Professional Engineer (P.E.), State of MD
+                      <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                        License Number 22725
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">
+                    Professional Memberships
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                    <li>
+                      <a
+                        href="https://www.asiacis.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-600 hover:underline"
+                      >
+                        Member of Asia Computational Intelligence Society
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.iccsaia.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-600 hover:underline"
+                      >
+                        Technical Program Chair - International Conference on
+                        Computer Science and Artificial Intelligence
+                        Applications 2025
+                      </a>
+                    </li>
+                    <li>
+                      Past Memberships:
+                      <ul className="list-inside list-[circle] ml-6 text-sm">
+                        <li>American Society of Civil Engineers (ASCE)</li>
+                        <li>
+                          National Society of Professional Engineers (NSPE)
+                        </li>
+                        <li>Institute of Transportation Engineers (ITE)</li>
+                        <li>
+                          Institute for Operations Research and Management
+                          Sciences (INFORMS)
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">
+                    Keynote Speeches
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Delivered over 20 keynote speeches in various international
+                    conferences and seminars across the world.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Courses Taught */}
+            <motion.div
+              id="courses"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="my-8"
+            >
+              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+                Courses Taken
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {resume.coursesTaught.map((teachingRecord, recordIndex) => (
+                  <motion.div
+                    key={recordIndex}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: recordIndex * 0.1,
+                      duration: 0.3,
+                    }}
+                    whileHover={{
+                      scale: 1.02,
+                      transition: { duration: 0.2 },
+                    }}
+                    className={`
+                      bg-white/50 dark:bg-gray-800/50 
+                      rounded-xl 
+                      border border-purple-100 dark:border-purple-900 
+                      p-5 
+                      hover:shadow-xl 
+                      transition-all 
+                      duration-500 
+                      group
+                      ${
+                        recordIndex < 3
+                          ? "md:col-span-2 lg:col-span-2"
+                          : "md:col-span-2 lg:col-span-3"
+                      }
+                    `}
+                  >
+                    <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                      <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-3">
+                        <FaBook className="w-5 h-5 text-green-600 dark:text-green-300" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-green-700 dark:text-green-300 group-hover:text-green-900 dark:group-hover:text-green-100 transition-colors">
+                        {teachingRecord.institution}
+                      </h3>
+                    </div>
+                    <div className="flex justify-between items-start mb-2">
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        {teachingRecord.period}
+                      </p>
+                    </div>
+                    <ul className="list-disc list-inside text-xs space-y-1 text-gray-600 dark:text-gray-400">
+                      {teachingRecord.courses.map((course, courseIndex) => (
+                        <li
+                          key={courseIndex}
+                          className="group-hover:text-green-800 dark:group-hover:text-green-200 transition-colors"
+                        >
+                          {course}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Publications */}
+            <div id="publications" className="mb-8 space-y-6 relative pb-24">
+              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+                Publications
+              </h2>
+
+              {/* Journal Papers Section */}
+              {resume.publications.journalPapers &&
+                resume.publications.journalPapers.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-300 mb-4 border-b border-purple-100 pb-2">
+                      Journal Papers
+                    </h3>
+                    <div className="space-y-3 text-sm text-purple-700 dark:text-purple-300">
+                      {paginateItems(
+                        resume.publications.journalPapers,
+                        journalPapersCurrentPage
+                      ).map((paper, index) => (
+                        <div
+                          key={index}
+                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-purple-100 dark:border-purple-900"
+                        >
+                          <p className="font-semibold">{paper.title}</p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            Authors:{" "}
+                            {Array.isArray(paper.authors)
+                              ? paper.authors.join(", ")
+                              : paper.authors}
+                          </p>
+                          <p className="text-xs">
+                            {paper.journal}, {paper.year}
+                            {paper.doi && (
+                              <a
+                                href={paper.doi}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ml-2 text-blue-600 dark:text-blue-400 hover:underline"
+                              >
+                                DOI: {paper.doi.split("/").pop()}
+                              </a>
+                            )}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    <PaginationControls
+                      items={resume.publications.journalPapers}
+                      currentPage={journalPapersCurrentPage}
+                      setCurrentPage={setJournalPapersCurrentPage}
+                      itemType="Journal Papers"
+                    />
+                  </div>
+                )}
+
+              {/* Conference Proceedings Section */}
+              {resume.publications.conferenceProceedings &&
+                resume.publications.conferenceProceedings.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-300 mb-4 border-b border-purple-100 pb-2">
+                      Conference Proceedings
+                    </h3>
+                    <div className="space-y-3 text-sm text-purple-700 dark:text-purple-300">
+                      {paginateItems(
+                        resume.publications.conferenceProceedings,
+                        conferenceProceedingsCurrentPage
+                      ).map((proceeding, index) => (
+                        <div
+                          key={index}
+                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-purple-100 dark:border-purple-900"
+                        >
+                          <p className="font-semibold">{proceeding.title}</p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            Authors:{" "}
+                            {Array.isArray(proceeding.authors)
+                              ? proceeding.authors.join(", ")
+                              : proceeding.authors}
+                          </p>
+                          <p className="text-xs">
+                            {proceeding.conference}, {proceeding.year}
+                            {proceeding.doi && (
+                              <a
+                                href={proceeding.doi}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ml-2 text-blue-600 dark:text-blue-400 hover:underline"
+                              >
+                                DOI: {proceeding.doi.split("/").pop()}
+                              </a>
+                            )}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    <PaginationControls
+                      items={resume.publications.conferenceProceedings}
+                      currentPage={conferenceProceedingsCurrentPage}
+                      setCurrentPage={setConferenceProceedingsCurrentPage}
+                      itemType="Conference Proceedings"
+                    />
+                  </div>
+                )}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
