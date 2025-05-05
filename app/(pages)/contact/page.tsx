@@ -42,19 +42,11 @@ const contactSchema = z.object({
 // Locations data
 const locations = [
   {
-    name: "MKJHA Consulting - US Headquarters",
-    address: "419 Blairfield Court, Unit: Basement, Severn, MD 21144",
-    phone: "+1 (240) 712-2489",
-    email: "mkjha@mkjhaconsult.com",
-    website: "https://mkjhaconsult.com",
-    googleMapsLink: "https://maps.app.goo.gl/oSgDFfxuWSJ7h97Z8",
-  },
-  {
-    name: "MKJHA Consulting - Montreal Office",
-    address: "604-2250 rue Guy, Montreal, QC H3H 2M3, Canada",
+    name: "Pranav Jha - Montreal Office",
+    address: "604-2250 rue Guy, Montreal,   QC H3H 2M3, Canada",
     phone: "+1 (514) 885-2490",
-    email: "contact@mkjhaconsult.com",
-    website: "https://research-mkjhaconsult.vercel.app/",
+    email: "pranav.jha@mail.concordia.ca",
+    website: "#",
     googleMapsLink: "https://maps.app.goo.gl/k6Xaw3Z7t4PSpWYs6",
   },
 ];
@@ -119,12 +111,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-white to-purple-50 dark:from-gray-900 dark:to-gray-950 min-h-screen">
+    <div className="bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-950 min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/office/about-3.jpg"
+            src="/banner.jpg"
             alt="Professional Background"
             fill
             quality={90}
@@ -142,8 +134,8 @@ export default function ContactPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Contact{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Us
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Me
             </span>
           </motion.h1>
 
@@ -179,7 +171,7 @@ export default function ContactPage() {
                 <Card className="h-full hover:shadow-xl transition-all duration-300 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm">
                   <CardContent className="p-4 space-y-4">
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-xl font-semibold text-purple-700 dark:text-purple-400 flex items-center gap-2">
+                      <CardTitle className="text-xl font-semibold text-blue-700 dark:text-blue-400 flex items-center gap-2">
                         <MapPin className="w-5 h-5" />
                         {location.name}
                       </CardTitle>
@@ -209,15 +201,15 @@ export default function ContactPage() {
 
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                        <Phone className="w-4 h-4 text-purple-600" />
+                        <Phone className="w-4 h-4 text-blue-600" />
                         <span>{location.phone}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                        <Mail className="w-4 h-4 text-purple-600" />
+                        <Mail className="w-4 h-4 text-blue-600" />
                         <span>{location.email}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                        <Globe className="w-4 h-4 text-purple-600" />
+                        <Globe className="w-4 h-4 text-blue-600" />
                         <span className="truncate">{location.address}</span>
                       </div>
                     </div>
@@ -235,7 +227,7 @@ export default function ContactPage() {
             className="flex items-center justify-center"
           >
             <Card className="w-full shadow-2xl rounded-2xl overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-6 relative">
+              <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 relative">
                 <div className="absolute top-4 right-4">
                   <Badge
                     variant="destructive"
@@ -246,10 +238,10 @@ export default function ContactPage() {
                 </div>
                 <CardTitle className="text-3xl font-bold flex items-center gap-4">
                   <Send className="w-10 h-10" />
-                  Contact Us
+                  Contact Me
                 </CardTitle>
                 <CardDescription className="text-white/80 mt-2">
-                  Have a question or want to collaborate? We&#39;d love to hear
+                  Have a question or want to collaborate? I&#39;d love to hear
                   from you.
                 </CardDescription>
               </CardHeader>

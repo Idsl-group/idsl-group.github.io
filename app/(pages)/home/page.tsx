@@ -16,7 +16,7 @@ export default function HomePage() {
   const services = [
     {
       icon: <LightningBoltIcon className="w-8 h-8 text-purple-600" />,
-      title: "AI Strategy",
+      title: "Full Stack Web and Mobile Development",
       description:
         "Develop transformative AI strategies tailored to your unique business challenges.",
       href: "/coming-soon",
@@ -30,7 +30,7 @@ export default function HomePage() {
     },
     {
       icon: <ReaderIcon className="w-8 h-8 text-purple-600" />,
-      title: "PhD Support",
+      title: "AI Research",
       description:
         "Comprehensive guidance for doctoral research, methodology, and publication.",
       href: "/services/phd-support",
@@ -60,9 +60,9 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            MKJHA{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Consulting
+            PRANAV{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              K JHA
             </span>
           </motion.h1>
 
@@ -72,9 +72,10 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           >
-            Engaging with researchers to undertake cutting-edge research and use
-            cases in data science, cybersecurity, advanced analytics, and
-            transportation, with a current focus on edge and quantum computing.
+            I have passion for AI and Machine Learning and I am working on
+            cutting-edge research and use cases in data science, cybersecurity,
+            advanced analytics, and transportation, with a current focus on edge
+            and quantum computing.
           </motion.p>
         </div>
       </section>
@@ -90,25 +91,30 @@ export default function HomePage() {
             className="space-y-6"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
-              Elevate Your Research <br />
-              <span className="text-purple-600">AI-Powered Consulting</span>
+              Highly motivated <br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI Solutions Architect
+              </span>
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-prose">
-              Expert guidance in AI strategy, machine learning, and academic
-              research. Transform complex challenges into innovative solutions.
+              I am a highly motivated AI Solutions Architect with a passion for
+              AI and Machine Learning and I am working on cutting-edge research
+              and use cases in data science, cybersecurity, advanced analytics,
+              and transportation, with a current focus on edge and quantum
+              computing.
             </p>
             <div className="flex space-x-4">
               <Link
                 href="/about"
-                className="px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-lg"
+                className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors shadow-lg"
               >
                 Explore Services
               </Link>
               <Link
                 href="/contact"
-                className="px-6 py-3 border border-purple-600 text-purple-600 rounded-full hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                className="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
               >
-                Contact Us
+                Contact Me
               </Link>
             </div>
           </motion.div>
@@ -165,9 +171,9 @@ export default function HomePage() {
                       stiffness: 120,
                       delay: 0.3,
                     }}
-                    className="text-3xl md:text-4xl font-bold text-purple-600 mb-6"
+                    className="text-3xl md:text-4xl font-bold text-blue-600 mb-6"
                   >
-                    Alignment Optimization
+                    Cutting-Edge AI Research
                   </motion.h2>
 
                   <motion.p
@@ -180,11 +186,10 @@ export default function HomePage() {
                     }}
                     className="text-gray-700 dark:text-gray-300 text-lg mb-6 leading-relaxed"
                   >
-                    Pioneering advanced AI alignment techniques that bridge
-                    cutting-edge research with ethical, strategic
-                    implementation. Our approach ensures AI systems are
-                    precisely calibrated to human values and organizational
-                    objectives.
+                    Looking for cutting-edge AI research and use cases in data
+                    science, cybersecurity, advanced analytics, and
+                    transportation, with a current focus on edge and quantum
+                    computing.
                   </motion.p>
 
                   <motion.div
@@ -198,9 +203,10 @@ export default function HomePage() {
                     className="space-y-4"
                   >
                     {[
-                      "Quantum-Inspired Alignment Strategies",
-                      "Ethical AI Value Mapping",
-                      "Precision Optimization Frameworks",
+                      "Data Science",
+                      "Cybersecurity",
+                      "Advanced Analytics",
+                      "Machine Learning",
                     ].map((feature, index) => (
                       <div
                         key={index}
@@ -224,7 +230,7 @@ export default function HomePage() {
                   >
                     <Link
                       href="/research/highway-alignment"
-                      className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-all duration-300 group"
+                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 group"
                     >
                       Explore Research
                       <ArrowRightIcon className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -276,7 +282,7 @@ export default function HomePage() {
       <section className="bg-gray-50 dark:bg-gray-800 py-16 px-4 md:px-8 lg:px-16">
         <div className="container mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Our Specialized Services
+            Specialized Services
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Bridging academic excellence with cutting-edge technology to drive
@@ -329,13 +335,13 @@ export default function HomePage() {
           <div className="flex justify-center space-x-4">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-purple-600 text-white rounded-full text-lg hover:bg-purple-700 transition-colors shadow-lg"
+              className="px-8 py-4 bg-blue-600 text-white rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg"
             >
               Book Consultation
             </Link>
             <Link
               href="/about"
-              className="px-8 py-4 border border-purple-600 text-purple-600 rounded-full text-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+              className="px-8 py-4 border border-blue-600 text-blue-600 rounded-full text-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
             >
               Learn About Us
             </Link>
