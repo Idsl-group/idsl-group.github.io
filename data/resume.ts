@@ -13,6 +13,33 @@ const resume = {
     "I’m looking to collaborate with AI research teams, innovative companies, and forward-thinking data science professionals who are passionate about:\n✅ Developing AI-powered business intelligence tools.\n✅ Creating real-time predictive analytics models for industries like finance, healthcare, and cybersecurity.\n✅ Building scalable ML pipelines that bring research into production.\nIf you're working on exciting projects in AI, ML, or data-driven automation, or just want to exchange ideas over coffee in Montreal, I’d love to connect! Open to research roles, collaborations, and impactful AI/ML opportunities.",
   ],
 
+  courses: [
+    {
+      name: "Neural Networks",
+      grade: "A+",
+    },
+    {
+      name: "Advanced Signal Processing",
+      grade: "A+",
+    },
+    {
+      name: "Probability and Stochastic Processes",
+      grade: "A+",
+    },
+    {
+      name: "Distributed Software Systems",
+      grade: "A",
+    },
+    {
+      name: "Error Detecting and Correcting Codes",
+      grade: "A+",
+    },
+    {
+      name: "Microprocessors",
+      grade: "A",
+    },
+  ],
+
   professionalAchievements: [
     "Associate Editor of International Journal of Artificial Intelligence (AI) in Business and Management",
     "Associate Editor of Journal of Computational and Cognitive Engineering",

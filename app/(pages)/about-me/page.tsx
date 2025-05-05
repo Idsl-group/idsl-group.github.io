@@ -496,12 +496,35 @@ export default function AboutMePage() {
                 AI, ML, Cybersecurity & Data Science Solutions
               </p>
               <p className="text-gray-800 dark:text-gray-200 max-w-5xl mx-auto leading-relaxed tracking-wide bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
-                {resume.summary.map((paragraph, index) => (
-                  <span key={index}>
-                    {paragraph}
-                    {index < resume.summary.length - 1 && " "}
-                  </span>
-                ))}
+                <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                  I transform raw data into meaningful insights
+                </span>{" "}
+                through a passionate approach to{" "}
+                <span className="text-blue-600 dark:text-blue-300">
+                  Machine Learning
+                </span>{" "}
+                and{" "}
+                <span className="text-emerald-600 dark:text-emerald-400">
+                  Data Science
+                </span>
+                . With a background in{" "}
+                <span className="text-purple-600 dark:text-purple-300">
+                  Deep Learning
+                </span>
+                ,
+                <span className="text-orange-600 dark:text-orange-400">
+                  {" "}
+                  Predictive Analytics
+                </span>
+                , and{" "}
+                <span className="text-teal-600 dark:text-teal-400">
+                  AI Automation
+                </span>
+                , I design intelligent systems that{" "}
+                <span className="font-bold text-red-600 dark:text-red-400">
+                  predict, optimize, and innovate
+                </span>
+                .
               </p>
             </div>
 
@@ -774,20 +797,13 @@ export default function AboutMePage() {
                     <li key={index}>{area}</li>
                   ))}
                 </ul>
-              </div>
 
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
-                  Professional Certifications
-                </h3>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                  <li>
-                    Professional Engineer (P.E.), State of MD
-                    <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                      License Number 22725
-                    </span>
-                  </li>
-                </ul>
+                {/* Detailed Professional Summary */}
+                <div className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-3">
+                  {resume.summary.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
 
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
@@ -802,112 +818,47 @@ export default function AboutMePage() {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:underline"
                     >
-                      Member of Asia Computational Intelligence Society
+                      <a href="https://ieeexplore.ieee.org/xplore/home.jsp">
+                        IEEE Student Member
+                      </a>
                     </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.iccsaia.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      Technical Program Chair - International Conference on
-                      Computer Science and Artificial Intelligence Applications
-                      2025
-                    </a>
-                  </li>
-                  <li>
-                    Past Memberships:
-                    <ul className="list-inside list-[circle] ml-6 text-sm">
-                      <li>American Society of Civil Engineers (ASCE)</li>
-                      <li>National Society of Professional Engineers (NSPE)</li>
-                      <li>Institute of Transportation Engineers (ITE)</li>
-                      <li>
-                        Institute for Operations Research and Management
-                        Sciences (INFORMS)
-                      </li>
-                    </ul>
                   </li>
                 </ul>
               </div>
-
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
-                  Keynote Speeches
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Delivered over 20 keynote speeches in various international
-                  conferences and seminars across the world.
-                </p>
-              </div>
             </div>
 
-            {/* Courses Taught */}
+            {/* Courses Taken */}
             <motion.div
               id="courses"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="my-8"
+              className="mb-8"
             >
               <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
                 Courses Taken
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {resume.coursesTaught.map((teachingRecord, recordIndex) => (
-                  <motion.div
-                    key={recordIndex}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      delay: recordIndex * 0.1,
-                      duration: 0.3,
-                    }}
-                    whileHover={{
-                      scale: 1.02,
-                      transition: { duration: 0.2 },
-                    }}
-                    className={`
-                      bg-white/50 dark:bg-gray-800/50 
-                      rounded-xl 
-                      border border-blue-100 dark:border-blue-900 
-                      p-5 
-                      hover:shadow-xl 
-                      transition-all 
-                      duration-500 
-                      group
-                      ${
-                        recordIndex < 3
-                          ? "md:col-span-2 lg:col-span-2"
-                          : "md:col-span-2 lg:col-span-3"
-                      }
-                    `}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {resume.courses.map((course, index) => (
+                  <div
+                    key={index}
+                    className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   >
-                    <div className="flex items-center mb-3 border-b border-blue-200 pb-2">
-                      <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-3">
-                        <FaBook className="w-5 h-5 text-green-600 dark:text-green-300" />
-                      </div>
-                      <h3 className="text-sm font-semibold text-green-700 dark:text-green-300 group-hover:text-green-900 dark:group-hover:text-green-100 transition-colors">
-                        {teachingRecord.institution}
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+                        {course.name}
                       </h3>
+                      <span
+                        className={`text-xs font-bold ${
+                          course.grade === "A+"
+                            ? "text-green-600 dark:text-green-400"
+                            : "text-blue-600 dark:text-blue-400"
+                        }`}
+                      >
+                        {course.grade}
+                      </span>
                     </div>
-                    <div className="flex justify-between items-start mb-2">
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {teachingRecord.period}
-                      </p>
-                    </div>
-                    <ul className="list-disc list-inside text-xs space-y-1 text-gray-600 dark:text-gray-400">
-                      {teachingRecord.courses.map((course, courseIndex) => (
-                        <li
-                          key={courseIndex}
-                          className="group-hover:text-green-800 dark:group-hover:text-green-200 transition-colors"
-                        >
-                          {course}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
