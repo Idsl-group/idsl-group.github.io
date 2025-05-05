@@ -75,12 +75,7 @@ export const Icons = {
     </svg>
   ),
   logo: () => (
-    <Image
-      src="/images/logo.png"
-      alt="MKJHA Consulting Logo"
-      height={24}
-      width={24}
-    />
+    <Image src="/profile.jpg" alt="PRANAV K JHA" height={24} width={24} />
   ),
 
   // logo: (props: IconProps) => (

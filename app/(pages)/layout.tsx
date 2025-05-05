@@ -16,12 +16,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pranav K Jha",
-  description: "Revolutionizing AI Innovation",
+  title: "PRANAV K JHA",
+  description: "AI Solutions Architect",
   icons: {
-    icon: [{ url: "/images/logo.png" }, { url: "/images/logo.png" }],
-    shortcut: ["/images/logo.png"],
-    apple: ["/images/logo.png"],
+    icon: [{ url: "/profile.jpg" }],
+    shortcut: ["/profile.jpg"],
+    apple: ["/profile.jpg"],
   },
 };
 
