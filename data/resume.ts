@@ -1,4 +1,18 @@
 const resume = {
+  summary: [
+    "I’ve always been driven by the challenge of transforming raw data into meaningful insights. Working in IT, I’ve seen firsthand how businesses struggle to extract value from their data, optimize decision-making, and stay ahead in an increasingly AI-driven world. These experiences have fueled my passion for Machine Learning and Data Science—not just as analytical tools, but as powerful solutions to real-world problems. With a strong background in Deep Learning, Predictive Analytics, and AI Automation, my goal is to design intelligent systems that go beyond identifying patterns—they predict, optimize, and automate processes for greater efficiency and innovation.",
+    "Too often, I’ve seen organizations react to challenges after they happen. Whether it's forecasting demand, detecting fraud, or preventing system failures, the real game-changer is using AI to anticipate problems before they arise. That’s where I want to make an impact—by bridging the gap between data and intelligent action. Working with major industry players like Fujitsu, CGI, Telus, and IBM, I’ve learned that data-driven strategies aren’t just a competitive advantage—they’re essential for survival in today’s fast-moving world.",
+  ],
+  focusAreas: [
+    "Predictive AI: Building models that forecast trends, risks, and outcomes with high accuracy.",
+    "Anomaly Detection: Identifying fraud, cybersecurity threats, and operational failures before they escalate.",
+    "AI-Driven Automation: Designing self-learning systems that adapt and optimize processes in real time.",
+    "Scalable Data Solutions: Creating ML pipelines that can handle vast amounts of data efficiently.",
+  ],
+  callToAction: [
+    "I’m looking to collaborate with AI research teams, innovative companies, and forward-thinking data science professionals who are passionate about:\n✅ Developing AI-powered business intelligence tools.\n✅ Creating real-time predictive analytics models for industries like finance, healthcare, and cybersecurity.\n✅ Building scalable ML pipelines that bring research into production.\nIf you're working on exciting projects in AI, ML, or data-driven automation, or just want to exchange ideas over coffee in Montreal, I’d love to connect! Open to research roles, collaborations, and impactful AI/ML opportunities.",
+  ],
+
   professionalAchievements: [
     "Associate Editor of International Journal of Artificial Intelligence (AI) in Business and Management",
     "Associate Editor of Journal of Computational and Cognitive Engineering",
@@ -16,98 +30,53 @@ const resume = {
       description:
         "Managing multiple large-scale federal projects involving AI, ML, and Big Data.",
     },
-    {
-      title: "Adjunct Professor of Civil and Environmental Engineering",
-      organization: "George Washington University",
-      description:
-        "Teaching courses in civil engineering, AI, and advanced algorithms.",
-    },
-    {
-      title: "Adjunct Associate Professor of Data Science",
-      organization: "University of Maryland, Global Campus",
-      description:
-        "Teaching data science and AI courses at the graduate level.",
-    },
-    {
-      title:
-        "Professor of Practice, Department of Computer Science and Information Systems",
-      organization: "BITS-Pilani, Hyderabad Campus, India",
-      description:
-        "Teaching and mentoring students in AI, ML, and data science.",
-    },
-    {
-      title: "Tenured/Tenure-Track Professor of Civil Engineering",
-      organization: "Morgan State University",
-      description:
-        "13 years teaching and research experience in transportation, AI, and algorithms.",
-    },
-    {
-      title: "Editorial Roles",
-      organization: "Multiple Journals and Conferences",
-      description: `
-          - Associate Editor: International Journal of Artificial Intelligence in Business and Management (IJAIBM),
-          - Associate Editor: Journal of Computational and Cognitive Engineering,
-          - Guest Editor: Applied Sciences (Special Issue on Autonomous Driving),
-          - Editorial Board Member: International Journal of Operations Research and Information Systems,
-          - Editorial Board Member: Journal of Data Science and Intelligent Systems,
-          - Editorial Committee Member: VectMag Virtual Conference Series.
-        `,
-    },
-    {
-      title: "Memberships and Leadership",
-      organization: "Asia Computational Intelligence Society, and others",
-      description: `
-          - Member of Asia Computational Intelligence Society,
-          - Technical Program Chair: International Conference on Computer Science and Artificial Intelligence Applications 2025.
-        `,
-    },
-    {
-      title: "Research and Publications",
-      organization: "Various Conferences and Journals",
-      description:
-        "Published over 200 technical papers and edited books in data science, operations research, Bayesian analysis, and engineering. Working on multiple ongoing projects.",
-    },
-    {
-      title: "Teaching Experience",
-      organization: "Various Institutions",
-      description:
-        "Taught over 15 graduate and undergraduate courses in engineering, data science, AI, and advanced algorithms.",
-    },
-    {
-      title: "Federal Projects",
-      organization: "Various U.S. Government Agencies",
-      description:
-        "Extensive experience working on federally funded research and projects.",
-    },
   ],
   currentPositions: [
-    "Senior Data Scientist at the Brite Group",
-    "Adjunct Professor of Civil and Environmental Engineering at George Washington University",
-    "Adjunct Associate Professor of Data Science at University of Maryland, Global Campus",
-    "Professor of Practice in Computer Science and Information Systems at BITS-Pilani, Hyderabad Campus, India",
+    {
+      company: "Fujitsu",
+      location: "Montreal, Quebec, Canada",
+      period: "August 2023 - Present (1 year 10 months)",
+      title: "Senior Application Support",
+    },
+    {
+      company: "MKJHA CONSULTING",
+      location: "Severn, Maryland, United States",
+      period: "March 2024 - Present (1 year 3 months)",
+      title: "Research Scientist",
+    },
   ],
+
   education: [
     {
-      degree: "Ph.D. in Civil Engineering",
-      institution: "University of Maryland, College Park, MD",
-      year: 2000,
+      institution: "Concordia University",
+      degrees: [
+        {
+          name: "Master of Engineering (M.Eng.)",
+          field: "Electrical and Computer Engineering",
+          startYear: 2021,
+          endYear: 2023,
+        },
+        {
+          name: "Doctor of Philosophy (Ph.D.) Coursework",
+          field: "Electrical and Computer Engineering",
+          startYear: 2018,
+          endYear: 2021,
+        },
+      ],
     },
     {
-      degree: "Ph.D. Student in Mechanical Engineering",
-      institution: "Rensselaer Polytechnic Institute",
-      yearsAttended: "1993-1994",
-    },
-    {
-      degree: "M.S. in Mechanical Engineering",
-      institution: "Old Dominion University, Norfolk, VA",
-      year: 1993,
-    },
-    {
-      degree: "B.E. in Mechanical Engineering",
-      institution: "National Institute of Technology, Durgapur, India",
-      year: 1991,
+      institution: "National Institute of Technology, Tiruchirappalli",
+      degrees: [
+        {
+          name: "Master of Science (M.S.)",
+          field: "Electrical, Electronics and Communications Engineering",
+          startYear: 2016,
+          endYear: 2018,
+        },
+      ],
     },
   ],
+
   coursesTaught: [
     {
       institution:
@@ -154,135 +123,120 @@ const resume = {
       ],
     },
   ],
+
   workExperience: [
     {
-      company: "The Brite Group",
-      location: "Herndon, VA",
-      period: "October 2022 - Present",
-      title: "Director of Advanced Analytics and Data Science",
-      description:
-        "Leading multiple large-scale federal projects involving AI, ML, data science, and advanced analytics. Mentoring junior employees with use cases involving AI, ML, and Big Data.",
+      company: "Fujitsu",
+      title: "Senior Application Support",
+      startDate: "August 2023",
+      endDate: "Present",
+      duration: "1 year 10 months",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "Birla Institute of Technology and Science-Pilani",
-      location: "Hyderabad, India",
-      period: "April 2024 - Present",
-      title: "Professor of Practice - Computer Science and Information Systems",
-      description:
-        "Teaching undergraduate Machine Learning course, engaging in departmental activities, and advising on industry-academia interaction.",
+      company: "MKJHA CONSULTING",
+      title: "Research Scientist",
+      startDate: "March 2024",
+      endDate: "Present",
+      duration: "1 year 3 months",
+      location: "Severn, Maryland, United States",
+      details: [
+        "Conducted in-depth literature reviews on cybersecurity and machine learning, identifying 15+ vulnerabilities in CAN protocol security.",
+        "Performed exploratory data analysis (EDA) to uncover key patterns, leading to an 18% improvement in model accuracy.",
+        "Optimized machine learning models (Random Forest, XGBoost, SVM) through hyperparameter tuning, achieving an F1-score of 0.92.",
+        "Submitted research for publication in a reputed journal.",
+      ],
     },
     {
-      company: "George Washington University",
-      location: "Washington, D.C.",
-      period: "January 2023 - Present",
-      title: "Adjunct Professor of Civil and Environmental Engineering",
-      description:
-        "Teaching a graduate course titled Data Science in Civil and Environmental Engineering.",
+      company: "DataAnnotation",
+      title: "Data Scientist",
+      startDate: "June 2024",
+      endDate: "March 2025",
+      duration: "10 months",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "University of Maryland Global Campus",
-      location: "Adelphi, MD",
-      period: "June 2023 - Present",
-      title: "Adjunct Associate Professor of Data Science",
-      description:
-        "Teaching undergraduate and graduate courses: IFSM 330 Business Intelligence and Data Analytics, DATA 460 Artificial Intelligence Solutions, and DATA 605 Decision Analytics.",
+      company: "DataAnnotation",
+      title: "AI Trainer",
+      startDate: "February 2024",
+      endDate: "June 2024",
+      duration: "5 months",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "MKJHA Consulting",
-      location: "Severn, MD",
-      period: "July 2014 - Present (part-time)",
-      title: "President and CEO",
-      description:
-        "Performing data science use cases, assisting graduate students with research, and leading commercialization efforts in computer vision and ML.",
+      company: "BeauT Ai",
+      title: "Backend Engineer (Node.js)",
+      startDate: "November 2024",
+      endDate: "January 2025",
+      duration: "3 months",
+      location: "Montreal, Quebec, Canada",
+      details: [
+        "Developed robust, cross-platform mobile applications using React Native, seamlessly integrating GraphQL APIs to streamline data fetching.",
+        "Engineered a scalable backend with NestJS, TypeORM, GraphQL, and MySQL, ensuring strong performance and easy maintainability.",
+        "Designed and fine-tuned authentication systems to boost security and safeguard data.",
+        "Created a personalized user preferences page to deliver tailored service recommendations.",
+        "Enhanced overall application performance by optimizing database queries and refining schema design.",
+      ],
     },
     {
-      company: "Advancement Strategy Consulting",
-      location: "Columbia, MD",
-      period: "January 2021 - October 2022",
-      title: "Director of Data Science, Advanced Analytics, and Transportation",
-      description:
-        "Led and participated in data science and transportation projects for TEDCO-MD, State of Ohio, CDC, George Washington University, and Penn State University-Harrisburg.",
+      company: "Alorica",
+      title: "IT Support Specialist",
+      startDate: "March 2023",
+      endDate: "April 2023",
+      duration: "2 months",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "BlueHalo (formerly Intelligent Automation, Inc.)",
-      location: "Rockville, MD",
-      period: "October - December 2020",
-      title: "Senior Research Scientist",
-      description:
-        "Worked on data science projects for the U.S. Marine Corps and developed computer vision algorithms for traffic movement analysis.",
+      company: "IO Solutions Contact Center",
+      title: "Information Technology Sales Specialist",
+      startDate: "January 2023",
+      endDate: "March 2023",
+      duration: "3 months",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "Accenture Federal Services",
-      location: "Greenbelt, MD",
-      period: "November 2019 - October 2020",
-      title: "Experienced Data Scientist",
-      description:
-        "Worked on data science, analytics, and data mining projects for the U.S. Census Bureau.",
+      company: "Concordia University",
+      title: "Graduate Teaching Assistant",
+      startDate: "September 2021",
+      endDate: "December 2021",
+      duration: "4 months",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "Beulah Engineering Group",
-      location: "Towson, MD",
-      period: "April 2014 - November 2014",
-      title: "Senior Engineer",
-      description:
-        "Performed requirement and life-cycle analyses, worked on transportation and ML projects, and developed technical proposals for federal funding.",
+      company: "Concordia University",
+      title: "Graduate Research Assistant",
+      startDate: "August 2018",
+      endDate: "August 2021",
+      duration: "3 years 1 month",
+      location: "Montreal, Quebec, Canada",
+      details: [],
     },
     {
-      company: "Morgan State University",
-      location: "Baltimore, MD",
-      period: "August 2001 - April 2014",
-      title: "Faculty of Civil Engineering (Tenured Professor)",
-      description:
-        "Taught undergraduate and graduate courses, supervised research, secured competitive federal research funding, and conducted research in civil and transportation engineering.",
+      company: "National Institute of Technology, Tiruchirappalli",
+      title: "Research Assistant",
+      startDate: "February 2016",
+      endDate: "July 2018",
+      duration: "2 years 6 months",
+      location: "Tiruchirappalli, Tamil Nadu, India",
+      details: [],
     },
     {
-      company: "ATRC, Inc.",
-      location: "Severn, MD",
-      period: "2002 - 2012",
-      title: "President",
-      description:
-        "Conducted NSF-sponsored research, developed routing and scheduling software, and submitted multi-million-dollar research proposals.",
-    },
-    {
-      company: "University of Maryland",
-      location: "College Park, MD",
-      period: "2000 - 2002",
-      title: "Adjunct Professor, Professional Master’s Program",
-      description:
-        "Taught graduate courses in AI, GIS, and algorithms; taught undergraduate transportation engineering capstone course.",
-    },
-    {
-      company: "Maryland State Highway Administration",
-      location: "Maryland (various cities)",
-      period: "1994 - 2001",
-      title: "Senior Transportation Engineer",
-      description:
-        "Supervised traffic and transportation projects, developed asset management software, and used engineering tools like MUTCD, HCM, Synchro, and ArcGIS.",
-    },
-    {
-      company: "MetLife",
-      location: "Troy, NY",
-      period: "Summer 1994",
-      title: "Summer Intern",
-      description: "Managed computerized insurance database.",
-    },
-    {
-      company: "Rensselaer Polytechnic Institute",
-      location: "Troy, NY",
-      period: "August 1993 - May 1994",
-      title: "Graduate Research Assistant / Tutor",
-      description:
-        "Developed computer algorithms in CFD and heat transfer; assisted students with engineering courses.",
-    },
-    {
-      company: "Old Dominion University",
-      location: "Norfolk, VA",
-      period: "January 1991 - August 1993",
-      title: "Graduate Research Assistant / Tutor",
-      description:
-        "Conducted research funded by NASA Langley Research Center; developed CFD and thermodynamic software; assisted students with engineering coursework.",
+      company: "INFONET BPO SERVICES PRIVATE LIMITED",
+      title: "IT Executive",
+      startDate: "May 2015",
+      endDate: "January 2016",
+      duration: "9 months",
+      location: "Pune, Maharashtra, India",
+      details: [],
     },
   ],
+
   fundedProjects: [
     {
       role: "Co-Principal Investigator",
@@ -322,399 +276,76 @@ const resume = {
     },
   ],
 
-  publications: {
-    books: [
-      {
-        authors: "Anderson, R.O., M.K. Jha et al.",
-        title:
-          "Civil Engineering Body of Knowledge for the 21st Century, Second Edition",
-        publisher: "ASCE Press, Reston, VA",
-        year: 2008,
-        isbn: "9780784409657",
-        pages: 192,
-        website: "https://ascelibrary.org/doi/book/10.1061/9780784409657",
-      },
-      {
-        authors: "Jha, M.K., P. Schonfeld, J.-C. Jong, and E. Kim",
-        title: "Intelligent Road Design",
-        publisher: "WIT Press, Southampton, UK",
-        year: 2006,
-        isbn: "978-1-84564-003-3",
-        pages: 448,
-        website: "https://www.witpress.com/books/978-1-84564-003-3",
-      },
-    ],
-    editedBooks: [
-      {
-        title:
-          "Recent Research in Urban Sustainability, Architecture and Structures",
-        editors: ["O. Owolabi", "M.K. Jha"],
-        publisher: "WSEAS Press",
-        year: 2013,
-        isbn: "978-960-474-331-5",
-        pages: 239,
-        website: "www.wseas.org",
-      },
-      {
-        title:
-          "Mathematics and Computers in Business, Manufacturing and Tourism",
-        editors: ["O. Owolabi", "M.K. Jha", "P. Lorca"],
-        publisher: "WSEAS Press",
-        year: 2013,
-        isbn: "978-960-474-332-2",
-        pages: 108,
-        website: "www.wseas.org",
-      },
-      {
-        title: "Recent Advances in Mathematics",
-        editors: [
-          "Azami Zaharim",
-          "Gabriella Bognar",
-          "Yixin Bao",
-          "Dana Anderson",
-          "Manoj K. Jha",
-        ],
-        publisher: "WSEAS Press",
-        year: 2013,
-        isbn: "978-1-61804-158-6",
-        pages: 271,
-        website: "www.wseas.org",
-      },
-      {
-        title:
-          "Recent Advances in Fluid Mechanics, Heat & Mass Transfer and Biology",
-        editors: ["M.K. Jha", "M. Lazard", "A. Zaharim"],
-        publisher: "WSEAS Press",
-        year: 2012,
-        isbn: "978-1-61804-065-7",
-        pages: 241,
-      },
-      {
-        title: "Applied Mathematics in Electrical & Computer Engineering",
-        editors: ["M.K. Jha", "M. Lazard", "A. Zaharim"],
-        publisher: "WSEAS Press",
-        year: 2012,
-        isbn: "978-1-61804-064-0",
-        pages: 447,
-      },
-      {
-        title: "Recent Advances in Business Administration",
-        editors: ["M.K. Jha", "M. Lazard", "A. Zaharim"],
-        publisher: "WSEAS Press",
-        year: 2012,
-        isbn: "978-1-61804-066-4",
-        pages: 166,
-      },
-      {
-        title: "Latest Trend on Urban Planning and Transportation",
-        editors: ["M. Jha"],
-        publisher: "WSEAS Press",
-        year: 2010,
-        isbn: "978-960-474-204-2",
-        pages: 186,
-      },
-      {
-        title: "Recent Advances in Computer Engineering and Applications",
-        editors: [
-          "S. Lagakos",
-          "L. Perlovsky",
-          "M. Jha",
-          "B. Covaci",
-          "A. Zaharim",
-          "N. Mastorakis",
-        ],
-        publisher: "WSEAS Press",
-        year: 2010,
-        isbn: "978-960-474-151-9",
-        pages: 237,
-        website: "www.wseas.org",
-      },
-      {
-        title:
-          "Recent Advances in Circuits, Systems, Signal, and Telecommunications",
-        editors: [
-          "S. Lagakos",
-          "L. Perlovsky",
-          "M. Jha",
-          "B. Covaci",
-          "A. Zaharim",
-          "N. Mastorakis",
-        ],
-        publisher: "WSEAS Press",
-        year: 2010,
-        isbn: "978-960-474-152-6",
-        pages: 221,
-        website: "www.wseas.org",
-      },
-      {
-        title: "Recent Advances in Applied Mathematics",
-        editors: [
-          "S. Lagakos",
-          "L. Perlovsky",
-          "M. Jha",
-          "B. Covaci",
-          "A. Zaharim",
-          "N. Mastorakis",
-        ],
-        publisher: "WSEAS Press",
-        year: 2010,
-        isbn: "978-960-474-150-2",
-        pages: 648,
-        website: "www.wseas.org",
-      },
-      {
-        title: "Mathematical & Computational Methods",
-        editors: ["M. Jha", "C. Long", "N. Mastorakis", "C. Bulucea"],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-133-5",
-        pages: 241,
-      },
-      {
-        title:
-          "Sensors, Signals, Visualization, Imaging, Simulation & Materials",
-        editors: ["M. Jha", "C. Long", "N. Mastorakis", "C. Bulucea"],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-135-9",
-        pages: 226,
-      },
-      {
-        title: "Recent Advances on Data Networks, Communications, Computers",
-        editors: ["M. Jha", "C. Long", "N. Mastorakis", "C. Bulucea"],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-134-2",
-        pages: 255,
-      },
-      {
-        title: "Environmental Sciences and Sustainability",
-        editors: ["M. Jha", "C. Long", "N. Mastorakis", "C. Bulucea"],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-136-6",
-        pages: 192,
-      },
-      {
-        title: "Recent Advances in Circuits",
-        editors: [
-          "N. Mastorakis",
-          "V. Mladenov",
-          "Z. Bozkovic",
-          "S. Kartalopoulos",
-          "A. Varonides",
-          "M. Jha",
-        ],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-096-3",
-        pages: 224,
-      },
-      {
-        title: "Recent Advances in Systems",
-        editors: [
-          "N. Mastorakis",
-          "V. Mladenov",
-          "Z. Bozkovic",
-          "S. Kartalopoulos",
-          "A. Varonides",
-          "M. Jha",
-        ],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-097-0",
-        pages: 622,
-      },
-      {
-        title: "Recent Advances in Communications",
-        editors: [
-          "N. Mastorakis",
-          "V. Mladenov",
-          "Z. Bozkovic",
-          "S. Kartalopoulos",
-          "A. Varonides",
-          "M. Jha",
-        ],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-098-7",
-        pages: 195,
-      },
-      {
-        title: "Recent Advances in Computers",
-        editors: [
-          "N. Mastorakis",
-          "V. Mladenov",
-          "Z. Bozkovic",
-          "S. Kartalopoulos",
-          "A. Varonides",
-          "M. Jha",
-          "D. Simian",
-        ],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-099-4",
-        pages: 659,
-      },
-      {
-        title: "Recent Advances in Cultural Heritage and Tourism",
-        editors: [
-          "N. Mastorakis",
-          "M. Jha",
-          "V. Mladenov",
-          "Z. Bozkovic",
-          "S. Kartalopoulos",
-        ],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-103-8",
-        pages: 120,
-      },
-      {
-        title: "Recent Advances in Urban Planning and Transportation",
-        editors: ["N. Mastorakis", "M. Jha"],
-        publisher: "WSEAS Press",
-        year: 2009,
-        isbn: "978-960-474-102-1",
-        pages: 186,
-      },
-    ],
-    journalPapers: [
-      {
-        authors: ["Jha, M.K.", "Wanko, N.", "Bachu, A.K."],
-        title:
-          "A Machine Learning-Based Active Learning Framework to Capture Risk and Uncertainty in Transportation and Construction Scheduling",
-        journalTitle:
-          "Recent Trends in Transportation Infrastructure, Volume 2. TIPCE 2022",
-        editors: ["Agarwal, A.", "Velmurugan, S.", "Maurya, A.K."],
-        series: "Lecture Notes in Civil Engineering",
-        volume: 347,
-        publisher: "Springer, Singapore",
-        year: 2023,
-        doi: "https://doi.org/10.1007/978-981-99-2556-8_13",
-      },
-    ],
-    bookChapters: [
-      {
-        authors: ["Jha, M.K.", "Wanko, N.", "Bachu, A.K."],
-        title:
-          "A Machine Learning-Based Active Learning Framework to Capture Risk and Uncertainty in Transportation and Construction Scheduling",
-        bookTitle:
-          "Recent Trends in Transportation Infrastructure, Volume 2. TIPCE 2022",
-        editors: ["Agarwal, A.", "Velmurugan, S.", "Maurya, A.K."],
-        series: "Lecture Notes in Civil Engineering",
-        volume: 347,
-        publisher: "Springer, Singapore",
-        year: 2023,
-        doi: "https://doi.org/10.1007/978-981-99-2556-8_13",
-      },
-      {
-        authors: ["Jha, M.K.", "A.B. Davy"],
-        title:
-          "Investigating the Benefit-Cost of MEMS Application for Structural Health Monitoring of Transportation Infrastructure",
-        bookTitle:
-          "2007 Cleantech Conference and Trade Show Cleantech 2007: The Cleantech Conference, Venture Forum and Trade Show",
-        editors: ["M. Laudon", "P. Romanowicz"],
-        publisher: "CRC Press",
-        year: 2019,
-        doi: "https://doi.org/10.1201/9780429187469",
-        pages: "326-329",
-      },
-      {
-        authors: ["Jha, M.K.", "R. Keele"],
-        title: "Evaluating Cyber Attacks in Rail Transit",
-        bookTitle: "Encyclopedia of Business Analytics and Optimization",
-        editor: "John Wang",
-        publisher: "IGI Global",
-        year: 2014,
-        pages: "864-872",
-      },
-      {
-        authors: ["Jha, M.K.", "H. Ogallo"],
-        title: "Traffic Signal Timing Optimization Analysis and Practice",
-        bookTitle: "Encyclopedia of Business Analytics and Optimization",
-        editor: "John Wang",
-        publisher: "IGI Global",
-        year: 2014,
-        pages: "2557-2569",
-      },
-      {
-        authors: ["Jha, M.K."],
-        title:
-          "Metaheuristic Applications in Highway and Rail Infrastructure Planning and Design: Implications to Energy and Environmental Sustainability",
-        bookTitle:
-          "Metaheuristics in Water, Geotechnical and Transport Engineering",
-        editor: "A.H. Gandomi",
-        publisher: "Elsevier",
-        year: 2013,
-        pages: "365-384",
-      },
-      {
-        authors: ["Jha, M.K.", "M. Head", "S. P. Gar"],
-        title:
-          "Metaheuristic Applications in Bridge Infrastructure Maintenance Scheduling Considering Stochastic Aspects of Deterioration",
-        bookTitle:
-          "Metaheuristic Applications in Structures and Infrastructures",
-        editor: "A.H. Gandomi",
-        publisher: "Elsevier",
-        year: 2013,
-        pages: "539-556",
-      },
-      {
-        authors: ["Jha, M.K.", "R. Keele"],
-        title:
-          "Using Dynamic Bayesian Networks for Investigating the Impacts of Extreme Events",
-        editor: "W. Premchaiswadi",
-        publisher: "InTech Open",
-        year: 2012,
-        pages: "35-48",
-        url: "https://www.intechopen.com",
-      },
-      {
-        authors: [
-          "Karlaftis, M.G.",
-          "S.M. Easa",
-          "M.K. Jha",
-          "E.I. Vlahogianni",
-        ],
-        title: "Design and Construction of Transportation Infrastructure",
-        bookTitle:
-          "Artificial Intelligence Applications to Critical Transportation Issues",
-        publisher: "Transportation Research Board",
-        year: 2012,
-        pages: "121-136",
-      },
-      {
-        authors: [
-          "Jha, M.K.",
-          "K. Kepaptsoglou",
-          "M. Karlaftis",
-          "G. A.K. Kokonarri",
-        ],
-        title:
-          "A Bilevel Optimization Model For Large Scale Highway Infrastructure Maintenance Inspection and Scheduling Following a Seismic Event",
-        bookTitle: "Computational Methods in Earthquake Engineering",
-        editors: ["M. Papadrakakis", "M. Fragiadakis", "N.D. Lagaros"],
-        publisher: "Springer",
-        year: 2011,
-        volume: 21,
-        pages: "515-526",
-      },
-    ],
-    conferenceProceedings: [
-      {
-        authors: ["Jha, M.K.", "R. Keele"],
-        title:
-          "Using Dynamic Bayesian Networks for Investigating the Impacts of Extreme Events",
-        bookTitle: "Computational Methods in Earthquake Engineering",
-        editors: ["M. Papadrakakis", "M. Fragiadakis", "N.D. Lagaros"],
-        publisher: "Springer",
-        year: 2011,
-        volume: 21,
-        pages: "515-526",
-      },
-    ],
-  },
+  publications: [
+    {
+      title:
+        "Challenges and potentials for visible light communications: State of the art",
+      authors: ["P. K. Jha", "N. Mishra", "D. S. Kumar"],
+      venue: "AIP Conference Proceedings 1849 (1)",
+      year: 2017,
+      citations: 17,
+    },
+    {
+      title:
+        "Achievable rate analysis of relay assisted cooperative NOMA over Rician fading channels",
+      authors: ["P. K. Jha", "D. S. Kumar"],
+      venue:
+        "2018 4th International Conference on Recent Advances in Information Technology (RAIT)",
+      year: 2018,
+      citations: 14,
+    },
+    {
+      title:
+        "Performance analysis of FSO using relays and spatial diversity under log-normal fading channel",
+      authors: ["P. K. Jha", "N. Kachare", "K. Kalyani", "D. S. Kumar"],
+      venue:
+        "2018 4th International Conference on Electrical Energy Systems (ICEES)",
+      year: 2018,
+      citations: 12,
+    },
+    {
+      title:
+        "An opportunistic-non orthogonal multiple access based cooperative relaying system over Rician fading channels",
+      authors: ["P. K. Jha", "S. S. Shree", "D. S. Kumar"],
+      venue:
+        "2018 4th International Conference on Recent Advances in Information Technology (RAIT)",
+      year: 2018,
+      citations: 5,
+    },
+    {
+      title:
+        "Achievable Rate Analysis for Cooperative Relay Assisted Opportunistic-NOMA over Rician Fading Channels with Channel State Information",
+      authors: ["P. K. Jha", "S. S. Shree", "D. S. Kumar"],
+      venue: "Wireless Personal Communications, Springer",
+      year: 2018,
+      citations: 2,
+    },
+    {
+      title:
+        "Performance analysis of dual-hop optical wireless communication systems over k-distribution turbulence channel with pointing error",
+      authors: ["N. Mishra", "P. K. Jha"],
+      venue: "AIP Conference Proceedings 1849 (1)",
+      year: 2017,
+      citations: 2,
+    },
+    {
+      title:
+        "Performance analysis of FSO system with spatial diversity and relays for M-QAM over log-normal channel",
+      authors: ["P. K. Jha", "N. Kachare", "K. Kalyani", "D. S. Kumar"],
+      venue: "arXiv preprint arXiv:1709.05488",
+      year: 2017,
+      citations: 1,
+    },
+    {
+      title:
+        "Adversarial Machine Learning: Attacks, Defenses, and Open Challenges",
+      authors: ["P. K. Jha"],
+      venue: "arXiv preprint arXiv:2502.05637",
+      year: 2025,
+      citations: 0,
+    },
+  ],
+
   certificationsAndMemberships: {
     certifications: [
       {

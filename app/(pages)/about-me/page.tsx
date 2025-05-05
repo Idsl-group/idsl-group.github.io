@@ -297,6 +297,8 @@ export default function AboutMePage() {
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 
+  const [publicationsCurrentPage, setPublicationsCurrentPage] = useState(1);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="w-full py-8">
@@ -494,26 +496,12 @@ export default function AboutMePage() {
                 AI, ML, Cybersecurity & Data Science Solutions
               </p>
               <p className="text-gray-800 dark:text-gray-200 max-w-5xl mx-auto leading-relaxed tracking-wide bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
-                <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-                  With over 5 years of expertise
-                </span>{" "}
-                in artificial intelligence, machine learning, operations
-                research, optimization, and data science, I bring a{" "}
-                <span className="italic text-blue-600 dark:text-blue-300">
-                  wealth of knowledge and leadership
-                </span>{" "}
-                to the field of advanced analytics. My proficiency spans
-                <span className="font-medium text-emerald-700 dark:text-emerald-400">
-                  {" "}
-                  statistical regression, Bayesian hierarchical modeling
-                </span>
-                , and programming in Python and R. I leads multiple large-scale
-                federal initiatives focused on AI, ML, and Big Data. My work
-                combines deep technical insight with strategic vision to deliver{" "}
-                <span className="font-bold text-gray-900 dark:text-white">
-                  impactful, data-driven solutions
-                </span>{" "}
-                for complex challenges.
+                {resume.summary.map((paragraph, index) => (
+                  <span key={index}>
+                    {paragraph}
+                    {index < resume.summary.length - 1 && " "}
+                  </span>
+                ))}
               </p>
             </div>
 
@@ -672,7 +660,7 @@ export default function AboutMePage() {
                       className="text-sm text-gray-700 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 group"
                     >
                       <h4 className="text-xs font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
-                        {position}
+                        {position.title}
                       </h4>
                     </motion.div>
                   ))}
@@ -691,13 +679,14 @@ export default function AboutMePage() {
                     <FaGraduationCap className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5" />
                     <div>
                       <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
-                        {edu.degree}
+                        {edu.degrees[0].name}
                       </h3>
                       <div className="text-xs">
                         <span>{edu.institution}</span>
-                        {edu.year && (
+                        {edu.degrees[0].startYear && (
                           <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                            {edu.year}
+                            {edu.degrees[0].startYear} -{" "}
+                            {edu.degrees[0].endYear}
                           </span>
                         )}
                       </div>
@@ -736,15 +725,15 @@ export default function AboutMePage() {
                               {job.location && ` • ${job.location}`}
                             </div>
                           </div>
-                          {job.period && (
+                          {job.startDate && job.endDate && (
                             <span className="text-xs text-gray-500 dark:text-gray-500">
-                              {job.period}
+                              {job.startDate} - {job.endDate}
                             </span>
                           )}
                         </div>
-                        {job.description && (
+                        {job.details && (
                           <p className="text-xs text-gray-700 dark:text-gray-300 mt-1">
-                            {job.description}
+                            {job.details}
                           </p>
                         )}
                       </div>
@@ -775,74 +764,82 @@ export default function AboutMePage() {
                 Professional Achievements
               </h2>
 
-              <div className="space-y-4">
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
-                    Professional Certifications
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                    <li>
-                      Professional Engineer (P.E.), State of MD
-                      <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                        License Number 22725
-                      </span>
-                    </li>
-                  </ul>
-                </div>
+              {/* Focus Areas */}
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md mb-4">
+                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
+                  Focus Areas
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                  {resume.focusAreas.map((area, index) => (
+                    <li key={index}>{area}</li>
+                  ))}
+                </ul>
+              </div>
 
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
-                    Professional Memberships
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                    <li>
-                      <a
-                        href="https://www.asiacis.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
-                        Member of Asia Computational Intelligence Society
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.iccsaia.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
-                        Technical Program Chair - International Conference on
-                        Computer Science and Artificial Intelligence
-                        Applications 2025
-                      </a>
-                    </li>
-                    <li>
-                      Past Memberships:
-                      <ul className="list-inside list-[circle] ml-6 text-sm">
-                        <li>American Society of Civil Engineers (ASCE)</li>
-                        <li>
-                          National Society of Professional Engineers (NSPE)
-                        </li>
-                        <li>Institute of Transportation Engineers (ITE)</li>
-                        <li>
-                          Institute for Operations Research and Management
-                          Sciences (INFORMS)
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
+                  Professional Certifications
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                  <li>
+                    Professional Engineer (P.E.), State of MD
+                    <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                      License Number 22725
+                    </span>
+                  </li>
+                </ul>
+              </div>
 
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
-                    Keynote Speeches
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Delivered over 20 keynote speeches in various international
-                    conferences and seminars across the world.
-                  </p>
-                </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
+                  Professional Memberships
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                  <li>
+                    <a
+                      href="https://www.asiacis.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Member of Asia Computational Intelligence Society
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.iccsaia.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Technical Program Chair - International Conference on
+                      Computer Science and Artificial Intelligence Applications
+                      2025
+                    </a>
+                  </li>
+                  <li>
+                    Past Memberships:
+                    <ul className="list-inside list-[circle] ml-6 text-sm">
+                      <li>American Society of Civil Engineers (ASCE)</li>
+                      <li>National Society of Professional Engineers (NSPE)</li>
+                      <li>Institute of Transportation Engineers (ITE)</li>
+                      <li>
+                        Institute for Operations Research and Management
+                        Sciences (INFORMS)
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
+                  Keynote Speeches
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Delivered over 20 keynote speeches in various international
+                  conferences and seminars across the world.
+                </p>
               </div>
             </div>
 
@@ -921,101 +918,44 @@ export default function AboutMePage() {
                 Publications
               </h2>
 
-              {/* Journal Papers Section */}
-              {resume.publications.journalPapers &&
-                resume.publications.journalPapers.length > 0 && (
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-4 border-b border-blue-100 pb-2">
-                      Journal Papers
-                    </h3>
-                    <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
-                      {paginateItems(
-                        resume.publications.journalPapers,
-                        journalPapersCurrentPage
-                      ).map((paper, index) => (
-                        <div
-                          key={index}
-                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-blue-100 dark:border-blue-900"
-                        >
-                          <p className="font-semibold">{paper.title}</p>
-                          <p className="text-xs text-gray-600 dark:text-gray-400">
-                            Authors:{" "}
-                            {Array.isArray(paper.authors)
-                              ? paper.authors.join(", ")
-                              : paper.authors}
-                          </p>
-                          <p className="text-xs">
-                            {paper.journal}, {paper.year}
-                            {paper.doi && (
-                              <a
-                                href={paper.doi}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ml-2 text-blue-600 dark:text-blue-400 hover:underline"
-                              >
-                                DOI: {paper.doi.split("/").pop()}
-                              </a>
-                            )}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                    <PaginationControls
-                      items={resume.publications.journalPapers}
-                      currentPage={journalPapersCurrentPage}
-                      setCurrentPage={setJournalPapersCurrentPage}
-                      itemType="Journal Papers"
-                    />
+              {/* Conference and Journal Papers Section */}
+              {resume.publications && resume.publications.length > 0 && (
+                <div className="mb-8">
+                  <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
+                    {paginateItems(
+                      resume.publications,
+                      publicationsCurrentPage
+                    ).map((publication, index) => (
+                      <div
+                        key={index}
+                        className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-blue-100 dark:border-blue-900"
+                      >
+                        <p className="font-semibold">{publication.title}</p>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          Authors:{" "}
+                          {Array.isArray(publication.authors)
+                            ? publication.authors.join(", ")
+                            : publication.authors}
+                        </p>
+                        <p className="text-xs">
+                          {publication.venue}, {publication.year}
+                          {publication.citations && (
+                            <span className="ml-2 text-gray-500">
+                              Citations: {publication.citations}
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                )}
-
-              {/* Conference Proceedings Section */}
-              {resume.publications.conferenceProceedings &&
-                resume.publications.conferenceProceedings.length > 0 && (
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-4 border-b border-blue-100 pb-2">
-                      Conference Proceedings
-                    </h3>
-                    <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
-                      {paginateItems(
-                        resume.publications.conferenceProceedings,
-                        conferenceProceedingsCurrentPage
-                      ).map((proceeding, index) => (
-                        <div
-                          key={index}
-                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-blue-100 dark:border-blue-900"
-                        >
-                          <p className="font-semibold">{proceeding.title}</p>
-                          <p className="text-xs text-gray-600 dark:text-gray-400">
-                            Authors:{" "}
-                            {Array.isArray(proceeding.authors)
-                              ? proceeding.authors.join(", ")
-                              : proceeding.authors}
-                          </p>
-                          <p className="text-xs">
-                            {proceeding.conference}, {proceeding.year}
-                            {proceeding.doi && (
-                              <a
-                                href={proceeding.doi}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ml-2 text-blue-600 dark:text-blue-400 hover:underline"
-                              >
-                                DOI: {proceeding.doi.split("/").pop()}
-                              </a>
-                            )}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                    <PaginationControls
-                      items={resume.publications.conferenceProceedings}
-                      currentPage={conferenceProceedingsCurrentPage}
-                      setCurrentPage={setConferenceProceedingsCurrentPage}
-                      itemType="Conference Proceedings"
-                    />
-                  </div>
-                )}
+                  <PaginationControls
+                    items={resume.publications}
+                    currentPage={publicationsCurrentPage}
+                    setCurrentPage={setPublicationsCurrentPage}
+                    itemType="Publications"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </motion.div>
