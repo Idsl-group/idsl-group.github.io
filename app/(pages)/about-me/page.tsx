@@ -368,11 +368,11 @@ export default function AboutMePage() {
               <div className="bg-transparent dark:bg-transparent p-1">
                 <div className="flex flex-col space-y-2">
                   {[
-                    { id: "profile", label: "Profile", icon: "👤" },
+                    { id: "profile", label: "About", icon: "👤" },
                     { id: "education", label: "Education", icon: "🎓" },
                     { id: "work-experience", label: "Work", icon: "💼" },
                     { id: "courses", label: "Courses", icon: "📚" },
-                    { id: "funded-projects", label: "Projects", icon: "🔬" },
+                    { id: "projects", label: "Projects", icon: "🔬" },
                     { id: "publications", label: "Papers", icon: "📝" },
                   ].map((section) => (
                     <button
@@ -380,45 +380,16 @@ export default function AboutMePage() {
                       onClick={() => {
                         const element = document.getElementById(section.id);
                         if (element) {
-                          // Smooth scroll with custom easing
-                          const startPosition = window.pageYOffset;
-                          const targetPosition =
+                          const offset = 100; // Adjust this value as needed
+                          const elementPosition =
                             element.getBoundingClientRect().top +
-                            window.pageYOffset -
-                            80;
-                          const distance = targetPosition - startPosition;
-                          const duration = 1000; // Adjust duration as needed
-                          let start: number | null = null;
+                            window.pageYOffset;
+                          const offsetPosition = elementPosition - offset;
 
-                          const animation = (currentTime: number) => {
-                            if (start === null) start = currentTime;
-                            const timeElapsed = currentTime - start;
-                            const run = ease(
-                              timeElapsed,
-                              startPosition,
-                              distance,
-                              duration
-                            );
-                            window.scrollTo(0, run);
-                            if (timeElapsed < duration) {
-                              requestAnimationFrame(animation);
-                            }
-                          };
-
-                          // Easing function for smooth scroll
-                          const ease = (
-                            t: number,
-                            b: number,
-                            c: number,
-                            d: number
-                          ) => {
-                            t /= d / 2;
-                            if (t < 1) return (c / 2) * t * t + b;
-                            t--;
-                            return (-c / 2) * (t * (t - 2) - 1) + b;
-                          };
-
-                          requestAnimationFrame(animation);
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth",
+                          });
                         }
                       }}
                       className={`
@@ -827,41 +798,81 @@ export default function AboutMePage() {
               </div>
             </div>
 
-            {/* Courses Taken */}
-            <motion.div
-              id="courses"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-8"
-            >
+            {/* Projects */}
+            <div id="projects" className="mb-8">
               <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
-                Courses Taken
+                Projects
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {resume.courses.map((course, index) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {resume.projects.map((project, index) => (
                   <div
                     key={index}
-                    className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-blue-100 dark:border-blue-900/50"
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
-                        {course.name}
+                    <div className="mb-3">
+                      <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-1 group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors">
+                        {project.title}
                       </h3>
-                      <span
-                        className={`text-xs font-bold ${
-                          course.grade === "A+"
-                            ? "text-green-600 dark:text-green-400"
-                            : "text-blue-600 dark:text-blue-400"
-                        }`}
-                      >
-                        {course.grade}
-                      </span>
+                      <div className="flex items-center space-x-2">
+                        {project.startDate && (
+                          <span className="text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded-full">
+                            {project.startDate}
+                          </span>
+                        )}
+                        {project.associatedWith && (
+                          <span className="text-xs text-gray-500 dark:text-gray-400 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded-full">
+                            {project.associatedWith}
+                          </span>
+                        )}
+                      </div>
                     </div>
+
+                    <div className="mb-3">
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {(project.technologies || project.keywords) && (
+                      <div className="mb-3">
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies?.map((tech, techIndex) => (
+                            <span
+                              key={`tech-${techIndex}`}
+                              className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                          {project.keywords?.map((keyword, keyIndex) => (
+                            <span
+                              key={`key-${keyIndex}`}
+                              className="text-xs bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full text-purple-700 dark:text-purple-300"
+                            >
+                              {keyword}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {project.link && (
+                      <div className="mt-3">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center"
+                        >
+                          View Project
+                          <FaExternalLinkAlt className="ml-2 w-3 h-3" />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Publications */}
             <div id="publications" className="mb-8 space-y-6 relative pb-24">

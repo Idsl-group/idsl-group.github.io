@@ -40,6 +40,96 @@ const resume = {
     },
   ],
 
+  projects: [
+    {
+      title:
+        "Predictive Modeling and Real-Time Control of Urban Flooding Using Deep Learning and Edge-based IoT Sensor Networks",
+      startDate: "May 2025",
+      endDate: "Present",
+      associatedWith: "MKJHA CONSULTING",
+      description:
+        "This research aims to develop a machine learning-based predictive system for urban flood forecasting and prevention. A hybrid deep learning model (e.g., CNN-LSTM) is trained on multi-source spatial-temporal data including rainfall, terrain elevation, soil absorption, drainage sensor outputs, and weather forecasts. The system is integrated with an edge-IoT infrastructure to enable real-time monitoring and actuation (e.g., dynamic control of floodgates and alerts). The framework supports adaptive learning to improve predictions over time and provides actionable insights to urban planners and emergency services.",
+    },
+    {
+      title:
+        "Machine Learning–Driven Forecasting of Travel Patterns: A Minnesota Case Study",
+      startDate: "April 2025",
+      endDate: "Present",
+      associatedWith: "MKJHA CONSULTING",
+      description:
+        "This work-in-progress presents a machine learning framework for forecasting travel demand in Minnesota using multimodal inputs—GPS trajectories, transit schedules, weather data, and socio-demographic indicators. We train and compare ensemble models (random forests, gradient boosting) alongside LSTM networks, achieving preliminary error reductions of ~20% versus classical time-series forecasts. These early findings demonstrate the potential of data-driven approaches to inform dynamic service planning and infrastructure investment for regional transportation agencies.",
+      notes: "Findings will be submitted for publication in a reputed journal.",
+    },
+    {
+      title: "Binary Classification with XGBoost on CIC-IDS-2017 Dataset",
+      startDate: "January 2025",
+      endDate: "Present",
+      description:
+        "This notebook focuses on binary classification using the CIC-IDS-2017 cybersecurity dataset, employing XGBoost (Extreme Gradient Boosting)—a powerful gradient boosting framework optimized for structured numerical data. The objective is to improve Intrusion Detection Systems (IDS) by leveraging XGBoost’s efficiency in handling complex, high-dimensional datasets. The study involves preprocessing network traffic data, fine-tuning XGBoost hyperparameters, and evaluating the model’s performance using metrics such as accuracy, precision, recall, and F1-score.",
+      link: "kaggle-notebooks/CIC-IDS-2017 BERT Classification.ipynb",
+    },
+    {
+      title: "YouTube Analysis Data Engineering Project",
+      startDate: "July 2024",
+      description:
+        "This project aims to securely manage, streamline, and analyze structured and semi-structured YouTube video data based on video categories and trending metrics.",
+      servicesUsed: [
+        "Amazon S3",
+        "AWS IAM",
+        "Amazon QuickSight",
+        "AWS Glue",
+        "AWS Lambda",
+        "AWS Athena",
+      ],
+      link: "youtube-analysis-data-engineering-project",
+    },
+    {
+      title: "E-Commerce App",
+      startDate: "April 2024",
+      description:
+        "Built a complete e-commerce webshop with an admin dashboard using Next.js (SSR/SSG), Stripe for payments, TypeScript for type safety, and Payload CMS for content management. The stack ensures scalability, security, and real-time functionality.",
+      technologies: ["Next.js", "Stripe", "TypeScript", "Payload CMS"],
+      link: "https://github.com/pranav-k-jha/e-commerce-ts-next-payload-cms",
+    },
+    {
+      title: "Real Estate Price Prediction",
+      startDate: "January 2024",
+      description:
+        "Demonstrated building a real estate price prediction website using the Bangalore home prices dataset from Kaggle. Developed a linear regression model with scikit-learn to predict home prices.",
+      link: "Real-Estate-Price-Prediction",
+    },
+    {
+      title:
+        "Digitizing the Sports Industry Through Lift-Ride Data Analysis Using Microservices and Distributed Systems",
+      description:
+        "A distributed system to digitalize the sports industry by aggregating lift-ride data from geographically spread resorts. Implemented a server-side API and a multithreaded Java client to generate ~10,000 POST requests with retry logic, and performed performance profiling (mean/median response times, throughput, p99).",
+      keywords: [
+        "Client-server architecture",
+        "Multithreading",
+        "Java",
+        "Spring Boot",
+        "gRPC",
+        "RabbitMQ",
+        "Microservices",
+        "MongoDB",
+      ],
+    },
+    {
+      title:
+        "Edu Analytics: A Distributed System with gRPC and Message-Driven Data Processing",
+      description:
+        "Developed a microservice architecture using gRPC for RPC communication and RabbitMQ for message-driven data processing on a MongoDB cluster. Processed Kaggle’s EduCostStat dataset to query tuition and room & board statistics, calculate top states by cost growth, and perform region-wise aggregations. Implemented Java-based gRPC services and clients, and designed message flows for efficient data handling.",
+      keywords: [
+        "gRPC",
+        "RabbitMQ",
+        "MongoDB",
+        "Java",
+        "Microservices",
+        "Protocol Buffers",
+      ],
+    },
+  ],
+
   professionalAchievements: [
     "Associate Editor of International Journal of Artificial Intelligence (AI) in Business and Management",
     "Associate Editor of Journal of Computational and Cognitive Engineering",
