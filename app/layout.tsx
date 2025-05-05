@@ -5,19 +5,19 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Pranav Jha - AI, Cybersecurity & Data Science Solutions",
+  title: "PRANAV K JHA - AI, Cybersecurity & Data Science Solutions",
   description:
     "Redefining Security and Innovation with AI-Driven Intelligence. Cutting-edge solutions in data science, machine learning, cybersecurity, and advanced analytics.",
   icons: {
-    icon: [{ url: "/profile.jpg" }],
-    shortcut: ["/profile.jpg"],
-    apple: ["/profile.jpg"],
+    icon: [{ url: "/logo.png" }],
+    shortcut: ["/logo.png"],
+    apple: ["/logo.png"],
   },
   openGraph: {
-    title: "Pranav Jha - AI Solutions Architect",
+    title: "PRANAV K JHA - AI Solutions Architect",
     description:
       "Transforming challenges into opportunities through advanced AI and cybersecurity strategies.",
-    images: [{ url: "/profile.jpg" }],
+    images: [{ url: "/logo.png" }],
   },
 };
 

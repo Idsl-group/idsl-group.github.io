@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "PRANAV K JHA",
   description: "AI Solutions Architect",
   icons: {
-    icon: [{ url: "/profile.jpg" }],
-    shortcut: ["/profile.jpg"],
-    apple: ["/profile.jpg"],
+    icon: [{ url: "/logo.png" }],
+    shortcut: ["/logo.png"],
+    apple: ["/logo.png"],
   },
 };
 
