@@ -30,19 +30,19 @@ import { useSwipeable } from "react-swipeable";
 export default function AboutMePage() {
   const contactLinks = [
     {
-      icon: <FaEnvelope className="text-purple-600" />,
-      text: "mkjha101@hotmail.com",
-      href: "mailto:mkjha101@hotmail.com",
+      icon: <FaEnvelope className="text-blue-600" />,
+      text: "pranav.jha@mail.concordia.ca",
+      href: "mailto:pranav.jha@mail.concordia.ca",
     },
     {
-      icon: <FaPhone className="text-purple-600" />,
+      icon: <FaPhone className="text-blue-600" />,
       text: "(240) 712-2489",
       href: "tel:+12407122489",
     },
     {
-      icon: <FaGlobe className="text-purple-600" />,
+      icon: <FaGlobe className="text-blue-600" />,
       text: "Personal Website",
-      href: "http://mkjhaconsult.com/about-dr-jha",
+      href: "#",
     },
   ];
 
@@ -50,7 +50,7 @@ export default function AboutMePage() {
     {
       icon: <FaLinkedin className="text-blue-600" />,
       text: "LinkedIn Profile",
-      href: "https://www.linkedin.com/in/mkjhaphd/",
+      href: "https://www.linkedin.com/in/pranav-jha/",
     },
     {
       icon: <SiOrcid className="text-green-600" />,
@@ -60,12 +60,12 @@ export default function AboutMePage() {
     {
       icon: <SiGooglescholar className="text-red-600" />,
       text: "Google Scholar",
-      href: "https://scholar.google.com/citations?user=P5t_XZIAAAAJ&hl=en&oi=ao",
+      href: "https://scholar.google.ca/citations?user=_KvkPzkAAAAJ&hl=en",
     },
     {
       icon: <FaResearchgate className="text-green-700" />,
       text: "ResearchGate",
-      href: "https://www.researchgate.net/profile/Manoj-Jha-8",
+      href: "https://www.researchgate.net/profile/Pranav-Jha-7",
     },
   ];
 
@@ -74,7 +74,7 @@ export default function AboutMePage() {
     { id: "work-experience", label: "Work Experience" },
     { id: "education", label: "Education" },
     { id: "courses", label: "Courses" },
-    { id: "funded-projects", label: "Funded Projects" },
+    { id: "projects", label: "Projects" },
     { id: "publications", label: "Publications" },
   ];
 
@@ -105,7 +105,7 @@ export default function AboutMePage() {
       "work-experience",
       "education",
       "courses",
-      "funded-projects",
+      "projects",
       "publications",
     ];
 
@@ -183,16 +183,16 @@ export default function AboutMePage() {
     return (
       <div {...handlers} className="touch-pan-y">
         <div className="flex justify-center items-center mt-6 space-x-2">
-          <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full border border-purple-100 dark:border-purple-900 shadow-sm">
+          <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full border border-blue-100 dark:border-blue-900 shadow-sm">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
-              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 group transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <FaChevronLeft className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+              <FaChevronLeft className="w-5 h-5 text-blue-600 dark:text-blue-300 group-disabled:text-gray-400 transition-colors" />
             </button>
 
-            <span className="text-sm font-medium text-purple-600 dark:text-purple-300">
+            <span className="text-sm font-medium text-blue-600 dark:text-blue-300">
               {currentPage} / {totalPages}
             </span>
 
@@ -201,9 +201,9 @@ export default function AboutMePage() {
                 setCurrentPage((prev) => Math.min(totalPages, prev + 1))
               }
               disabled={currentPage === totalPages}
-              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 group transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <FaChevronRight className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+              <FaChevronRight className="w-5 h-5 text-blue-600 dark:text-blue-300 group-disabled:text-gray-400 transition-colors" />
             </button>
           </div>
         </div>
@@ -243,16 +243,16 @@ export default function AboutMePage() {
     return (
       <div {...handlers} className="touch-pan-y">
         <div className="flex justify-center items-center mt-6 space-x-2">
-          <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full border border-purple-100 dark:border-purple-900 shadow-sm">
+          <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full border border-blue-100 dark:border-blue-900 shadow-sm">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
-              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 group transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <FaChevronLeft className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+              <FaChevronLeft className="w-5 h-5 text-blue-600 dark:text-blue-300 group-disabled:text-gray-400 transition-colors" />
             </button>
 
-            <span className="text-sm font-medium text-purple-600 dark:text-purple-300">
+            <span className="text-sm font-medium text-blue-600 dark:text-blue-300">
               {currentPage} / {totalPages}
             </span>
 
@@ -261,9 +261,9 @@ export default function AboutMePage() {
                 setCurrentPage((prev) => Math.min(totalPages, prev + 1))
               }
               disabled={currentPage === totalPages}
-              className="p-2 group transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 group transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-900 rounded-full disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <FaChevronRight className="w-5 h-5 text-purple-600 dark:text-purple-300 group-disabled:text-gray-400 transition-colors" />
+              <FaChevronRight className="w-5 h-5 text-blue-600 dark:text-blue-300 group-disabled:text-gray-400 transition-colors" />
             </button>
           </div>
         </div>
@@ -430,8 +430,8 @@ export default function AboutMePage() {
                         group
                         ${
                           activeSection === section.id
-                            ? "bg-purple-600 text-white"
-                            : "text-purple-700 dark:text-purple-300 hover:bg-purple-100/50 dark:hover:bg-gray-700/50"
+                            ? "bg-blue-600 text-white"
+                            : "text-blue-700 dark:text-blue-300 hover:bg-blue-100/50 dark:hover:bg-gray-700/50"
                         }
                       `}
                       aria-label={`Navigate to ${section.label} section`}
@@ -458,7 +458,7 @@ export default function AboutMePage() {
                           ${
                             activeSection === section.id
                               ? "text-white"
-                              : "text-purple-700 dark:text-purple-300"
+                              : "text-blue-700 dark:text-blue-300"
                           }
                         `}
                       >
@@ -476,7 +476,7 @@ export default function AboutMePage() {
               className="text-center mb-8 space-y-4 text-sm leading-relaxed"
             >
               <div className="flex flex-col items-center mb-6">
-                <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-purple-100 dark:border-indigo-950 shadow-2xl mb-4">
+                <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-100 dark:border-indigo-950 shadow-2xl mb-4">
                   <Image
                     src="/profile.jpg"
                     alt="Pranav Jha"
@@ -487,7 +487,7 @@ export default function AboutMePage() {
                   />
                 </div>
               </div>
-              <h1 className="text-4xl font-bold text-purple-800 dark:text-purple-200 mb-3">
+              <h1 className="text-4xl font-bold text-blue-800 dark:text-blue-200 mb-3">
                 Pranav Jha
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -498,28 +498,18 @@ export default function AboutMePage() {
                   With over 5 years of expertise
                 </span>{" "}
                 in artificial intelligence, machine learning, operations
-                research, optimization, and data science, Dr. Jha brings a{" "}
+                research, optimization, and data science, I bring a{" "}
                 <span className="italic text-blue-600 dark:text-blue-300">
                   wealth of knowledge and leadership
                 </span>{" "}
-                to the field of advanced analytics. His proficiency spans
+                to the field of advanced analytics. My proficiency spans
                 <span className="font-medium text-emerald-700 dark:text-emerald-400">
                   {" "}
                   statistical regression, Bayesian hierarchical modeling
                 </span>
-                , and programming in Python and R. As the Director of Advanced
-                Analytics and Data Science at{" "}
-                <a
-                  href="https://thebritegroup.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-purple-700 dark:text-purple-400 hover:underline"
-                >
-                  The Brite Group
-                </a>
-                , Dr. Jha leads multiple large-scale federal initiatives focused
-                on AI, ML, and Big Data. His work combines deep technical
-                insight with strategic vision to deliver{" "}
+                , and programming in Python and R. I leads multiple large-scale
+                federal initiatives focused on AI, ML, and Big Data. My work
+                combines deep technical insight with strategic vision to deliver{" "}
                 <span className="font-bold text-gray-900 dark:text-white">
                   impactful, data-driven solutions
                 </span>{" "}
@@ -532,235 +522,9 @@ export default function AboutMePage() {
               id="profile"
               className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8"
             >
-              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+              <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
                 Professional Profile
               </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                {/* Expertise and Experience */}
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-900">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full mr-4">
-                      <FaBook className="w-6 h-6 text-purple-600 dark:text-purple-300" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-200">
-                      Expertise
-                    </h3>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Over 25 years of experience in:
-                  </p>
-                  <ul className="list-disc list-inside text-sm space-y-1 mt-2 text-gray-600 dark:text-gray-400">
-                    <li>Artificial Intelligence</li>
-                    <li>Machine Learning</li>
-                    <li>Operations Research</li>
-                    <li>Data Science</li>
-                    <li>Statistical Regression</li>
-                    <li>Bayesian Hierarchical Modeling</li>
-                  </ul>
-                  <p className="text-xs mt-3 italic text-gray-500 dark:text-gray-500">
-                    Proficient in Python, R, and advanced algorithms
-                  </p>
-                </div>
-
-                {/* Academic Positions */}
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-900">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
-                      <FaUniversity className="w-6 h-6 text-green-600 dark:text-green-300" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-green-800 dark:text-green-200">
-                      Academic Roles
-                    </h3>
-                  </div>
-                  <ul className="list-disc list-inside text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                    <li>
-                      <a
-                        href="https://www.gwu.edu/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
-                      >
-                        George Washington University
-                      </a>
-                      <div className="text-gray-600 dark:text-gray-400">
-                        Adjunct Professor, Civil & Environmental Engineering
-                      </div>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.umgc.edu/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
-                      >
-                        University of Maryland, Global Campus
-                      </a>
-                      <div className="text-gray-600 dark:text-gray-400">
-                        Adjunct Associate Professor, Data Science
-                      </div>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.bits-pilani.ac.in/hyderabad/manoj-k-jha/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
-                      >
-                        BITS-Pilani, Hyderabad Campus
-                      </a>
-                      <div className="text-gray-600 dark:text-gray-400">
-                        Professor of Practice, Computer Science & Information
-                        Systems
-                      </div>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.morgan.edu/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
-                      >
-                        Morgan State University
-                      </a>
-                      <div className="text-gray-600 dark:text-gray-400">
-                        Tenured Professor (13 Years), Civil Engineering
-                      </div>
-                    </li>
-                  </ul>
-
-                  <p className="text-xs mt-3 italic text-gray-500 dark:text-gray-500">
-                    Teaching over 15 graduate and undergraduate courses across
-                    multiple disciplines
-                  </p>
-                </div>
-
-                {/* Professional Contributions */}
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-900">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
-                      <FaAward className="w-6 h-6 text-blue-600 dark:text-blue-300" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200">
-                      Professional Impact
-                    </h3>
-                  </div>
-                  <div className="text-xs space-y-3 text-gray-600 dark:text-gray-400">
-                    <div>
-                      <p className="font-semibold mb-1">Editorial Roles</p>
-                      <ul className="list-disc list-inside">
-                        <li>
-                          Associate Editor of{" "}
-                          <a
-                            href="https://www.igi-global.com/journal/international-journal-artificial-intelligence/334185"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            International Journal of Artificial Intelligence
-                            (AI) in Business and Management (IJAIBM)
-                          </a>
-                        </li>
-                        <li>
-                          Associate Editor of{" "}
-                          <a
-                            href="https://ojs.bonviewpress.com/index.php/JCCE/EBMembers"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            Journal of Computational and Cognitive Engineering
-                          </a>
-                        </li>
-                        <li>
-                          Guest Editor –{" "}
-                          <a
-                            href="https://www.mdpi.com/journal/applsci/special_issues/I6N43Q512B"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            Applied Sciences: Special Issue on “Innovations in
-                            Autonomous Driving and Vehicle Intelligence”
-                          </a>
-                        </li>
-                        <li>
-                          Editorial Board Member of{" "}
-                          <a
-                            href="https://www.igi-global.com/journal/international-journal-operations-research-information/1141"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            International Journal of Operations Research and
-                            Information Systems
-                          </a>
-                        </li>
-                        <li>
-                          Editorial Board Member of{" "}
-                          <a
-                            href="https://ojs.bonviewpress.com/index.php/jdsis/edb"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            Journal of Data Science and Intelligent Systems
-                          </a>
-                        </li>
-                        <li>
-                          Editorial Committee Member of{" "}
-                          <a
-                            href="https://www.vectmag.com/post/meet-the-editorial-committee-dr-manoj-jha-george-washington-university-usa?utm_campaign=4373e9d0-6fd4-4128-8501-0299f5e0d662&utm_source=so&utm_medium=mail"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            VectMag Virtual Conference Series
-                          </a>
-                        </li>
-                        <li>
-                          Member of{" "}
-                          <a
-                            href="https://www.asiacis.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            Asia Computational Intelligence Society
-                          </a>
-                        </li>
-                        <li>
-                          Technical Program Chair –{" "}
-                          <a
-                            href="https://www.iccsaia.org/#:~:text=International%20Conference%20on%20Computer%20Science%20and%20Artificial%20Intelligence%20Applications%20(CSAIA"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
-                          >
-                            International Conference on Computer Science and
-                            Artificial Intelligence Applications 2025
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold mb-1">
-                        Professional Achievements
-                      </p>
-                      <ul className="list-disc list-inside">
-                        <li>200+ Technical Papers Published</li>
-                        <li>
-                          Technical Program Chair, CS & AI Conference 2025
-                        </li>
-                        <li>Member, Asia Computational Intelligence Society</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <p className="text-xs mt-3 italic text-gray-500 dark:text-gray-500">
-                    Currently leading advanced data science projects
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Contact, Links, and Positions */}
@@ -782,13 +546,13 @@ export default function AboutMePage() {
                 }}
                 initial="hidden"
                 animate="visible"
-                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-purple-100 dark:border-purple-900 hover:shadow-xl transition-all duration-500 group"
+                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-blue-100 dark:border-blue-900 hover:shadow-xl transition-all duration-500 group"
               >
-                <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
-                  <div className="bg-purple-100 dark:bg-purple-900 p-2 rounded-full mr-3">
-                    <FaLink className="w-5 h-5 text-purple-600 dark:text-purple-300" />
+                <div className="flex items-center mb-3 border-b border-blue-200 pb-2">
+                  <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-full mr-3">
+                    <FaLink className="w-5 h-5 text-blue-600 dark:text-blue-300" />
                   </div>
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 group-hover:text-purple-900 dark:group-hover:text-purple-100 transition-colors">
+                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
                     Professional Links
                   </h3>
                 </div>
@@ -810,13 +574,13 @@ export default function AboutMePage() {
                         transition: { duration: 0.2 },
                       }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center text-sm text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-purple-100 transition-colors duration-300  rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30"
+                      className="flex items-center text-sm text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 transition-colors duration-300  rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30"
                     >
-                      <span className="mr-3 bg-purple-100 dark:bg-purple-900 p-2 rounded-full">
+                      <span className="mr-3 bg-blue-100 dark:bg-blue-900 p-2 rounded-full">
                         {link.icon}
                       </span>
                       {link.text}
-                      <FaExternalLinkAlt className="ml-auto text-purple-400 dark:text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <FaExternalLinkAlt className="ml-auto text-blue-400 dark:text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </motion.a>
                   ))}
                 </div>
@@ -830,13 +594,13 @@ export default function AboutMePage() {
                 }}
                 initial="hidden"
                 animate="visible"
-                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-purple-100 dark:border-purple-900 hover:shadow-xl transition-all duration-500 group"
+                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-blue-100 dark:border-blue-900 hover:shadow-xl transition-all duration-500 group"
               >
-                <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                <div className="flex items-center mb-3 border-b border-blue-200 pb-2">
                   <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-3">
                     <FaAddressCard className="w-5 h-5 text-green-600 dark:text-green-300" />
                   </div>
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 group-hover:text-purple-900 dark:group-hover:text-purple-100 transition-colors">
+                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
                     Contact Information
                   </h3>
                 </div>
@@ -881,13 +645,13 @@ export default function AboutMePage() {
                 }}
                 initial="hidden"
                 animate="visible"
-                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-purple-100 dark:border-purple-900 hover:shadow-xl transition-all duration-500 group"
+                className="bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-blue-100 dark:border-blue-900 hover:shadow-xl transition-all duration-500 group"
               >
-                <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                <div className="flex items-center mb-3 border-b border-blue-200 pb-2">
                   <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-full mr-3">
                     <FaBriefcase className="w-5 h-5 text-blue-600 dark:text-blue-300" />
                   </div>
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 group-hover:text-purple-900 dark:group-hover:text-purple-100 transition-colors">
+                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
                     Current Positions
                   </h3>
                 </div>
@@ -918,15 +682,15 @@ export default function AboutMePage() {
 
             {/* Education */}
             <div id="education" className="my-8">
-              <h2 className="text-xl font-bold text-purple-800 dark:text-purple-200 mb-3 border-b-2 border-purple-200 pb-1">
+              <h2 className="text-xl font-bold text-blue-800 dark:text-blue-200 mb-3 border-b-2 border-blue-200 pb-1">
                 Education
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300">
                 {resume.education.map((edu, index) => (
                   <div key={index} className="flex items-start">
-                    <FaGraduationCap className="mr-3 mt-1 text-purple-600 dark:text-purple-400 w-5 h-5" />
+                    <FaGraduationCap className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5" />
                     <div>
-                      <h3 className="text-sm font-semibold text-purple-700 dark:text-purple-300">
+                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
                         {edu.degree}
                       </h3>
                       <div className="text-xs">
@@ -945,7 +709,7 @@ export default function AboutMePage() {
 
             {/* Work Experience */}
             <div id="work-experience" className="my-8">
-              <h2 className="text-xl font-bold text-purple-800 dark:text-purple-200 mb-3 border-b-2 border-purple-200 pb-1">
+              <h2 className="text-xl font-bold text-blue-800 dark:text-blue-200 mb-3 border-b-2 border-blue-200 pb-1">
                 Work Experience
               </h2>
               <div className="grid gap-4 text-gray-700 dark:text-gray-300 grid-rows-5 min-h-[300px]">
@@ -960,11 +724,11 @@ export default function AboutMePage() {
                     return job ? (
                       <div
                         key={index}
-                        className="group relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-purple-500 before:rounded-full before:border-2 before:border-purple-200 dark:before:border-purple-800 after:absolute after:left-[5px] after:top-2 after:bottom-0 after:w-0.5 after:bg-purple-100 dark:after:bg-purple-800 last:after:hidden"
+                        className="group relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-500 before:rounded-full before:border-2 before:border-blue-200 dark:before:border-blue-800 after:absolute after:left-[5px] after:top-2 after:bottom-0 after:w-0.5 after:bg-blue-100 dark:after:bg-blue-800 last:after:hidden"
                       >
                         <div className="flex justify-between items-start mb-1">
                           <div>
-                            <h3 className="text-sm font-semibold text-purple-700 dark:text-purple-300">
+                            <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
                               {job.title}
                             </h3>
                             <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -1007,13 +771,13 @@ export default function AboutMePage() {
               id="professional-achievements"
               className="mb-8 space-y-6 relative"
             >
-              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+              <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
                 Professional Achievements
               </h2>
 
               <div className="space-y-4">
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">
+                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
                     Professional Certifications
                   </h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
@@ -1027,7 +791,7 @@ export default function AboutMePage() {
                 </div>
 
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">
+                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
                     Professional Memberships
                   </h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
@@ -1036,7 +800,7 @@ export default function AboutMePage() {
                         href="https://www.asiacis.org/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-600 hover:underline"
+                        className="text-blue-600 hover:underline"
                       >
                         Member of Asia Computational Intelligence Society
                       </a>
@@ -1046,7 +810,7 @@ export default function AboutMePage() {
                         href="https://www.iccsaia.org/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-600 hover:underline"
+                        className="text-blue-600 hover:underline"
                       >
                         Technical Program Chair - International Conference on
                         Computer Science and Artificial Intelligence
@@ -1071,7 +835,7 @@ export default function AboutMePage() {
                 </div>
 
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-2">
+                  <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
                     Keynote Speeches
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -1090,7 +854,7 @@ export default function AboutMePage() {
               transition={{ duration: 0.6 }}
               className="my-8"
             >
-              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+              <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
                 Courses Taken
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -1110,7 +874,7 @@ export default function AboutMePage() {
                     className={`
                       bg-white/50 dark:bg-gray-800/50 
                       rounded-xl 
-                      border border-purple-100 dark:border-purple-900 
+                      border border-blue-100 dark:border-blue-900 
                       p-5 
                       hover:shadow-xl 
                       transition-all 
@@ -1123,7 +887,7 @@ export default function AboutMePage() {
                       }
                     `}
                   >
-                    <div className="flex items-center mb-3 border-b border-purple-200 pb-2">
+                    <div className="flex items-center mb-3 border-b border-blue-200 pb-2">
                       <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-3">
                         <FaBook className="w-5 h-5 text-green-600 dark:text-green-300" />
                       </div>
@@ -1153,7 +917,7 @@ export default function AboutMePage() {
 
             {/* Publications */}
             <div id="publications" className="mb-8 space-y-6 relative pb-24">
-              <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4 border-b-2 border-purple-200 pb-2">
+              <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
                 Publications
               </h2>
 
@@ -1161,17 +925,17 @@ export default function AboutMePage() {
               {resume.publications.journalPapers &&
                 resume.publications.journalPapers.length > 0 && (
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-300 mb-4 border-b border-purple-100 pb-2">
+                    <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-4 border-b border-blue-100 pb-2">
                       Journal Papers
                     </h3>
-                    <div className="space-y-3 text-sm text-purple-700 dark:text-purple-300">
+                    <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
                       {paginateItems(
                         resume.publications.journalPapers,
                         journalPapersCurrentPage
                       ).map((paper, index) => (
                         <div
                           key={index}
-                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-purple-100 dark:border-purple-900"
+                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-blue-100 dark:border-blue-900"
                         >
                           <p className="font-semibold">{paper.title}</p>
                           <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -1209,17 +973,17 @@ export default function AboutMePage() {
               {resume.publications.conferenceProceedings &&
                 resume.publications.conferenceProceedings.length > 0 && (
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-300 mb-4 border-b border-purple-100 pb-2">
+                    <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-4 border-b border-blue-100 pb-2">
                       Conference Proceedings
                     </h3>
-                    <div className="space-y-3 text-sm text-purple-700 dark:text-purple-300">
+                    <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
                       {paginateItems(
                         resume.publications.conferenceProceedings,
                         conferenceProceedingsCurrentPage
                       ).map((proceeding, index) => (
                         <div
                           key={index}
-                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-purple-100 dark:border-purple-900"
+                          className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg border border-blue-100 dark:border-blue-900"
                         >
                           <p className="font-semibold">{proceeding.title}</p>
                           <p className="text-xs text-gray-600 dark:text-gray-400">
