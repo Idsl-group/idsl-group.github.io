@@ -81,7 +81,7 @@ const resume = {
     },
   ],
   currentPositions: [
-    "Director of Advanced Analytics and Data Science at the Brite Group",
+    "Senior Data Scientist at the Brite Group",
     "Adjunct Professor of Civil and Environmental Engineering at George Washington University",
     "Adjunct Associate Professor of Data Science at University of Maryland, Global Campus",
     "Professor of Practice in Computer Science and Information Systems at BITS-Pilani, Hyderabad Campus, India",

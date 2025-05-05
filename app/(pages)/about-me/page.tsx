@@ -278,14 +278,14 @@ export default function AboutMePage() {
       icon: (
         <FaGlobe className="w-4 h-4 mr-2 text-green-600 dark:text-green-400" />
       ),
-      content: "419 Blairfield Court, Severn, MD 21144",
+      content: "2250 rue Guy, Montreal, QC H3H 2M3, Canada",
       type: "address",
     },
     {
       icon: (
         <FaEnvelope className="w-4 h-4 mr-2 text-green-600 dark:text-green-400" />
       ),
-      content: "mkjha@mkjhaconsult.com",
+      content: "pranav.jha@mail.concordia.ca",
       type: "email",
     },
   ];
