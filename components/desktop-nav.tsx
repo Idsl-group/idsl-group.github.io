@@ -72,8 +72,8 @@ export default function DesktopNav() {
               "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ease-in-out",
               hasSubItems ? "cursor-default" : "",
               isMenuOpen
-                ? "text-[#E0E1DD] dark:text-[#E0E1DD] bg-gradient-to-r from-[#112240] via-[#233554] to-[#112240] dark:bg-gradient-to-r"
-                : "text-gray-700 dark:text-[#B0B8C4] hover:text-black dark:hover:text-[#E0E1DD] hover:bg-gray-100 dark:hover:bg-gradient-to-r dark:hover:from-[#112240] dark:hover:via-[#233554] dark:hover:to-[#112240]"
+                ? "text-white dark:text-white bg-gradient-to-r from-[#0E1A2B] via-[#1C2F45] to-[#0E1A2B]"
+                : "text-neutral-800 dark:text-[#B0B8C4] hover:text-black dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-gradient-to-r dark:hover:from-[#0E1A2B] dark:hover:via-[#1C2F45] dark:hover:to-[#0E1A2B]"
             )}
           >
             <span className="relative z-10">{item.title}</span>
@@ -84,10 +84,10 @@ export default function DesktopNav() {
                   transition: { type: "spring", stiffness: 300 },
                 }}
               >
-                <ChevronDown className="h-4 w-4 ml-1 text-gray-700 dark:text-[#B0B8C4]" />
+                <ChevronDown className="h-4 w-4 ml-1 text-neutral-600 dark:text-[#A0AEC0]" />
               </motion.div>
             )}
-            <span className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-gradient-to-r dark:from-[#112240] dark:via-[#233554] dark:to-[#112240]" />
+            <span className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-gradient-to-r dark:from-[#0E1A2B] dark:via-[#1C2F45] dark:to-[#0E1A2B]" />
           </Link>
         </div>
 
@@ -104,7 +104,7 @@ export default function DesktopNav() {
                 transition: { duration: 0.2 },
               }}
               variants={dropdownVariants}
-              className="absolute z-50 top-full left-0 mt-2 w-64 rounded-lg shadow-lg p-2 border border-gray-200 dark:border-[#233554] bg-white dark:bg-[#0A192F] backdrop-blur-sm"
+              className="absolute z-50 top-full left-0 mt-2 w-64 rounded-lg shadow-xl p-2 border border-neutral-200 dark:border-[#1E2A38] bg-white dark:bg-[#0A192F] backdrop-blur-md"
               onMouseEnter={() => setOpenMenu(item.title)}
               onMouseLeave={() => setOpenMenu(null)}
             >
@@ -114,10 +114,10 @@ export default function DesktopNav() {
                   href={subItem.href}
                   className={cn(
                     "block px-3 py-2 rounded-md transition-all duration-300 group relative overflow-hidden",
-                    "text-gray-700 dark:text-[#B0B8C4] hover:text-black dark:hover:text-[#E0E1DD]",
+                    "text-neutral-800 dark:text-[#B0B8C4] hover:text-black dark:hover:text-white",
                     hoveredItem === subItem.href
-                      ? "dark:bg-gradient-to-r dark:from-[#112240] dark:via-[#233554] dark:to-[#112240] bg-gray-100"
-                      : "hover:bg-gray-100 dark:hover:bg-gradient-to-r dark:hover:from-[#112240] dark:hover:via-[#233554] dark:hover:to-[#112240]"
+                      ? "bg-neutral-100 dark:bg-gradient-to-r dark:from-[#0E1A2B] dark:via-[#1C2F45] dark:to-[#0E1A2B]"
+                      : "hover:bg-neutral-100 dark:hover:bg-gradient-to-r dark:hover:from-[#0E1A2B] dark:hover:via-[#1C2F45] dark:hover:to-[#0E1A2B]"
                   )}
                   onMouseEnter={() => setHoveredItem(subItem.href)}
                   onMouseLeave={() => setHoveredItem(null)}
@@ -127,12 +127,12 @@ export default function DesktopNav() {
                       {subItem.title}
                     </span>
                     {subItem.description && (
-                      <span className="text-xs text-gray-500 dark:text-[#AAB2C3] group-hover:text-black dark:group-hover:text-[#E0E1DD] transition-colors">
+                      <span className="text-xs text-neutral-500 dark:text-[#AAB2C3] group-hover:text-black dark:group-hover:text-white transition-colors">
                         {subItem.description}
                       </span>
                     )}
                   </div>
-                  <span className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-transparent dark:bg-gradient-to-r dark:from-[#0E1A2B] dark:via-[#1C2F45] dark:to-[#0E1A2B]" />
                 </Link>
               ))}
             </motion.div>
