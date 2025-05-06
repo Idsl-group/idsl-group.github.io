@@ -2,7 +2,13 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, MapPin, Calendar, Building2 } from "lucide-react";
+import {
+  Briefcase,
+  MapPin,
+  Calendar,
+  Building2,
+  ChevronDown,
+} from "lucide-react";
 import resume from "@/data/resume";
 
 type Experience = {
@@ -92,7 +98,7 @@ export default function ExperiencePage() {
     useState<Experience | null>(resume.workExperience[0]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 py-16 px-4 sm:px-6 lg:px-8 overflow-y-scroll">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -108,8 +114,8 @@ export default function ExperiencePage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6 relative">
+          <div className="relative space-y-6 md:max-h-[600px] md:overflow-y-auto pr-4 scrollbar-thin scrollbar-track-gray-100 dark:scrollbar-track-gray-800 scrollbar-thumb-blue-300 dark:scrollbar-thumb-blue-700">
             {resume.workExperience.map((position) => (
               <ExperienceCard
                 key={`${position.company}-${position.title}`}
@@ -121,9 +127,30 @@ export default function ExperiencePage() {
                 onSelect={() => setSelectedExperience(position)}
               />
             ))}
+
+            {/* Scroll Hint */}
+            {resume.workExperience.length > 5 && (
+              <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center pointer-events-none">
+                <motion.div
+                  animate={{
+                    y: [0, 10, 0],
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="flex flex-col items-center text-gray-500 dark:text-gray-400"
+                >
+                  <ChevronDown className="w-8 h-8 opacity-50" />
+                  <span className="text-xs mt-1">Scroll for more</span>
+                </motion.div>
+              </div>
+            )}
           </div>
 
-          <div className="bg-white dark:bg-gray-800/60 rounded-2xl p-6 shadow-lg">
+          <div className="bg-white dark:bg-gray-800/60 rounded-2xl p-6 shadow-lg md:sticky md:top-24">
             {selectedExperience && (
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
