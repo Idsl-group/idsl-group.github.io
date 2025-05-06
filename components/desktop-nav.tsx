@@ -48,28 +48,25 @@ export default function DesktopNav() {
         key={item.href}
         variants={itemVariants}
         className="relative group"
+        onMouseEnter={() => setOpenMenu(hasSubItems ? item.title : null)}
+        onMouseLeave={() => setOpenMenu(null)}
       >
-        <div
-          onMouseEnter={() => setOpenMenu(hasSubItems ? item.title : null)}
-          onMouseLeave={() => setOpenMenu(null)}
+        <Link
+          href={item.href}
+          className="relative px-3 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors duration-300 group/link"
         >
-          <Link
-            href={item.href}
-            className="relative px-3 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors duration-300 group/link"
-          >
-            <span className="relative z-10">{item.title}</span>
+          <span className="relative z-10">{item.title}</span>
 
-            {hasSubItems && (
-              <ChevronDown
-                className={`inline-block ml-1 h-4 w-4 text-neutral-400 dark:text-neutral-500 transition-transform duration-300 ${
-                  openMenu === item.title ? "rotate-180" : ""
-                }`}
-              />
-            )}
+          {hasSubItems && (
+            <ChevronDown
+              className={`inline-block ml-1 h-4 w-4 text-neutral-400 dark:text-neutral-500 transition-transform duration-300 ${
+                openMenu === item.title ? "rotate-180" : ""
+              }`}
+            />
+          )}
 
-            <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-black dark:bg-white origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300" />
-          </Link>
-        </div>
+          <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-black dark:bg-white origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300" />
+        </Link>
 
         <AnimatePresence>
           {hasSubItems && openMenu === item.title && (
@@ -78,6 +75,8 @@ export default function DesktopNav() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
+              onMouseEnter={() => setOpenMenu(item.title)}
+              onMouseLeave={() => setOpenMenu(null)}
               className="absolute top-full left-0 mt-4 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden divide-y divide-neutral-100 dark:divide-neutral-800"
             >
               {item.subItems?.map((subItem) => (
