@@ -19,7 +19,11 @@ const PublicationCard: React.FC<{
   publication: Publication;
   isSelected: boolean;
   onSelect: () => void;
-}> = React.memo(({ publication, isSelected, onSelect }) => {
+}> = React.memo(function PublicationCard({
+  publication,
+  isSelected,
+  onSelect,
+}) {
   return (
     <motion.div
       layout
@@ -131,7 +135,7 @@ export default function PublicationsPage() {
   const sortedPublications = useMemo(
     () =>
       [...resume.publications].sort((a, b) => (b.year || 0) - (a.year || 0)),
-    [resume.publications]
+    []
   );
 
   const publicationCards = useMemo(
