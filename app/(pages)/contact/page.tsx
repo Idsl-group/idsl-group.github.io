@@ -79,8 +79,26 @@ export default function ContactPage() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-6xl w-full grid md:grid-cols-[2fr_3fr] gap-6 bg-white dark:bg-gray-800/70 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700"
+        className="max-w-6xl w-full grid md:grid-cols-[2fr_3fr] gap-6 bg-white dark:bg-gray-800/70 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 relative"
       >
+        {/* Under Development Badge */}
+        <div className="absolute top-4 right-4 z-20">
+          <span
+            className="
+            bg-yellow-100 text-yellow-800 
+            dark:bg-yellow-900 dark:text-yellow-300
+            text-xs font-medium 
+            px-2.5 py-0.5 
+            rounded-full
+            flex items-center
+            animate-pulse
+          "
+          >
+            <span className="mr-1">🚧</span>
+            Under Development
+          </span>
+        </div>
+
         {/* Contact Information Section */}
         <div className="col-span-1 p-10 bg-gradient-to-br from-blue-600 to-purple-700 dark:from-blue-800 dark:to-purple-900 text-white flex flex-col justify-between relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-700/20 dark:from-blue-900/20 dark:to-purple-900/20 opacity-20"></div>

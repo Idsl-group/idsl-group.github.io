@@ -52,7 +52,7 @@ const PublicationCard: React.FC<{
         </h3>
 
         <div className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-          <p className="italic">{publication.authors.join(", ")}</p>
+          <p className="italic">{publication.authors?.join(", ")}</p>
           {publication.venue && (
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {publication.venue}
