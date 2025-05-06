@@ -1,208 +1,194 @@
+"use client";
+
 import * as React from "react";
+import Image from "next/image";
+import { motion as Motion } from "framer-motion";
 import {
   FaLinkedin,
   FaTwitter,
+  FaGithub,
   FaMapMarkerAlt,
   FaEnvelope,
   FaReact,
-  FaGithub,
 } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiVercel } from "react-icons/si";
-import Link from "next/link";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
-  const locations = [
-    {
-      name: "Montreal Office",
-      address: "2250 rue Guy, Montreal, QC H3H 2M3, Canada",
-      email: "contact@mkjhaconsult.com",
-    },
-  ];
-
   const socialLinks = [
     {
       icon: FaLinkedin,
       href: "https://www.linkedin.com/in/pranav-k-jha",
       label: "LinkedIn",
+      color: "text-blue-600 hover:text-blue-800",
     },
     {
       icon: FaTwitter,
       href: "https://x.com/pranav_kjha",
       label: "Twitter",
+      color: "text-sky-500 hover:text-sky-700",
     },
     {
       icon: FaGithub,
       href: "https://github.com/pranav-k-jha",
       label: "GitHub",
+      color: "text-purple-600 hover:text-purple-800",
+    },
+  ];
+
+  const techStack = [
+    {
+      Icon: FaReact,
+      name: "React",
+      color: "text-blue-600",
+    },
+    {
+      Icon: SiNextdotjs,
+      name: "Next.js",
+      color: "text-black dark:text-white",
+    },
+    {
+      Icon: SiTailwindcss,
+      name: "Tailwind",
+      color: "text-teal-600",
+    },
+    {
+      Icon: SiVercel,
+      name: "Vercel",
+      color: "text-gray-800 dark:text-white",
     },
   ];
 
   return (
     <footer
       className={cn(
-        // Light theme background
-        "bg-gradient-to-br from-gray-100 via-white to-gray-200",
-        // Dark theme background
-        "dark:bg-gradient-to-br dark:from-[#010613] dark:via-[#0F172A] dark:to-[#010613]",
-
-        // Common styling
-        "py-12 px-4 sm:px-6 lg:px-8 shadow-lg",
-
-        // Text colors
-        "text-gray-700 dark:text-gray-300",
-
-        // Border and transition
-        "border-t border-gray-200 dark:border-gray-800",
+        "bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-950",
+        "py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800",
         "transition-colors duration-300 ease-in-out",
-
         className
       )}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Company Info Column */}
-        <div className="space-y-4 text-center md:text-left">
-          <div className="flex justify-center md:justify-start items-center space-x-3">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              <span className="text-gray-700 dark:text-gray-200">PRANAV</span> K
-              JHA
-            </h3>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+        {/* Profile Section */}
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-6 text-center md:text-left"
+        >
+          <div className="flex justify-center md:justify-start items-center space-x-4">
+            <Image
+              src="/profile.jpg"
+              alt="Pranav K Jha"
+              width={64}
+              height={64}
+              className="rounded-full border-4 border-blue-500/30 shadow-lg"
+            />
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Pranav K Jha
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                AI Solutions Architect
+              </p>
+            </div>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            AI Researcher & Developer
+            Transforming complex data challenges into intelligent solutions
+            through innovative AI and machine learning technologies.
           </p>
-        </div>
+        </Motion.div>
 
-        {/* Locations Column */}
-        <div className="space-y-4 text-center">
-          <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            Location
+        {/* Contact Section */}
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-6 text-center"
+        >
+          <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            Get in Touch
           </h4>
-          {locations.map((location, index) => (
-            <div key={index} className="mb-4">
-              <h5 className="font-medium text-gray-800 dark:text-gray-200">
-                {location.name}
-              </h5>
-              <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 text-sm">
-                <FaMapMarkerAlt />
-                <p>{location.address}</p>
-              </div>
-              <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 text-sm">
-                <FaEnvelope />
-                <p>{location.email}</p>
-              </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400">
+              <FaMapMarkerAlt className="text-blue-500 dark:text-blue-400 text-lg" />
+              <span>Montreal, QC, Canada</span>
             </div>
-          ))}
-        </div>
+            <div className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400">
+              <FaEnvelope className="text-blue-500 dark:text-blue-400 text-lg" />
+              <a
+                href="mailto:pranav.jha@mail.concordia.ca"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                pranav.jha@mail.concordia.ca
+              </a>
+            </div>
+          </div>
 
-        {/* Social and Contact Column */}
-        <div className="space-y-4 text-center md:text-right">
-          <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            Connect With Me
-          </h4>
-          <div className="flex justify-center md:justify-end space-x-4 mb-4">
+          <div className="flex justify-center space-x-6 mt-6">
             {socialLinks.map((social, index) => (
-              <Link
+              <Motion.a
                 key={index}
                 href={social.href}
                 target="_blank"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`
+                  text-2xl ${social.color}
+                  transition-all duration-300 
+                  hover:scale-110 hover:opacity-80
+                `}
                 aria-label={social.label}
               >
-                <social.icon className="text-2xl hover:scale-110 transition-transform" />
-              </Link>
+                <social.icon />
+              </Motion.a>
             ))}
           </div>
-          <p className="text-sm text-gray-700 dark:text-gray-300">
-            &copy; {new Date().getFullYear()} Pranav K Jha.
-            <span className="block text-xs text-gray-600 dark:text-gray-500 mt-1">
-              AI Solutions Architect
-            </span>
-          </p>
-        </div>
-      </div>
+        </Motion.div>
 
-      {/* Design and Tech Section */}
-      <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
-        <div className="max-w-md mx-auto space-y-4">
-          <span className="block text-xs text-gray-600 dark:text-gray-400 font-medium">
-            Designed by
-            <span className="inline-flex items-center align-middle ml-2">
-              <Image
-                src="/profile.jpg"
-                alt="Pranav K Jha"
-                width={20}
-                height={20}
-                className="rounded-full object-cover mr-2 inline-block align-middle -mt-0.5"
-              />
-              Pranav K Jha
-            </span>
-          </span>
-          <div className="flex items-center justify-center space-x-4">
-            <a
-              href="mailto:pranav.jha@mail.concordia.ca"
-              className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
-            >
-              <FaEnvelope className="mr-2" /> pranav.jha@mail.concordia.ca
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pranav-k-jha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
-            >
-              <FaLinkedin className="mr-2" /> LinkedIn
-            </a>
-            <a
-              href="https://github.com/pranav-k-jha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
-            >
-              <FaGithub className="mr-2" /> GitHub
-            </a>
+        {/* Tech Stack Section */}
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="space-y-6 text-center md:text-right"
+        >
+          <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            Tech Ecosystem
+          </h4>
+          <div className="flex justify-center md:justify-end space-x-6">
+            {techStack.map(({ Icon, name, color }, index) => (
+              <Motion.div
+                key={index}
+                whileHover={{ scale: 1.1 }}
+                className="flex flex-col items-center space-y-2 group"
+              >
+                <div
+                  className={`
+                  p-3 rounded-full 
+                  bg-gray-100 dark:bg-gray-800
+                  ${color} 
+                  transition-all duration-300
+                  group-hover:shadow-lg
+                `}
+                >
+                  <Icon className="text-2xl" />
+                </div>
+                <span
+                  className="text-xs text-gray-600 dark:text-gray-400 
+                  opacity-0 group-hover:opacity-100 
+                  transition-opacity duration-300"
+                >
+                  {name}
+                </span>
+              </Motion.div>
+            ))}
           </div>
-          <div className="flex items-center justify-center space-x-4">
-            <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-              Built with
-            </span>
-            <div className="flex items-center space-x-3">
-              {[
-                {
-                  Icon: FaReact,
-                  lightColor: "text-blue-600",
-                  darkColor: "text-blue-400",
-                  title: "React",
-                },
-                {
-                  Icon: SiNextdotjs,
-                  lightColor: "text-black",
-                  darkColor: "text-white",
-                  title: "Next.js",
-                },
-                {
-                  Icon: SiTailwindcss,
-                  lightColor: "text-blue-500",
-                  darkColor: "text-blue-300",
-                  title: "Tailwind CSS",
-                },
-                {
-                  Icon: SiVercel,
-                  lightColor: "text-black",
-                  darkColor: "text-white",
-                  title: "Vercel",
-                },
-              ].map(({ Icon, lightColor, darkColor, title }) => (
-                <Icon
-                  key={title}
-                  className={`${lightColor} dark:${darkColor} text-xl hover:scale-125 transition-transform`}
-                  title={title}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+          <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+            &copy; {new Date().getFullYear()} Pranav K Jha.
+            <span className="block text-xs mt-1">All Rights Reserved</span>
+          </p>
+        </Motion.div>
       </div>
     </footer>
   );
