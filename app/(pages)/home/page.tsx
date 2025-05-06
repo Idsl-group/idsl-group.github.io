@@ -54,24 +54,39 @@ const quantumServices = [
 
 export default function QuantumHomePage() {
   return (
-    <main className="bg-[#0a0a0a] text-white min-h-screen overflow-hidden relative">
+    <main className="bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white min-h-screen overflow-hidden relative">
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/10 to-purple-900/10"></div>
+        <div
+          className="absolute top-0 left-0 w-full h-full 
+          bg-gradient-to-br 
+          from-blue-50/50 dark:from-blue-900/10 
+          to-purple-50/50 dark:to-purple-900/10 
+          opacity-100 dark:opacity-100"
+        ></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <header className="flex justify-between items-center py-8">
-          <div className="text-2xl font-bold tracking-wider opacity-80 hover:opacity-100 transition-opacity">
+          <div className="text-2xl font-bold tracking-wider opacity-80 hover:opacity-100 transition-opacity text-gray-900 dark:text-white">
             PK
           </div>
           <nav className="space-x-6 text-sm tracking-wide opacity-70 hover:opacity-100 transition-opacity">
-            <Link href="/projects" className="hover:text-blue-300">
+            <Link
+              href="/projects"
+              className="hover:text-blue-600 dark:hover:text-blue-300 text-gray-700 dark:text-gray-300"
+            >
               Projects
             </Link>
-            <Link href="/research" className="hover:text-blue-300">
+            <Link
+              href="/research"
+              className="hover:text-blue-600 dark:hover:text-blue-300 text-gray-700 dark:text-gray-300"
+            >
               Research
             </Link>
-            <Link href="/contact" className="hover:text-blue-300">
+            <Link
+              href="/contact"
+              className="hover:text-blue-600 dark:hover:text-blue-300 text-gray-700 dark:text-gray-300"
+            >
               Contact
             </Link>
           </nav>
@@ -85,19 +100,19 @@ export default function QuantumHomePage() {
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={ANIMATION_VARIANTS} className="space-y-6">
-              <div className="inline-flex items-center bg-blue-900/30 px-4 py-2 rounded-full text-xs tracking-wider">
-                <Layers className="w-4 h-4 mr-2 text-blue-300" />
+              <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 px-4 py-2 rounded-full text-xs tracking-wider">
+                <Layers className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-300" />
                 Computational Innovator
               </div>
 
-              <h1 className="text-5xl font-extralight tracking-tighter">
+              <h1 className="text-5xl font-extralight tracking-tighter text-gray-900 dark:text-white">
                 PRANAV{" "}
-                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                   K JHA
                 </span>
               </h1>
 
-              <p className="text-lg text-gray-300 max-w-2xl leading-relaxed tracking-wide">
+              <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed tracking-wide">
                 Pioneering computational research at the intersection of quantum
                 computing, machine learning, and advanced algorithmic
                 strategies. Transforming theoretical concepts into tangible
@@ -119,7 +134,7 @@ export default function QuantumHomePage() {
               variants={ANIMATION_VARIANTS}
               className="hidden md:block relative"
             >
-              <div className="absolute -inset-2 bg-blue-900/10 rounded-3xl blur-xl"></div>
+              <div className="absolute -inset-2 bg-blue-50 dark:bg-blue-900/10 rounded-3xl blur-xl"></div>
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform">
                 <Image
                   src="/profile.jpg"
@@ -127,7 +142,7 @@ export default function QuantumHomePage() {
                   width={600}
                   height={600}
                   priority
-                  className="object-cover grayscale hover:grayscale-0 transition-all"
+                  className="object-cover grayscale hover:grayscale-0 transition-all rounded-2xl"
                 />
               </div>
             </motion.div>
@@ -144,10 +159,10 @@ export default function QuantumHomePage() {
             variants={ANIMATION_VARIANTS}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-light tracking-tight mb-4">
+            <h2 className="text-3xl font-light tracking-tight mb-4 text-gray-900 dark:text-white">
               Computational <span className="font-bold">Domains</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-700 dark:text-gray-400 max-w-2xl mx-auto">
               Interdisciplinary research spanning quantum computing, machine
               learning, and advanced computational paradigms.
             </p>
@@ -169,20 +184,20 @@ export default function QuantumHomePage() {
                   },
                 }}
                 whileHover={{ scale: 1.03 }}
-                className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 hover:border-blue-600 transition-all"
+                className="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 hover:border-blue-600 transition-all"
               >
-                <div className="mb-4 w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center">
-                  <service.icon className="w-6 h-6 text-blue-300" />
+                <div className="mb-4 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-300" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 tracking-tight">
+                <h3 className="text-xl font-semibold mb-2 tracking-tight text-gray-900 dark:text-white">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-gray-700 dark:text-gray-400 text-sm mb-4">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="text-blue-400 hover:text-blue-300 text-sm flex items-center"
+                  className="text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm flex items-center"
                 >
                   Explore
                   <ArrowUpRight className="ml-1 w-4 h-4" />
