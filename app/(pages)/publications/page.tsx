@@ -13,6 +13,8 @@ type Publication = {
   venue?: string;
   year?: number;
   citations?: number;
+  submittedTo?: string;
+  status?: string;
 };
 
 const PublicationCard: React.FC<{
@@ -59,12 +61,33 @@ const PublicationCard: React.FC<{
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
             {publication.title}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
             {publication.authors?.join(", ")}
           </p>
-          <p className="text-xs text-gray-500 dark:text-gray-500 italic">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             {publication.venue}
           </p>
+          {publication.submittedTo && (
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              Submitted to: {publication.submittedTo}
+            </p>
+          )}
+          {publication.status && (
+            <div className="mt-2">
+              <span
+                className={`
+                text-xs px-2 py-1 rounded-full
+                ${
+                  publication.status === "Published"
+                    ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+                    : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
+                }
+              `}
+              >
+                {publication.status}
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col items-end">
