@@ -184,7 +184,7 @@ export default function QuantumHomePage() {
                   },
                 }}
                 whileHover={{ scale: 1.03 }}
-                className="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 hover:border-blue-600 transition-all"
+                className="bg-gray-50 dark:bg-gray-900/50 border border-transparent hover:border-blue-600 dark:hover:border-blue-400 rounded-2xl p-6 transition-all duration-300 ease-in-out"
               >
                 <div className="mb-4 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                   <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-300" />
