@@ -50,7 +50,7 @@ export default function AboutMePage() {
     {
       icon: <FaLinkedin className="text-blue-600" />,
       text: "LinkedIn Profile",
-      href: "https://www.linkedin.com/in/pranav-jha/",
+      href: "https://www.linkedin.com/in/pranav-k-jha/",
     },
     {
       icon: <SiOrcid className="text-green-600" />,
