@@ -838,73 +838,90 @@ export default function AboutMePage() {
                 Projects
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {resume.projects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-blue-100 dark:border-blue-900/50"
-                  >
-                    <div className="mb-3">
-                      <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-1 group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors">
-                        {project.title}
-                      </h3>
-                      <div className="flex items-center space-x-2">
-                        {project.startDate && (
-                          <span className="text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded-full">
-                            {project.startDate}
-                          </span>
-                        )}
-                        {project.associatedWith && (
-                          <span className="text-xs text-gray-500 dark:text-gray-400 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded-full">
-                            {project.associatedWith}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                {resume.projects.map((project, index) => {
+                  const [expanded, setExpanded] = useState(false);
+                  const shouldTruncate = project.description.length > 200;
+                  const displayedDescription = expanded
+                    ? project.description
+                    : project.description.slice(0, 200);
 
-                    <div className="mb-3">
-                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
-
-                    {(project.skills || project.keywords) && (
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-blue-100 dark:border-blue-900/50"
+                    >
                       <div className="mb-3">
-                        <div className="flex flex-wrap gap-2">
-                          {project.skills?.map((skill, skillIndex) => (
-                            <span
-                              key={`skill-${skillIndex}`}
-                              className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300"
-                            >
-                              {skill}
+                        <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-1 group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors">
+                          {project.title}
+                        </h3>
+                        <div className="flex items-center space-x-2">
+                          {project.startDate && (
+                            <span className="text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded-full">
+                              {project.startDate}
                             </span>
-                          ))}
-                          {project.keywords?.map((keyword, keyIndex) => (
-                            <span
-                              key={`key-${keyIndex}`}
-                              className="text-xs bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full text-purple-700 dark:text-purple-300"
-                            >
-                              {keyword}
+                          )}
+                          {project.associatedWith && (
+                            <span className="text-xs text-gray-500 dark:text-gray-400 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded-full">
+                              {project.associatedWith}
                             </span>
-                          ))}
+                          )}
                         </div>
                       </div>
-                    )}
 
-                    {project.link && (
-                      <div className="mt-3">
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center"
-                        >
-                          View Project
-                          <FaExternalLinkAlt className="ml-2 w-3 h-3" />
-                        </a>
+                      <div className="mb-3">
+                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {displayedDescription}
+                          {shouldTruncate && !expanded && "..."}
+                        </p>
+                        {shouldTruncate && (
+                          <button
+                            onClick={() => setExpanded(!expanded)}
+                            className="text-xs text-blue-600 dark:text-blue-400 hover:underline mt-1"
+                          >
+                            {expanded ? "Show less" : "Read more"}
+                          </button>
+                        )}
                       </div>
-                    )}
-                  </div>
-                ))}
+
+                      {(project.skills || project.keywords) && (
+                        <div className="mb-3">
+                          <div className="flex flex-wrap gap-2">
+                            {project.skills?.map((skill, skillIndex) => (
+                              <span
+                                key={`skill-${skillIndex}`}
+                                className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                            {project.keywords?.map((keyword, keyIndex) => (
+                              <span
+                                key={`key-${keyIndex}`}
+                                className="text-xs bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full text-purple-700 dark:text-purple-300"
+                              >
+                                {keyword}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {project.link && (
+                        <div className="mt-3">
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center"
+                          >
+                            View Project
+                            <FaExternalLinkAlt className="ml-2 w-3 h-3" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
