@@ -27,6 +27,11 @@ export const navigationConfig: NavItem[] = [
     description: "Projects",
     subItems: [
       {
+        title: "All Projects",
+        href: "/projects",
+        description: "All Projects",
+      },
+      {
         title: "Cybersecurity",
         href: "/coming-soon",
         description:

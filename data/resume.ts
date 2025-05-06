@@ -49,6 +49,16 @@ const resume = {
       associatedWith: "MKJHA CONSULTING",
       description:
         "This research aims to develop a machine learning-based predictive system for urban flood forecasting and prevention. A hybrid deep learning model (e.g., CNN-LSTM) is trained on multi-source spatial-temporal data including rainfall, terrain elevation, soil absorption, drainage sensor outputs, and weather forecasts. The system is integrated with an edge-IoT infrastructure to enable real-time monitoring and actuation (e.g., dynamic control of floodgates and alerts). The framework supports adaptive learning to improve predictions over time and provides actionable insights to urban planners and emergency services.",
+      technologies: [
+        "CNN-LSTM",
+        "Deep Learning",
+        "Edge IoT",
+        "Machine Learning",
+      ],
+      keywords: ["Deep Learning", "IoT", "Edge Computing", "Urban Planning"],
+      servicesUsed: [],
+      link: null,
+      notes: null,
     },
     {
       title:
@@ -58,21 +68,54 @@ const resume = {
       associatedWith: "MKJHA CONSULTING",
       description:
         "This work-in-progress presents a machine learning framework for forecasting travel demand in Minnesota using multimodal inputs—GPS trajectories, transit schedules, weather data, and socio-demographic indicators. We train and compare ensemble models (random forests, gradient boosting) alongside LSTM networks, achieving preliminary error reductions of ~20% versus classical time-series forecasts. These early findings demonstrate the potential of data-driven approaches to inform dynamic service planning and infrastructure investment for regional transportation agencies.",
+      technologies: [
+        "Random Forests",
+        "Gradient Boosting",
+        "LSTM",
+        "Machine Learning",
+        "Time Series Forecasting",
+      ],
+      keywords: [
+        "Machine Learning",
+        "Travel Forecasting",
+        "Predictive Analytics",
+      ],
+      servicesUsed: [],
+      link: null,
       notes: "Findings will be submitted for publication in a reputed journal.",
     },
     {
       title: "Binary Classification with XGBoost on CIC-IDS-2017 Dataset",
       startDate: "January 2025",
       endDate: "Present",
+      associatedWith: null,
       description:
-        "This notebook focuses on binary classification using the CIC-IDS-2017 cybersecurity dataset, employing XGBoost (Extreme Gradient Boosting)—a powerful gradient boosting framework optimized for structured numerical data. The objective is to improve Intrusion Detection Systems (IDS) by leveraging XGBoost’s efficiency in handling complex, high-dimensional datasets. The study involves preprocessing network traffic data, fine-tuning XGBoost hyperparameters, and evaluating the model’s performance using metrics such as accuracy, precision, recall, and F1-score.",
+        "This notebook focuses on binary classification using the CIC-IDS-2017 cybersecurity dataset, employing XGBoost (Extreme Gradient Boosting)—a powerful gradient boosting framework optimized for structured numerical data. The objective is to improve Intrusion Detection Systems (IDS) by leveraging XGBoost's efficiency in handling complex, high-dimensional datasets. The study involves preprocessing network traffic data, fine-tuning XGBoost hyperparameters, and evaluating the model's performance using metrics such as accuracy, precision, recall, and F1-score.",
+      technologies: [
+        "XGBoost",
+        "Machine Learning",
+        "Cybersecurity",
+        "Binary Classification",
+        "Data Preprocessing",
+      ],
+      keywords: [
+        "Binary Classification",
+        "Intrusion Detection",
+        "Data Preprocessing",
+      ],
+      servicesUsed: [],
       link: "kaggle-notebooks/CIC-IDS-2017 BERT Classification.ipynb",
+      notes: null,
     },
     {
       title: "YouTube Analysis Data Engineering Project",
       startDate: "July 2024",
+      endDate: null,
+      associatedWith: null,
       description:
         "This project aims to securely manage, streamline, and analyze structured and semi-structured YouTube video data based on video categories and trending metrics.",
+      technologies: ["Data Analysis", "Cloud Services", "Video Analytics"],
+      keywords: ["Data Engineering", "Cloud Services", "Video Analytics"],
       servicesUsed: [
         "Amazon S3",
         "AWS IAM",
@@ -82,51 +125,99 @@ const resume = {
         "AWS Athena",
       ],
       link: "youtube-analysis-data-engineering-project",
+      notes: null,
     },
     {
       title: "E-Commerce App",
       startDate: "April 2024",
+      endDate: null,
+      associatedWith: null,
       description:
         "Built a complete e-commerce webshop with an admin dashboard using Next.js (SSR/SSG), Stripe for payments, TypeScript for type safety, and Payload CMS for content management. The stack ensures scalability, security, and real-time functionality.",
-      technologies: ["Next.js", "Stripe", "TypeScript", "Payload CMS"],
+      technologies: [
+        "Next.js",
+        "Stripe",
+        "TypeScript",
+        "Payload CMS",
+        "SSR",
+        "SSG",
+      ],
+      keywords: ["Web Development", "E-commerce", "Full-stack"],
+      servicesUsed: [],
       link: "https://github.com/pranav-k-jha/e-commerce-ts-next-payload-cms",
+      notes: null,
     },
     {
       title: "Real Estate Price Prediction",
       startDate: "January 2024",
+      endDate: null,
+      associatedWith: null,
       description:
         "Demonstrated building a real estate price prediction website using the Bangalore home prices dataset from Kaggle. Developed a linear regression model with scikit-learn to predict home prices.",
+      technologies: [
+        "scikit-learn",
+        "Linear Regression",
+        "Machine Learning",
+        "Price Prediction",
+      ],
+      keywords: ["Machine Learning", "Price Prediction", "Real Estate"],
+      servicesUsed: [],
       link: "Real-Estate-Price-Prediction",
+      notes: null,
     },
     {
       title:
         "Digitizing the Sports Industry Through Lift-Ride Data Analysis Using Microservices and Distributed Systems",
+      startDate: null,
+      endDate: null,
+      associatedWith: null,
       description:
         "A distributed system to digitalize the sports industry by aggregating lift-ride data from geographically spread resorts. Implemented a server-side API and a multithreaded Java client to generate ~10,000 POST requests with retry logic, and performed performance profiling (mean/median response times, throughput, p99).",
-      keywords: [
-        "Client-server architecture",
-        "Multithreading",
+      technologies: [
         "Java",
         "Spring Boot",
         "gRPC",
         "RabbitMQ",
         "Microservices",
-        "MongoDB",
+        "Performance Profiling",
+        "Distributed Systems",
       ],
+      keywords: [
+        "Client-server architecture",
+        "Multithreading",
+        "Microservices",
+        "Performance Profiling",
+      ],
+      servicesUsed: [],
+      link: null,
+      notes: null,
     },
     {
       title:
         "Edu Analytics: A Distributed System with gRPC and Message-Driven Data Processing",
+      startDate: null,
+      endDate: null,
+      associatedWith: null,
       description:
-        "Developed a microservice architecture using gRPC for RPC communication and RabbitMQ for message-driven data processing on a MongoDB cluster. Processed Kaggle’s EduCostStat dataset to query tuition and room & board statistics, calculate top states by cost growth, and perform region-wise aggregations. Implemented Java-based gRPC services and clients, and designed message flows for efficient data handling.",
-      keywords: [
+        "Developed a microservice architecture using gRPC for RPC communication and RabbitMQ for message-driven data processing on a MongoDB cluster. Processed Kaggle's EduCostStat dataset to query tuition and room & board statistics, calculate top states by cost growth, and perform region-wise aggregations. Implemented Java-based gRPC services and clients, and designed message flows for efficient data handling.",
+      technologies: [
+        "Java",
         "gRPC",
         "RabbitMQ",
         "MongoDB",
-        "Java",
         "Microservices",
-        "Protocol Buffers",
+        "Data Processing",
+        "RPC Communication",
       ],
+      keywords: [
+        "Microservices",
+        "Data Processing",
+        "RPC Communication",
+        "Message-Driven Architecture",
+      ],
+      servicesUsed: [],
+      link: null,
+      notes: null,
     },
   ],
 
@@ -184,52 +275,52 @@ const resume = {
     },
   ],
 
-  coursesTaught: [
-    {
-      institution:
-        "Birla Institute of Technology and Science-Pilani, Hyderabad, India",
-      period: "April 2024 - Present",
-      courses: ["BITS F464: Machine Learning"],
-    },
-    {
-      institution: "George Washington University",
-      period: "Spring 2023 - Present",
-      courses: ["CE 6800: Data Science in Civil and Environmental Engineering"],
-    },
-    {
-      institution: "University of Maryland Global Campus",
-      period: "Fall 2023 - Present",
-      courses: [
-        "IFSM 330: Business Intelligence and Data Analytics",
-        "DATA 460: Artificial Intelligence Solutions",
-        "DATA 605: Decision Analytics",
-      ],
-    },
-    {
-      institution: "Morgan State University",
-      period: "Fall 2001 - Spring 2014",
-      courses: [
-        "CEGR 514: Environmental Risk Assessment",
-        "CEGR 651: Computer Aided Highway Engineering Design",
-        "CEGR 670: Special Topics in Highway Safety",
-        "CEGR 671: Highway Traffic Flow Theory",
-        "CEGR 680: Highway Infrastructure Management Systems",
-        "CEGR 684 & 685: Advanced Algorithms in Transportation I & II",
-        "CEGR 686: Demand Analysis and Forecasting",
-        "CEGR 697: GIS Applications in Transportation",
-      ],
-    },
-    {
-      institution: "University of Maryland, College Park",
-      period: "Fall 2000 - Spring 2003",
-      courses: [
-        "ENPM 808C: Computer Aided Highway Engineering Design",
-        "ENPM 808Y: GIS Applications in Engineering",
-        "ENPM 808Z: Intelligent Optimization with Artificial Intelligence",
-        "ENCE 470: Highway and Traffic Engineering",
-      ],
-    },
-  ],
+  // coursesTaught: [
+  //   {
+  //     institution:
+  //       "Birla Institute of Technology and Science-Pilani, Hyderabad, India",
+  //     period: "April 2024 - Present",
+  //     courses: ["BITS F464: Machine Learning"],
+  //   },
+  //   {
+  //     institution: "George Washington University",
+  //     period: "Spring 2023 - Present",
+  //     courses: ["CE 6800: Data Science in Civil and Environmental Engineering"],
+  //   },
+  //   {
+  //     institution: "University of Maryland Global Campus",
+  //     period: "Fall 2023 - Present",
+  //     courses: [
+  //       "IFSM 330: Business Intelligence and Data Analytics",
+  //       "DATA 460: Artificial Intelligence Solutions",
+  //       "DATA 605: Decision Analytics",
+  //     ],
+  //   },
+  //   {
+  //     institution: "Morgan State University",
+  //     period: "Fall 2001 - Spring 2014",
+  //     courses: [
+  //       "CEGR 514: Environmental Risk Assessment",
+  //       "CEGR 651: Computer Aided Highway Engineering Design",
+  //       "CEGR 670: Special Topics in Highway Safety",
+  //       "CEGR 671: Highway Traffic Flow Theory",
+  //       "CEGR 680: Highway Infrastructure Management Systems",
+  //       "CEGR 684 & 685: Advanced Algorithms in Transportation I & II",
+  //       "CEGR 686: Demand Analysis and Forecasting",
+  //       "CEGR 697: GIS Applications in Transportation",
+  //     ],
+  //   },
+  //   {
+  //     institution: "University of Maryland, College Park",
+  //     period: "Fall 2000 - Spring 2003",
+  //     courses: [
+  //       "ENPM 808C: Computer Aided Highway Engineering Design",
+  //       "ENPM 808Y: GIS Applications in Engineering",
+  //       "ENPM 808Z: Intelligent Optimization with Artificial Intelligence",
+  //       "ENCE 470: Highway and Traffic Engineering",
+  //     ],
+  //   },
+  // ],
 
   workExperience: [
     {
