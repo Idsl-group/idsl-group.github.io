@@ -49,13 +49,17 @@ const resume = {
       associatedWith: "MKJHA CONSULTING",
       description:
         "This research aims to develop a machine learning-based predictive system for urban flood forecasting and prevention. A hybrid deep learning model (e.g., CNN-LSTM) is trained on multi-source spatial-temporal data including rainfall, terrain elevation, soil absorption, drainage sensor outputs, and weather forecasts. The system is integrated with an edge-IoT infrastructure to enable real-time monitoring and actuation (e.g., dynamic control of floodgates and alerts). The framework supports adaptive learning to improve predictions over time and provides actionable insights to urban planners and emergency services.",
-      technologies: [
+      skills: [
         "CNN-LSTM",
         "Deep Learning",
         "Edge IoT",
         "Machine Learning",
+        "Time Series Analysis",
+        "Data Visualization",
+        "IoT",
+        "Edge Computing",
+        "Urban Planning",
       ],
-      keywords: ["Deep Learning", "IoT", "Edge Computing", "Urban Planning"],
       servicesUsed: [],
       link: null,
       notes: null,
@@ -68,14 +72,11 @@ const resume = {
       associatedWith: "MKJHA CONSULTING",
       description:
         "This work-in-progress presents a machine learning framework for forecasting travel demand in Minnesota using multimodal inputs—GPS trajectories, transit schedules, weather data, and socio-demographic indicators. We train and compare ensemble models (random forests, gradient boosting) alongside LSTM networks, achieving preliminary error reductions of ~20% versus classical time-series forecasts. These early findings demonstrate the potential of data-driven approaches to inform dynamic service planning and infrastructure investment for regional transportation agencies.",
-      technologies: [
+      skills: [
         "Random Forests",
         "Gradient Boosting",
         "LSTM",
-        "Machine Learning",
         "Time Series Forecasting",
-      ],
-      keywords: [
         "Machine Learning",
         "Travel Forecasting",
         "Predictive Analytics",
@@ -87,21 +88,17 @@ const resume = {
     {
       title: "Binary Classification with XGBoost on CIC-IDS-2017 Dataset",
       startDate: "January 2025",
-      endDate: "Present",
+      endDate: "January 2025",
       associatedWith: null,
       description:
         "This notebook focuses on binary classification using the CIC-IDS-2017 cybersecurity dataset, employing XGBoost (Extreme Gradient Boosting)—a powerful gradient boosting framework optimized for structured numerical data. The objective is to improve Intrusion Detection Systems (IDS) by leveraging XGBoost's efficiency in handling complex, high-dimensional datasets. The study involves preprocessing network traffic data, fine-tuning XGBoost hyperparameters, and evaluating the model's performance using metrics such as accuracy, precision, recall, and F1-score.",
-      technologies: [
+      skills: [
         "XGBoost",
         "Machine Learning",
         "Cybersecurity",
         "Binary Classification",
         "Data Preprocessing",
-      ],
-      keywords: [
-        "Binary Classification",
         "Intrusion Detection",
-        "Data Preprocessing",
       ],
       servicesUsed: [],
       link: "kaggle-notebooks/CIC-IDS-2017 BERT Classification.ipynb",
@@ -110,12 +107,16 @@ const resume = {
     {
       title: "YouTube Analysis Data Engineering Project",
       startDate: "July 2024",
-      endDate: null,
+      endDate: "July 2024",
       associatedWith: null,
       description:
         "This project aims to securely manage, streamline, and analyze structured and semi-structured YouTube video data based on video categories and trending metrics.",
-      technologies: ["Data Analysis", "Cloud Services", "Video Analytics"],
-      keywords: ["Data Engineering", "Cloud Services", "Video Analytics"],
+      keywords: [
+        "Data Analysis",
+        "Cloud Services",
+        "Video Analytics",
+        "Data Engineering",
+      ],
       servicesUsed: [
         "Amazon S3",
         "AWS IAM",
@@ -130,19 +131,21 @@ const resume = {
     {
       title: "E-Commerce App",
       startDate: "April 2024",
-      endDate: null,
+      endDate: "April 2024",
       associatedWith: null,
       description:
         "Built a complete e-commerce webshop with an admin dashboard using Next.js (SSR/SSG), Stripe for payments, TypeScript for type safety, and Payload CMS for content management. The stack ensures scalability, security, and real-time functionality.",
-      technologies: [
+      skills: [
         "Next.js",
         "Stripe",
         "TypeScript",
         "Payload CMS",
         "SSR",
         "SSG",
+        "Web Development",
+        "E-commerce",
+        "Full-stack",
       ],
-      keywords: ["Web Development", "E-commerce", "Full-stack"],
       servicesUsed: [],
       link: "https://github.com/pranav-k-jha/e-commerce-ts-next-payload-cms",
       notes: null,
@@ -150,17 +153,17 @@ const resume = {
     {
       title: "Real Estate Price Prediction",
       startDate: "January 2024",
-      endDate: null,
+      endDate: "January 2024",
       associatedWith: null,
       description:
         "Demonstrated building a real estate price prediction website using the Bangalore home prices dataset from Kaggle. Developed a linear regression model with scikit-learn to predict home prices.",
-      technologies: [
+      skills: [
         "scikit-learn",
         "Linear Regression",
         "Machine Learning",
         "Price Prediction",
+        "Real Estate",
       ],
-      keywords: ["Machine Learning", "Price Prediction", "Real Estate"],
       servicesUsed: [],
       link: "Real-Estate-Price-Prediction",
       notes: null,
@@ -168,12 +171,12 @@ const resume = {
     {
       title:
         "Digitizing the Sports Industry Through Lift-Ride Data Analysis Using Microservices and Distributed Systems",
-      startDate: null,
-      endDate: null,
+      startDate: "January 2023",
+      endDate: "April 2023",
       associatedWith: null,
       description:
         "A distributed system to digitalize the sports industry by aggregating lift-ride data from geographically spread resorts. Implemented a server-side API and a multithreaded Java client to generate ~10,000 POST requests with retry logic, and performed performance profiling (mean/median response times, throughput, p99).",
-      technologies: [
+      skills: [
         "Java",
         "Spring Boot",
         "gRPC",
@@ -181,12 +184,8 @@ const resume = {
         "Microservices",
         "Performance Profiling",
         "Distributed Systems",
-      ],
-      keywords: [
         "Client-server architecture",
         "Multithreading",
-        "Microservices",
-        "Performance Profiling",
       ],
       servicesUsed: [],
       link: null,
@@ -195,21 +194,16 @@ const resume = {
     {
       title:
         "Edu Analytics: A Distributed System with gRPC and Message-Driven Data Processing",
-      startDate: null,
-      endDate: null,
+      startDate: "January 2023",
+      endDate: "April 2023",
       associatedWith: null,
       description:
         "Developed a microservice architecture using gRPC for RPC communication and RabbitMQ for message-driven data processing on a MongoDB cluster. Processed Kaggle's EduCostStat dataset to query tuition and room & board statistics, calculate top states by cost growth, and perform region-wise aggregations. Implemented Java-based gRPC services and clients, and designed message flows for efficient data handling.",
-      technologies: [
+      skills: [
         "Java",
         "gRPC",
         "RabbitMQ",
         "MongoDB",
-        "Microservices",
-        "Data Processing",
-        "RPC Communication",
-      ],
-      keywords: [
         "Microservices",
         "Data Processing",
         "RPC Communication",
@@ -221,14 +215,6 @@ const resume = {
     },
   ],
 
-  experienceSummary: [
-    {
-      title: "Director of Advanced Analytics and Data Science",
-      organization: "Brite Group",
-      description:
-        "Managing multiple large-scale federal projects involving AI, ML, and Big Data.",
-    },
-  ],
   currentPositions: [
     {
       company: "Fujitsu",
@@ -283,7 +269,12 @@ const resume = {
       endDate: "Present",
       duration: "1 year 10 months",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Provided technical support operations for Active Directory user accounts, ensuring secure access control and compliance with IT policies.",
+        "Streamlined incident management by reducing ticket resolution time through effective escalation and collaboration with DevOps and cybersecurity teams.",
+        "Resolved complex hardware, software, and network issues weekly, minimizing downtime and improving end-user satisfaction.",
+        "Mentored junior support staff, enhancing team performance and technical expertise.",
+      ],
     },
     {
       company: "MKJHA CONSULTING",
@@ -306,7 +297,11 @@ const resume = {
       endDate: "March 2025",
       duration: "10 months",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Developed and implemented machine learning models for data analysis and prediction.",
+        "Collaborated with cross-functional teams to design and implement data pipelines.",
+        "Conducted data analysis and visualization to identify trends and insights.",
+      ],
     },
     {
       company: "DataAnnotation",
@@ -315,7 +310,11 @@ const resume = {
       endDate: "June 2024",
       duration: "5 months",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Trained AI models using Python, TensorFlow, and PyTorch to improve accuracy and efficiency.",
+        "Developed custom training pipelines for specific datasets, ensuring optimal performance.",
+        "Collaborated with data scientists to fine-tune models and implement advanced training techniques.",
+      ],
     },
     {
       company: "BeauT Ai",
@@ -339,7 +338,10 @@ const resume = {
       endDate: "April 2023",
       duration: "2 months",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Supported IT operations by troubleshooting and resolving software and configuration issues.",
+        "Reduced ticket resolution time by escalating complex issues (BIOS failures, network drive errors) to DevOps and cybersecurity teams.",
+      ],
     },
     {
       company: "IO Solutions Contact Center",
@@ -348,7 +350,9 @@ const resume = {
       endDate: "March 2023",
       duration: "3 months",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Supported IT operations by troubleshooting and resolving software and configuration issues.",
+      ],
     },
     {
       company: "Concordia University",
@@ -357,7 +361,9 @@ const resume = {
       endDate: "December 2021",
       duration: "4 months",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Worked as a Graduate Teaching Assistant for Concordia University.",
+      ],
     },
     {
       company: "Concordia University",
@@ -366,7 +372,9 @@ const resume = {
       endDate: "August 2021",
       duration: "3 years 1 month",
       location: "Montreal, Quebec, Canada",
-      details: [],
+      details: [
+        "Analyzed hybrid precoding techniques for mmWave MIMO systems using deep learning.",
+      ],
     },
     {
       company: "National Institute of Technology, Tiruchirappalli",
@@ -375,7 +383,9 @@ const resume = {
       endDate: "July 2018",
       duration: "2 years 6 months",
       location: "Tiruchirappalli, Tamil Nadu, India",
-      details: [],
+      details: [
+        "Analyzed cooperative relaying systems and contributed to IEEE conference publications.",
+      ],
     },
     {
       company: "INFONET BPO SERVICES PRIVATE LIMITED",
@@ -384,7 +394,9 @@ const resume = {
       endDate: "January 2016",
       duration: "9 months",
       location: "Pune, Maharashtra, India",
-      details: [],
+      details: [
+        "Supported IT operations by troubleshooting and resolving software and configuration issues.",
+      ],
     },
   ],
 

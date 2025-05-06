@@ -55,7 +55,7 @@ export default function AboutMePage() {
     {
       icon: <SiOrcid className="text-green-600" />,
       text: "ORCiD",
-      href: "https://orcid.org/0000-0001-7351-4764",
+      href: "https://orcid.org/0000-0001-8053-988X",
     },
     {
       icon: <SiGooglescholar className="text-red-600" />,
@@ -301,7 +301,7 @@ export default function AboutMePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <div className="w-full py-8">
+      <div className="w-[80%] mx-auto py-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -339,7 +339,7 @@ export default function AboutMePage() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-2xl md:text-3xl font-bold mb-2"
                   >
-                    AI, ML, CYBERSECURITY & DATA SCIENCE
+                    AI SOLUTIONS ARCHITECT
                   </motion.h1>
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -653,9 +653,18 @@ export default function AboutMePage() {
                       }}
                       className="text-sm text-gray-700 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 group"
                     >
-                      <h4 className="text-xs font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
+                      <h4 className="text-sm font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
                         {position.title}
                       </h4>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        {position.company}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        {position.location}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        {position.period}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -672,17 +681,38 @@ export default function AboutMePage() {
                   <div key={index} className="flex items-start">
                     <FaGraduationCap className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5" />
                     <div>
-                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+                      <h3 className="text-md font-semibold text-blue-700 dark:text-blue-300">
                         {edu.degrees[0].name}
                       </h3>
-                      <div className="text-xs">
+                      <div className="text-sm">
                         <span>{edu.institution}</span>
                         {edu.degrees[0].startYear && (
-                          <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
                             {edu.degrees[0].startYear} -{" "}
                             {edu.degrees[0].endYear}
                           </span>
                         )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/*Courses */}
+            <div id="courses" className="my-8">
+              <h2 className="text-xl font-bold text-blue-800 dark:text-blue-200 mb-3 border-b-2 border-blue-200 pb-1">
+                Courses
+              </h2>
+              <div className="grid grid-cols-3 gap-4 space-y-4 text-gray-700 dark:text-gray-300">
+                {resume.courses.map((course, index) => (
+                  <div key={index} className="flex items-start">
+                    <FaBook className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+                        {course.name}
+                      </h3>
+                      <div className="text-xs">
+                        <span>{course.grade}</span>
                       </div>
                     </div>
                   </div>
@@ -711,7 +741,7 @@ export default function AboutMePage() {
                       >
                         <div className="flex justify-between items-start mb-1">
                           <div>
-                            <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+                            <h3 className="text-md font-semibold text-blue-700 dark:text-blue-300">
                               {job.title}
                             </h3>
                             <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -727,7 +757,11 @@ export default function AboutMePage() {
                         </div>
                         {job.details && (
                           <p className="text-xs text-gray-700 dark:text-gray-300 mt-1">
-                            {job.details}
+                            <ul className="list-disc list-inside">
+                              {job.details.map((detail, index) => (
+                                <li key={index}>{detail}</li>
+                              ))}
+                            </ul>
                           </p>
                         )}
                       </div>
@@ -755,7 +789,7 @@ export default function AboutMePage() {
               className="mb-8 space-y-6 relative"
             >
               <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
-                Professional Achievements
+                Research Interests
               </h2>
 
               {/* Focus Areas */}
@@ -763,7 +797,7 @@ export default function AboutMePage() {
                 <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
                   Focus Areas
                 </h3>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                <ul className="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-2">
                   {resume.focusAreas.map((area, index) => (
                     <li key={index}>{area}</li>
                   ))}
@@ -833,15 +867,15 @@ export default function AboutMePage() {
                       </p>
                     </div>
 
-                    {(project.technologies || project.keywords) && (
+                    {(project.skills || project.keywords) && (
                       <div className="mb-3">
                         <div className="flex flex-wrap gap-2">
-                          {project.technologies?.map((tech, techIndex) => (
+                          {project.skills?.map((skill, skillIndex) => (
                             <span
-                              key={`tech-${techIndex}`}
+                              key={`skill-${skillIndex}`}
                               className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300"
                             >
-                              {tech}
+                              {skill}
                             </span>
                           ))}
                           {project.keywords?.map((keyword, keyIndex) => (
