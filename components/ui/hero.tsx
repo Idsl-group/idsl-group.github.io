@@ -1,8 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
-import Link from "next/link";
-import { ChevronRightIcon, ArrowRightIcon } from "lucide-react";
+
 import { motion, HTMLMotionProps } from "framer-motion";
 
 interface HeroProps extends Omit<HTMLMotionProps<"div">, "children"> {
