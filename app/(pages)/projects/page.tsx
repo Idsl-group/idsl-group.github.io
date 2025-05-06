@@ -213,7 +213,7 @@ export default function ProjectsPage() {
 
   const { filteredProjects, allTechnologies, allKeywords } = useMemo(() => {
     const technologies = Array.from(
-      new Set(resume.projects.flatMap((p) => p.technologies || []))
+      new Set(resume.projects.flatMap((p) => p.skills || []))
     );
 
     const keywords = Array.from(
@@ -223,7 +223,7 @@ export default function ProjectsPage() {
     const filtered = filter
       ? resume.projects.filter(
           (project) =>
-            project.technologies?.includes(filter) ||
+            project.skills?.includes(filter) ||
             project.keywords?.includes(filter)
         )
       : resume.projects;
