@@ -478,42 +478,42 @@ const resume = {
     {
       title:
         "Challenges and potentials for visible light communications: State of the art",
-      authors: ["P. K. Jha", "N. Mishra", "D. S. Kumar"],
-      venue: "AIP Conference Proceedings 1849 (1)",
+      authors: ["PK Jha", "N Mishra", "DS Kumar"],
+      venue: "AIP conference proceedings 1849 (1)",
       year: 2017,
       citations: 17,
     },
     {
       title:
         "Achievable rate analysis of relay assisted cooperative NOMA over Rician fading channels",
-      authors: ["P. K. Jha", "D. S. Kumar"],
+      authors: ["PK Jha", "DS Kumar"],
       venue:
-        "2018 4th International Conference on Recent Advances in Information Technology (RAIT)",
+        "2018 4th International Conference on Recent Advances in Information",
       year: 2018,
       citations: 14,
     },
     {
       title:
         "Performance analysis of FSO using relays and spatial diversity under log-normal fading channel",
-      authors: ["P. K. Jha", "N. Kachare", "K. Kalyani", "D. S. Kumar"],
+      authors: ["PK Jha", "N Kachare", "K Kalyani", "DS Kumar"],
       venue:
-        "2018 4th International Conference on Electrical Energy Systems (ICEES)",
+        "2018 4th International Conference on Electrical Energy Systems (ICEES), 121-125",
       year: 2018,
       citations: 12,
     },
     {
       title:
         "An opportunistic-non orthogonal multiple access based cooperative relaying system over Rician fading channels",
-      authors: ["P. K. Jha", "S. S. Shree", "D. S. Kumar"],
+      authors: ["PK Jha", "SS Shree", "DS Kumar"],
       venue:
-        "2018 4th International Conference on Recent Advances in Information Technology (RAIT)",
+        "2018 4th International Conference on Recent Advances in Information",
       year: 2018,
       citations: 5,
     },
     {
       title:
         "Achievable Rate Analysis for Cooperative Relay Assisted Opportunistic-NOMA over Rician Fading Channels with Channel State Information",
-      authors: ["P. K. Jha", "S. S. Shree", "D. S. Kumar"],
+      authors: ["PK Jha", "SS Shree", "DS Kumar"],
       venue: "Wireless Personal Communications, Springer",
       year: 2018,
       citations: 2,
@@ -521,7 +521,7 @@ const resume = {
     {
       title:
         "Performance analysis of dual-hop optical wireless communication systems over k-distribution turbulence channel with pointing error",
-      authors: ["N. Mishra", "P. K. Jha"],
+      authors: ["N Mishra", "PK Jha"],
       venue: "AIP Conference Proceedings 1849 (1)",
       year: 2017,
       citations: 2,
@@ -529,7 +529,7 @@ const resume = {
     {
       title:
         "Performance analysis of FSO system with spatial diversity and relays for M-QAM over log-normal channel",
-      authors: ["P. K. Jha", "N. Kachare", "K. Kalyani", "D. S. Kumar"],
+      authors: ["PK Jha", "N Kachare", "K Kalyani", "DS Kumar"],
       venue: "arXiv preprint arXiv:1709.05488",
       year: 2017,
       citations: 1,
@@ -537,12 +537,32 @@ const resume = {
     {
       title:
         "Adversarial Machine Learning: Attacks, Defenses, and Open Challenges",
-      authors: ["P. K. Jha"],
+      authors: ["PK Jha"],
       venue: "arXiv preprint arXiv:2502.05637",
       year: 2025,
       citations: 0,
     },
   ],
+
+  publicationMetrics: {
+    totalCitations: 53,
+    citationsSince2020: 2,
+    hIndex: 4,
+    hIndexSince2020: 1,
+    i10Index: 3,
+    i10IndexSince2020: 0,
+    citationsByYear: {
+      "2017": 17, // Challenges and potentials (17)
+      "2018": 14, // Achievable rate (14)
+      "2019": 0,
+      "2020": 0,
+      "2021": 0,
+      "2022": 0,
+      "2023": 0,
+      "2024": 0,
+      "2025": 2, // Adversarial Machine Learning
+    },
+  },
 
   certificationsAndMemberships: {
     certifications: [
