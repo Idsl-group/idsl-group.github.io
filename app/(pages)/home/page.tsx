@@ -7,11 +7,22 @@ import {
   Cpu,
   Database,
   Globe,
-  BookOpen,
   Terminal,
   Layers,
   ArrowUpRight,
 } from "lucide-react";
+
+const ANIMATION_VARIANTS = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
 
 const quantumServices = [
   {
@@ -44,17 +55,12 @@ const quantumServices = [
 export default function QuantumHomePage() {
   return (
     <main className="bg-[#0a0a0a] text-white min-h-screen overflow-hidden relative">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/10 to-purple-900/10 animate-pulse"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/10 to-purple-900/10"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.header
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex justify-between items-center py-8"
-        >
+        <header className="flex justify-between items-center py-8">
           <div className="text-2xl font-bold tracking-wider opacity-80 hover:opacity-100 transition-opacity">
             PK
           </div>
@@ -69,16 +75,16 @@ export default function QuantumHomePage() {
               Contact
             </Link>
           </nav>
-        </motion.header>
+        </header>
 
-        <section className="min-h-[calc(100vh-200px)] flex items-center">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="min-h-[calc(100vh-200px)] flex items-center"
+        >
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-6"
-            >
+            <motion.div variants={ANIMATION_VARIANTS} className="space-y-6">
               <div className="inline-flex items-center bg-blue-900/30 px-4 py-2 rounded-full text-xs tracking-wider">
                 <Layers className="w-4 h-4 mr-2 text-blue-300" />
                 Computational Innovator
@@ -99,44 +105,43 @@ export default function QuantumHomePage() {
               </p>
 
               <div className="flex space-x-4">
-                <motion.a
+                <Link
                   href="/contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white tracking-wider hover:from-blue-700 hover:to-purple-700 transition-all"
                 >
                   Initiate Collaboration
                   <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
-                </motion.a>
+                </Link>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              variants={ANIMATION_VARIANTS}
               className="hidden md:block relative"
             >
-              <div className="absolute -inset-2 bg-blue-900/20 rounded-3xl blur-2xl animate-pulse"></div>
+              <div className="absolute -inset-2 bg-blue-900/10 rounded-3xl blur-xl"></div>
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform">
                 <Image
                   src="/profile.jpg"
                   alt="Pranav K Jha Professional Portrait"
                   width={600}
                   height={600}
+                  priority
                   className="object-cover grayscale hover:grayscale-0 transition-all"
                 />
               </div>
             </motion.div>
           </div>
-        </section>
+        </motion.section>
 
-        <section className="py-16">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="py-16"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+            variants={ANIMATION_VARIANTS}
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-light tracking-tight mb-4">
@@ -152,15 +157,18 @@ export default function QuantumHomePage() {
             {quantumServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: "easeOut",
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.4,
+                      delay: index * 0.1,
+                    },
+                  },
                 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.03 }}
                 className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 hover:border-blue-600 transition-all"
               >
                 <div className="mb-4 w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center">
@@ -182,7 +190,7 @@ export default function QuantumHomePage() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
       </div>
     </main>
   );
