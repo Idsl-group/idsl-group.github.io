@@ -98,7 +98,7 @@ const ExperienceCard = React.memo(
 
 ExperienceCard.displayName = "ExperienceCard";
 
-export default function ExperiencePage() {
+const ExperiencePage = () => {
   const [selectedExperience, setSelectedExperience] =
     useState<Experience | null>(resume.workExperience[0]);
 
@@ -121,7 +121,15 @@ export default function ExperiencePage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 relative">
-          <div className="relative space-y-4 md:max-h-[600px] md:overflow-y-auto pr-4 scrollbar-thin scrollbar-track-gray-100 dark:scrollbar-track-gray-800 scrollbar-thumb-blue-300 dark:scrollbar-thumb-blue-700">
+          <div
+            className="relative space-y-4 md:max-h-[600px] md:overflow-y-auto pr-4 
+            scrollbar-thin 
+            scrollbar-track-gray-100 
+            dark:scrollbar-track-gray-800 
+            scrollbar-thumb-blue-300 
+            dark:scrollbar-thumb-blue-700
+            scroll-smooth"
+          >
             {resume.workExperience.map((position) => (
               <ExperienceCard
                 key={`${position.company}-${position.title}`}
@@ -133,29 +141,6 @@ export default function ExperiencePage() {
                 onSelect={() => setSelectedExperience(position)}
               />
             ))}
-
-            {/* Scroll Hint */}
-            {resume.workExperience.length > 5 && (
-              <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center pointer-events-none">
-                <motion.div
-                  animate={{
-                    y: [0, 10, 0],
-                    opacity: [0.7, 1, 0.7],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="flex flex-col items-center text-gray-500 dark:text-gray-400"
-                >
-                  <ChevronDown className="w-8 h-8 opacity-50" />
-                  <span className="text-xs mt-1 font-medium">
-                    More Experiences
-                  </span>
-                </motion.div>
-              </div>
-            )}
           </div>
 
           <div className="bg-white dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-lg md:sticky md:top-24">
@@ -209,4 +194,6 @@ export default function ExperiencePage() {
       </motion.div>
     </div>
   );
-}
+};
+
+export default ExperiencePage;
