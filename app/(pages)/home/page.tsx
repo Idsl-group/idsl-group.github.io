@@ -4,136 +4,134 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Zap,
   Cpu,
   Database,
   Globe,
   BookOpen,
-  Briefcase,
+  Terminal,
+  Layers,
   ArrowUpRight,
 } from "lucide-react";
 
-const services = [
+const quantumServices = [
   {
     icon: Cpu,
-    title: "Machine Learning",
+    title: "Quantum ML",
     description:
-      "Advanced predictive modeling and intelligent system development.",
-    href: "/services/machine-learning",
+      "Advanced probabilistic modeling and computational intelligence.",
+    href: "/quantum-ml",
   },
   {
     icon: Database,
-    title: "Data Engineering",
-    description: "Scalable data pipelines and robust analytics infrastructure.",
-    href: "/services/data-engineering",
+    title: "Data Architectures",
+    description: "Scalable, distributed data infrastructure design.",
+    href: "/data-architectures",
   },
   {
     icon: Globe,
-    title: "Cloud Solutions",
-    description:
-      "Innovative cloud architecture and distributed computing strategies.",
-    href: "/services/cloud-solutions",
+    title: "Edge Computing",
+    description: "Decentralized computational strategies and optimization.",
+    href: "/edge-computing",
   },
   {
-    icon: BookOpen,
-    title: "AI Research",
-    description:
-      "Comprehensive guidance for doctoral research, methodology, and publication.",
-    href: "/services/phd-support",
+    icon: Terminal,
+    title: "Research Acceleration",
+    description: "Algorithmic methodologies for computational research.",
+    href: "/research-acceleration",
   },
 ];
 
-export default function HomePage() {
+export default function QuantumHomePage() {
   return (
-    <main className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 min-h-screen overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 z-0 opacity-30 dark:opacity-20">
-          <Image
-            src="/banner.jpg"
-            alt="Professional Background"
-            fill
-            quality={90}
-            priority
-            className="object-cover h-[24rem] md:h-[32rem] lg:h-[40rem] filter brightness-110 dark:brightness-50"
-            aria-hidden="true"
-          />
-        </div>
+    <main className="bg-[#0a0a0a] text-white min-h-screen overflow-hidden relative">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/10 to-purple-900/10 animate-pulse"></div>
+      </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6"
-          >
-            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg rounded-full inline-flex items-center px-4 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/50 shadow-sm">
-              <Zap className="w-4 h-4 mr-2 text-yellow-500" />
-              AI & Data Science Innovator
-            </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.header
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex justify-between items-center py-8"
+        >
+          <div className="text-2xl font-bold tracking-wider opacity-80 hover:opacity-100 transition-opacity">
+            PK
+          </div>
+          <nav className="space-x-6 text-sm tracking-wide opacity-70 hover:opacity-100 transition-opacity">
+            <Link href="/projects" className="hover:text-blue-300">
+              Projects
+            </Link>
+            <Link href="/research" className="hover:text-blue-300">
+              Research
+            </Link>
+            <Link href="/contact" className="hover:text-blue-300">
+              Contact
+            </Link>
+          </nav>
+        </motion.header>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-              PRANAV{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                K JHA
-              </span>
-            </h1>
+        <section className="min-h-[calc(100vh-200px)] flex items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-6"
+            >
+              <div className="inline-flex items-center bg-blue-900/30 px-4 py-2 rounded-full text-xs tracking-wider">
+                <Layers className="w-4 h-4 mr-2 text-blue-300" />
+                Computational Innovator
+              </div>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
-              Pioneering AI and Machine Learning research at the intersection of
-              advanced analytics, cybersecurity, and transformative
-              technologies. Specializing in edge computing, quantum computing,
-              and innovative computational strategies.
-            </p>
+              <h1 className="text-5xl font-extralight tracking-tighter">
+                PRANAV{" "}
+                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                  K JHA
+                </span>
+              </h1>
 
-            <div className="flex space-x-4">
-              <motion.a
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Get In Touch
-                <ArrowUpRight className="ml-2 w-5 h-5" />
-              </motion.a>
+              <p className="text-lg text-gray-300 max-w-2xl leading-relaxed tracking-wide">
+                Pioneering computational research at the intersection of quantum
+                computing, machine learning, and advanced algorithmic
+                strategies. Transforming theoretical concepts into tangible
+                technological innovations.
+              </p>
 
-              <motion.a
-                href="/projects"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-full shadow-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800/50 backdrop-blur-lg hover:bg-gray-50 dark:hover:bg-gray-800/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                View Projects
-                <Briefcase className="ml-2 w-5 h-5" />
-              </motion.a>
-            </div>
-          </motion.div>
+              <div className="flex space-x-4">
+                <motion.a
+                  href="/contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white tracking-wider hover:from-blue-700 hover:to-purple-700 transition-all"
+                >
+                  Initiate Collaboration
+                  <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
+                </motion.a>
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="hidden md:block"
-          >
-            <div className="relative w-full aspect-square">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-purple-100/50 dark:from-blue-900/30 dark:to-purple-900/30 rounded-3xl -rotate-6 shadow-xl"></div>
-              <div className="relative z-10 w-full h-full rounded-3xl overflow-hidden shadow-2xl transform rotate-6 scale-90 hover:scale-95 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="hidden md:block relative"
+            >
+              <div className="absolute -inset-2 bg-blue-900/20 rounded-3xl blur-2xl animate-pulse"></div>
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform">
                 <Image
                   src="/profile.jpg"
-                  alt="Pranav K Jha Professional Headshot"
-                  fill
-                  quality={90}
-                  className="object-cover"
+                  alt="Pranav K Jha Professional Portrait"
+                  width={600}
+                  height={600}
+                  className="object-cover grayscale hover:grayscale-0 transition-all"
                 />
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Services Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-lg">
-        <div className="max-w-6xl mx-auto">
+        <section className="py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,17 +139,17 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
-              Professional Services
+            <h2 className="text-3xl font-light tracking-tight mb-4">
+              Computational <span className="font-bold">Domains</span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Delivering cutting-edge solutions across machine learning, data
-              engineering, cloud architecture, and academic research.
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Interdisciplinary research spanning quantum computing, machine
+              learning, and advanced computational paradigms.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-4 gap-6">
+            {quantumServices.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 50 }}
@@ -163,29 +161,29 @@ export default function HomePage() {
                 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/30 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 hover:border-blue-600 transition-all"
               >
-                <div className="mb-4 w-16 h-16 bg-gradient-to-br from-blue-100/50 to-purple-100/50 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full flex items-center justify-center">
-                  <service.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
+                <div className="mb-4 w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <service.icon className="w-6 h-6 text-blue-300" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+                <h3 className="text-xl font-semibold mb-2 tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-400 text-sm mb-4">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="text-blue-600 dark:text-blue-400 hover:underline flex items-center"
+                  className="text-blue-400 hover:text-blue-300 text-sm flex items-center"
                 >
-                  Learn More
+                  Explore
                   <ArrowUpRight className="ml-1 w-4 h-4" />
                 </Link>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }
