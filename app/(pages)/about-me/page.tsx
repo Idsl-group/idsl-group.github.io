@@ -324,7 +324,7 @@ export default function AboutMePage() {
               className="absolute inset-0 bg-cover bg-center opacity-40 dark:opacity-60 
              object-cover object-center 
              sm:bg-cover md:bg-cover lg:bg-cover 
-             w-full h-full quality-100 "
+             w-full h-full quality-100"
               style={{
                 backgroundImage:
                   "linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/banner.jpg')",
@@ -801,7 +801,6 @@ export default function AboutMePage() {
               <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4 border-b-2 border-blue-200 pb-2">
                 Research Interests
               </h2>
-
               {/* Focus Areas */}
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md mb-4">
                 <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">
@@ -812,7 +811,6 @@ export default function AboutMePage() {
                     <li key={index}>{area}</li>
                   ))}
                 </ul>
-
                 {/* Detailed Professional Summary */}
                 <div className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-3">
                   {resume.summary.map((paragraph, index) => (
@@ -985,6 +983,11 @@ export default function AboutMePage() {
                             </span>
                           )}
                         </p>
+                        {publication.doi && (
+                          <p className="text-xs">
+                            DOI: <a href={publication.doi}>{publication.doi}</a>
+                          </p>
+                        )}
                       </div>
                     ))}
                   </div>

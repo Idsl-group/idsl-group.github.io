@@ -401,6 +401,7 @@ const resume = {
       status: "Published",
       year: 2017,
       citations: 17,
+      doi: "https://doi.org/10.1063/1.4984154",
     },
     {
       title:
@@ -412,6 +413,7 @@ const resume = {
       status: "Published",
       year: 2018,
       citations: 14,
+      doi: "10.1109/RAIT.2018.8388972",
     },
     {
       title:
@@ -423,6 +425,7 @@ const resume = {
       status: "Published",
       year: 2018,
       citations: 12,
+      doi: "10.1109/ICEES.2018.8442405",
     },
     {
       title:
@@ -434,17 +437,9 @@ const resume = {
       status: "Published",
       year: 2018,
       citations: 5,
+      doi: "10.1109/RAIT.2018.8388973",
     },
-    {
-      title:
-        "Achievable Rate Analysis for Cooperative Relay Assisted Opportunistic-NOMA over Rician Fading Channels with Channel State Information",
-      authors: ["PK Jha", "SS Shree", "DS Kumar"],
-      venue: "Wireless Personal Communications, Springer",
-      submittedTo: "Wireless Personal Communications, Springer",
-      status: "Published",
-      year: 2018,
-      citations: 2,
-    },
+
     {
       title:
         "Performance analysis of dual-hop optical wireless communication systems over k-distribution turbulence channel with pointing error",
@@ -454,16 +449,7 @@ const resume = {
       status: "Published",
       year: 2017,
       citations: 2,
-    },
-    {
-      title:
-        "Performance analysis of FSO system with spatial diversity and relays for M-QAM over log-normal channel",
-      authors: ["PK Jha", "N Kachare", "K Kalyani", "DS Kumar"],
-      venue: "arXiv preprint arXiv:1709.05488",
-      submittedTo: "arXiv",
-      status: "Published",
-      year: 2017,
-      citations: 1,
+      doi: "https://doi.org/10.1063/1.4984158",
     },
     {
       title:
@@ -474,6 +460,7 @@ const resume = {
       status: "Published",
       year: 2025,
       citations: 0,
+      doi: "https://arxiv.org/pdf/2502.05637",
     },
     {
       title:
@@ -484,6 +471,7 @@ const resume = {
       status: "under Review",
       year: 2025,
       citations: 0,
+      doi: "https://arxiv.org/pdf/2502.05637",
     },
   ],
 

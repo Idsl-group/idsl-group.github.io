@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BookOpenIcon, AwardIcon, GraduationCap } from "lucide-react";
 import resume from "@/data/resume";
 import { CitationMetrics } from "@/components/CitationMetrics";
+import { FaLink } from "react-icons/fa";
 
 // Define Publication type based on the structure in resume.ts
 type Publication = {
@@ -15,67 +16,62 @@ type Publication = {
   citations?: number;
   submittedTo?: string;
   status?: string;
+  doi?: string;
+};
+
+const formatDOI = (doi: string) => {
+  // Ensure DOI starts with https://doi.org/ if it doesn't already
+  const formattedDoi = doi.startsWith("http")
+    ? doi
+    : `https://doi.org/${doi.replace(/^doi:/, "")}`;
+
+  // Truncate long DOIs
+  const displayDoi = doi.length > 30 ? `${doi.slice(0, 27)}...` : doi;
+
+  return { formattedDoi, displayDoi };
 };
 
 const PublicationCard: React.FC<{
   publication: Publication;
   isSelected: boolean;
-  onSelect: () => void;
-}> = React.memo(function PublicationCard({
-  publication,
-  isSelected,
-  onSelect,
-}) {
+}> = ({ publication, isSelected }) => {
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{
-        opacity: 1,
-        scale: isSelected ? 1.02 : 1,
-      }}
-      transition={{
-        type: "tween",
-        duration: 0.2,
-      }}
-      onClick={onSelect}
+    <div
       className={`
-        cursor-pointer 
-        bg-white 
-        dark:bg-gray-800 
-        rounded-2xl 
-        p-6 
-        space-y-4 
-        border 
-        transition-all 
-        duration-200
-        ${
-          isSelected
-            ? "border-blue-200 dark:border-blue-700 shadow-lg"
-            : "border-transparent hover:border-gray-200 dark:hover:border-gray-700"
-        }
+        bg-white dark:bg-gray-800 
+        rounded-xl shadow-md hover:shadow-lg 
+        transition-all duration-300 
+        border border-gray-100 dark:border-gray-700
+        p-5 flex flex-col 
+        ${isSelected ? "ring-2 ring-blue-500" : ""}
       `}
     >
-      <div className="flex justify-between items-start">
-        <div className="flex-grow pr-4">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            {publication.title}
-          </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
-            {publication.authors?.join(", ")}
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {publication.venue}
-          </p>
-          {publication.submittedTo && (
+      <div className="flex-grow">
+        <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2">
+          {publication.title}
+        </h3>
+
+        <div className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+          <p className="italic">{publication.authors.join(", ")}</p>
+          {publication.venue && (
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Submitted to: {publication.submittedTo}
+              {publication.venue}
             </p>
           )}
+        </div>
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center space-x-2">
+          {publication.year && (
+            <span className="text-xs bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300">
+              {publication.year}
+            </span>
+          )}
+
           {publication.status && (
-            <div className="mt-2">
-              <span
-                className={`
+            <span
+              className={`
                 text-xs px-2 py-1 rounded-full
                 ${
                   publication.status === "Published"
@@ -83,67 +79,39 @@ const PublicationCard: React.FC<{
                     : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
                 }
               `}
-              >
-                {publication.status}
-              </span>
-            </div>
+            >
+              {publication.status}
+            </span>
+          )}
+
+          {publication.citations !== undefined && (
+            <span className="text-xs bg-purple-50 dark:bg-purple-900/30 px-2 py-1 rounded-full text-purple-700 dark:text-purple-300">
+              {publication.citations} Citations
+            </span>
           )}
         </div>
 
-        <div className="flex flex-col items-end">
-          <div className="flex items-center space-x-2">
-            <AwardIcon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-            <span className="text-xl font-bold text-blue-700 dark:text-blue-500">
-              {publication.citations}
-            </span>
-          </div>
-          <span className="text-xs text-gray-500 dark:text-gray-400">
-            Citations
-          </span>
-          <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-            {publication.year}
-          </span>
-        </div>
+        {publication.doi && (
+          <a
+            href={formatDOI(publication.doi).formattedDoi}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              text-xs text-blue-600 dark:text-blue-400
+              hover:underline flex items-center space-x-1
+              focus:outline-none focus:ring-2 focus:ring-blue-500 
+              rounded p-1
+            "
+            title={publication.doi}
+          >
+            <FaLink className="mr-1" />
+            <span>{formatDOI(publication.doi).displayDoi}</span>
+          </a>
+        )}
       </div>
-
-      {isSelected && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          transition={{ duration: 0.3 }}
-          className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700"
-        >
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <h4 className="text-xs font-medium text-gray-500 dark:text-gray-400">
-                Total Citations
-              </h4>
-              <p className="text-lg font-bold text-gray-800 dark:text-gray-200">
-                {publication.citations}
-              </p>
-            </div>
-            <div>
-              <h4 className="text-xs font-medium text-gray-500 dark:text-gray-400">
-                Publication Year
-              </h4>
-              <p className="text-lg font-bold text-gray-800 dark:text-gray-200">
-                {publication.year}
-              </p>
-            </div>
-            <div>
-              <h4 className="text-xs font-medium text-gray-500 dark:text-gray-400">
-                Venue
-              </h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300 truncate">
-                {publication.venue}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </motion.div>
+    </div>
   );
-});
+};
 
 export default function PublicationsPage() {
   const [selectedPublication, setSelectedPublication] =
@@ -168,10 +136,9 @@ export default function PublicationsPage() {
           key={publication.title}
           publication={publication}
           isSelected={selectedPublication === publication}
-          onSelect={() => handlePublicationSelect(publication)}
         />
       )),
-    [sortedPublications, selectedPublication, handlePublicationSelect]
+    [sortedPublications, selectedPublication]
   );
 
   return (
