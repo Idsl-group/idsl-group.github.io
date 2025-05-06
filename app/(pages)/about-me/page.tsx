@@ -102,9 +102,9 @@ export default function AboutMePage() {
   useEffect(() => {
     const sections = [
       "profile",
-      "work-experience",
       "education",
       "courses",
+      "work-experience",
       "projects",
       "publications",
     ];
@@ -370,8 +370,8 @@ export default function AboutMePage() {
                   {[
                     { id: "profile", label: "About", icon: "👤" },
                     { id: "education", label: "Education", icon: "🎓" },
-                    { id: "work-experience", label: "Work", icon: "💼" },
                     { id: "courses", label: "Courses", icon: "📚" },
+                    { id: "work-experience", label: "Work", icon: "💼" },
                     { id: "projects", label: "Projects", icon: "🔬" },
                     { id: "publications", label: "Papers", icon: "📝" },
                   ].map((section) => (
@@ -938,6 +938,16 @@ export default function AboutMePage() {
                           {publication.citations && (
                             <span className="ml-2 text-gray-500">
                               Citations: {publication.citations}
+                            </span>
+                          )}
+                          {publication.submittedTo && (
+                            <span className="ml-2 text-gray-500">
+                              Submitted to: {publication.submittedTo}
+                            </span>
+                          )}
+                          {publication.status && (
+                            <span className="ml-2 text-gray-500">
+                              Status: {publication.status}
                             </span>
                           )}
                         </p>
