@@ -919,7 +919,12 @@ export default function AboutMePage() {
                 <div className="mb-8">
                   <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
                     {paginateItems(
-                      resume.publications,
+                      [...resume.publications]
+                        .map((pub) => ({
+                          ...pub,
+                          year: parseInt(String(pub.year).substring(0, 4)) || 0, // Correct malformed year like 20250 → 2025
+                        }))
+                        .sort((a, b) => b.year - a.year),
                       publicationsCurrentPage
                     ).map((publication, index) => (
                       <div
@@ -934,8 +939,9 @@ export default function AboutMePage() {
                             : publication.authors}
                         </p>
                         <p className="text-xs">
-                          {publication.venue}, {publication.year}
-                          {publication.citations && (
+                          {publication.venue && `${publication.venue}, `}
+                          {publication.year}
+                          {publication.citations !== undefined && (
                             <span className="ml-2 text-gray-500">
                               Citations: {publication.citations}
                             </span>
