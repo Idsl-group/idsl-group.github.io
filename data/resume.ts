@@ -275,53 +275,6 @@ const resume = {
     },
   ],
 
-  // coursesTaught: [
-  //   {
-  //     institution:
-  //       "Birla Institute of Technology and Science-Pilani, Hyderabad, India",
-  //     period: "April 2024 - Present",
-  //     courses: ["BITS F464: Machine Learning"],
-  //   },
-  //   {
-  //     institution: "George Washington University",
-  //     period: "Spring 2023 - Present",
-  //     courses: ["CE 6800: Data Science in Civil and Environmental Engineering"],
-  //   },
-  //   {
-  //     institution: "University of Maryland Global Campus",
-  //     period: "Fall 2023 - Present",
-  //     courses: [
-  //       "IFSM 330: Business Intelligence and Data Analytics",
-  //       "DATA 460: Artificial Intelligence Solutions",
-  //       "DATA 605: Decision Analytics",
-  //     ],
-  //   },
-  //   {
-  //     institution: "Morgan State University",
-  //     period: "Fall 2001 - Spring 2014",
-  //     courses: [
-  //       "CEGR 514: Environmental Risk Assessment",
-  //       "CEGR 651: Computer Aided Highway Engineering Design",
-  //       "CEGR 670: Special Topics in Highway Safety",
-  //       "CEGR 671: Highway Traffic Flow Theory",
-  //       "CEGR 680: Highway Infrastructure Management Systems",
-  //       "CEGR 684 & 685: Advanced Algorithms in Transportation I & II",
-  //       "CEGR 686: Demand Analysis and Forecasting",
-  //       "CEGR 697: GIS Applications in Transportation",
-  //     ],
-  //   },
-  //   {
-  //     institution: "University of Maryland, College Park",
-  //     period: "Fall 2000 - Spring 2003",
-  //     courses: [
-  //       "ENPM 808C: Computer Aided Highway Engineering Design",
-  //       "ENPM 808Y: GIS Applications in Engineering",
-  //       "ENPM 808Z: Intelligent Optimization with Artificial Intelligence",
-  //       "ENCE 470: Highway and Traffic Engineering",
-  //     ],
-  //   },
-  // ],
-
   workExperience: [
     {
       company: "Fujitsu",

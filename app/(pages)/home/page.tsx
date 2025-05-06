@@ -65,40 +65,14 @@ export default function QuantumHomePage() {
         ></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <header className="flex justify-between items-center py-8">
-          <div className="text-2xl font-bold tracking-wider opacity-80 hover:opacity-100 transition-opacity text-gray-900 dark:text-white">
-            PK
-          </div>
-          <nav className="space-x-6 text-sm tracking-wide opacity-70 hover:opacity-100 transition-opacity">
-            <Link
-              href="/projects"
-              className="hover:text-blue-600 dark:hover:text-blue-300 text-gray-700 dark:text-gray-300"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/research"
-              className="hover:text-blue-600 dark:hover:text-blue-300 text-gray-700 dark:text-gray-300"
-            >
-              Research
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-blue-600 dark:hover:text-blue-300 text-gray-700 dark:text-gray-300"
-            >
-              Contact
-            </Link>
-          </nav>
-        </header>
-
+      <div className="container mx-auto px-6 py-16 relative z-10">
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           className="min-h-[calc(100vh-200px)] flex items-center"
         >
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12  items-center">
             <motion.div variants={ANIMATION_VARIANTS} className="space-y-6">
               <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 px-4 py-2 rounded-full text-xs tracking-wider">
                 <Layers className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-300" />
@@ -144,10 +118,10 @@ export default function QuantumHomePage() {
                       ease: "easeInOut",
                     },
                   }}
-                  className="transform transition-transform duration-300 ease-in-out"
+                  className="transform flex items-center justify-center transition-transform duration-300 ease-in-out"
                 >
                   <Image
-                    src="/profile.jpg"
+                    src="/header-2.jpg"
                     alt="Pranav K Jha Professional Portrait"
                     width={600}
                     height={600}
