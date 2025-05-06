@@ -299,6 +299,16 @@ export default function AboutMePage() {
 
   const [publicationsCurrentPage, setPublicationsCurrentPage] = useState(1);
 
+  const [expandedProjects, setExpandedProjects] = useState(
+    new Array(resume.projects.length).fill(false)
+  );
+
+  const toggleProjectExpansion = (index: number) => {
+    const newExpandedProjects = [...expandedProjects];
+    newExpandedProjects[index] = !newExpandedProjects[index];
+    setExpandedProjects(newExpandedProjects);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="w-[80%] mx-auto py-8">
@@ -839,9 +849,8 @@ export default function AboutMePage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {resume.projects.map((project, index) => {
-                  const [expanded, setExpanded] = useState(false);
                   const shouldTruncate = project.description.length > 200;
-                  const displayedDescription = expanded
+                  const displayedDescription = expandedProjects[index]
                     ? project.description
                     : project.description.slice(0, 200);
 
@@ -871,14 +880,16 @@ export default function AboutMePage() {
                       <div className="mb-3">
                         <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                           {displayedDescription}
-                          {shouldTruncate && !expanded && "..."}
+                          {shouldTruncate && !expandedProjects[index] && "..."}
                         </p>
                         {shouldTruncate && (
                           <button
-                            onClick={() => setExpanded(!expanded)}
+                            onClick={() => toggleProjectExpansion(index)}
                             className="text-xs text-blue-600 dark:text-blue-400 hover:underline mt-1"
                           >
-                            {expanded ? "Show less" : "Read more"}
+                            {expandedProjects[index]
+                              ? "Show less"
+                              : "Read more"}
                           </button>
                         )}
                       </div>
