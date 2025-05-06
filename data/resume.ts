@@ -471,7 +471,7 @@ const resume = {
       status: "under Review",
       year: 2025,
       citations: 0,
-      doi: "https://arxiv.org/pdf/2502.05637",
+      doi: "not_available",
     },
   ],
 
