@@ -46,16 +46,19 @@ export default function RootLayout({
         >
           <div className="relative flex min-h-screen flex-col">
             <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
-              <div className="container flex h-16 items-center justify-between">
-                <div className="flex items-center lg:space-x-4">
-                  <Link href="/" className="flex items-center space-x-2">
-                    <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent">
-                      {" "}
+              <div className="container flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
+                <div className="flex items-center space-x-4">
+                  <Link href="/" className="flex items-center space-x-2 group">
+                    <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
                       PRANAV K JHA
                     </span>
                   </Link>
-                  <DesktopNav />
-                  <MobileNav />
+                  <nav className="hidden lg:flex items-center space-x-4">
+                    <DesktopNav />
+                  </nav>
+                  <div className="lg:hidden">
+                    <MobileNav />
+                  </div>
                 </div>
 
                 <div className="flex items-center space-x-2">
