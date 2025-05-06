@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpenIcon, AwardIcon, GraduationCap } from "lucide-react";
 import resume from "@/data/resume";
@@ -19,7 +19,7 @@ const PublicationCard: React.FC<{
   publication: Publication;
   isSelected: boolean;
   onSelect: () => void;
-}> = ({ publication, isSelected, onSelect }) => {
+}> = React.memo(({ publication, isSelected, onSelect }) => {
   return (
     <motion.div
       layout
@@ -27,14 +27,10 @@ const PublicationCard: React.FC<{
       animate={{
         opacity: 1,
         scale: isSelected ? 1.02 : 1,
-        boxShadow: isSelected
-          ? "0 10px 25px rgba(0, 0, 255, 0.1)"
-          : "0 4px 6px rgba(0, 0, 0, 0.1)",
       }}
       transition={{
-        duration: 0.3,
-        type: "spring",
-        stiffness: 300,
+        type: "tween",
+        duration: 0.2,
       }}
       onClick={onSelect}
       className={`
@@ -46,7 +42,7 @@ const PublicationCard: React.FC<{
         space-y-4 
         border 
         transition-all 
-        duration-300
+        duration-200
         ${
           isSelected
             ? "border-blue-200 dark:border-blue-700 shadow-lg"
@@ -120,21 +116,27 @@ const PublicationCard: React.FC<{
       )}
     </motion.div>
   );
-};
+});
 
 export default function PublicationsPage() {
   const [selectedPublication, setSelectedPublication] =
     useState<Publication | null>(null);
 
-  const handlePublicationSelect = (publication: Publication) => {
-    setSelectedPublication(
-      selectedPublication === publication ? null : publication
+  const handlePublicationSelect = useCallback((publication: Publication) => {
+    setSelectedPublication((current) =>
+      current === publication ? null : publication
     );
-  };
+  }, []);
+
+  const sortedPublications = useMemo(
+    () =>
+      [...resume.publications].sort((a, b) => (b.year || 0) - (a.year || 0)),
+    [resume.publications]
+  );
 
   const publicationCards = useMemo(
     () =>
-      resume.publications.map((publication) => (
+      sortedPublications.map((publication) => (
         <PublicationCard
           key={publication.title}
           publication={publication}
@@ -142,7 +144,7 @@ export default function PublicationsPage() {
           onSelect={() => handlePublicationSelect(publication)}
         />
       )),
-    [resume.publications, selectedPublication, handlePublicationSelect]
+    [sortedPublications, selectedPublication, handlePublicationSelect]
   );
 
   return (
