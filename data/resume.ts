@@ -60,7 +60,6 @@ const resume = {
         "Edge Computing",
         "Urban Planning",
       ],
-      servicesUsed: [],
       link: null,
       notes: null,
     },
@@ -81,7 +80,6 @@ const resume = {
         "Travel Forecasting",
         "Predictive Analytics",
       ],
-      servicesUsed: [],
       link: null,
       notes: "Findings will be submitted for publication in a reputed journal.",
     },
@@ -100,7 +98,6 @@ const resume = {
         "Data Preprocessing",
         "Intrusion Detection",
       ],
-      servicesUsed: [],
       link: "kaggle-notebooks/CIC-IDS-2017 BERT Classification.ipynb",
       notes: null,
     },
@@ -116,8 +113,6 @@ const resume = {
         "Cloud Services",
         "Video Analytics",
         "Data Engineering",
-      ],
-      servicesUsed: [
         "Amazon S3",
         "AWS IAM",
         "Amazon QuickSight",
@@ -146,7 +141,6 @@ const resume = {
         "E-commerce",
         "Full-stack",
       ],
-      servicesUsed: [],
       link: "https://github.com/pranav-k-jha/e-commerce-ts-next-payload-cms",
       notes: null,
     },
@@ -164,7 +158,6 @@ const resume = {
         "Price Prediction",
         "Real Estate",
       ],
-      servicesUsed: [],
       link: "Real-Estate-Price-Prediction",
       notes: null,
     },
@@ -187,7 +180,6 @@ const resume = {
         "Client-server architecture",
         "Multithreading",
       ],
-      servicesUsed: [],
       link: null,
       notes: null,
     },
@@ -209,7 +201,6 @@ const resume = {
         "RPC Communication",
         "Message-Driven Architecture",
       ],
-      servicesUsed: [],
       link: null,
       notes: null,
     },
@@ -400,45 +391,6 @@ const resume = {
     },
   ],
 
-  fundedProjects: [
-    {
-      role: "Co-Principal Investigator",
-      title:
-        "Software-Simulated Test and Evaluation of Military Missions Using Positioning and Routing Algorithms, Phase II",
-      amount: "$942,000",
-      sponsor: "Department of Defense (Scientific Research Corporation)",
-      period: "June 1, 2009 – September 30, 2010",
-      coPIs: [
-        "S. Kikuchi (Virginia Tech)",
-        "P. Schonfeld (University of Maryland, College Park)",
-        "J. Nithianandan (Morgan State University)",
-        "M. Reece (Morgan State University)",
-        "R. Dean (Morgan State University)",
-      ],
-    },
-    {
-      role: "Co-Principal Investigator",
-      title:
-        "Software-Simulated Test and Evaluation of Military Missions Using Positioning and Routing Algorithm, Phase I",
-      amount: "$249,000",
-      sponsor: "Department of Defense (Computer Science Corporation)",
-      period: "March 8, 2008 – September 30, 2009",
-      coPIs: [
-        "S. Kikuchi (Virginia Tech)",
-        "P. Schonfeld (University of Maryland, College Park)",
-      ],
-    },
-    {
-      role: "Principal Investigator",
-      title:
-        "A Multiobjective Bilevel Approach to Highway Alignment Optimization",
-      amount: "$200,000",
-      sponsor: "National Science Foundation",
-      period: "January 1, 2008 – June 30, 2009",
-      coPIs: ["P. Schonfeld (University of Maryland, College Park)"],
-    },
-  ],
-
   publications: [
     {
       title:
@@ -526,33 +478,6 @@ const resume = {
       "2023": 0,
       "2024": 0,
       "2025": 2, // Adversarial Machine Learning
-    },
-  },
-
-  certificationsAndMemberships: {
-    certifications: [
-      {
-        title: "Professional Engineer (P.E.)",
-        issuedBy: "State of MD",
-        licenseNumber: "22725",
-      },
-    ],
-    memberships: [
-      "Asia Computational Intelligence Society",
-      "American Society of Civil Engineers (ASCE)",
-      "National Society of Professional Engineers (NSPE)",
-      "Institute of Transportation Engineers (ITE)",
-      "Institute for Operations Research and Management Sciences (INFORMS)",
-    ],
-    keynoteSpeeches: {
-      total: 20,
-      description:
-        "Delivered over 20 keynote speeches in various international conferences and seminars across the world.",
-    },
-    technicalProgramChair: {
-      role: "Technical Program Chair",
-      event:
-        "International Conference on Computer Science and Artificial Intelligence Applications 2025",
     },
   },
 };
