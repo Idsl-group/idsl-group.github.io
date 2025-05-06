@@ -135,15 +135,26 @@ export default function QuantumHomePage() {
               className="hidden md:block relative"
             >
               <div className="absolute -inset-2 bg-blue-50 dark:bg-blue-900/10 rounded-3xl blur-xl"></div>
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform">
-                <Image
-                  src="/profile.jpg"
-                  alt="Pranav K Jha Professional Portrait"
-                  width={600}
-                  height={600}
-                  priority
-                  className="object-cover grayscale hover:grayscale-0 transition-all rounded-2xl"
-                />
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+                <motion.div
+                  whileHover={{
+                    scale: 1.01,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  className="transform transition-transform duration-300 ease-in-out"
+                >
+                  <Image
+                    src="/profile.jpg"
+                    alt="Pranav K Jha Professional Portrait"
+                    width={600}
+                    height={600}
+                    priority
+                    className="object-cover grayscale hover:grayscale-0 transition-all rounded-2xl"
+                  />
+                </motion.div>
               </div>
             </motion.div>
           </div>
