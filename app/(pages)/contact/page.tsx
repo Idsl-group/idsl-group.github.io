@@ -79,37 +79,61 @@ export default function ContactPage() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-4xl w-full grid md:grid-cols-2 gap-8 bg-white dark:bg-gray-800/60 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden"
+        className="max-w-6xl w-full grid md:grid-cols-[2fr_3fr] gap-6 bg-white dark:bg-gray-800/70 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700"
       >
         {/* Contact Information Section */}
-        <div className="p-10 bg-blue-600 dark:bg-blue-800 text-white flex flex-col justify-between">
-          <div>
-            <h2 className="text-3xl font-bold mb-6 flex items-center">
-              <Send className="mr-3 w-8 h-8" /> Get in Touch
-            </h2>
-            <p className="text-blue-100 mb-8">
-              Have a project in mind or just want to say hello? I&apos;d love to
-              hear from you.
-            </p>
-          </div>
+        <div className="col-span-1 p-10 bg-gradient-to-br from-blue-600 to-purple-700 dark:from-blue-800 dark:to-purple-900 text-white flex flex-col justify-between relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-700/20 dark:from-blue-900/20 dark:to-purple-900/20 opacity-20"></div>
 
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <MapPin className="mr-3 w-5 h-5" />
-              <span>Montreal, QC, Canada</span>
-            </div>
-            <div className="flex items-center">
-              <Mail className="mr-3 w-5 h-5" />
-              <a
-                href="mailto:pranav.jha@mail.concordia.ca"
-                className="hover:underline"
+          <div className="relative z-10">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-6 flex items-center">
+                <Send className="mr-3 w-8 h-8 text-white" /> Get in Touch
+              </h2>
+              <p className="text-blue-100 mb-8 leading-relaxed">
+                Interested in collaboration, have a project proposal, or just
+                want to connect? I&apos;m always open to exciting opportunities
+                and meaningful conversations.
+              </p>
+            </motion.div>
+
+            <div className="space-y-4 mt-8">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-center space-x-4 bg-white/10 p-3 rounded-lg"
               >
-                pranav.jha@mail.concordia.ca
-              </a>
-            </div>
-            <div className="flex items-center">
-              <Phone className="mr-3 w-5 h-5" />
-              <span>+1 (514) 885-2490</span>
+                <MapPin className="w-6 h-6 text-white" />
+                <span className="text-white/80">Montreal, QC, Canada</span>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex items-center space-x-4 bg-white/10 p-3 rounded-lg"
+              >
+                <Mail className="w-6 h-6 text-white" />
+                <a
+                  href="mailto:pranav.jha@mail.concordia.ca"
+                  className="text-white/80 hover:text-white transition-colors break-all"
+                >
+                  pranav.jha@mail.concordia.ca
+                </a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex items-center space-x-4 bg-white/10 p-3 rounded-lg"
+              >
+                <Phone className="w-6 h-6 text-white" />
+                <span className="text-white/80">+1 (514) 885-2490</span>
+              </motion.div>
             </div>
           </div>
         </div>
