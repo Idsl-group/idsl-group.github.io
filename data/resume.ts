@@ -130,16 +130,6 @@ const resume = {
     },
   ],
 
-  professionalAchievements: [
-    "Associate Editor of International Journal of Artificial Intelligence (AI) in Business and Management",
-    "Associate Editor of Journal of Computational and Cognitive Engineering",
-    "Guest Editor for Applied Sciences: Special Issue on 'Innovations in Autonomous Driving and Vehicle Intelligence'",
-    "Editorial Board Member of International Journal of Operations Research and Information Systems",
-    "Editorial Board Member of Journal of Data Science and Intelligent Systems",
-    "Editorial Committee Member of VectMag Virtual Conference Series",
-    "Member of Asia Computational Intelligence Society",
-    "Technical Program Chair - International Conference on Computer Science and Artificial Intelligence Applications 2025",
-  ],
   experienceSummary: [
     {
       title: "Director of Advanced Analytics and Data Science",
