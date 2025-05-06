@@ -166,7 +166,7 @@ export default function PublicationsPage() {
         </div>
 
         {/* Citation Metrics Sidebar */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 mt-16">
           <CitationMetrics metrics={resume.publicationMetrics} />
         </div>
       </motion.div>

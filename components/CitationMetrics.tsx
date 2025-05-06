@@ -67,7 +67,7 @@ export const CitationMetrics: React.FC<CitationMetricsProps> = ({
         />
       </div>
 
-      <div className="w-full h-40 relative bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden p-4">
+      {/* <div className="w-full h-40 relative bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden p-4">
         <div className="absolute inset-0 flex items-end space-x-1 pb-2">
           {years.map((year, index) => {
             const height = (citations[index] / maxCitation) * 100;
@@ -96,7 +96,7 @@ export const CitationMetrics: React.FC<CitationMetricsProps> = ({
             <span key={year}>{year}</span>
           ))}
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };
