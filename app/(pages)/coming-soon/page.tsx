@@ -19,8 +19,8 @@ export default function ComingSoonPage() {
             Coming Soon
           </h1>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            We're working hard to bring something amazing to life. Stay tuned
-            for an exciting update!
+            We&apos;re working hard to bring something amazing to life. Stay
+            tuned for an exciting update coming soon!
           </p>
         </div>
 

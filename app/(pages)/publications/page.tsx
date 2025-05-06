@@ -96,6 +96,7 @@ const PublicationCard = React.memo(
     );
   }
 );
+PublicationCard.displayName = "PublicationCard";
 
 export default function PublicationsPage() {
   const [selectedPublication, setSelectedPublication] =
@@ -107,17 +108,17 @@ export default function PublicationsPage() {
     );
   };
 
-  const publicationsList = useMemo(
+  const publicationCards = useMemo(
     () =>
-      resume.publications.map((publication, index) => (
+      resume.publications.map((publication) => (
         <PublicationCard
-          key={index}
+          key={publication.title}
           publication={publication}
           isSelected={selectedPublication === publication}
           onSelect={() => handlePublicationSelect(publication)}
         />
       )),
-    [resume.publications, selectedPublication]
+    [resume.publications, selectedPublication, handlePublicationSelect]
   );
 
   return (
@@ -135,7 +136,7 @@ export default function PublicationsPage() {
           </h1>
         </div>
 
-        <div className="space-y-6">{publicationsList}</div>
+        <div className="space-y-6">{publicationCards}</div>
 
         <AnimatePresence>
           {selectedPublication && (
