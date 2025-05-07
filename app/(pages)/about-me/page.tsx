@@ -351,19 +351,19 @@ export default function AboutMePage() {
                   >
                     AI SOLUTIONS ARCHITECT
                   </motion.h1>
-                  <motion.h1
+                  {/* <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-2xl md:text-3xl font-bold mb-2"
                   >
                     PRANAV K JHA
-                  </motion.h1>
+                  </motion.h1> */}
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
-                    className="text-xs md:text-sm text-gray-700 dark:text-gray-300"
+                    className="text-xs md:text-sm text-gray-700 dark:text-gray-300 font-semibold"
                   >
                     AI, ML, Cybersecurity & Data Science Solutions
                   </motion.p>
@@ -471,7 +471,7 @@ export default function AboutMePage() {
                 </div>
               </div>
               <h1 className="text-4xl font-bold text-blue-800 dark:text-blue-200 mb-3">
-                Pranav Jha
+                PRANAV K JHA
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 AI, ML, Cybersecurity & Data Science Solutions
@@ -892,7 +892,7 @@ export default function AboutMePage() {
                         )}
                       </div>
 
-                      {(project.skills || project.keywords) && (
+                      {(project.skills || project.skills) && (
                         <div className="mb-3">
                           <div className="flex flex-wrap gap-2">
                             {project.skills?.map((skill, skillIndex) => (
@@ -903,7 +903,7 @@ export default function AboutMePage() {
                                 {skill}
                               </span>
                             ))}
-                            {project.keywords?.map((keyword, keyIndex) => (
+                            {project.skills?.map((keyword, keyIndex) => (
                               <span
                                 key={`key-${keyIndex}`}
                                 className="text-xs bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full text-purple-700 dark:text-purple-300"
