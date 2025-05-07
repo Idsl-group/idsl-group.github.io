@@ -98,7 +98,7 @@ const resume = {
         "Data Preprocessing",
         "Intrusion Detection",
       ],
-      link: "kaggle-notebooks/CIC-IDS-2017 BERT Classification.ipynb",
+      link: "https://github.com/pranav-k-jha/kaggle-notebooks/blob/main/CIC-IDS-2017%20BERT%20Classification.ipynb",
       notes: null,
     },
     {
@@ -120,7 +120,7 @@ const resume = {
         "AWS Lambda",
         "AWS Athena",
       ],
-      link: "youtube-analysis-data-engineering-project",
+      link: "https://github.com/pranav-k-jha/youtube-analysis-data-engineering-project",
       notes: null,
     },
     {
@@ -158,7 +158,7 @@ const resume = {
         "Price Prediction",
         "Real Estate",
       ],
-      link: "Real-Estate-Price-Prediction",
+      link: "https://github.com/pranav-k-jha/Real-Estate-Price-Prediction",
       notes: null,
     },
     {
@@ -180,7 +180,7 @@ const resume = {
         "Client-server architecture",
         "Multithreading",
       ],
-      link: null,
+      link: "https://github.com/pranav-k-jha/lift-ride-digitalization",
       notes: null,
     },
     {
@@ -201,7 +201,7 @@ const resume = {
         "RPC Communication",
         "Message-Driven Architecture",
       ],
-      link: null,
+      link: "https://github.com/pranav-k-jha/message-driven-data-processing",
       notes: null,
     },
   ],
