@@ -365,7 +365,7 @@ export default function AboutMePage() {
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="text-xs md:text-sm text-gray-700 dark:text-gray-300 font-semibold"
                   >
-                    AI, ML, Cybersecurity & Data Science Solutions
+                    AI, ML, Cybersecurity & Data Science Solutions Architect
                   </motion.p>
                 </div>
               </div>
@@ -473,9 +473,9 @@ export default function AboutMePage() {
               <h1 className="text-4xl font-bold text-blue-800 dark:text-blue-200 mb-3">
                 PRANAV K JHA
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              {/* <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 AI, ML, Cybersecurity & Data Science Solutions
-              </p>
+              </p> */}
               <p className="text-gray-800 dark:text-gray-200 max-w-5xl mx-auto leading-relaxed tracking-wide bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4">
                 <span className="font-semibold text-indigo-600 dark:text-indigo-400">
                   I transform raw data into meaningful insights
