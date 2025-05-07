@@ -220,7 +220,7 @@ const resume = {
       location: "Severn, Maryland, United States",
       period: "March 2024 - Present (1 year 3 months)",
       title: "Research Scientist",
-      link: "https://mkjhaconsulting.com/",
+      link: "https://www.mkjhaconsulting.com/",
       email: "pranav.jha@mkjhaconsult.com",
     },
     {
