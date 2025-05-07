@@ -77,13 +77,15 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           className="space-y-6 text-center md:text-left"
         >
           <div className="flex justify-center md:justify-start items-center space-x-4">
-            <Image
-              src="/profile.jpg"
-              alt="Pranav K Jha"
-              width={64}
-              height={64}
-              className="rounded-full border-4 border-blue-500/30 shadow-lg"
-            />
+            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-lg">
+              <Image
+                src="/profile.jpg"
+                alt="Pranav K Jha"
+                width={64}
+                height={64}
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Pranav K Jha
