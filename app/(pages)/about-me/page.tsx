@@ -666,14 +666,23 @@ export default function AboutMePage() {
                       <h4 className="text-sm font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
                         {position.title}
                       </h4>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                      <a
+                        href={position.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-blue-600 dark:text-blue-300"
+                      >
+                        <FaExternalLinkAlt className="w-2 h-2 text-blue-600 dark:text-blue-300 group-disabled:text-gray-400 transition-colors" />
                         {position.company}
-                      </p>
+                      </a>
                       <p className="text-xs text-gray-500 dark:text-gray-400">
                         {position.location}
                       </p>
                       <p className="text-xs text-gray-500 dark:text-gray-400">
                         {position.period}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        {position.email}
                       </p>
                     </motion.div>
                   ))}
