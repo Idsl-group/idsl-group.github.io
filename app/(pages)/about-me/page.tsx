@@ -903,14 +903,6 @@ export default function AboutMePage() {
                                 {skill}
                               </span>
                             ))}
-                            {project.skills?.map((keyword, keyIndex) => (
-                              <span
-                                key={`key-${keyIndex}`}
-                                className="text-xs bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full text-purple-700 dark:text-purple-300"
-                              >
-                                {keyword}
-                              </span>
-                            ))}
                           </div>
                         </div>
                       )}
