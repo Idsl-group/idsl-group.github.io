@@ -928,15 +928,28 @@ export default function AboutMePage() {
                             </div>
                           )}
                       </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300 flex-grow">
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-blue-600 dark:text-blue-400"
-                        >
-                          View Project
-                        </a>
+                      <div className="text-sm text-gray-600 dark:text-gray-300 flex-grow mt-2">
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center px-3 py-1.5 
+                              bg-blue-100 dark:bg-blue-900/50 
+                              text-blue-700 dark:text-blue-300 
+                              hover:bg-blue-200 dark:hover:bg-blue-800 
+                              rounded-full 
+                              transition-all duration-300 
+                              ease-in-out 
+                              transform hover:-translate-y-0.5 
+                              hover:shadow-md 
+                              text-xs 
+                              font-medium"
+                          >
+                            <FaExternalLinkAlt className="mr-2 w-3 h-3" />
+                            View Project
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
