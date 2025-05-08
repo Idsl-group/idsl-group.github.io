@@ -800,7 +800,7 @@ export default function AboutMePage() {
                     return job ? (
                       <div
                         key={index}
-                        className="group relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-500 before:rounded-full before:border-2 before:border-blue-200 dark:before:border-blue-800 after:absolute after:left-[5px] after:top-2 after:bottom-0 after:w-0.5 after:bg-blue-100 dark:after:bg-blue-800 last:after:hidden"
+                        className="group relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-blue-500 before:rounded-full before:border-2 before:border-blue-200 dark:before:border-blue-800 after:absolute after:left-[5px] after:top-2 after:bottom-0 after:w-0.5 after:bg-blue-100 dark:after:bg-blue-800"
                       >
                         <div className="flex justify-between items-start mb-1">
                           <div>
