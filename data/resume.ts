@@ -1,4 +1,91 @@
-const resume = {
+interface Degree {
+  name: string;
+  field: string;
+  startYear: number;
+  endYear: number;
+  gpa: string;
+  status: string;
+  location: string;
+  highlights?: string[];
+  relevantCoursework?: string[];
+  researchFocus?: string[];
+}
+
+interface EducationEntry {
+  institution: string;
+  degrees: Degree[];
+}
+
+interface Project {
+  title: string;
+  startDate: string;
+  endDate: string;
+  associatedWith: string | null;
+  description: string;
+  skills: string[];
+  link: string | null;
+  notes: string | null;
+}
+
+interface CurrentPosition {
+  company: string;
+  location: string;
+  period: string;
+  title: string;
+  link: string;
+  email: string;
+}
+
+interface WorkExperienceEntry {
+  company: string;
+  title: string;
+  startDate: string;
+  endDate: string;
+  duration: string;
+  location: string;
+  details: string[];
+}
+
+interface Publication {
+  title: string;
+  authors: string[];
+  venue: string;
+  submittedTo: string;
+  status: string;
+  year: number;
+  citations: number;
+  doi: string;
+}
+
+interface PublicationMetrics {
+  totalCitations: number;
+  citationsSince2020: number;
+  hIndex: number;
+  hIndexSince2020: number;
+  i10Index: number;
+  i10IndexSince2020: number;
+  citationsByYear: { [year: string]: number };
+}
+
+interface Course {
+  name: string;
+  grade: string;
+}
+
+interface Resume {
+  summary: string[];
+  focusAreas: string[];
+  callToAction: string[];
+  courses: Course[];
+  projects: Project[];
+  currentPositions: CurrentPosition[];
+  education: EducationEntry[];
+  workExperience: WorkExperienceEntry[];
+  publications: Publication[];
+  publicationMetrics: PublicationMetrics;
+}
+
+const resume: Resume = {
   summary: [
     "I’ve always been driven by the challenge of transforming raw data into meaningful insights. Working in IT, I’ve seen firsthand how businesses struggle to extract value from their data, optimize decision-making, and stay ahead in an increasingly AI-driven world. These experiences have fueled my passion for Machine Learning and Data Science—not just as analytical tools, but as powerful solutions to real-world problems. With a strong background in Deep Learning, Predictive Analytics, and AI Automation, my goal is to design intelligent systems that go beyond identifying patterns—they predict, optimize, and automate processes for greater efficiency and innovation.",
     "Too often, I’ve seen organizations react to challenges after they happen. Whether it's forecasting demand, detecting fraud, or preventing system failures, the real game-changer is using AI to anticipate problems before they arise. That’s where I want to make an impact—by bridging the gap between data and intelligent action. Working with major industry players like Fujitsu, CGI, Telus, and IBM, I’ve learned that data-driven strategies aren’t just a competitive advantage—they’re essential for survival in today’s fast-moving world.",
@@ -242,12 +329,41 @@ const resume = {
           field: "Electrical and Computer Engineering",
           startYear: 2021,
           endYear: 2023,
+          gpa: "3.71/4.3",
+          status: "Graduated",
+          location: "Montreal, Quebec, Canada",
+          highlights: [
+            "Specialized in Communication Systems and Computer Engineering",
+            "Recipient of Concordia Graduate Scholarship for Academic Excellence",
+          ],
+          relevantCoursework: [
+            "Neural Networks",
+            "Distributed Software Systems",
+            "Software Engineering",
+            "Error Control Coding",
+          ],
         },
+      ],
+    },
+    {
+      institution: "Concordia University",
+      degrees: [
         {
-          name: "Doctor of Philosophy (Ph.D.) Coursework",
+          name: "Doctor of Philosophy (Ph.D.) Student",
           field: "Electrical and Computer Engineering",
           startYear: 2018,
           endYear: 2021,
+          gpa: "3.90/4.3",
+          status: "Transferred",
+          location: "Montreal, Quebec, Canada",
+          highlights: [
+            "Recipient of Concordia International Award for Excellence from 2018 to 2020",
+          ],
+          relevantCoursework: [
+            "Advanced Signal Processing",
+            "Probability and Stochastic Processes",
+            "Digital Communication",
+          ],
         },
       ],
     },
@@ -256,12 +372,40 @@ const resume = {
       degrees: [
         {
           name: "Master of Science (M.S.)",
-          field: "Electrical, Electronics and Communications Engineering",
+          field: "Electronics and Communications Engineering",
           startYear: 2016,
           endYear: 2018,
+          gpa: "8.2/10",
+          status: "Graduated",
+          location: "Tiruchirappalli, Tamil Nadu, India",
         },
       ],
     },
+    // {
+    //   institution: "West Bengal University of Technology",
+    //   degrees: [
+    //     {
+    //       name: "Bachelor of Technology (B.Tech.)",
+    //       field: "Electronics and Communications Engineering",
+    //       startYear: 2008,
+    //       endYear: 2012,
+    //       gpa: "7.95/10",
+    //       status: "Graduated",
+    //       location: "Kolkata, West Bengal, India",
+    //       highlights: [
+    //         "Received the prestigious National Institute of Technology, Tiruchirappalli, Tamil Nadu, India",
+    //         "Received the prestigious National Institute of Technology, Tiruchirappalli, Tamil Nadu, India",
+    //         "Received the prestigious National Institute of Technology, Tiruchirappalli, Tamil Nadu, India",
+    //       ],
+    //       relevantCoursework: [
+    //         "Neural Networks",
+    //         "Advanced Signal Processing",
+    //         "Probability and Stochastic Processes",
+    //         "Distributed Software Systems",
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 
   workExperience: [

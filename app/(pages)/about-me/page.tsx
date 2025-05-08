@@ -663,7 +663,7 @@ export default function AboutMePage() {
                       }}
                       className="text-sm text-gray-700 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 group"
                     >
-                      <h4 className="text-sm font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-100 transition-colors">
+                      <h4 className="text-sm font-semibold text-blue-700 dark:text-blue-300 group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors">
                         {position.title}
                       </h4>
                       <a
@@ -697,19 +697,63 @@ export default function AboutMePage() {
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300">
                 {resume.education.map((edu, index) => (
-                  <div key={index} className="flex items-start">
-                    <FaGraduationCap className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5" />
+                  <div
+                    key={index}
+                    className="flex items-start bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-sm"
+                  >
+                    <FaGraduationCap className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-6 h-6" />
                     <div>
                       <h3 className="text-md font-semibold text-blue-700 dark:text-blue-300">
-                        {edu.degrees[0].name}
+                        {edu.degrees[0].name} in {edu.degrees[0].field}
                       </h3>
                       <div className="text-sm">
-                        <span>{edu.institution}</span>
-                        {edu.degrees[0].startYear && (
-                          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
-                            {edu.degrees[0].startYear} -{" "}
-                            {edu.degrees[0].endYear}
-                          </span>
+                        <span className="font-medium">{edu.institution}</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
+                          {edu.degrees[0].startYear} - {edu.degrees[0].endYear}
+                        </span>
+                        <div className="mt-2 text-xs text-gray-600 dark:text-gray-300">
+                          <p>
+                            <strong>GPA:</strong> {edu.degrees[0].gpa}
+                          </p>
+                          <p>
+                            <strong>Status:</strong> {edu.degrees[0].status}
+                          </p>
+                          <p>
+                            <strong>Location:</strong> {edu.degrees[0].location}
+                          </p>
+                        </div>
+                        {edu.degrees[0].highlights && (
+                          <div className="mt-2">
+                            <h4 className="text-xs font-semibold text-blue-600 dark:text-blue-400">
+                              Highlights:
+                            </h4>
+                            <ul className="list-disc list-inside text-xs text-gray-600 dark:text-gray-300">
+                              {edu.degrees[0].highlights.map(
+                                (highlight, idx) => (
+                                  <li key={idx}>{highlight}</li>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        )}
+                        {edu.degrees[0].relevantCoursework && (
+                          <div className="mt-2">
+                            <h4 className="text-xs mb-2 font-semibold text-blue-600 dark:text-blue-400">
+                              Relevant Coursework:
+                            </h4>
+                            <div className="flex flex-wrap gap-1 text-xs text-gray-600 dark:text-gray-300">
+                              {edu.degrees[0].relevantCoursework.map(
+                                (course, idx) => (
+                                  <span
+                                    key={idx}
+                                    className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded-full"
+                                  >
+                                    {course}
+                                  </span>
+                                )
+                              )}
+                            </div>
+                          </div>
                         )}
                       </div>
                     </div>
@@ -907,7 +951,7 @@ export default function AboutMePage() {
                             {project.skills?.map((skill, skillIndex) => (
                               <span
                                 key={`skill-${skillIndex}`}
-                                className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300"
+                                className="text-xs bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded-full text-blue-700 dark:text-blue-300"
                               >
                                 {skill}
                               </span>
