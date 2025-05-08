@@ -150,7 +150,7 @@ export default function ContactPage() {
                 className="flex items-center space-x-4 bg-white/10 p-3 rounded-lg"
               >
                 <Phone className="w-6 h-6 text-white" />
-                <span className="text-white/80">+1 (514) 885-2490</span>
+                <span className="text-white/80">+1 (438) 814-2556</span>
               </motion.div>
             </div>
           </div>
