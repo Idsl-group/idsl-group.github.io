@@ -905,7 +905,7 @@ export default function AboutMePage() {
                     className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-blue-100 dark:border-blue-900/50"
                   >
                     <div className="flex flex-col">
-                      <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-2 group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors">
+                      <h3 className="text-sm font-bold text-blue-700 dark:text-blue-300 mb-2 group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors">
                         {project.title}
                       </h3>
                       <div className="flex items-center space-x-2 mb-2">
