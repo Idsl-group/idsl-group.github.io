@@ -914,21 +914,7 @@ export default function AboutMePage() {
                             {project.startDate}
                           </span>
                         )}
-                        {project.technologies &&
-                          project.technologies.length > 0 && (
-                            <div className="flex flex-wrap gap-1">
-                              {project.technologies.map((tech, techIndex) => (
-                                <span
-                                  key={techIndex}
-                                  className="text-xs bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300 flex-grow mt-2">
+
                         {project.link && (
                           <a
                             href={project.link}
