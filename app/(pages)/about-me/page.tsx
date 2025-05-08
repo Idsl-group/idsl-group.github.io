@@ -347,7 +347,7 @@ export default function AboutMePage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-2xl md:text-3xl font-bold mb-2"
+                    className="text-2xl md:text-3xl font-bold mb-2 dark:text-gray-300"
                   >
                     AI SOLUTIONS ARCHITECT
                   </motion.h1>
