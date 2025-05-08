@@ -321,10 +321,10 @@ export default function AboutMePage() {
           {/* Cover Banner */}
           <div className="relative w-screen -mx-[50vw] left-1/2 right-1/2 h-[450px] overflow-hidden -mt-20">
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-40 dark:opacity-60 
+              className="absolute inset-0 bg-cover bg-center opacity-40 dark:opacity-40 
              object-cover object-center 
              sm:bg-cover md:bg-cover lg:bg-cover 
-             w-full h-full quality-100"
+             w-full h-full quality-100 "
               style={{
                 backgroundImage:
                   "linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/banner.jpg')",
