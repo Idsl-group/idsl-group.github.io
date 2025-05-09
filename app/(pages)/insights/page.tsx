@@ -11,8 +11,8 @@ const insightsData = [
     title: "AI and Quantum Computing",
     description:
       "Exploring the intersection of artificial intelligence and quantum computing technologies.",
-    image: "/insights/image-1.webp",
-    fallbackImage: "/insights/image-1.webp",
+    image: "/insights/image-1.png",
+    fallbackImage: "/insights/image-1.png",
     category: "Research",
     date: "May 2024",
   },
@@ -21,8 +21,8 @@ const insightsData = [
     title: "Edge Computing Revolution",
     description:
       "Insights into the transformative potential of edge computing in modern infrastructure.",
-    image: "/insights/image-2.webp",
-    fallbackImage: "/insights/image-2.webp",
+    image: "/insights/image-2.png",
+    fallbackImage: "/insights/image-2.png",
     category: "Technology",
     date: "April 2024",
   },
@@ -31,8 +31,8 @@ const insightsData = [
     title: "Transportation Analytics",
     description:
       "Advanced data science techniques revolutionizing urban mobility and transportation systems.",
-    image: "/insights/image-3.webp",
-    fallbackImage: "/insights/image-3.webp",
+    image: "/insights/image-3.png",
+    fallbackImage: "/insights/image-3.png",
     category: "Analytics",
     date: "March 2024",
   },
@@ -41,8 +41,8 @@ const insightsData = [
     title: "Machine Learning Breakthroughs",
     description:
       "Cutting-edge developments in machine learning and predictive modeling.",
-    image: "/insights/image-4.avif",
-    fallbackImage: "/insights/image-4.avif",
+    image: "/insights/image-4.png",
+    fallbackImage: "/insights/image-4.png",
     category: "AI Research",
     date: "February 2024",
   },
