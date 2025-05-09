@@ -11,6 +11,7 @@ import {
   Layers,
   ArrowUpRight,
 } from "lucide-react";
+import { BentoDemo } from "@/components/bento-features";
 
 const ANIMATION_VARIANTS = {
   hidden: { opacity: 0, y: 20 },
@@ -191,6 +192,18 @@ export default function QuantumHomePage() {
             ))}
           </div>
         </motion.section>
+        {/* Projects Section */}
+        <section
+          id="projects"
+          className="w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 space-y-6 bg-slate-50 dark:bg-black"
+        >
+          <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center ">
+            <h2 className="text-3xl font-light tracking-tight mb-4 text-gray-900 dark:text-white">
+              Projects <span className="font-bold">I am interested in</span>
+            </h2>
+          </div>
+          <BentoDemo />
+        </section>
       </div>
     </main>
   );

@@ -8,11 +8,11 @@ const projects = [
     name: "Real-Time Threat Detection",
     description:
       "Build neural networks to analyze network traffic patterns and detect zero-day exploits using deep packet inspection.",
-    href: "/projects/threat-detection",
-    cta: "View Project",
+    href: "/attacks/threat-detection",
+    // cta: "View Project",
     background: (
       <Image
-        src="/images/cyber-network.png"
+        src="/attacks/cyber-network.png"
         alt="Network threat detection visualization"
         fill
         style={{ objectFit: "cover" }}
@@ -26,11 +26,11 @@ const projects = [
     name: "Phishing Detection NLP",
     description:
       "Develop transformer models to analyze email content and URLs for social engineering attacks with 99.2% accuracy.",
-    href: "/projects/phishing-detection",
-    cta: "See Code",
+    href: "/attacks/phishing-detection",
+    // cta: "See Code",
     background: (
       <Image
-        src="/images/phishing-analysis.jpg"
+        src="/attacks/phishing-analysis.jpg"
         alt="Phishing email analysis interface"
         fill
         style={{ objectFit: "cover" }}
@@ -44,11 +44,11 @@ const projects = [
     name: "Malware Classification",
     description:
       "Create CNN architectures for static/dynamic analysis of executable files using entropy graphs and API call sequences.",
-    href: "/projects/malware-classification",
-    cta: "Explore Model",
+    href: "/attacks/malware-classification",
+    // cta: "Explore Model",
     background: (
       <Image
-        src="/images/malware-binary.jpg"
+        src="/attacks/malware-binary.jpg"
         alt="Malware code visualization"
         fill
         style={{ objectFit: "cover" }}
@@ -62,11 +62,11 @@ const projects = [
     name: "Adversarial Defense",
     description:
       "Implement GAN-based systems to harden models against evasion attacks using defensive distillation techniques.",
-    href: "/projects/adversarial-defense",
-    cta: "Research Paper",
+    href: "/attacks/adversarial-defense",
+    // cta: "Research Paper",
     background: (
       <Image
-        src="/images/adversarial-attack.png"
+        src="/attacks/adversarial-attack.png"
         alt="Adversarial pattern visualization"
         fill
         style={{ objectFit: "cover" }}
@@ -80,11 +80,11 @@ const projects = [
     name: "Anomaly Detection",
     description:
       "Develop LSTM-autoencoders for identifying suspicious behavior in cloud infrastructure logs and SIEM data.",
-    href: "/projects/anomaly-detection",
-    cta: "View Demo",
+    href: "/attacks/anomaly-detection",
+    // cta: "View Demo",
     background: (
       <Image
-        src="/images/network-anomaly.jpg"
+        src="/attacks/network-anomaly.jpg"
         alt="Network anomaly heatmap"
         fill
         style={{ objectFit: "cover" }}
@@ -95,7 +95,7 @@ const projects = [
   },
 ];
 
-export async function BentoDemo() {
+export function BentoDemo() {
   return (
     <BentoGrid className="lg:grid-rows-3">
       {projects.map((project) => (
