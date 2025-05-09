@@ -115,6 +115,18 @@ export default function LatestInsightsPage() {
   return (
     <LazyMotion features={domAnimation}>
       <div className="relative min-h-screen overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 opacity-10 dark:opacity-20">
+          <Image
+            src="/insights/image-1.png"
+            alt="Background"
+            fill
+            priority
+            quality={50} // Reduced image quality for performance
+            className="object-cover"
+          />
+        </div>
+
         <motion.div
           initial="initial"
           animate="animate"

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "AI and Quantum Computing",
+    "description": "Exploring the intersection of artificial intelligence and quantum computing technologies.",
+    "content": "A deep dive into how quantum computing is revolutionizing AI capabilities...",
+    "category": "Research",
+    "date": "May 2024",
+    "image": "/insights/image-1.png",
+    "tags": ["AI", "Quantum Computing", "Technology"]
+  },
+  {
+    "id": 2,
+    "title": "Edge Computing Revolution",
+    "description": "Insights into the transformative potential of edge computing in modern infrastructure.",
+    "content": "Exploring how edge computing is changing the landscape of distributed systems and real-time processing...",
+    "category": "Technology", 
+    "date": "April 2024",
+    "image": "/insights/image-2.png",
+    "tags": ["Edge Computing", "Infrastructure", "Cloud"]
+  }
+]
