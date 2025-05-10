@@ -349,7 +349,7 @@ const resume: Resume = {
       institution: "Concordia University",
       degrees: [
         {
-          name: "Doctor of Philosophy (Ph.D.) Student",
+          name: "Doctor of Philosophy (Ph.D.) Candidate",
           field: "Electrical and Computer Engineering",
           startYear: 2018,
           endYear: 2021,
