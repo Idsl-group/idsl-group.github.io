@@ -21,6 +21,7 @@ import {
   FaCopy,
   FaBriefcase,
   FaCheck,
+  FaGithub,
 } from "react-icons/fa";
 import { SiOrcid, SiGooglescholar } from "react-icons/si";
 import Image from "next/image";
@@ -51,6 +52,11 @@ export default function AboutMePage() {
       icon: <FaLinkedin className="text-blue-600" />,
       text: "LinkedIn Profile",
       href: "https://www.linkedin.com/in/pranav-k-jha/",
+    },
+    {
+      icon: <FaGithub className="text-gray-600" />,
+      text: "GitHub",
+      href: "https://github.com/pranav-k-jha",
     },
     {
       icon: <SiOrcid className="text-green-600" />,
