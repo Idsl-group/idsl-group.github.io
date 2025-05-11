@@ -9,10 +9,9 @@ const projects = [
     description:
       "Build neural networks to analyze network traffic patterns and detect zero-day exploits using deep packet inspection.",
     href: "/attacks/threat-detection",
-    // cta: "View Project",
     background: (
       <Image
-        src="/attacks/cyber-network.png"
+        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80"
         alt="Network threat detection visualization"
         fill
         style={{ objectFit: "cover" }}
@@ -27,10 +26,9 @@ const projects = [
     description:
       "Develop transformer models to analyze email content and URLs for social engineering attacks with 99.2% accuracy.",
     href: "/attacks/phishing-detection",
-    // cta: "See Code",
     background: (
       <Image
-        src="/attacks/phishing-analysis.jpg"
+        src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80"
         alt="Phishing email analysis interface"
         fill
         style={{ objectFit: "cover" }}
@@ -45,10 +43,9 @@ const projects = [
     description:
       "Create CNN architectures for static/dynamic analysis of executable files using entropy graphs and API call sequences.",
     href: "/attacks/malware-classification",
-    // cta: "Explore Model",
     background: (
       <Image
-        src="/attacks/malware-binary.jpg"
+        src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80"
         alt="Malware code visualization"
         fill
         style={{ objectFit: "cover" }}
@@ -63,10 +60,9 @@ const projects = [
     description:
       "Implement GAN-based systems to harden models against evasion attacks using defensive distillation techniques.",
     href: "/attacks/adversarial-defense",
-    // cta: "Research Paper",
     background: (
       <Image
-        src="/attacks/adversarial-attack.png"
+        src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80"
         alt="Adversarial pattern visualization"
         fill
         style={{ objectFit: "cover" }}
@@ -81,10 +77,9 @@ const projects = [
     description:
       "Develop LSTM-autoencoders for identifying suspicious behavior in cloud infrastructure logs and SIEM data.",
     href: "/attacks/anomaly-detection",
-    // cta: "View Demo",
     background: (
       <Image
-        src="/attacks/network-anomaly.jpg"
+        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80"
         alt="Network anomaly heatmap"
         fill
         style={{ objectFit: "cover" }}

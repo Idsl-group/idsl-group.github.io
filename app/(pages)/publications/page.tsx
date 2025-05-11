@@ -9,6 +9,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { FaLink, FaGoogle } from "react-icons/fa";
+import Image from "next/image";
 import resume from "@/data/resume";
 import { CitationMetrics } from "@/components/CitationMetrics";
 
@@ -152,20 +153,41 @@ export default function PublicationsPage() {
     []
   );
 
-  const publicationCards = useMemo(
-    () =>
-      sortedPublications.map((publication) => (
-        <PublicationCard
-          key={publication.title}
-          publication={publication}
-          isSelected={selectedPublication === publication}
-        />
-      )),
-    [sortedPublications, selectedPublication]
-  );
+  const publicationCards = sortedPublications.map((publication) => (
+    <PublicationCard
+      key={publication.title}
+      publication={publication}
+      isSelected={selectedPublication === publication}
+    />
+  ));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12">
+      {/* Header Image Section */}
+      <div className="relative w-full h-[300px] mb-12">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80"
+            alt="Library and Research"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 dark:from-black/80 dark:to-black/40" />
+        </div>
+        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+          <div className="text-white">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+              Research Publications
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
+              Exploring the frontiers of technology through academic research
+              and scholarly contributions
+            </p>
+          </div>
+        </div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
