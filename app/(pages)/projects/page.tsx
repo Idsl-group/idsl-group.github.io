@@ -1,20 +1,14 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Code,
-  Link2,
   ExternalLink,
-  ArrowUpRight,
-  Filter,
-  CheckCircle2,
-  Star,
-  Briefcase,
   Calendar,
   Brain,
   Database,
-  Shield,
   Server,
 } from "lucide-react";
 import resume from "@/data/resume";
@@ -32,6 +26,7 @@ type Project = {
   link?: string | null;
   notes?: string | null;
   skills?: string[];
+  imageUrl?: string | null;
 };
 
 const ProjectCard = ({
@@ -58,9 +53,21 @@ const ProjectCard = ({
       }}
       className="group relative h-full"
     >
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur-sm"></div>
-
-      <div className="relative bg-white dark:bg-gray-800/70 rounded-2xl border border-gray-200 dark:border-gray-700/50 p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden h-full flex flex-col">
+      <div className="h-full p-6 rounded-xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 flex flex-col">
+        {project.imageUrl && (
+          <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+            <Image
+              src={`/${project.imageUrl}`}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        )}
+        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors duration-300">
+          {project.title}
+        </h3>
         <div className="flex justify-between items-start mb-4 relative z-10">
           <div className="flex-grow pr-4">
             <div className="flex items-center mb-2">

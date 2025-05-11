@@ -25,6 +25,7 @@ interface Project {
   skills: string[];
   link: string | null;
   notes: string | null;
+  imageUrl?: string | null;
 }
 
 interface CurrentPosition {
@@ -146,6 +147,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/kaggle-notebooks/blob/main/CIC-IDS-2017%20BERT%20Classification.ipynb",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title:
@@ -168,6 +170,7 @@ const resume: Resume = {
       ],
       link: null,
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title: "MKJHA Consulting Website",
@@ -186,6 +189,7 @@ const resume: Resume = {
       ],
       link: "https://www.mkjhaconsulting.com",
       notes: null,
+      imageUrl: "mkjhaconsulting.png",
     },
     {
       title:
@@ -206,6 +210,7 @@ const resume: Resume = {
       ],
       link: "https://livnsense.com",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title:
@@ -226,6 +231,7 @@ const resume: Resume = {
       ],
       link: null,
       notes: "Findings will be submitted for publication in a reputed journal.",
+      imageUrl: "banner.jpg",
     },
     {
       title: "Binary Classification with XGBoost on CIC-IDS-2017 Dataset",
@@ -244,6 +250,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/kaggle-notebooks/blob/main/CIC-IDS-2017%20BERT%20Classification.ipynb",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title: "YouTube Analysis Data Engineering Project",
@@ -266,6 +273,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/youtube-analysis-data-engineering-project",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title: "E-Commerce App",
@@ -287,6 +295,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/e-commerce-ts-next-payload-cms",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title: "Real Estate Price Prediction",
@@ -304,6 +313,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/Real-Estate-Price-Prediction",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title:
@@ -326,6 +336,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/lift-ride-digitalization",
       notes: null,
+      imageUrl: "banner.jpg",
     },
     {
       title:
@@ -347,6 +358,7 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/message-driven-data-processing",
       notes: null,
+      imageUrl: "banner.jpg",
     },
   ],
 
