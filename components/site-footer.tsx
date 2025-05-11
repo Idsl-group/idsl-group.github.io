@@ -62,9 +62,10 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
     <footer
       className={cn(
-        "bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-950",
-        "py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800",
-        "transition-colors duration-300 ease-in-out",
+        "bg-gradient-to-br from-gray-50/80 via-white to-gray-50/80 dark:from-gray-900/80 dark:via-gray-950 dark:to-gray-900/80",
+        "backdrop-blur-sm border-t border-gray-200/50 dark:border-gray-800/50",
+        "py-16 px-4 sm:px-6 lg:px-8",
+        "transition-all duration-500 ease-out",
         className
       )}
     >
@@ -77,7 +78,10 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           className="space-y-6 text-center md:text-left"
         >
           <div className="flex justify-center md:justify-start items-center space-x-4">
-            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-lg">
+            <Motion.div
+              whileHover={{ scale: 1.05 }}
+              className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-blue-500/30 ring-offset-2 ring-offset-white dark:ring-offset-gray-950 shadow-xl"
+            >
               <Image
                 src="/profile.jpg"
                 alt="Pranav K Jha"
@@ -85,9 +89,9 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 height={64}
                 className="w-full h-full object-cover"
               />
-            </div>
+            </Motion.div>
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                 Pranav K Jha
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -108,23 +112,30 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-6 text-center"
         >
-          <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-            Get in Touch
-          </h4>
           <div className="space-y-4">
-            <div className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400">
-              <FaMapMarkerAlt className="text-blue-500 dark:text-blue-400 text-lg" />
+            <Motion.div
+              className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="p-2 rounded-lg bg-blue-500/10 dark:bg-blue-500/5">
+                <FaMapMarkerAlt className="text-blue-500 dark:text-blue-400 text-lg" />
+              </div>
               <span>Montreal, QC, Canada</span>
-            </div>
-            <div className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400">
-              <FaEnvelope className="text-blue-500 dark:text-blue-400 text-lg" />
+            </Motion.div>
+            <Motion.div
+              className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="p-2 rounded-lg bg-blue-500/10 dark:bg-blue-500/5">
+                <FaEnvelope className="text-blue-500 dark:text-blue-400 text-lg" />
+              </div>
               <a
                 href="mailto:pranav.jha@mail.concordia.ca"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 pranav.jha@mail.concordia.ca
               </a>
-            </div>
+            </Motion.div>
           </div>
 
           <div className="flex justify-center space-x-6 mt-6">
@@ -133,12 +144,12 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 key={index}
                 href={social.href}
                 target="_blank"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
                 className={`
                   text-2xl ${social.color}
-                  transition-all duration-300 
-                  hover:scale-110 hover:opacity-80
+                  transition-all duration-300
+                  hover:shadow-lg
                 `}
                 aria-label={social.label}
               >
@@ -149,48 +160,29 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
         </Motion.div>
 
         {/* Tech Stack Section */}
-        <Motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="space-y-6 text-center md:text-right"
-        >
-          <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-            Tech Ecosystem
-          </h4>
-          <div className="flex justify-center md:justify-end space-x-6">
-            {techStack.map(({ Icon, name, color }, index) => (
-              <Motion.div
-                key={index}
-                whileHover={{ scale: 1.1 }}
-                className="flex flex-col items-center space-y-2 group"
-              >
-                <div
-                  className={`
-                  p-3 rounded-full 
-                  bg-gray-100 dark:bg-gray-800
-                  ${color} 
-                  transition-all duration-300
-                  group-hover:shadow-lg
-                `}
+        <div className="text-center md:text-right">
+          <div className="text-sm text-gray-600 dark:text-gray-400 flex flex-col items-center md:items-end space-y-2">
+            <div className="flex items-center gap-3">
+              <span>&copy; {new Date().getFullYear()} Pranav K Jha</span>
+              <span className="h-4 w-px bg-gray-300 dark:bg-gray-700"></span>
+              <span className="flex items-center gap-2">
+                Built with
+                <Motion.span
+                  className="inline-flex items-center gap-1.5"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <Icon className="text-2xl" />
-                </div>
-                <span
-                  className="text-xs text-gray-600 dark:text-gray-400 
-                  opacity-0 group-hover:opacity-100 
-                  transition-opacity duration-300"
-                >
-                  {name}
-                </span>
-              </Motion.div>
-            ))}
+                  <SiNextdotjs className="h-4 w-4" title="Next.js" />
+                  <FaReact className="h-4 w-4 text-blue-500" title="React" />
+                  <SiTailwindcss
+                    className="h-4 w-4 text-teal-500"
+                    title="Tailwind CSS"
+                  />
+                </Motion.span>
+              </span>
+            </div>
+            <span className="text-xs opacity-75">All Rights Reserved</span>
           </div>
-          <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
-            &copy; {new Date().getFullYear()} Pranav K Jha.
-            <span className="block text-xs mt-1">All Rights Reserved</span>
-          </p>
-        </Motion.div>
+        </div>
       </div>
     </footer>
   );

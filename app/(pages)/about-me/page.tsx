@@ -311,7 +311,7 @@ export default function AboutMePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <div className="w-[80%] mx-auto py-8">
+      <div className="w-[85%] mx-auto py-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -321,7 +321,7 @@ export default function AboutMePage() {
           {/* Cover Banner */}
           <div className="relative w-screen -mx-[50vw] left-1/2 right-1/2 h-[450px] overflow-hidden -mt-20">
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-70 dark:opacity-60 
+              className="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60 
              object-cover object-center 
              sm:bg-cover md:bg-cover lg:bg-cover 
              w-full h-full quality-100 "
@@ -766,19 +766,25 @@ export default function AboutMePage() {
               <h2 className="text-xl font-bold text-blue-800 dark:text-blue-200 mb-3 border-b-2 border-blue-200 pb-1">
                 Courses
               </h2>
-              <div className="grid grid-cols-3 gap-4 space-y-4 text-gray-700 dark:text-gray-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-700 dark:text-gray-300">
                 {resume.courses.map((course, index) => (
-                  <div key={index} className="flex items-start">
-                    <FaBook className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5" />
-                    <div>
-                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="flex items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+                  >
+                    <FaBook className="mr-3 mt-1 text-blue-600 dark:text-blue-400 w-5 h-5 flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300 truncate">
                         {course.name}
                       </h3>
-                      <div className="text-xs">
+                      <div className="text-xs mt-1 text-gray-600 dark:text-gray-400">
                         <span>{course.grade}</span>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
