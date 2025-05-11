@@ -77,7 +77,7 @@ export default function QuantumHomePage() {
             <motion.div variants={ANIMATION_VARIANTS} className="space-y-6">
               <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 px-4 py-2 rounded-full text-xs tracking-wider">
                 <Layers className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-300" />
-                Computational Innovator
+                AI Solutions Architect
               </div>
 
               <h1 className="text-5xl font-extralight tracking-tighter text-gray-900 dark:text-white">
@@ -99,7 +99,7 @@ export default function QuantumHomePage() {
                   href="/contact"
                   className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white tracking-wider hover:from-blue-700 hover:to-purple-700 transition-all"
                 >
-                  Initiate Collaboration
+                  Contact Me
                   <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
                 </Link>
               </div>
