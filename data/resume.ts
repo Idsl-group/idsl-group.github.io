@@ -170,6 +170,24 @@ const resume: Resume = {
       notes: null,
     },
     {
+      title: "MKJHA Consulting Website",
+      startDate: "April 2025",
+      endDate: "Present",
+      associatedWith: null,
+      description:
+        "Designed, developed, and currently maintain the MKJHA Consulting website using Next.js, React, Tailwind CSS, and TypeScript. The site features a modern, responsive design with an emphasis on user experience and accessibility.",
+      skills: [
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "Web Development",
+        "Website Design",
+        "Website Development",
+      ],
+      link: "https://www.mkjhaconsulting.com",
+      notes: null,
+    },
+    {
       title:
         "Machine Learning–Driven Forecasting of Travel Patterns: A Minnesota Case Study",
       startDate: "April 2025",
