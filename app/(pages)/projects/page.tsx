@@ -226,36 +226,33 @@ const ProjectsPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Cover Banner */}
       <div className="relative w-full h-[300px] mb-12">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60"
-          style={{
-            backgroundImage:
-              "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80')",
-          }}
-        />
-        <div className="relative z-10 flex flex-col justify-center h-full px-8 py-6 max-w-7xl mx-auto">
-          <div className="flex items-center space-x-4">
-            <Code className="w-12 h-12 text-white opacity-90" />
-            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">
-              Featured Projects
-            </h1>
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+            alt="Featured Projects"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 dark:from-black/80 dark:to-black/40" />
+        </div>
+        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+          <div className="text-white">
+            <div className="flex items-center space-x-4">
+              <Code className="w-12 h-12 text-white" />
+              <h1 className="text-4xl md:text-5xl font-bold text-white">
+                Featured Projects
+              </h1>
+            </div>
+            <p className="mt-4 text-lg text-gray-200 max-w-2xl">
+              A showcase of my technical projects, research work, and innovative
+              solutions
+            </p>
           </div>
-          <p className="mt-4 text-lg text-gray-200 max-w-2xl ml-16">
-            A showcase of my technical projects, research work, and innovative
-            solutions
-          </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        {/* <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-black text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
-        >
-          Professional Projects
-        </motion.h1> */}
-
+      <div className="max-w-7xl mx-auto py-12 px-4 mt-12 sm:px-6 lg:px-8">
         {/* Category Navigation */}
         <div className="flex justify-center mb-12 space-x-4 flex-wrap">
           <button

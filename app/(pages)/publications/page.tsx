@@ -177,37 +177,30 @@ export default function PublicationsPage() {
         </div>
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="text-white">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Research Publications
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
+            <div className="flex items-center space-x-4">
+              <BookOpenIcon className="w-12 h-12 text-white opacity-90" />
+              <h1 className="text-4xl md:text-5xl font-extrabold">
+                Research Publications
+              </h1>
+            </div>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mt-4 ml-16">
               Exploring the frontiers of technology through academic research
               and scholarly contributions
             </p>
           </div>
         </div>
       </div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8"
+        className="max-w-7xl mx-auto mt-20 grid md:grid-cols-3 gap-8"
       >
         {/* Publications List */}
-        <div className="md:col-span-2 space-y-6">
-          <div className="flex items-center mb-6 space-x-4">
-            <BookOpenIcon className="w-10 h-10 text-blue-600 dark:text-blue-400" />
-            <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              Research Publications
-            </h1>
-          </div>
-
-          {publicationCards}
-        </div>
+        <div className="md:col-span-2 space-y-6">{publicationCards}</div>
 
         {/* Citation Metrics Sidebar */}
-        <div className="md:col-span-1 mt-16">
+        <div className="md:col-span-1">
           <CitationMetrics metrics={resume.publicationMetrics} />
 
           <a
