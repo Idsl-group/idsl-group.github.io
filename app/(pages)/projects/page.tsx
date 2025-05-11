@@ -65,32 +65,12 @@ const ProjectCard = ({
             />
           </div>
         )}
-        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors duration-300">
-          {project.title}
-        </h3>
         <div className="flex justify-between items-start mb-4 relative z-10">
-          <div className="flex-grow pr-4">
-            <div className="flex items-center mb-2">
-              <Code className="w-5 h-5 mr-2 text-blue-500 dark:text-blue-400" />
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight line-clamp-1">
-                {project.title}
-              </h3>
-            </div>
-
-            {project.associatedWith && (
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-2 pl-6 line-clamp-1">
-                {project.associatedWith}
-              </p>
-            )}
-
-            <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-              <Calendar className="w-4 h-4 mr-2" />
-              <span>
-                {project.startDate} - {project.endDate || "Present"}
-              </span>
-            </div>
+          <div className="flex items-center gap-2">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors duration-300">
+              {project.title}
+            </h3>
           </div>
-
           {project.link && (
             <Link
               href={project.link}
@@ -102,6 +82,18 @@ const ProjectCard = ({
           )}
         </div>
 
+        {project.associatedWith && (
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+            {project.associatedWith}
+          </p>
+        )}
+
+        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+          <Calendar className="w-4 h-4 mr-2" />
+          <span>
+            {project.startDate} - {project.endDate || "Present"}
+          </span>
+        </div>
         <div className="flex-grow mb-4">
           <p
             className={`text-gray-700 dark:text-gray-300 ${isExpanded ? "" : "line-clamp-3"}`}
