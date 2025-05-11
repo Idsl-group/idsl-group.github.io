@@ -57,7 +57,7 @@ const ProjectCard = ({
         {project.imageUrl && (
           <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
             <Image
-              src={`/${project.imageUrl}`}
+              src={`${project.imageUrl}`}
               alt={project.title}
               fill
               className="object-cover"

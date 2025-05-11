@@ -147,7 +147,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/kaggle-notebooks/blob/main/CIC-IDS-2017%20BERT%20Classification.ipynb",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80",
     },
     {
       title:
@@ -170,7 +171,8 @@ const resume: Resume = {
       ],
       link: null,
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
     },
     {
       title: "MKJHA Consulting Website",
@@ -189,7 +191,8 @@ const resume: Resume = {
       ],
       link: "https://www.mkjhaconsulting.com",
       notes: null,
-      imageUrl: "mkjhaconsulting.png",
+      imageUrl:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
     },
     {
       title:
@@ -210,7 +213,8 @@ const resume: Resume = {
       ],
       link: "https://livnsense.com",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80",
     },
     {
       title:
@@ -231,7 +235,8 @@ const resume: Resume = {
       ],
       link: null,
       notes: "Findings will be submitted for publication in a reputed journal.",
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?auto=format&fit=crop&q=80",
     },
     {
       title: "Binary Classification with XGBoost on CIC-IDS-2017 Dataset",
@@ -250,7 +255,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/kaggle-notebooks/blob/main/CIC-IDS-2017%20BERT%20Classification.ipynb",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80",
     },
     {
       title: "YouTube Analysis Data Engineering Project",
@@ -273,7 +279,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/youtube-analysis-data-engineering-project",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&q=80",
     },
     {
       title: "E-Commerce App",
@@ -295,7 +302,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/e-commerce-ts-next-payload-cms",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80",
     },
     {
       title: "Real Estate Price Prediction",
@@ -313,7 +321,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/Real-Estate-Price-Prediction",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80",
     },
     {
       title:
@@ -336,7 +345,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/lift-ride-digitalization",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80",
     },
     {
       title:
@@ -358,7 +368,8 @@ const resume: Resume = {
       ],
       link: "https://github.com/pranav-k-jha/message-driven-data-processing",
       notes: null,
-      imageUrl: "banner.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
     },
   ],
 

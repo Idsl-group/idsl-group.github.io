@@ -20,7 +20,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.unsplash.com", // Added for banner images
+        hostname: "images.unsplash.com", // Unsplash image CDN domain
       },
     ],
   },
