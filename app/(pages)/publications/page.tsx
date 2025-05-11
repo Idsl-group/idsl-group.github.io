@@ -162,7 +162,7 @@ export default function PublicationsPage() {
   ));
 
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Header Image Section */}
       <div className="relative w-full h-[300px] mb-12">
         <div className="absolute inset-0">

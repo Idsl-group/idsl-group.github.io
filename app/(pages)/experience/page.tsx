@@ -106,7 +106,7 @@ const ExperiencePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Cover Banner */}
-      <div className="relative w-screen -mx-[50vw] left-1/2 right-1/2 h-[400px] overflow-hidden -mt-20">
+      <div className="relative w-full h-[300px] mb-12">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60"
           style={{
