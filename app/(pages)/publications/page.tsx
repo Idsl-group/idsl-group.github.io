@@ -47,9 +47,27 @@ const PublicationCard: React.FC<{
       `}
     >
       <div className="flex-grow">
-        <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2">
-          {publication.title}
-        </h3>
+        <div className="flex items-start justify-between mb-2">
+          <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200">
+            {publication.title}
+          </h3>
+          {publication.submittedTo && (
+            <span
+              className={`
+              ml-2 px-2 py-1 text-xs font-medium rounded-full whitespace-nowrap
+              ${
+                publication.submittedTo === "IEEE"
+                  ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-200"
+                  : publication.submittedTo === "AIP Conference Proceedings"
+                    ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-200"
+                    : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+              }
+            `}
+            >
+              {publication.submittedTo}
+            </span>
+          )}
+        </div>
 
         <div className="text-sm text-gray-600 dark:text-gray-300 mb-3">
           <p className="italic">{publication.authors?.join(", ")}</p>
