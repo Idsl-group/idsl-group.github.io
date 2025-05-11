@@ -2,10 +2,15 @@
 
 import React, { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpenIcon, AwardIcon, GraduationCap } from "lucide-react";
+import {
+  BookOpenIcon,
+  AwardIcon,
+  GraduationCap,
+  ExternalLink,
+} from "lucide-react";
+import { FaLink, FaGoogle } from "react-icons/fa";
 import resume from "@/data/resume";
 import { CitationMetrics } from "@/components/CitationMetrics";
-import { FaLink } from "react-icons/fa";
 
 // Define Publication type based on the structure in resume.ts
 type Publication = {
@@ -182,6 +187,23 @@ export default function PublicationsPage() {
         {/* Citation Metrics Sidebar */}
         <div className="md:col-span-1 mt-16">
           <CitationMetrics metrics={resume.publicationMetrics} />
+
+          <a
+            href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 w-full flex items-center justify-center px-4 py-3 rounded-xl
+              bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700
+              hover:from-blue-600 hover:to-purple-700 dark:hover:from-blue-500 dark:hover:to-purple-600
+              transform hover:scale-[1.02] hover:shadow-lg
+              transition-all duration-300 group"
+          >
+            <FaGoogle className="w-5 h-5 text-white mr-2 group-hover:scale-110 transition-transform" />
+            <span className="text-white font-medium">
+              Visit Google Scholar Profile
+            </span>
+            <ExternalLink className="w-4 h-4 ml-2 text-white/80 group-hover:text-white transition-colors" />
+          </a>
         </div>
       </motion.div>
     </div>
