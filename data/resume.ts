@@ -129,6 +129,25 @@ const resume: Resume = {
 
   projects: [
     {
+      title: "Log classification using BERT and LLMs",
+      startDate: "May 2025",
+      endDate: "Present",
+      associatedWith: null,
+      description:
+        "This project focuses on error-log classification using BERT and LLMs. While the real system was built for a company named ZOHO, this version uses synthetic data — the problem-solving architecture remains identical to the production implementation.",
+      skills: [
+        "BERT",
+        "LLMs",
+        "Machine Learning",
+        "Cybersecurity",
+        "Log Classification",
+        "Data Preprocessing",
+        "Intrusion Detection",
+      ],
+      link: "https://github.com/pranav-k-jha/kaggle-notebooks/blob/main/CIC-IDS-2017%20BERT%20Classification.ipynb",
+      notes: null,
+    },
+    {
       title:
         "Predictive Modeling and Real-Time Control of Urban Flooding Using Deep Learning and Edge-based IoT Sensor Networks",
       startDate: "May 2025",
