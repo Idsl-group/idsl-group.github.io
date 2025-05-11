@@ -333,7 +333,7 @@ export default function AboutMePage() {
              w-full h-full quality-100 "
               style={{
                 backgroundImage:
-                  "linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/bg-1.jpg')",
+                  "linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/bg-2.jpg')",
               }}
             ></div>
             <div className="relative z-10 flex items-end justify-center h-full px-8 py-6 max-w-7xl mx-auto -translate-y-36 md:-translate-y-24 lg:translate-y-0">
