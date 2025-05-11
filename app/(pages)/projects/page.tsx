@@ -223,58 +223,83 @@ const ProjectsPage = () => {
     : resume.projects;
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-4xl md:text-5xl font-black text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
-      >
-        Professional Projects
-      </motion.h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {/* Cover Banner */}
+      <div className="relative w-screen -mx-[50vw] left-1/2 right-1/2 h-[400px] overflow-hidden -mt-20">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60"
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80')",
+          }}
+        />
+        <div className="relative z-10 flex flex-col justify-center h-full px-8 py-6 max-w-7xl mx-auto">
+          <div className="flex items-center space-x-4">
+            <Code className="w-12 h-12 text-white opacity-90" />
+            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">
+              Featured Projects
+            </h1>
+          </div>
+          <p className="mt-4 text-lg text-gray-200 max-w-2xl ml-16">
+            A showcase of my technical projects, research work, and innovative
+            solutions
+          </p>
+        </div>
+      </div>
 
-      {/* Category Navigation */}
-      <div className="flex justify-center mb-12 space-x-4 flex-wrap">
-        <button
-          onClick={() => setActiveCategory(null)}
-          className={`px-4 py-2 rounded-full transition-all duration-300 m-1 ${
-            activeCategory === null
-              ? "bg-blue-500 text-white"
-              : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-          }`}
+      <div className="container mx-auto px-4 py-12">
+        {/* <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl md:text-5xl font-black text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
         >
-          All Projects
-        </button>
-        {projectCategories.map((category) => (
+          Professional Projects
+        </motion.h1> */}
+
+        {/* Category Navigation */}
+        <div className="flex justify-center mb-12 space-x-4 flex-wrap">
           <button
-            key={category.name}
-            onClick={() => setActiveCategory(category.name)}
-            className={`px-4 py-2 rounded-full flex items-center space-x-2 transition-all duration-300 m-1 ${
-              activeCategory === category.name
+            onClick={() => setActiveCategory(null)}
+            className={`px-4 py-2 rounded-full transition-all duration-300 m-1 ${
+              activeCategory === null
                 ? "bg-blue-500 text-white"
                 : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
-            {category.icon}
-            <span>{category.name}</span>
+            All Projects
           </button>
-        ))}
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project, projectIndex) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-            index={projectIndex}
-          />
-        ))}
-      </div>
-
-      {filteredProjects.length === 0 && (
-        <div className="text-center text-gray-500 dark:text-gray-400 mt-12">
-          No projects found in this category.
+          {projectCategories.map((category) => (
+            <button
+              key={category.name}
+              onClick={() => setActiveCategory(category.name)}
+              className={`px-4 py-2 rounded-full flex items-center space-x-2 transition-all duration-300 m-1 ${
+                activeCategory === category.name
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+              }`}
+            >
+              {category.icon}
+              <span>{category.name}</span>
+            </button>
+          ))}
         </div>
-      )}
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project, projectIndex) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={projectIndex}
+            />
+          ))}
+        </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="text-center text-gray-500 dark:text-gray-400 mt-12">
+            No projects found in this category.
+          </div>
+        )}
+      </div>
     </div>
   );
 };
