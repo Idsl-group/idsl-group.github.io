@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import resume from "@/data/resume";
+import Image from "next/image";
 
 type Experience = {
   company: string;
@@ -103,95 +104,119 @@ const ExperiencePage = () => {
     useState<Experience | null>(resume.workExperience[0]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 py-16 px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-5xl mx-auto"
-      >
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Professional Journey
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A comprehensive overview of my professional experiences,
-            highlighting key roles, responsibilities, and career progression.
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {/* Cover Banner */}
+      <div className="relative w-screen -mx-[50vw] left-1/2 right-1/2 h-[400px] overflow-hidden -mt-20">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60"
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80')",
+          }}
+        />
+        <div className="relative z-10 flex flex-col justify-center h-full px-8 py-6 max-w-7xl mx-auto">
+          <div className="flex items-center space-x-4">
+            <Briefcase className="w-12 h-12 text-white" />
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
+              Professional Journey
+            </h1>
+          </div>
+          <p className="mt-4 text-lg text-gray-200 max-w-2xl">
+            A timeline of my career milestones and professional achievements
           </p>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-8 relative">
-          <div
-            className="relative space-y-4 md:max-h-[600px] md:overflow-y-auto pr-4 
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Professional Journey
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              A comprehensive overview of my professional experiences,
+              highlighting key roles, responsibilities, and career progression.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 relative">
+            <div
+              className="relative space-y-4 md:max-h-[600px] md:overflow-y-auto pr-4 
             scrollbar-thin 
             scrollbar-track-gray-100 
             dark:scrollbar-track-gray-800 
             scrollbar-thumb-blue-300 
             dark:scrollbar-thumb-blue-700
             scroll-smooth"
-          >
-            {resume.workExperience.map((position) => (
-              <ExperienceCard
-                key={`${position.company}-${position.title}`}
-                experience={position}
-                isSelected={
-                  selectedExperience?.company === position.company &&
-                  selectedExperience?.title === position.title
-                }
-                onSelect={() => setSelectedExperience(position)}
-              />
-            ))}
-          </div>
+            >
+              {resume.workExperience.map((position) => (
+                <ExperienceCard
+                  key={`${position.company}-${position.title}`}
+                  experience={position}
+                  isSelected={
+                    selectedExperience?.company === position.company &&
+                    selectedExperience?.title === position.title
+                  }
+                  onSelect={() => setSelectedExperience(position)}
+                />
+              ))}
+            </div>
 
-          <div className="bg-white dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-lg md:sticky md:top-24">
-            {selectedExperience && (
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {selectedExperience.company}
-                  </h2>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-                    <Calendar className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-                    <span>{selectedExperience.duration}</span>
+            <div className="bg-white dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-lg md:sticky md:top-24">
+              {selectedExperience && (
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {selectedExperience.company}
+                    </h2>
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                      <Calendar className="w-4 h-4 text-blue-500 dark:text-blue-400" />
+                      <span>{selectedExperience.duration}</span>
+                    </div>
+                  </div>
+                  <div className="space-y-4 text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center space-x-3">
+                      <Briefcase className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                      <span className="text-lg font-semibold">
+                        {selectedExperience.title}
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                      <span>{selectedExperience.location}</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Calendar className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                      <span>
+                        {selectedExperience.startDate} -{" "}
+                        {selectedExperience.endDate}
+                      </span>
+                    </div>
+                    {selectedExperience.details &&
+                      selectedExperience.details.length > 0 && (
+                        <div className="mt-6">
+                          <h3 className="text-md font-semibold mb-3 text-gray-800 dark:text-gray-100">
+                            Key Responsibilities:
+                          </h3>
+                          <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                            {selectedExperience.details.map((detail, index) => (
+                              <li key={index}>{detail}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                   </div>
                 </div>
-                <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                  <div className="flex items-center space-x-3">
-                    <Briefcase className="w-6 h-6 text-blue-500 dark:text-blue-400" />
-                    <span className="text-lg font-semibold">
-                      {selectedExperience.title}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-6 h-6 text-blue-500 dark:text-blue-400" />
-                    <span>{selectedExperience.location}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Calendar className="w-6 h-6 text-blue-500 dark:text-blue-400" />
-                    <span>
-                      {selectedExperience.startDate} -{" "}
-                      {selectedExperience.endDate}
-                    </span>
-                  </div>
-                  {selectedExperience.details &&
-                    selectedExperience.details.length > 0 && (
-                      <div className="mt-6">
-                        <h3 className="text-md font-semibold mb-3 text-gray-800 dark:text-gray-100">
-                          Key Responsibilities:
-                        </h3>
-                        <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                          {selectedExperience.details.map((detail, index) => (
-                            <li key={index}>{detail}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
