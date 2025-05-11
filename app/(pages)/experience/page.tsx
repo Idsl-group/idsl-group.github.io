@@ -108,12 +108,13 @@ const ExperiencePage = () => {
       {/* Cover Banner */}
       <div className="relative w-full h-[300px] mb-12">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60"
+          className="absolute inset-0"
           style={{
             backgroundImage:
               "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80')",
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 dark:from-black/80 dark:to-black/40" />
         <div className="relative z-10 flex flex-col justify-center h-full px-8 py-6 max-w-7xl mx-auto">
           <div className="flex items-center space-x-4">
             <Briefcase className="w-12 h-12 text-white" />
