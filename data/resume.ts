@@ -173,7 +173,7 @@ const resume: Resume = {
       title: "MKJHA Consulting Website",
       startDate: "April 2025",
       endDate: "Present",
-      associatedWith: null,
+      associatedWith: "MKJHA CONSULTING",
       description:
         "Designed, developed, and currently maintain the MKJHA Consulting website using Next.js, React, Tailwind CSS, and TypeScript. The site features a modern, responsive design with an emphasis on user experience and accessibility.",
       skills: [
@@ -185,6 +185,26 @@ const resume: Resume = {
         "Website Development",
       ],
       link: "https://www.mkjhaconsulting.com",
+      notes: null,
+    },
+    {
+      title:
+        "Gen AI Solution Architecture for Social Media Misinformation Handling System – Indian Railways",
+      startDate: "April 2025",
+      endDate: "Present",
+      associatedWith: "LivNSense",
+      description:
+        "Serving as a strategic AI Solutions Architect for the design and implementation of a real-time misinformation detection and mitigation system on social media channels for Indian Railways. Responsibilities include:",
+      skills: [
+        "Gen AI",
+        "LLMs",
+        "Machine Learning",
+        "Cybersecurity",
+        "Log Classification",
+        "Data Preprocessing",
+        "Intrusion Detection",
+      ],
+      link: "https://livnsense.com",
       notes: null,
     },
     {
