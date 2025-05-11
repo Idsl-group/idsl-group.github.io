@@ -11,8 +11,10 @@ const insightsData = [
     title: "AI and Quantum Computing",
     description:
       "Exploring the intersection of artificial intelligence and quantum computing technologies.",
-    image: "/insights/image-1.png",
-    fallbackImage: "/insights/image-1.png",
+    image:
+      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80",
+    fallbackImage:
+      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80",
     category: "Research",
     date: "May 2024",
   },
@@ -21,8 +23,10 @@ const insightsData = [
     title: "Edge Computing Revolution",
     description:
       "Insights into the transformative potential of edge computing in modern infrastructure.",
-    image: "/insights/image-2.png",
-    fallbackImage: "/insights/image-2.png",
+    image:
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
+    fallbackImage:
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
     category: "Technology",
     date: "April 2024",
   },
@@ -31,8 +35,10 @@ const insightsData = [
     title: "Transportation Analytics",
     description:
       "Advanced data science techniques revolutionizing urban mobility and transportation systems.",
-    image: "/insights/image-3.png",
-    fallbackImage: "/insights/image-3.png",
+    image:
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80",
+    fallbackImage:
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80",
     category: "Analytics",
     date: "March 2024",
   },
@@ -41,8 +47,10 @@ const insightsData = [
     title: "Machine Learning Breakthroughs",
     description:
       "Cutting-edge developments in machine learning and predictive modeling.",
-    image: "/insights/image-4.png",
-    fallbackImage: "/insights/image-4.png",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80",
+    fallbackImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80",
     category: "AI Research",
     date: "February 2024",
   },
