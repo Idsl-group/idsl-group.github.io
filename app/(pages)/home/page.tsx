@@ -114,7 +114,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-blue-700 dark:text-blue-200 hover:bg-white/10 dark:hover:border-white dark:hover:bg-white/10"
               >
                 <Link href="/team">Meet Our Team</Link>
               </Button>
