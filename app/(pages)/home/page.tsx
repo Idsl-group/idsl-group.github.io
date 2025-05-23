@@ -54,75 +54,74 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        {/* Background Image with Overlay */}
+      <header className="relative py-20 md:py-32 overflow-hidden">
+        {/* Background Image + Overlay */}
         <div className="absolute inset-0 -z-10">
           <Image
             src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2940&auto=format&fit=crop"
-            alt="Research Lab Environment"
+            alt="Researchers working in lab"
             fill
             className="object-cover"
             priority
             quality={100}
             placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAANABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAhEAACAgEEAgMAAAAAAAAAAAABAgMEEQAFIQYSEzFRYf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGREAAwADAAAAAAAAAAAAAAAAAAERAhIh/9oADAMBAAIRAxEAPwCJ4LfLmPq7dJXrGvXhWJYzYk4UcDn7x1q6+Jb5e3G5ZhsV4JY4oDMrGxIGyDxxz1qO0vGfJLOx15o4YIZhIwb94z1x1jI1JzVlLt0//2Q=="
+            blurDataURL="data:image/jpeg;base64,...your_blur_data..."
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80 dark:from-gray-900/90 dark:to-gray-900/90" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl font-bold text-white mb-6"
+              className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
             >
-              <motion.span className="block text-blue-100" variants={fadeInUp}>
-                Welcome to
-              </motion.span>
-              <br />
-              <GradientMotionSpan className="block">
+              <span className="block text-blue-100">Welcome to</span>
+              <GradientMotionSpan>
                 INTELLIGENT DATA SCIENCE LAB
               </GradientMotionSpan>
             </motion.h1>
+
             <motion.p
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-blue-100 dark:text-blue-200 mb-8 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-10 max-w-3xl mx-auto"
             >
               We develop novel algorithms and machine learning models to solve
-              complex problems in the fields of data science and artificial
-              intelligence.
+              complex challenges in data science and AI.
             </motion.p>
+
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <Button
+                asChild
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 transition-colors"
+                className="bg-white text-blue-700 hover:bg-blue-50 transition"
               >
-                Explore Our Research
+                <Link href="/publications">Explore Our Research</Link>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-blue-700 dark:text-blue-200 hover:bg-white/10 dark:hover:border-white dark:hover:bg-white/10"
+                className="border-white text-blue-700 dark:text-blue-200 hover:bg-white/10 dark:hover:border-white"
               >
                 <Link href="/team">Meet Our Team</Link>
               </Button>
             </motion.div>
           </div>
         </div>
-      </section>
-
+      </header>
       {/* Research Domains */}
       <section className="py-20 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

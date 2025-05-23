@@ -156,6 +156,146 @@ export const teamData = {
       awards: ["2020 International Masters Student Award 2020"],
     },
   ],
+  experience: [
+    {
+      title: "Assistant Professor",
+      organization: "Western University",
+      employmentType: "Permanent Full-time",
+      location: "London, Ontario, Canada",
+      onSite: true,
+      startDate: "Jul 2022",
+      endDate: "Present",
+      duration: "2 yrs 11 mos",
+      skills: [
+        "Machine Learning",
+        "Computer Science",
+        "Cybersecurity",
+        "Consulting",
+        "Artificial Intelligence",
+        "University Lecturing",
+        "Algorithms",
+        "Data Analysis",
+      ],
+    },
+    {
+      title: "Affiliate Assistant Professor",
+      organization: "The University of British Columbia",
+      employmentType: "Permanent Full-time",
+      location: "BC, Canada",
+      startDate: "Jul 2022",
+      endDate: "Present",
+      duration: "2 yrs 11 mos",
+    },
+    {
+      title: "Assistant Professor",
+      organization: "The University of British Columbia",
+      startDate: "Jul 2018",
+      endDate: "Jul 2022",
+      duration: "4 yrs 1 mo",
+      location: "British Columbia, Canada",
+    },
+    {
+      title: "Adjunct Assistant Professor",
+      organization: "University of Waterloo",
+      startDate: "Oct 2018",
+      endDate: "Present",
+      duration: "6 yrs 8 mos",
+      location: "Waterloo, Ontario, Canada",
+    },
+    {
+      title: "Postdoctoral Fellow",
+      organization: "University of Waterloo",
+      startDate: "Dec 2015",
+      endDate: "Jun 2018",
+      duration: "2 yrs 7 mos",
+      location: "Waterloo, ON",
+      description:
+        "Research in Artificial Intelligence; Machine Learning & Deep Learning; Theoretical Neuroscience; Stochastic Optimization; Multidisciplinary Design Optimization under Uncertainty; safety-critical real time systems.",
+    },
+    {
+      title: "PhD, Systems Design Engineering",
+      organization: "University of Waterloo",
+      startDate: "Sep 2010",
+      endDate: "Sep 2015",
+      duration: "5 yrs 1 mo",
+      location: "Waterloo, ON",
+      description:
+        "Developed multidisciplinary design optimization framework for planning and operation of systems under uncertainty using statistical and AI tools.",
+    },
+    {
+      title: "Teaching Assistant",
+      organization: "University of Waterloo",
+      courses: [
+        {
+          course: "SYDE 223 - Data Structure and Algorithms",
+          date: "Jan 2012 - Apr 2012",
+        },
+        {
+          course: "SYDE 292 - Circuits, Measurements and Instrumentation",
+          date: "Sep 2011 - Dec 2011",
+        },
+        {
+          course: "SYDE 192 - Digital Systems",
+          date: "May 2011 - Aug 2011",
+        },
+        {
+          course: "SYDE 223 - Data Structure and Algorithms",
+          date: "Jan 2011 - Apr 2011",
+        },
+      ],
+    },
+    {
+      title: "Graduate Research Assistant",
+      organization: "S2E - MITACS",
+      startDate: "2013",
+      endDate: "2013",
+      duration: "Less than a year",
+      description:
+        "Developed optimization model for planning of microgrids using stochastic programming. Created a web interface using PHP/MySQL and AMPL for configuration analysis.",
+    },
+    {
+      title: "Electrical Engineer",
+      organization: "Schlumberger Technologies",
+      startDate: "Aug 2008",
+      endDate: "Aug 2010",
+      duration: "2 yrs 1 mo",
+      location: "Pune Area, India",
+      description:
+        "Worked on a global project for sustaining electrical components for Schlumberger tools. Focused on redesigning tools to comply with ROHS and WEEE environmental standards.",
+    },
+  ],
+  education: [
+    {
+      institution: "University of Waterloo",
+      degree: "Doctor of Philosophy (Ph.D.)",
+      fieldOfStudy: "Systems Design Engineering",
+      startYear: 2010,
+      endYear: 2014,
+      activitiesAndSocieties: [
+        "IEEE",
+        "SSI",
+        "Student Technology Advisory Committee",
+        "VP Communications - Systems Graduate Student Association",
+      ],
+      description:
+        "Obtained PhD in Systems Design Engineering, focusing on planning of microgrids using stochastic programming and multidisciplinary design optimization. Included methods such as multi-attribute decision analysis and life cycle analysis.",
+    },
+    {
+      institution: "Dayalbagh Educational Institute",
+      degree: "BSc Engg",
+      fieldOfStudy: "Electrical Engineering",
+      startYear: 2004,
+      endYear: 2008,
+      activitiesAndSocieties: [
+        "IEEE",
+        "Systems Society of India",
+        "Student Co-ordinator - Multimedia Laboratories",
+      ],
+      description:
+        "Specialization in Computer Science with work in Neuro-Fuzzy Systems, Quantum Inspired Evolutionary Algorithms, and Parallel Computing.",
+    },
+  ],
+
   publications: [
     {
       id: 62,
