@@ -75,6 +75,7 @@ export default function NewsPage() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {item.content}
                 </p>
+                {/* In your news card component, update the Link component: */}
                 <Link
                   href={`/news/${item.id}`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"

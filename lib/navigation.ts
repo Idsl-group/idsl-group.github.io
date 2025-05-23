@@ -34,11 +34,6 @@ export const navigationConfig: NavItem[] = [
         description: "Team",
       },
       {
-        title: "Opportunities",
-        href: "/opportunities",
-        description: "Opportunities",
-      },
-      {
         title: "Resources",
         href: "/resources",
         description: "Resources",
@@ -50,7 +45,11 @@ export const navigationConfig: NavItem[] = [
     href: "/publications",
     description: "Publications",
   },
-
+  {
+    title: "Opportunities",
+    href: "/opportunities",
+    description: "Opportunities",
+  },
   {
     title: "News",
     href: "/news",

@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import { GradientMotionSpan } from "@/components/ui/gradient-motion-span";
 
 // Animation variants
 const fadeInUp: Variants = {
@@ -76,9 +77,19 @@ export default function HomePage() {
               animate="visible"
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              className="text-3xl md:text-5xl font-bold text-white mb-6"
             >
-              Welcome to IDSL
+              <motion.span
+                initial="hidden"
+                animate="visible"
+                variants={fadeInUp}
+              >
+                Welcome to
+              </motion.span>
+
+              <GradientMotionSpan>
+                INTELLIGENT DATA SCIENCE LAB
+              </GradientMotionSpan>
             </motion.h1>
             <motion.p
               initial="hidden"
