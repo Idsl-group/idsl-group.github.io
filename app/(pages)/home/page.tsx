@@ -79,15 +79,11 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="text-3xl md:text-5xl font-bold text-white mb-6"
             >
-              <motion.span
-                initial="hidden"
-                animate="visible"
-                variants={fadeInUp}
-              >
+              <motion.span className="block text-blue-100" variants={fadeInUp}>
                 Welcome to
               </motion.span>
-
-              <GradientMotionSpan>
+              <br />
+              <GradientMotionSpan className="block">
                 INTELLIGENT DATA SCIENCE LAB
               </GradientMotionSpan>
             </motion.h1>
