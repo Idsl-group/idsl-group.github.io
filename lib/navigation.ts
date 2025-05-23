@@ -9,60 +9,36 @@ export const navigationConfig: NavItem[] = [
   {
     title: "Home",
     href: "/",
-    description: "Home page of Pranav Jha",
+    description: "Home page of IDSL",
   },
   {
-    title: "About Me",
-    href: "/about-me",
-    description: "About Me",
+    title: "About",
+    href: "/about",
+    description: "About Dr. Narayan",
   },
   {
-    title: "Experience",
-    href: "/experience",
-    description: "Experience",
-  },
-  {
-    title: "Projects",
-    href: "#",
-    description: "Projects",
-    subItems: [
-      {
-        title: "All Projects",
-        href: "/projects",
-        description: "All Projects",
-      },
-      {
-        title: "Cybersecurity",
-        href: "/coming-soon",
-        description:
-          "Develop transformative AI strategies tailored to your unique business challenges.",
-      },
-      {
-        title: "Data Science",
-        href: "/coming-soon",
-        description:
-          "Design and implement advanced machine learning models for predictive insights.",
-      },
-      {
-        title: "Quantum Computing",
-        href: "/coming-soon",
-        description:
-          "Comprehensive guidance for doctoral research, methodology, and publication.",
-      },
-    ],
+    title: "Research",
+    href: "/research",
+    description: "Research",
   },
   {
     title: "Publications",
-    href: "/publications",
-    description: "Cutting-edge research in AI, ML, and cybersecurity",
+    href: "#",
+    description: "Publications",
   },
   {
-    title: "Latest Insights",
-    href: "/insights",
-    description: "Explore our latest thoughts on innovation and data science",
+    title: "Opportunities",
+    href: "/opportunities",
+    description: "Opportunities",
+  },
+  {
+    title: "Resources",
+    href: "/resources",
+    description: "Resources",
   },
   {
     title: "Contact",
     href: "/contact",
+    description: "Contact",
   },
 ];

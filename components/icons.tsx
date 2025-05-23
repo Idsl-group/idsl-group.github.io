@@ -74,9 +74,7 @@ export const Icons = {
       <line x1="2" x2="22" y1="2" y2="22" />
     </svg>
   ),
-  logo: () => (
-    <Image src="/profile.jpg" alt="PRANAV K JHA" height={24} width={24} />
-  ),
+  logo: () => <Image src="/logo.png" alt="IDSL" height={24} width={24} />,
 
   // logo: (props: IconProps) => (
   //   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>

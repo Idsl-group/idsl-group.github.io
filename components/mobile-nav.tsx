@@ -208,7 +208,7 @@ export default function MobileNav() {
                   <Icons.logo />
                 </motion.div>
                 <SheetTitle className="text-xl font-bold text-primary">
-                  PRANAV K JHA
+                  IDSL
                 </SheetTitle>
               </div>
             </SheetHeader>

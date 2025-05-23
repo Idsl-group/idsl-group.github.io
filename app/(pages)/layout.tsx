@@ -16,8 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PRANAV K JHA",
-  description: "AI Solutions Architect",
+  title: "IDSL",
+  description:
+    "Empowering the next generation of Cyber Physical Systems through the power of Data and AI",
   icons: {
     icon: [{ url: "/logo.png" }],
     shortcut: ["/logo.png"],
@@ -50,7 +51,7 @@ export default function RootLayout({
                 <div className="flex items-center space-x-4">
                   <Link href="/" className="flex items-center space-x-2 group">
                     <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
-                      PRANAV K JHA
+                      Intelligent Data Science Lab
                     </span>
                   </Link>
                   <nav className="hidden lg:flex items-center space-x-4">

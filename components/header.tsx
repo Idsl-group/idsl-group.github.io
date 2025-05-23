@@ -34,16 +34,17 @@ export default function Header({}: Props) {
       <div className="relative z-10 flex items-center h-full px-4 md:px-16 lg:px-24">
         <div className="header-content text-left">
           <h4 className="header-subtitle text-xl md:text-4xl mb-2 text-blue-700">
-            Hello, I am
+            Welcome to
           </h4>
           <h1 className="header-title text-4xl md:text-9xl font-bold text-gray-300 mb-4 drop-shadow-lg">
-            Pranav Jha
+            Intelligent Data Science Lab
           </h1>
           <h6 className="header-mono text-lg md:text-xl mb-6 text-gray-400">
-            Data Scientist | AI/ML Focused
+            Empowering the next generation of Cyber Physical Systems through the
+            power of Data and AI
           </h6>
           <Link
-            href="https://www.linkedin.com/in/pranav-k-jha"
+            href="https://www.linkedin.com/in/idsl"
             target="_blank"
             className="btn btn-rounded bg-transparent border border-blue-400 inline-flex items-center justify-center px-6 py-3 text-blue-800 rounded-full hover:text-blue-700 transition-colors"
           >

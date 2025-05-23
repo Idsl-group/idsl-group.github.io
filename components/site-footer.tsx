@@ -18,19 +18,19 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   const socialLinks = [
     {
       icon: FaLinkedin,
-      href: "https://www.linkedin.com/in/pranav-k-jha",
+      href: "https://www.linkedin.com/in/idsl",
       label: "LinkedIn",
       color: "text-blue-600 hover:text-blue-800",
     },
     {
       icon: FaTwitter,
-      href: "https://x.com/pranav_kjha",
+      href: "https://x.com/idsl",
       label: "Twitter",
       color: "text-sky-500 hover:text-sky-700",
     },
     {
       icon: FaGithub,
-      href: "https://github.com/pranav-k-jha",
+      href: "https://github.com/idsl",
       label: "GitHub",
       color: "text-purple-600 hover:text-purple-800",
     },
@@ -83,8 +83,8 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-blue-500/30 ring-offset-2 ring-offset-white dark:ring-offset-gray-950 shadow-xl"
             >
               <Image
-                src="/profile.jpg"
-                alt="Pranav K Jha"
+                src="/logo.png"
+                alt="IDSL"
                 width={64}
                 height={64}
                 className="w-full h-full object-cover"
@@ -92,7 +92,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             </Motion.div>
             <div>
               <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                Pranav K Jha
+                IDSL
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 AI Solutions Architect
@@ -130,10 +130,10 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 <FaEnvelope className="text-blue-500 dark:text-blue-400 text-lg" />
               </div>
               <a
-                href="mailto:pranav.jha@mail.concordia.ca"
+                href="mailto:idsl@concordia.ca"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                pranav.jha@mail.concordia.ca
+                idsl@concordia.ca
               </a>
             </Motion.div>
           </div>
@@ -163,7 +163,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
         <div className="text-center md:text-right">
           <div className="text-sm text-gray-600 dark:text-gray-400 flex flex-col items-center md:items-end space-y-2">
             <div className="flex items-center gap-3">
-              <span>&copy; {new Date().getFullYear()} Pranav K Jha</span>
+              <span>&copy; {new Date().getFullYear()} IDSL</span>
               <span className="h-4 w-px bg-gray-300 dark:bg-gray-700"></span>
               <span className="flex items-center gap-2">
                 Built with
