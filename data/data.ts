@@ -156,4 +156,533 @@ export const teamData = {
       awards: ["2020 International Masters Student Award 2020"],
     },
   ],
+  publications: [
+    {
+      id: 62,
+      type: "Journal",
+      title:
+        "AVATAR: Autonomous Vehicle Assessment through Testing of Adversarial Patches in Real-time",
+      year: 2024,
+    },
+    {
+      id: 61,
+      type: "Conference",
+      title:
+        "Assist Is Just as Important as the Goal: Image Resurfacing to Aid Model's Robust Prediction",
+      venue:
+        "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision",
+      pages: "3833--3842",
+      year: 2024,
+    },
+    {
+      id: 60,
+      type: "Conference",
+      title:
+        "Attacking CNNs in Histopathology with SNAP: Sporadic and Naturalistic Adversarial Patches (Student Abstract)",
+      venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
+      pages: "23550--23551",
+      year: 2024,
+    },
+    {
+      id: 59,
+      type: "Conference",
+      title:
+        "Generating Universal Adversarial Perturbations for Quantum Classifiers",
+      venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
+      pages: "10891--10899",
+      year: 2024,
+    },
+    {
+      id: 58,
+      type: "Journal",
+      title:
+        "Stratification of tumour cell radiation response and metabolic signatures visualization with Raman spectroscopy and explainable convolutional neural network",
+      pages: "1645--1657",
+      year: 2024,
+    },
+    {
+      id: 57,
+      type: "Journal",
+      title:
+        "Long-Term Impact of Childhood Adversity on the Gut Microbiome of Nursing Students",
+      pages: "68",
+      year: 2024,
+    },
+    {
+      id: 56,
+      type: "Conference",
+      title:
+        "Improving Adversarial Robustness of Few-Shot Learning with Contrastive Learning and Hypersphere Embedding",
+      venue:
+        "2023 International Conference on Machine Learning and Applications (ICMLA)",
+      pages: "241--248",
+      year: 2023,
+    },
+    {
+      id: 55,
+      type: "Conference",
+      title: "Vulnerability of cnns against multi-patch attacks",
+      venue:
+        "Proceedings of the 2023 ACM Workshop on Secure and Trustworthy Cyber-Physical Systems",
+      pages: "23--32",
+      year: 2023,
+    },
+    {
+      id: 54,
+      type: "Journal",
+      title:
+        "The effect of spatial resolution on deep learning classification of lung cancer histopathology",
+      pages: "20230008",
+      year: 2023,
+    },
+    {
+      id: 53,
+      type: "Journal",
+      title:
+        "A holistic approach to achieving SDGs: a case study of Dayalbagh, India",
+      year: 2023,
+    },
+    {
+      id: 52,
+      type: "Journal",
+      title:
+        "Machine learning directed aptamer search from conserved primary sequences and secondary structures",
+      pages: "186--195",
+      year: 2023,
+    },
+    {
+      id: 51,
+      type: "Journal",
+      title:
+        "Raman spectroscopy and convolutional neural networks for monitoring biochemical radiation response in breast tumour xenografts",
+      pages: "1530",
+      year: 2023,
+    },
+    {
+      id: 50,
+      type: "Conference",
+      title:
+        "Towards Robust Certified Defense via Improved Randomized Smoothing",
+      venue: "2022 International Joint Conference on Neural Networks (IJCNN)",
+      pages: "1--8",
+      year: 2022,
+    },
+    {
+      id: 49,
+      type: "Conference",
+      title: "Spiking approximations of the maxpooling operation in deep SNNs",
+      venue: "2022 International Joint Conference on Neural Networks (IJCNN)",
+      pages: "1--8",
+      year: 2022,
+    },
+    {
+      id: 48,
+      type: "Conference",
+      title:
+        "AGS: Attribution guided sharpening as a defense against adversarial attacks",
+      venue: "International Symposium on Intelligent Data Analysis",
+      pages: "225--236",
+      year: 2022,
+    },
+    {
+      id: 47,
+      type: "Journal",
+      title:
+        "SHRP2 Naturalistic Data Analysis of Older Drivers’ Gap-Acceptance Behaviour",
+      year: 2022,
+    },
+    {
+      id: 46,
+      type: "Conference",
+      title:
+        "Improving imbalanced dataset classification using Conditional Classifier-Generator (cCGen)",
+      venue:
+        "2022 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+      pages: "671--675",
+      year: 2022,
+    },
+    {
+      id: 45,
+      type: "Journal",
+      title:
+        "Adversarial patch attacks and defences in vision-based tasks: A survey",
+      year: 2022,
+    },
+    {
+      id: 44,
+      type: "Conference",
+      title:
+        "Driving Scene Understanding: How much temporal context and spatial resolution is necessary?",
+      venue: "The 34th Canadian Conference on Artificial Intelligence",
+      year: 2021,
+    },
+    {
+      id: 43,
+      type: "Conference",
+      title:
+        "An active transfer learning (ATL) framework for smart manufacturing with limited data: case study on material transfer in composites processing",
+      venue:
+        "2021 4th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS)",
+      pages: "277--282",
+      year: 2021,
+    },
+    {
+      id: 42,
+      type: "Conference",
+      title: "Probabilistic Robustness Quantification of Neural Networks",
+      venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
+      pages: "15966--15967",
+      year: 2021,
+    },
+    {
+      id: 41,
+      type: "Conference",
+      title: "Is Timing Critical to Trace Reconstruction?",
+      venue:
+        "2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+      pages: "2700--2705",
+      year: 2021,
+    },
+    {
+      id: 40,
+      type: "Conference",
+      title: "MINTS: Unsupervised Temporal Specifications Miner",
+      venue:
+        "2021 IEEE 21st International Conference on Software Quality, Reliability and Security (QRS)",
+      pages: "841--851",
+      year: 2021,
+    },
+    {
+      id: 39,
+      type: "Conference",
+      title:
+        "Retrieval enhanced ensemble model framework for rumor detection on micro-blogging platforms",
+      venue:
+        "2021 20th IEEE International Conference on Machine Learning and Applications (ICMLA)",
+      pages: "227--232",
+      year: 2021,
+    },
+    {
+      id: 38,
+      type: "Conference",
+      title: "Self-Attention Mechanism in GANs for Molecule Generation",
+      venue:
+        "2021 20th IEEE International Conference on Machine Learning and Applications (ICMLA)",
+      pages: "57--60",
+      year: 2021,
+    },
+    {
+      id: 37,
+      type: "Conference",
+      title:
+        "An active transfer learning (atl) framework for smart manufacturing with limited data: Case study on material transfer in composites processing",
+      venue:
+        "2021 4th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS)",
+      pages: "277--282",
+      year: 2021,
+    },
+    {
+      id: 36,
+      type: "Conference",
+      title:
+        "Retrieval Enhanced Ensemble Model Framework For Rumor Detection On Micro-blogging Platforms",
+      venue:
+        "2021 20th IEEE International Conference on Machine Learning and Applications (ICMLA)",
+      pages: "227--232",
+      year: 2021,
+    },
+    {
+      id: 35,
+      type: "Conference",
+      title:
+        "Gwad: Greedy workflow graph anomaly detection framework for system traces",
+      venue:
+        "2020 IEEE International Conference on systems, man, and Cybernetics (SMC)",
+      pages: "2790--2796",
+      year: 2020,
+    },
+    {
+      id: 34,
+      type: "Conference",
+      title:
+        "Qmine: A framework for mining quantitative regular expressions from system traces",
+      venue:
+        "2020 IEEE 20th International Conference on Software Quality, Reliability and Security Companion (QRS-C)",
+      pages: "370--377",
+      year: 2020,
+    },
+    {
+      id: 33,
+      type: "Conference",
+      title: "Robust supply chains with gradient boosted trees",
+      venue: "2020 IEEE Symposium Series on Computational Intelligence (SSCI)",
+      pages: "2633--2639",
+      year: 2020,
+    },
+    {
+      id: 32,
+      type: "Conference",
+      title: "MA2DF: A multi-agent anomaly detection framework",
+      venue:
+        "2020 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+      pages: "30--36",
+      year: 2020,
+    },
+    {
+      id: 31,
+      type: "Conference",
+      title:
+        "Light weight dilated CNN for time series classification and prediction",
+      venue:
+        "2020 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+      pages: "2179--2183",
+      year: 2020,
+    },
+    {
+      id: 30,
+      type: "Journal",
+      title:
+        "Deep neural networks for multimodal data fusion and affect recognition",
+      pages: "130--145",
+      year: 2020,
+    },
+    {
+      id: 29,
+      type: "Journal",
+      title:
+        "Fecal microbiota transplantation efficacy for Clostridium difficile infection: A trans-kingdom battle between donor and recipient gut microbiomes",
+      year: 2020,
+    },
+    {
+      id: 28,
+      type: "Conference",
+      title: "A neural word embedding approach to system trace reconstruction",
+      venue:
+        "2019 IEEE International Conference on Systems, Man and Cybernetics (SMC)",
+      pages: "310--315",
+      year: 2019,
+    },
+    {
+      id: 27,
+      type: "Conference",
+      title:
+        "Deep Learning-based Transfer Learning Framework for Predictive Maintenance",
+      venue:
+        "2019 IEEE International Conference on Systems, Man and Cybernetics (SMC)",
+      pages: "341--346",
+      year: 2019,
+    },
+    {
+      id: 26,
+      type: "Conference",
+      title: "Robustness Analysis of Network Anomaly Detectors",
+      venue:
+        "2019 IEEE International Conference on Systems, Man and Cybernetics (SMC)",
+      pages: "1083--1088",
+      year: 2019,
+    },
+    {
+      id: 25,
+      type: "Conference",
+      title:
+        "Smart manufacturing fault detection using recurrent neural networks",
+      venue:
+        "2019 IEEE International Conference on Systems, Man and Cybernetics (SMC)",
+      pages: "2164--2168",
+      year: 2019,
+    },
+    {
+      id: 24,
+      type: "Journal",
+      title: "RNA Structural motifs in miRNA-target interactions",
+      pages: "187--195",
+      year: 2019,
+    },
+    {
+      id: 23,
+      type: "Journal",
+      title: "Spiking neural network with synaptic delay and STDP learning",
+      pages: "57--66",
+      year: 2018,
+    },
+    {
+      id: 22,
+      type: "Conference",
+      title: "Robust network traffic classification with label noise",
+      venue:
+        "2017 13th International Conference on Network and Service Management (CNSM)",
+      pages: "1--6",
+      year: 2017,
+    },
+    {
+      id: 21,
+      type: "Conference",
+      title: "A spiking neural network for robust sound recognition",
+      venue:
+        "2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      pages: "2622--2626",
+      year: 2016,
+    },
+    {
+      id: 20,
+      type: "Conference",
+      title:
+        "Breast cancer malignancy grading based on light microscopy images and machine learning",
+      venue:
+        "2015 11th International Conference on Systems, Signals and Image Processing (IWSSIP)",
+      pages: "17--20",
+      year: 2015,
+    },
+    {
+      id: 19,
+      type: "Journal",
+      title:
+        "Lightweight convolutional neural networks for image classification",
+      pages: "43--56",
+      year: 2015,
+    },
+    {
+      id: 18,
+      type: "Conference",
+      title: "Active learning for automated image classification of plankton",
+      venue:
+        "2015 11th International Conference on Systems, Signals and Image Processing (IWSSIP)",
+      pages: "1--4",
+      year: 2015,
+    },
+    [
+      {
+        id: 17,
+        type: "Journal",
+        title: "Image denoising using wavelet transform and thresholding",
+        pages: "123--130",
+        year: 2014,
+      },
+      {
+        id: 16,
+        type: "Conference",
+        title:
+          "Machine learning based approach for network intrusion detection",
+        venue:
+          "2014 IEEE International Conference on Computing, Networking and Communications (ICNC)",
+        pages: "456--460",
+        year: 2014,
+      },
+      {
+        id: 15,
+        type: "Journal",
+        title: "Efficient face recognition using PCA and LDA",
+        pages: "89--95",
+        year: 2013,
+      },
+      {
+        id: 14,
+        type: "Conference",
+        title: "A hybrid approach for speech emotion recognition",
+        venue:
+          "2013 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+        pages: "789--792",
+        year: 2013,
+      },
+      {
+        id: 13,
+        type: "Journal",
+        title: "Pattern recognition techniques in medical image analysis",
+        pages: "300--310",
+        year: 2012,
+      },
+      {
+        id: 12,
+        type: "Conference",
+        title: "Feature selection methods for text classification",
+        venue: "2012 IEEE International Conference on Data Mining (ICDM)",
+        pages: "150--155",
+        year: 2012,
+      },
+      {
+        id: 11,
+        type: "Journal",
+        title: "Support vector machines for bioinformatics",
+        pages: "45--55",
+        year: 2011,
+      },
+      {
+        id: 10,
+        type: "Conference",
+        title: "Real-time object tracking using Kalman filter",
+        venue:
+          "2011 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+        pages: "250--255",
+        year: 2011,
+      },
+      {
+        id: 9,
+        type: "Journal",
+        title: "Data mining techniques for fraud detection",
+        pages: "120--130",
+        year: 2010,
+      },
+      {
+        id: 8,
+        type: "Conference",
+        title: "Neural networks for pattern recognition",
+        venue: "2010 International Joint Conference on Neural Networks (IJCNN)",
+        pages: "310--315",
+        year: 2010,
+      },
+      {
+        id: 7,
+        type: "Journal",
+        title: "Genetic algorithms in machine learning",
+        pages: "100--110",
+        year: 2009,
+      },
+      {
+        id: 6,
+        type: "Conference",
+        title: "Clustering algorithms in data analysis",
+        venue: "2009 IEEE Symposium on Computational Intelligence",
+        pages: "200--205",
+        year: 2009,
+      },
+      {
+        id: 5,
+        type: "Journal",
+        title: "An overview of deep learning in computer vision",
+        pages: "15--25",
+        year: 2008,
+      },
+      {
+        id: 4,
+        type: "Conference",
+        title: "Image segmentation using watershed algorithm",
+        venue: "2008 IEEE International Conference on Image Processing (ICIP)",
+        pages: "123--128",
+        year: 2008,
+      },
+      {
+        id: 3,
+        type: "Journal",
+        title: "Pattern classification using decision trees",
+        pages: "50--60",
+        year: 2007,
+      },
+      {
+        id: 2,
+        type: "Conference",
+        title: "Speech recognition using hidden Markov models",
+        venue:
+          "2007 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+        pages: "2000--2005",
+        year: 2007,
+      },
+      {
+        id: 1,
+        type: "Journal",
+        title: "Fundamentals of neural computation",
+        pages: "1--10",
+        year: 2006,
+      },
+    ],
+  ],
 };
