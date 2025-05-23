@@ -13,32 +13,47 @@ export const navigationConfig: NavItem[] = [
   },
   {
     title: "About",
-    href: "/about",
-    description: "About Dr. Narayan",
+    href: "#",
+    description: "About IDSL",
+    subItems: [
+      {
+        title: "About Dr. Narayan",
+        href: "/about-dr-narayan",
+        description: "About Dr. Narayan",
+      },
+    ],
   },
   {
     title: "Research",
     href: "/research",
     description: "Research",
+    subItems: [
+      {
+        title: "Team",
+        href: "/team",
+        description: "Team",
+      },
+      {
+        title: "Opportunities",
+        href: "/opportunities",
+        description: "Opportunities",
+      },
+      {
+        title: "Resources",
+        href: "/resources",
+        description: "Resources",
+      },
+    ],
   },
   {
     title: "Publications",
-    href: "#",
+    href: "/publications",
     description: "Publications",
   },
+
   {
-    title: "Opportunities",
-    href: "/opportunities",
-    description: "Opportunities",
-  },
-  {
-    title: "Resources",
-    href: "/resources",
-    description: "Resources",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-    description: "Contact",
+    title: "News",
+    href: "/news",
+    description: "News",
   },
 ];
