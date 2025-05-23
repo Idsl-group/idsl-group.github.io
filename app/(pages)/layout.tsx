@@ -50,7 +50,7 @@ export default function RootLayout({
               <div className="container flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
                 <div className="flex items-center space-x-4">
                   <Link href="/" className="flex items-center space-x-2 group">
-                    <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
+                    <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
                       INTELLIGENT DATA SCIENCE LAB
                     </span>
                   </Link>

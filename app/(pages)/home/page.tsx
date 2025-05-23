@@ -213,6 +213,91 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* Recruitment Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              className="text-3xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              Join Our Research Team
+            </motion.h2>
+
+            <motion.div
+              className="prose prose-lg text-gray-600 dark:text-gray-300 mb-8 text-left mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <p className="mb-4">
+                Please see our{" "}
+                <a
+                  href="/publications"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  publications list
+                </a>{" "}
+                for more information on our research. Our team members and some
+                examples of current and past projects are also available on our{" "}
+                <a
+                  href="/team"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  team page
+                </a>
+                . We upload our presentations and workshops to the{" "}
+                <a
+                  href="/resources"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  resources page
+                </a>
+                .
+              </p>
+
+              <p className="mb-6">
+                Our group is recruiting year-round for postdocs, MASc and PhD
+                students, visiting students and undergraduate students. All
+                admitted students will receive a stipend.
+              </p>
+
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                  How to Apply
+                </h3>
+                <p className="mb-4">
+                  If you are interested in pursuing research or graduate
+                  studies, please email{" "}
+                  <a
+                    href="mailto:apurva.narayan@uwaterloo.ca"
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Dr. Apurva Narayan
+                  </a>{" "}
+                  with the following documents:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>CV</li>
+                  <li>Research Statement</li>
+                  <li>Sample work (if applicable)</li>
+                </ul>
+                <div className="mt-6">
+                  <Button asChild>
+                    <a href="mailto:apurva.narayan@uwaterloo.ca">
+                      Contact Dr. Narayan
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
