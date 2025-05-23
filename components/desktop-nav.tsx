@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+
 import { navigationConfig, NavItem } from "@/lib/navigation";
 
 const navVariants = {
@@ -13,128 +13,90 @@ const navVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 24,
+      type: "tween",
+      duration: 0.3,
       staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: -10 },
+  hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 20 },
+    x: 0,
+    transition: {
+      type: "tween",
+      duration: 0.3,
+    },
   },
   hover: {
-    scale: 1.02,
+    scale: 1.05,
     transition: { duration: 0.2 },
   },
 };
 
 export default function DesktopNav() {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setActiveMenu(null);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleMouseEnter = (title: string, hasSubItems: boolean) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    if (hasSubItems) {
-      setActiveMenu(title);
-      setIsHovering(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      if (!isHovering) {
-        setActiveMenu(null);
-      }
-    }, 200);
-  };
 
   const renderNavItem = (item: NavItem) => {
     const hasSubItems = item.subItems && item.subItems.length > 0;
-    const isActive = activeMenu === item.title;
 
     return (
       <motion.div
         key={item.href}
         variants={itemVariants}
-        className="relative"
-        onMouseEnter={() => handleMouseEnter(item.title, !!hasSubItems)}
-        onMouseLeave={handleMouseLeave}
+        className="relative group"
+        onMouseEnter={() => setOpenMenu(hasSubItems ? item.title : null)}
+        onMouseLeave={() => setOpenMenu(null)}
       >
         <Link
           href={item.href}
-          className={cn(
-            "relative px-4 py-2.5 text-sm font-medium flex items-center gap-1 rounded-lg transition-colors duration-200",
-            isActive
-              ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30"
-              : "text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50"
-          )}
+          className="relative px-3 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors duration-300 group/link"
         >
-          {item.title}
+          <span className="relative z-10">{item.title}</span>
+
           {hasSubItems && (
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${
-                isActive ? "rotate-180" : ""
+              className={`inline-block ml-1 h-4 w-4 text-neutral-400 dark:text-neutral-500 transition-transform duration-300 ${
+                openMenu === item.title ? "rotate-180" : ""
               }`}
             />
           )}
+
+          <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-black dark:bg-white origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300" />
         </Link>
 
         <AnimatePresence>
-          {hasSubItems && isActive && (
+          {hasSubItems && openMenu === item.title && (
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 8 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute left-0 top-full mt-2 w-56 z-50"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => {
-                setIsHovering(false);
-                handleMouseLeave();
-              }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              onMouseEnter={() => setOpenMenu(item.title)}
+              onMouseLeave={() => setOpenMenu(null)}
+              className="absolute top-full left-0 mt-4 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden divide-y divide-neutral-100 dark:divide-neutral-800"
             >
-              <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10 overflow-hidden">
-                {item.subItems?.map((subItem) => (
-                  <Link
-                    key={subItem.href}
-                    href={subItem.href}
-                    className="group flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800/70 transition-colors duration-200"
-                  >
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                          {subItem.title}
-                        </span>
-                        <ChevronRight className="h-3.5 w-3.5 text-gray-400 group-hover:text-blue-500 transition-colors" />
-                      </div>
-                      {subItem.description && (
-                        <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400 line-clamp-2">
-                          {subItem.description}
-                        </p>
-                      )}
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              {item.subItems?.map((subItem) => (
+                <Link
+                  key={subItem.href}
+                  href={subItem.href}
+                  className="block px-4 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors duration-300 group"
+                >
+                  <div className="flex flex-col">
+                    <span className="font-semibold text-sm text-neutral-900 dark:text-neutral-100 group-hover:text-black dark:group-hover:text-white transition-colors">
+                      {subItem.title}
+                    </span>
+                    {subItem.description && (
+                      <span className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+                        {subItem.description}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
@@ -145,12 +107,12 @@ export default function DesktopNav() {
   return (
     <motion.nav
       ref={navRef}
-      variants={navVariants}
       initial="hidden"
       animate="visible"
-      className="hidden md:flex items-center space-x-1"
+      variants={navVariants}
+      className="flex items-center space-x-2"
     >
-      {navigationConfig.map((item) => renderNavItem(item))}
+      {navigationConfig.map(renderNavItem)}
     </motion.nav>
   );
 }

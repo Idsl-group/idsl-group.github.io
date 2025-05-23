@@ -1,188 +1,181 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
-import { motion as Motion } from "framer-motion";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
-  FaMapMarkerAlt,
+  FaPhone,
   FaEnvelope,
-  FaReact,
+  FaMapMarkerAlt,
+  FaUniversity,
 } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiVercel } from "react-icons/si";
-import { cn } from "@/lib/utils";
+import { FaXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { navigationConfig } from "@/lib/navigation";
 
-export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
-  const socialLinks = [
-    {
-      icon: FaLinkedin,
-      href: "https://www.linkedin.com/in/idsl",
-      label: "LinkedIn",
-      color: "text-blue-600 hover:text-blue-800",
+const footerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
-    {
-      icon: FaTwitter,
-      href: "https://x.com/idsl",
-      label: "Twitter",
-      color: "text-sky-500 hover:text-sky-700",
-    },
-    {
-      icon: FaGithub,
-      href: "https://github.com/idsl",
-      label: "GitHub",
-      color: "text-purple-600 hover:text-purple-800",
-    },
-  ];
+  },
+};
 
-  const techStack = [
-    {
-      Icon: FaReact,
-      name: "React",
-      color: "text-blue-600",
-    },
-    {
-      Icon: SiNextdotjs,
-      name: "Next.js",
-      color: "text-black dark:text-white",
-    },
-    {
-      Icon: SiTailwindcss,
-      name: "Tailwind",
-      color: "text-teal-600",
-    },
-    {
-      Icon: SiVercel,
-      name: "Vercel",
-      color: "text-gray-800 dark:text-white",
-    },
-  ];
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+};
 
+export function SiteFooter() {
   return (
-    <footer
-      className={cn(
-        "bg-gradient-to-br from-gray-50/80 via-white to-gray-50/80 dark:from-gray-900/80 dark:via-gray-950 dark:to-gray-900/80",
-        "backdrop-blur-sm border-t border-gray-200/50 dark:border-gray-800/50",
-        "py-16 px-4 sm:px-6 lg:px-8",
-        "transition-all duration-500 ease-out",
-        className
-      )}
-    >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-        {/* Profile Section */}
-        <Motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-6 text-center md:text-left"
+    <footer className="w-full bg-gray-900 text-gray-300 border-t border-gray-800">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <motion.div
+          variants={footerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
         >
-          <div className="flex justify-center md:justify-start items-center space-x-4">
-            <Motion.div
-              whileHover={{ scale: 1.05 }}
-              className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-blue-500/30 ring-offset-2 ring-offset-white dark:ring-offset-gray-950 shadow-xl"
-            >
-              <Image
-                src="/logo.png"
-                alt="IDSL"
-                width={64}
-                height={64}
-                className="w-full h-full object-cover"
-              />
-            </Motion.div>
-            <div>
-              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                IDSL
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                AI Solutions Architect
-              </p>
-            </div>
-          </div>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Transforming complex data challenges into intelligent solutions
-            through innovative AI and machine learning technologies.
-          </p>
-        </Motion.div>
-
-        {/* Contact Section */}
-        <Motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-6 text-center"
-        >
-          <div className="space-y-4">
-            <Motion.div
-              className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="p-2 rounded-lg bg-blue-500/10 dark:bg-blue-500/5">
-                <FaMapMarkerAlt className="text-blue-500 dark:text-blue-400 text-lg" />
-              </div>
-              <span>Montreal, QC, Canada</span>
-            </Motion.div>
-            <Motion.div
-              className="flex items-center justify-center space-x-3 text-gray-600 dark:text-gray-400"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="p-2 rounded-lg bg-blue-500/10 dark:bg-blue-500/5">
-                <FaEnvelope className="text-blue-500 dark:text-blue-400 text-lg" />
-              </div>
+          {/* About Section */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="text-xl font-bold text-white mb-4">IDSL</h3>
+            <p className="text-sm leading-relaxed">
+              Intelligent Data Science Lab
+              <br />
+              Research Group of Apurva Narayan at Western University, University
+              of British Columbia and the University of Waterloo, Canada.
+            </p>
+            <div className="flex space-x-4 pt-2">
               <a
-                href="mailto:idsl@concordia.ca"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                idsl@concordia.ca
-              </a>
-            </Motion.div>
-          </div>
-
-          <div className="flex justify-center space-x-6 mt-6">
-            {socialLinks.map((social, index) => (
-              <Motion.a
-                key={index}
-                href={social.href}
+                href="https://twitter.com/"
                 target="_blank"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className={`
-                  text-2xl ${social.color}
-                  transition-all duration-300
-                  hover:shadow-lg
-                `}
-                aria-label={social.label}
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
               >
-                <social.icon />
-              </Motion.a>
-            ))}
-          </div>
-        </Motion.div>
-
-        {/* Tech Stack Section */}
-        <div className="text-center md:text-right">
-          <div className="text-sm text-gray-600 dark:text-gray-400 flex flex-col items-center md:items-end space-y-2">
-            <div className="flex items-center gap-3">
-              <span>&copy; {new Date().getFullYear()} IDSL</span>
-              <span className="h-4 w-px bg-gray-300 dark:bg-gray-700"></span>
-              <span className="flex items-center gap-2">
-                Built with
-                <Motion.span
-                  className="inline-flex items-center gap-1.5"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <SiNextdotjs className="h-4 w-4" title="Next.js" />
-                  <FaReact className="h-4 w-4 text-blue-500" title="React" />
-                  <SiTailwindcss
-                    className="h-4 w-4 text-teal-500"
-                    title="Tailwind CSS"
-                  />
-                </Motion.span>
-              </span>
+                <FaXTwitter className="h-5 w-5" />
+              </a>
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <FaLinkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <FaGithub className="h-5 w-5" />
+              </a>
             </div>
-            <span className="text-xs opacity-75">All Rights Reserved</span>
-          </div>
-        </div>
+          </motion.div>
+
+          {/* Contact Section */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <FaPhone className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">Phone</p>
+                  <a
+                    href="tel:+12508078272"
+                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                  >
+                    +1 (250) 807-8272
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <FaEnvelope className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">Emails</p>
+                  <div className="space-y-1">
+                    <a
+                      href="mailto:apurva.narayan@uwo.ca"
+                      className="block text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      apurva.narayan@uwo.ca
+                    </a>
+                    <a
+                      href="mailto:apurva.narayan@ubc.ca"
+                      className="block text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      apurva.narayan@ubc.ca
+                    </a>
+                    <a
+                      href="mailto:apurva.narayan@uwaterloo.ca"
+                      className="block text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      apurva.narayan@uwaterloo.ca
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Location Section */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-4">Location</h3>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">Office</p>
+                  <p className="text-sm text-gray-400">MC - 368</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <FaUniversity className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">Address</p>
+                  <p className="text-sm text-gray-400">
+                    1151 Richmond St,
+                    <br />
+                    London, ON N6A 3K7
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Navigation */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-4">
+              Navigation
+            </h3>
+            <nav className="grid grid-cols-2 gap-2">
+              {navigationConfig.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors py-1"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
+        </motion.div>
+
+        {/* Copyright */}
+        <motion.div
+          variants={itemVariants}
+          className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500"
+        >
+          <p>
+            {new Date().getFullYear()} Intelligent Data Science Lab. All rights
+            reserved.
+          </p>
+        </motion.div>
       </div>
     </footer>
   );
