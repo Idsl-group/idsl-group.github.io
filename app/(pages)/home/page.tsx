@@ -298,6 +298,83 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* Highlights Section */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-100 dark:border-blue-800/50"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-start">
+                <div className="flex-shrink-0 bg-blue-100 dark:bg-blue-800/50 text-blue-800 dark:text-blue-200 rounded-lg px-3 py-1 text-sm font-medium">
+                  Highlights
+                </div>
+                <div className="ml-3 text-sm text-blue-700 dark:text-blue-300">
+                  July 10, 2024
+                </div>
+              </div>
+              <div className="mt-2">
+                <p className="text-gray-900 dark:text-white">
+                  The Banff International Research Station will host the{" "}
+                  <span className="font-semibold">
+                    Climate Change Scenarios and Financial Risk
+                  </span>{" "}
+                  Online workshop at the UBC Okanagan campus in Kelowna, BC,
+                  from May 1 to May 6, 2022.
+                </p>
+                <p className="mt-4">
+                  <Link href="https://www.birs.ca/events/2022/5-day-workshops/22w5201">
+                    <Button>View Event</Button>
+                  </Link>
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                News
+              </h2>
+
+              <article className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <time dateTime="2025-05-01">May 1, 2025</time>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  Starting our AI for Social Good Seminar Series with inaugural
+                  speaker "Prof. Milind Tambe", Harvard
+                </h3>
+                <div className="prose prose-gray dark:prose-invert">
+                  <p>
+                    We are thrilled to launch our AI for Social Good Seminar
+                    Series, led by Western University and supported by
+                    University of Waterloo, UBC, and the International Center
+                    for Applied Systems Science for Sustainable Development. Our
+                    first inaugural speaker is Prof. Milind Tambe, Harvard
+                    University, USA.
+                  </p>
+                </div>
+              </article>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
