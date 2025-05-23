@@ -109,7 +109,7 @@ export default function HomePage() {
                 variant="outline"
                 className="border-white text-white hover:bg-white/10"
               >
-                Meet Our Team
+                <Link href="/team">Meet Our Team</Link>
               </Button>
             </motion.div>
           </div>
