@@ -24,29 +24,25 @@ export default function HomePage() {
     {
       title: "Data Analytics",
       description: "Advanced analytics for complex data challenges",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
+      image: "https://picsum.photos/id/1/2940/1960", // Laptop with code/analytics
       href: "/research/data-analytics",
     },
     {
       title: "Software Engineering",
       description: "Innovative approaches to software development",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2940&auto=format&fit=crop",
+      image: "https://picsum.photos/id/0/2940/1960", // Laptop on desk
       href: "/research/software-engineering",
     },
     {
       title: "Machine Learning",
       description: "Cutting-edge ML models and algorithms",
-      image:
-        "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2874&auto=format&fit=crop",
+      image: "https://picsum.photos/id/1002/2940/1960", // Abstract data visualization
       href: "/research/machine-learning",
     },
     {
       title: "Trustworthy AI",
       description: "Ensuring safety and reliability in AI systems",
-      image:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2886&auto=format&fit=crop",
+      image: "https://picsum.photos/id/1003/2940/1960", // Abstract tech background
       href: "/research/trustworthy-ai",
     },
   ];
@@ -58,7 +54,7 @@ export default function HomePage() {
         {/* Background Image + Overlay */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2940&auto=format&fit=crop"
+            src="https://picsum.photos/id/20/2940/1960" // Laboratory setting
             alt="Researchers working in lab"
             fill
             className="object-cover"
