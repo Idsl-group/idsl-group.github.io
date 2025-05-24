@@ -12,17 +12,12 @@ export const teamData = {
     },
     {
       name: "Anojan Yogenthiran",
+      role: "Research Associate",
       expertise: ["Optimal Aptamer Discovery", "LLMs"],
     },
     {
       name: "Raj Tulluri",
-      /**
-       * An array of strings representing areas of expertise.
-       * - "Optimal Aptamer Discovery": Specialization in finding aptamers with optimal binding properties.
-       * - "Artificial Intelligence": Expertise in AI technologies and methodologies.
-       * - "Large Language Models": Knowledge and experience with large-scale language processing models.
-       * - "Generative AI": Focus on AI models that can generate new content or data.
-       */
+      role: "Research Associate",
       expertise: [
         "Optimal Aptamer Discovery",
         "Artificial Intelligence",
@@ -32,6 +27,7 @@ export const teamData = {
     },
     {
       name: "Dipesh Gyanchandani",
+      role: "Research Associate",
       expertise: [
         "LLM",
         "Bioinformatics",
@@ -41,6 +37,7 @@ export const teamData = {
     },
     {
       name: "Prateek Chandra",
+      role: "Research Associate",
       expertise: ["LLMs"],
       imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
     },
