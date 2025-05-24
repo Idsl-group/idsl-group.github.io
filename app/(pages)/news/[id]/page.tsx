@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 
 const newsData = {
@@ -83,11 +84,19 @@ export default function NewsDetailPage() {
           className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden"
         >
           {/* Featured Image */}
-          <div className="h-64 md:h-96 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-            <img
+          <div className="relative h-64 md:h-96 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+            <Image
               src={newsItem.image}
               alt={newsItem.title}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 80vw"
+              priority
+              onError={(e) => {
+                // Hide the image if it fails to load
+                const target = e.target as HTMLImageElement;
+                target.style.display = "none";
+              }}
             />
           </div>
 

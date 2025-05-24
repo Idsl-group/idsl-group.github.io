@@ -364,7 +364,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   Starting our AI for Social Good Seminar Series with inaugural
-                  speaker "Prof. Milind Tambe", Harvard
+                  &ldquo;Prof. Milind Tambe&rdquo;, Harvard
                 </h3>
                 <div className="prose prose-gray dark:prose-invert">
                   <p>
