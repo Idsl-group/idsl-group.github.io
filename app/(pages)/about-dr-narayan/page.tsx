@@ -104,7 +104,7 @@ export default function AboutDrNarayan() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 transition"
+                className="border-blue-50 text-blue-700 dark:border-blue-500 dark:text-blue-500 hover:bg-blue-50/10 transition"
               >
                 <a href="/publications">View Research</a>
               </Button>
