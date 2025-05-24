@@ -56,7 +56,7 @@ export function SiteFooter() {
             </p>
             <div className="flex space-x-4 pt-2">
               <a
-                href="https://twitter.com/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -64,7 +64,7 @@ export function SiteFooter() {
                 <FaXTwitter className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -72,7 +72,7 @@ export function SiteFooter() {
                 <FaLinkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://github.com/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
