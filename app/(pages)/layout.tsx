@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SimpleThemeToggle } from "@/components/simple-theme-toggle";
+import Image from "next/image";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,6 +51,13 @@ export default function RootLayout({
               <div className="container flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
                 <div className="flex items-center space-x-4">
                   <Link href="/" className="flex items-center space-x-2 group">
+                    <Image
+                      src="/logo.png"
+                      alt="IDSL Logo"
+                      width={30}
+                      height={30}
+                      className="rounded-full"
+                    />
                     <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
                       IDSL
                     </span>
