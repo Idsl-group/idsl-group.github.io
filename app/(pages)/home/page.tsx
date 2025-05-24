@@ -207,11 +207,12 @@ export default function HomePage() {
             </div>
             <div className="mt-10 text-center">
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-gray-800"
               >
-                Learn More About Our Research
+                <Link href="/publications">Learn More About Our Research</Link>
               </Button>
             </div>
           </div>
