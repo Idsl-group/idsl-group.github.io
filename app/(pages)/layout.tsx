@@ -56,7 +56,7 @@ export default function RootLayout({
                       alt="IDSL Logo"
                       width={30}
                       height={30}
-                      className="rounded-full"
+                      className="hidden lg:block rounded-full"
                     />
                     <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
                       IDSL
