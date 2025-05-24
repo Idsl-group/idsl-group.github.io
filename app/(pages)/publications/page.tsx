@@ -155,10 +155,10 @@ export default function PublicationsPage() {
                           {pub.type.charAt(0)}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                          <h3 className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white mb-1">
                             {pub.title}
                           </h3>
-                          <div className="flex flex-col sm:flex-row sm:items-center text-sm text-gray-600 dark:text-gray-300 space-y-1 sm:space-y-0 sm:space-x-4">
+                          <div className="flex flex-col sm:flex-row sm:items-center text-xs md:text-sm text-gray-600 dark:text-gray-300 space-y-1 sm:space-y-0 sm:space-x-4">
                             {pub.venue && (
                               <span className="flex items-center">
                                 <svg
