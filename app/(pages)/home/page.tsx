@@ -58,8 +58,8 @@ export default function HomePage() {
         {/* Background Image + Overlay */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1562774053-701939374585?w=2000&auto=format&fit=crop" // Modern research lab with scientists
-            alt="Modern research laboratory with scientists working"
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2000&auto=format&fit=crop" // Space with digital data visualization
+            alt="Space-themed digital data visualization with stars and connections"
             fill
             className="object-cover"
             priority
