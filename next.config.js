@@ -22,6 +22,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com", // Unsplash image CDN domain
       },
+      {
+        protocol: "https",
+        hostname: "picsum.photos", // Unsplash image CDN domain
+      },
     ],
   },
   webpack: (config, { isServer }) => {

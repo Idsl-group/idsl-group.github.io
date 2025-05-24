@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const news = [
   {
@@ -11,7 +12,7 @@ const news = [
     date: "May 1, 2025",
     content:
       "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and the International Center for Applied Systems Science for Sustainable Development. Our first inaugural speaker is Prof. Milind Tambe, Harvard University, USA.",
-    image: "/images/news/ai-seminar.jpg",
+    image: "https://picsum.photos/800/400?random=1",
     tags: ["Seminar", "AI for Good"],
   },
 ];
@@ -45,11 +46,32 @@ export default function NewsPage() {
               transition={{ delay: index * 0.1 }}
               className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <img
+              <div className="relative w-full h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+                  <svg
+                    className="w-16 h-16 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 3}
+                  onError={(e) => {
+                    // Prevent infinite loop
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
               </div>
               <div className="p-6">

@@ -3,14 +3,19 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
   FaUniversity,
+  FaLinkedin,
+  FaReact,
+  FaGithub,
 } from "react-icons/fa";
-import { FaXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { navigationConfig } from "@/lib/navigation";
+import { SiNextdotjs, SiTailwindcss, SiVercel } from "react-icons/si";
 
 const footerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -175,6 +180,87 @@ export function SiteFooter() {
             {new Date().getFullYear()} Intelligent Data Science Lab. All rights
             reserved.
           </p>
+        </motion.div>
+        {/* Design and Tech Section */}
+        <motion.div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
+          <div className="max-w-md mx-auto space-y-4">
+            <span className="block text-xs text-gray-600 dark:text-gray-400 font-medium">
+              Designed by
+              <span className="inline-flex items-center align-middle ml-2">
+                <Image
+                  src="/profile-1.jpeg"
+                  alt="Pranav K Jha"
+                  width={20}
+                  height={20}
+                  className="rounded-full object-cover mr-2 inline-block align-middle -mt-0.5"
+                />
+                <span className="align-middle">Pranav K. Jha</span>
+              </span>
+            </span>
+            <div className="flex items-center justify-center space-x-4">
+              <a
+                href="mailto:pranav.jha@mail.concordia.ca"
+                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
+              >
+                <FaEnvelope className="mr-2" /> pranav.jha@mail.concordia.ca
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pranav-k-jha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
+              >
+                <FaLinkedin className="mr-2" /> LinkedIn
+              </a>
+              <a
+                href="https://github.com/pranav-k-jha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
+              >
+                <FaGithub className="mr-2" /> GitHub
+              </a>
+            </div>
+            <div className="flex items-center justify-center space-x-4">
+              <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+                Built with
+              </span>
+              <div className="flex items-center space-x-3">
+                {[
+                  {
+                    Icon: FaReact,
+                    lightColor: "text-blue-600",
+                    darkColor: "text-blue-400",
+                    title: "React",
+                  },
+                  {
+                    Icon: SiNextdotjs,
+                    lightColor: "text-black",
+                    darkColor: "text-white",
+                    title: "Next.js",
+                  },
+                  {
+                    Icon: SiTailwindcss,
+                    lightColor: "text-blue-500",
+                    darkColor: "text-blue-300",
+                    title: "Tailwind CSS",
+                  },
+                  {
+                    Icon: SiVercel,
+                    lightColor: "text-black",
+                    darkColor: "text-white",
+                    title: "Vercel",
+                  },
+                ].map(({ Icon, lightColor, darkColor, title }) => (
+                  <Icon
+                    key={title}
+                    className={`${lightColor} dark:${darkColor} text-xl hover:scale-125 transition-transform`}
+                    title={title}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </footer>
