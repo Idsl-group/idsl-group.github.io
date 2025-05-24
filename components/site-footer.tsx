@@ -235,7 +235,7 @@ export function SiteFooter() {
                   },
                   {
                     Icon: SiNextdotjs,
-                    lightColor: "text-black",
+                    lightColor: "text-white",
                     darkColor: "text-white",
                     title: "Next.js",
                   },
@@ -247,7 +247,7 @@ export function SiteFooter() {
                   },
                   {
                     Icon: SiVercel,
-                    lightColor: "text-black",
+                    lightColor: "text-white",
                     darkColor: "text-white",
                     title: "Vercel",
                   },
