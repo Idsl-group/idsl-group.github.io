@@ -17,7 +17,8 @@ const newsData = {
       "Talk details coming soon...",
     ],
     speakerBio: `Milind Tambe is Gordon McKay Professor of Computer Science and Director of Center for Research on Computation and Society at Harvard University; concurrently, he is also Principal Scientist and Director for "AI for Social Good" at Google Deepmind. Prof. Tambe and his team have developed pioneering AI systems that deliver real-world impact in public health (e.g., maternal and child health), public safety, and wildlife conservation. He is recipient of the AAAI Award for Artificial Intelligence for the Benefit of Humanity, AAAI Feigenbaum Prize, IJCAI John McCarthy Award, AAAI Robert S. Engelmore Memorial Lecture Award, AAMAS ACM Autonomous Agents Research Award, INFORMS Wagner prize for excellence in Operations Research practice, Military Operations Research Society Rist Prize, Columbus Fellowship Foundation Homeland security award and commendations and certificates of appreciation from the US Coast Guard, the Federal Air Marshals Service and airport police at the city of Los Angeles. He is a fellow of AAAI and ACM.`,
-    image: "https://picsum.photos/id/20/800/400",
+    image:
+      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&auto=format&fit=crop",
     tags: ["Seminar", "AI for Good"],
   },
 };

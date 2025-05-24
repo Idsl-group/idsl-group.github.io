@@ -24,25 +24,29 @@ export default function HomePage() {
     {
       title: "Data Analytics",
       description: "Advanced analytics for complex data challenges",
-      image: "https://picsum.photos/id/1/2940/1960", // Laptop with code/analytics
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop", // Data visualization
       href: "/research/data-analytics",
     },
     {
       title: "Software Engineering",
       description: "Innovative approaches to software development",
-      image: "https://picsum.photos/id/0/2940/1960", // Laptop on desk
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1000&auto=format&fit=crop", // Code on screen
       href: "/research/software-engineering",
     },
     {
       title: "Machine Learning",
       description: "Cutting-edge ML models and algorithms",
-      image: "https://picsum.photos/id/1002/2940/1960", // Abstract data visualization
+      image:
+        "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1000&auto=format&fit=crop", // AI and neural networks
       href: "/research/machine-learning",
     },
     {
       title: "Trustworthy AI",
       description: "Ensuring safety and reliability in AI systems",
-      image: "https://picsum.photos/id/1003/2940/1960", // Abstract tech background
+      image:
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1000&auto=format&fit=crop", // Security and trust
       href: "/research/trustworthy-ai",
     },
   ];
@@ -54,8 +58,8 @@ export default function HomePage() {
         {/* Background Image + Overlay */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://picsum.photos/id/20/2940/1960" // Laboratory setting
-            alt="Researchers working in lab"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?w=2000&auto=format&fit=crop" // Modern research lab with scientists
+            alt="Modern research laboratory with scientists working"
             fill
             className="object-cover"
             priority
