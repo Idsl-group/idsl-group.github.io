@@ -42,6 +42,7 @@ export const teamData = {
     {
       name: "Prateek Chandra",
       expertise: ["LLMs"],
+      imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
     },
   ],
   Postdoc: [{ name: "Soniya" }],
