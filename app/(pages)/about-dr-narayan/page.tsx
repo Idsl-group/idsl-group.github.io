@@ -321,7 +321,7 @@ export default function AboutDrNarayan() {
                     icon={<Linkedin className="w-6 h-6" />}
                     title="Connect"
                     items={["LinkedIn Profile"]}
-                    link="https://linkedin.com/in/yourprofile"
+                    link="https://www.linkedin.com/in/apurva-narayan-44308b17/"
                   />
                 </div>
               </div>
