@@ -133,7 +133,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {researchDomains.map((domain, index) => (
-              <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <Card
+                key={domain.href}
+                className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={domain.image}
