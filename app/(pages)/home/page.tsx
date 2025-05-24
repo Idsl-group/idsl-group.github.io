@@ -137,29 +137,27 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {researchDomains.map((domain, index) => (
-              <Link key={index} href={domain.href}>
-                <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={domain.image}
-                      alt={domain.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      priority={index < 2}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
-                      {domain.title}
-                    </h3>
-                  </div>
-                  <CardContent className="p-4">
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {domain.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
+              <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={domain.image}
+                    alt={domain.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    priority={index < 2}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
+                    {domain.title}
+                  </h3>
+                </div>
+                <CardContent className="p-4">
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {domain.description}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
