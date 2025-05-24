@@ -24,7 +24,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "picsum.photos", // Unsplash image CDN domain
+        hostname: "images.pexels.com", // Pexels image CDN domain
       },
     ],
   },
