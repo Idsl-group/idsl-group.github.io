@@ -56,37 +56,36 @@ export default function AboutDrNarayan() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center">
-        <div className="absolute inset-0 -z-10">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center bg-gray-900">
+        {/* Header Image Background */}
+        <div className="absolute inset-0 z-0">
           <Image
-            src="/profile-1.png"
-            alt="Dr. Apurva Narayan"
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+            alt="Abstract technology background with blue digital particles"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
             quality={100}
             placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAANABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAhEAABAwQCAwEAAAAAAAAAAAABAgMEAAURIRIxE0Fhcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAwDAQACEQMRAD8A0lq3RZ8Rl2bHbfcKBlSxknbYJ3+1Kp7Vb4i4rK1R0lXGjYkkj8B7pSq1iZP/9k="
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAANABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAhEAABAwQCAwEAAAAAAAAAAAABAgMEAAURIRIxE0Fhcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwDSWrdFnxGXZsdt9woGVLGSdti3f7UqntVviLisrVHSVcaNiSSPwHulKrWJk//Z"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80 dark:from-gray-900/90 dark:to-gray-900/90" />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-indigo-900/90 dark:from-black/80 dark:to-black/90" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-4xl mx-auto text-center text-white"
-          >
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-6 sm:px-10 max-w-5xl">
+          <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-6xl font-bold mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
             >
               Dr. Apurva Narayan
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-blue-200 mb-8 max-w-3xl mx-auto"
+              className="text-lg sm:text-xl md:text-2xl text-blue-200 mb-10"
             >
               Leading Research in Intelligent Data Science and Machine Learning
             </motion.p>
@@ -97,7 +96,7 @@ export default function AboutDrNarayan() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50"
+                className="bg-white text-blue-700 hover:bg-blue-100 transition"
               >
                 <a href="#contact">Contact Me</a>
               </Button>
@@ -105,9 +104,9 @@ export default function AboutDrNarayan() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10 transition"
               >
-                <a href="#research">View Research</a>
+                <a href="/publications">View Research</a>
               </Button>
             </motion.div>
           </motion.div>
@@ -129,27 +128,30 @@ export default function AboutDrNarayan() {
               <div className="grid md:grid-cols-3 gap-8 p-8">
                 <div className="md:col-span-2">
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    About Me
+                    About
                   </h2>
                   <div className="prose dark:prose-invert max-w-none">
                     <p className="text-lg mb-4">
-                      I am an Assistant Professor in the Department of Computer
-                      Science at the University of British Columbia (UBC) and
-                      hold an Adjunct Assistant Professor position in the
-                      Department of Systems Design Engineering at the University
-                      of Waterloo.
+                      Dr. Apurva Narayan leads the IDSL research group. He is an
+                      assistant professor in the Department of Computer Science
+                      at Western University and affiliate assistant professor in
+                      the Department of Computer Science and School of
+                      Engineering at the University of British Columbia, as well
+                      as an adjunct assistant professor in the Department of
+                      Systems Design Engineering at the University of Waterloo
+                      (UW).
                     </p>
                     <p className="mb-4">
-                      My research focuses on developing novel machine learning
+                      His research focuses on developing novel machine learning
                       algorithms and data science techniques to solve complex
-                      real-world problems. I am particularly interested in the
+                      real-world problems. He is particularly interested in the
                       intersection of artificial intelligence, optimization, and
                       their applications in healthcare, climate science, and
                       beyond.
                     </p>
                     <p>
-                      With a passion for both teaching and research, I strive to
-                      bridge the gap between theoretical advancements and
+                      With a passion for both teaching and research, he strives
+                      to bridge the gap between theoretical advancements and
                       practical applications, mentoring the next generation of
                       data scientists and AI researchers.
                     </p>
