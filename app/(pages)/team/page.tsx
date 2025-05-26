@@ -144,40 +144,62 @@ export default function TeamPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-12"
-      >
-        <h1 className="text-4xl font-bold mb-4">Our Team</h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Meet the talented individuals behind IDSL&apos;s research and
-          innovation
-        </p>
-      </motion.div>
+    <div className="min-h-screen">
+      {/* Hero Section with Header Image */}
+      <section className="relative h-[50vh] flex items-center justify-center bg-gray-900">
+        {/* Header Image Background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="Team collaboration in a modern workspace"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={100}
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-indigo-900/90 dark:from-black/50 dark:to-black/80" />
+        </div>
 
-      <div className="space-y-16">
-        {sections.map((section) => {
-          const members = teamData[section.key] as TeamMember[];
-          if (!members || members.length === 0) return null;
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-6 sm:px-10 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
+            <p className="text-xl md:text-2xl text-gray-200">
+              Meet the talented individuals behind IDSL's research and
+              innovation
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-          return (
-            <section key={section.key} className="space-y-6">
-              <div className="border-b pb-2">
-                <h2 className="text-2xl font-semibold">{section.title}</h2>
-              </div>
+      <div className="container mx-auto px-4 py-12">
+        <div className="space-y-16">
+          {sections.map((section) => {
+            const members = teamData[section.key] as TeamMember[];
+            if (!members || members.length === 0) return null;
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {section.key === "ScholarshipsAndAwards"
-                  ? (members as any[]).map((member, i) =>
-                      renderAward(member, i)
-                    )
-                  : members.map((member, i) => renderMember(member, i))}
-              </div>
-            </section>
-          );
-        })}
+            return (
+              <section key={section.key} className="space-y-6">
+                <div className="border-b pb-2">
+                  <h2 className="text-2xl font-semibold">{section.title}</h2>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {section.key === "ScholarshipsAndAwards"
+                    ? (members as any[]).map((member, i) =>
+                        renderAward(member, i)
+                      )
+                    : members.map((member, i) => renderMember(member, i))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
