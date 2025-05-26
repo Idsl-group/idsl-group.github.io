@@ -73,18 +73,17 @@ export default function ResourcesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold mb-4">Resources</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h1 className="text-2xl font-bold text-white max-w-3xl mx-auto">
             Videos and presentations are available on our{" "}
             <a
               href="https://www.youtube.com/your-channel"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-blue-500 hover:text-blue-600 transition-colors"
             >
               YouTube page
             </a>
-          </p>
+          </h1>
         </motion.div>
 
         <motion.div
