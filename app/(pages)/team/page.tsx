@@ -65,59 +65,57 @@ export default function TeamPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: index * 0.05 }}
-        className="p-4 border rounded-lg hover:bg-accent/50 transition-colors flex flex-col items-center text-center"
+        className="p-4 border rounded-lg hover:bg-accent/50 transition-colors h-full flex flex-col"
       >
-        <div className="relative w-24 h-24 mb-4">
-          {member.image ? (
-            <Image
-              src={member.image}
-              alt={member.name}
-              fill
-              className="rounded-full object-cover"
-            />
-          ) : (
-            <div
-              className={`w-full h-full rounded-full flex items-center justify-center text-2xl font-bold ${colorClass}`}
-            >
-              {initials}
+        <div className="flex-shrink-0 mb-3">
+          <div className="mx-auto w-20 h-20 relative">
+            {member.image ? (
+              <Image
+                src={member.image}
+                alt={member.name}
+                fill
+                className="rounded-full object-cover"
+              />
+            ) : (
+              <div
+                className={`w-full h-full rounded-full flex items-center justify-center text-xl font-bold ${colorClass}`}
+              >
+                {initials}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="text-center flex-1 flex flex-col">
+          <h3 className="font-semibold text-base">{member.name}</h3>
+          {member.role && (
+            <p className="text-sm text-muted-foreground">{member.role}</p>
+          )}
+          {member.position && (
+            <p className="text-xs text-muted-foreground">{member.position}</p>
+          )}
+          {member.degree && (
+            <p className="text-xs text-muted-foreground">
+              {member.degree} {member.year && `• ${member.year}`}
+            </p>
+          )}
+          {member.expertise && member.expertise.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1 justify-center">
+              {member.expertise.slice(0, 3).map((exp, i) => (
+                <span
+                  key={i}
+                  className="text-[10px] px-1.5 py-0.5 bg-secondary rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis"
+                >
+                  {exp}
+                </span>
+              ))}
+              {member.expertise.length > 3 && (
+                <span className="text-[10px] text-muted-foreground">
+                  +{member.expertise.length - 3} more
+                </span>
+              )}
             </div>
           )}
         </div>
-        <h3 className="font-semibold text-lg">{member.name}</h3>
-        {member.role && <p className="text-muted-foreground">{member.role}</p>}
-        {member.position && (
-          <p className="text-sm text-muted-foreground">{member.position}</p>
-        )}
-        {member.degree && (
-          <p className="text-sm text-muted-foreground">
-            {member.degree} {member.year && `• ${member.year}`}
-          </p>
-        )}
-        {member.expertise && member.expertise.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-2 justify-center">
-            {member.expertise.map((exp, i) => (
-              <span
-                key={i}
-                className="text-xs px-2 py-1 bg-secondary rounded-full"
-              >
-                {exp}
-              </span>
-            ))}
-          </div>
-        )}
-        {member.links && member.links.length > 0 && (
-          <div className="mt-2 space-x-2">
-            {member.links.map((link, i) => (
-              <a
-                key={i}
-                href="#"
-                className="text-xs text-primary hover:underline"
-              >
-                {link}
-              </a>
-            ))}
-          </div>
-        )}
       </motion.div>
     );
   };
