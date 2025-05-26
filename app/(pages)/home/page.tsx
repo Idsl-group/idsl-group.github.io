@@ -25,28 +25,28 @@ export default function HomePage() {
       title: "Data Analytics",
       description: "Advanced analytics for complex data challenges",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop", // Data visualization
+        "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Data analytics dashboard
       href: "/research/data-analytics",
     },
     {
       title: "Software Engineering",
       description: "Innovative approaches to software development",
       image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1000&auto=format&fit=crop", // Code on screen
+        "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Developer coding
       href: "/research/software-engineering",
     },
     {
       title: "Machine Learning",
       description: "Cutting-edge ML models and algorithms",
       image:
-        "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1000&auto=format&fit=crop", // AI and neural networks
+        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // AI and neural network visualization
       href: "/research/machine-learning",
     },
     {
       title: "Trustworthy AI",
       description: "Ensuring safety and reliability in AI systems",
       image:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1000&auto=format&fit=crop", // Security and trust
+        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Security and trust visualization
       href: "/research/trustworthy-ai",
     },
   ];
