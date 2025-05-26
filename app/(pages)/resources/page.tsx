@@ -73,7 +73,7 @@ export default function ResourcesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-2xl font-bold text-white max-w-3xl mx-auto">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white max-w-3xl mx-auto">
             Videos and presentations are available on our{" "}
             <a
               href="https://www.youtube.com/your-channel"
