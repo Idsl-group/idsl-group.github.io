@@ -55,7 +55,7 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <div className="bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gray-50 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {news.map((item, index) => (
