@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
+import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import Image from "next/image";
@@ -45,56 +45,122 @@ export default function OpportunitiesPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 py-16 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
+          className="space-y-12"
         >
-          <Card className="bg-card/50 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-2xl">Join Our Research Team</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-lg leading-relaxed">
-                IDSL is looking for motivated students (undergrads and grads)
-                interested in working in the domain of Data Science, Machine
-                Learning, Artificial Intelligence, and Safety and Security of
-                Cyber Physical Systems. All admitted students will receive a
-                stipend.
-              </p>
-
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold mb-4">How to Apply</h3>
-                <p className="mb-4">
-                  If you are interested in pursuing research or graduate studies
-                  in these lines of work, please email
-                  <a
-                    href="mailto:apurva.narayan@uwaterloo.ca"
-                    className="text-primary hover:underline font-medium mx-1"
-                  >
-                    Dr. Apurva Narayan
-                  </a>
-                  with the following documents:
-                </p>
-
-                <ul className="space-y-3 list-disc pl-5">
-                  <li>CV</li>
-                  <li>Research Statement</li>
-                  <li>Sample work (if applicable)</li>
-                </ul>
-
-                <div className="mt-8 flex justify-center">
-                  <Button asChild className="gap-2" size="lg">
-                    <Link href="mailto:apurva.narayan@uwaterloo.ca">
-                      <Mail className="h-4 w-4" />
-                      Contact Dr. Narayan
-                    </Link>
-                  </Button>
+          {/* Main Opportunity Card */}
+          <Card className="bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="grid md:grid-cols-2">
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="space-y-6">
+                  <div>
+                    <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
+                      Research Opportunities
+                    </span>
+                    <h2 className="text-3xl font-bold tracking-tight">
+                      Join Our Research Team
+                    </h2>
+                  </div>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    IDSL is looking for motivated students (undergrads and
+                    grads) interested in working in the domain of Data Science,
+                    Machine Learning, Artificial Intelligence, and Safety and
+                    Security of Cyber Physical Systems. All admitted students
+                    will receive a stipend.
+                  </p>
                 </div>
               </div>
-            </CardContent>
+              <div className="hidden md:block relative min-h-[300px] bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-center space-y-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
+                      <Mail className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-semibold">How to Apply</h3>
+                    <p className="text-muted-foreground">
+                      Send your application to Dr. Apurva Narayan
+                    </p>
+                    <Button asChild className="gap-2 mt-4" size="lg">
+                      <Link href="mailto:apurva.narayan@uwaterloo.ca">
+                        <Mail className="h-4 w-4" />
+                        Contact Dr. Narayan
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Card>
+
+          {/* Requirements Section */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Documents Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="h-full border border-border/50 hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    Required Documents
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {[
+                      "CV",
+                      "Research Statement",
+                      "Sample Work (if applicable)",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Research Areas Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card className="h-full border border-border/50 hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    Research Areas
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Machine Learning",
+                      "AI Safety",
+                      "Data Science",
+                      "Cybersecurity",
+                      "Software Engineering",
+                      "Trustworthy AI",
+                    ].map((area, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-secondary/50 text-secondary-foreground"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>
