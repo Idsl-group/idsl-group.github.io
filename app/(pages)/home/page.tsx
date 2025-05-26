@@ -114,7 +114,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-blue-700 dark:text-blue-200 hover:bg-white/10 dark:hover:border-white"
+                className="border-white text-blue-700 dark:text-blue-200 hover:bg-white/10 hover:text-blue-300 dark:hover:border-white"
               >
                 <Link href="/team">Meet Our Team</Link>
               </Button>

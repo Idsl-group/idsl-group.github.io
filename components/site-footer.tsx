@@ -175,7 +175,7 @@ export function SiteFooter() {
         {/* Copyright */}
         <motion.div
           variants={itemVariants}
-          className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500"
+          className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400"
         >
           <p>
             {new Date().getFullYear()} Intelligent Data Science Lab. All rights
@@ -185,7 +185,7 @@ export function SiteFooter() {
         {/* Design and Tech Section */}
         <motion.div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
           <div className="max-w-md mx-auto space-y-4">
-            <span className="block text-xs text-gray-600 dark:text-gray-400 font-medium">
+            <span className="block text-xs text-gray-400 font-medium">
               Designed by
               <span className="inline-flex items-center align-middle ml-2">
                 <Image
@@ -201,7 +201,7 @@ export function SiteFooter() {
             <div className="flex items-center justify-center space-x-4">
               <a
                 href="mailto:pranav.jha@mail.concordia.ca"
-                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
+                className="text-xs text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
               >
                 <FaEnvelope className="mr-2" /> pranav.jha@mail.concordia.ca
               </a>
@@ -209,7 +209,7 @@ export function SiteFooter() {
                 href="https://www.linkedin.com/in/pranav-k-jha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
+                className="text-xs text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
               >
                 <FaLinkedin className="mr-2" /> LinkedIn
               </a>
@@ -217,13 +217,13 @@ export function SiteFooter() {
                 href="https://github.com/pranav-k-jha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
+                className="text-xs text-gray-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center"
               >
                 <FaGithub className="mr-2" /> GitHub
               </a>
             </div>
             <div className="flex items-center justify-center space-x-4">
-              <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+              <span className="text-xs text-gray-400 font-medium">
                 Built with
               </span>
               <div className="flex items-center space-x-3">
