@@ -57,22 +57,6 @@ export default function NewsPage() {
 
       <div className="bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Latest News & Updates
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Stay updated with the latest research, events, and achievements
-              from our team.
-            </p>
-          </motion.div>
-
-          {/* News Grid */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {news.map((item, index) => (
               <motion.article
