@@ -40,7 +40,7 @@ export default function RootLayout({
           "relative flex min-h-screen w-full flex-col justify-center scroll-smooth bg-background font-sans antialiased"
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
       </body>
