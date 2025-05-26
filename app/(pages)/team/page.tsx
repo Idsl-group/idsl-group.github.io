@@ -168,7 +168,7 @@ export default function TeamPage() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
             <p className="text-xl md:text-2xl text-gray-200">
-              Meet the talented individuals behind IDSL's research and
+              Meet the talented individuals behind IDSL&apos;s research and
               innovation
             </p>
           </motion.div>
