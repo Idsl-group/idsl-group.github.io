@@ -61,7 +61,7 @@ export default function AboutDrNarayan() {
         {/* Header Image Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
             alt="Abstract technology background with blue digital particles"
             fill
             className="object-cover object-center"
