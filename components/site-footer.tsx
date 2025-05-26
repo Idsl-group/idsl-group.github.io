@@ -51,8 +51,9 @@ export function SiteFooter() {
             <p className="text-sm leading-relaxed">
               Intelligent Data Science Lab
               <br />
-              Research Group of Apurva Narayan at Western University, University
-              of British Columbia and the University of Waterloo, Canada.
+              Research Group of Dr. Apurva Narayan at Western University,
+              University of British Columbia and the University of Waterloo,
+              Canada.
             </p>
             <div className="flex space-x-4 pt-2">
               <a
