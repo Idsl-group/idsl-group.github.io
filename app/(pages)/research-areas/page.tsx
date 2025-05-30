@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Network,
 } from "lucide-react";
+import Link from "next/link";
 
 type Props = {};
 
@@ -78,7 +79,7 @@ export default function ResearchAreasPage({}: Props) {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-indigo-900/70 to-purple-900/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-indigo-900/90 dark:from-black/50 dark:to-black/80" />
         </div>
 
         <div className="relative z-10 text-center px-6 sm:px-10 max-w-6xl mx-auto">
@@ -97,9 +98,11 @@ export default function ResearchAreasPage({}: Props) {
               cyber-physical systems
             </p>
             <div className="pt-6">
-              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-all duration-300 transform hover:scale-105">
-                Explore Our Work
-              </button>
+              <Link href="/publications">
+                <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-all duration-300 transform hover:scale-105">
+                  Explore Our Work
+                </button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -128,15 +131,17 @@ export default function ResearchAreasPage({}: Props) {
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full flex flex-col"
             >
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
-                <BrainCircuit className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+              <div className="flex items-center mb-3 space-x-3">
+                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                  <BrainCircuit className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Industrial Solutions
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Industrial Solutions
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 text-sm flex-grow">
                 We develop novel algorithms and computational tools to solve
                 industrial problems in safety, security, and robustness of
                 automation processes.
@@ -145,15 +150,17 @@ export default function ResearchAreasPage({}: Props) {
 
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
             >
-              <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6">
-                <ShieldCheck className="w-7 h-7 text-purple-600 dark:text-purple-400" />
+              <div className="flex items-center mb-4 space-x-3">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Theoretical Foundations
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Theoretical Foundations
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 We explore fundamental problems in AI and machine learning for
                 theoretical insights that drive innovation in our applied work.
               </p>
