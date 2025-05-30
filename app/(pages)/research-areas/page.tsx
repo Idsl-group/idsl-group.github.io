@@ -29,6 +29,33 @@ const staggerContainer = {
   },
 };
 
+const industryPartners = [
+  {
+    name: "Scotia Bank",
+    logo: "/logos/scotia-bank.svg",
+  },
+  {
+    name: "Troj AI Inc.",
+    logo: "/logos/trojai.webp",
+  },
+  {
+    name: "Loblaw Inc.",
+    logo: "/logos/Loblaws.svg",
+  },
+  {
+    name: "General Motors",
+    logo: "/logos/general-motors.svg.png",
+  },
+  {
+    name: "Microsoft",
+    logo: "/logos/microsoft.svg.png",
+  },
+  {
+    name: "Palitronica",
+    logo: "/logos/Palitronica.webp",
+  },
+];
+
 const researchTopics = [
   {
     title: "Robustness Certification",
@@ -54,15 +81,6 @@ const researchTopics = [
     title: "Smart Manufacturing",
     description: "AI-driven industrial optimization",
   },
-];
-
-const industryPartners = [
-  { name: "Scotia Bank", logo: "🏦" },
-  { name: "Troj AI Inc.", logo: "🤖" },
-  { name: "Loblaw Inc.", logo: "🛒" },
-  { name: "General Motors", logo: "🚗" },
-  { name: "Microsoft", logo: "💻" },
-  { name: "Palitronica", logo: "🔒" },
 ];
 
 export default function ResearchAreasPage({}: Props) {
@@ -254,10 +272,14 @@ export default function ResearchAreasPage({}: Props) {
                   whileHover={{ y: -5 }}
                   className="bg-white dark:bg-gray-700/50 p-6 rounded-xl flex flex-col items-center justify-center h-32 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
                 >
-                  <span className="text-3xl mb-2">{partner.logo}</span>
-                  <span className="font-medium text-center text-gray-800 dark:text-gray-200">
-                    {partner.name}
-                  </span>
+                  <div className="relative w-full h-12 mb-3">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </motion.div>
               ))}
             </div>
