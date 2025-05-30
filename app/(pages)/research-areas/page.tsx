@@ -122,7 +122,7 @@ export default function ResearchAreasPage({}: Props) {
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
             We combine cutting-edge research with practical applications to
-            solve complex challenges in today's digital landscape.
+            solve complex challenges in today&apos;s digital landscape.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mt-16">
@@ -178,7 +178,7 @@ export default function ResearchAreasPage({}: Props) {
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Our research spans across various domains, pushing the boundaries
-              of what's possible with intelligent systems.
+              of what&apos;s possible with intelligent systems.
             </p>
           </div>
 
