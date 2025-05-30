@@ -29,6 +29,11 @@ export const navigationConfig: NavItem[] = [
     description: "Research",
     subItems: [
       {
+        title: "Research Areas",
+        href: "/research-areas",
+        description: "Research Areas",
+      },
+      {
         title: "Team",
         href: "/team",
         description: "Team",
