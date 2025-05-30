@@ -34,14 +34,9 @@ export const navigationConfig: NavItem[] = [
         description: "Research Areas",
       },
       {
-        title: "Team",
+        title: "IDSL Research Team",
         href: "/team",
-        description: "Team",
-      },
-      {
-        title: "Resources",
-        href: "/resources",
-        description: "Resources",
+        description: "IDSL Research Team",
       },
     ],
   },
@@ -54,6 +49,11 @@ export const navigationConfig: NavItem[] = [
     title: "Opportunities",
     href: "/opportunities",
     description: "Opportunities",
+  },
+  {
+    title: "Resources",
+    href: "/resources",
+    description: "Resources",
   },
   {
     title: "News",
