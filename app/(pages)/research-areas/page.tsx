@@ -4,15 +4,71 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  GraduationCap,
+  BrainCircuit,
+  ShieldCheck,
+  Network,
+} from "lucide-react";
 
 type Props = {};
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const researchTopics = [
+  {
+    title: "Robustness Certification",
+    description: "Ensuring AI model reliability and safety",
+  },
+  {
+    title: "Data Mining",
+    description: "For complex cyber-physical systems",
+  },
+  {
+    title: "Fault Detection",
+    description: "Automatic diagnosis and resolution",
+  },
+  {
+    title: "Predictive Analytics",
+    description: "Advanced forecasting and modeling",
+  },
+  {
+    title: "AI in Healthcare",
+    description: "Transforming medical diagnostics",
+  },
+  {
+    title: "Smart Manufacturing",
+    description: "AI-driven industrial optimization",
+  },
+];
+
+const industryPartners = [
+  { name: "Scotia Bank", logo: "🏦" },
+  { name: "Troj AI Inc.", logo: "🤖" },
+  { name: "Loblaw Inc.", logo: "🛒" },
+  { name: "General Motors", logo: "🚗" },
+  { name: "Microsoft", logo: "💻" },
+  { name: "Palitronica", logo: "🔒" },
+];
+
 export default function ResearchAreasPage({}: Props) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-gray-900">
-        {/* Header Image Background */}
+      <section className="relative h-[60vh] flex items-center justify-center bg-gray-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg"
@@ -22,129 +78,193 @@ export default function ResearchAreasPage({}: Props) {
             priority
             quality={100}
           />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-indigo-900/90 dark:from-black/50 dark:to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-indigo-900/70 to-purple-900/80" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center text-white px-6 sm:px-10 max-w-5xl">
+        <div className="relative z-10 text-center px-6 sm:px-10 max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               Research Areas
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200">
-              Exploring the frontiers of intelligent systems and data science
+            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Pioneering research at the intersection of AI, data science, and
+              cyber-physical systems
             </p>
+            <div className="pt-6">
+              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-all duration-300 transform hover:scale-105">
+                Explore Our Work
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Research Areas</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            The IDSL Lab conducts research at the intersection of software
-            engineering, data analytics, machine learning, and safety and
-            security of cyber-physical systems.
-          </p>
-        </div>
-
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Applied Research</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle>Industrial Solutions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  We develop novel algorithms and computational tools to solve
-                  industrial problems in safety, security, and robustness of
-                  automation processes.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle>Theoretical Foundations</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  We explore fundamental problems in AI and machine learning for
-                  theoretical insights that drive innovation in our applied
-                  work.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Research Topics</h2>
-          <p className="mb-6">
-            We are interested in the development of smart plants and intelligent
-            processes, which can be distinguished from traditional industrial
-            plants by:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              "Robustness certification of AI models",
-              "Data mining for complex cyber physical systems",
-              "Automatic detection and diagnosis of faults",
-              "Predictive analytics",
-              "Anomaly detection",
-              "Fault detection and diagnosis",
-              "Specification mining",
-              "Robustness of AI",
-              "AI in Healthcare",
-              "AI in Manufacturing",
-            ].map((topic, index) => (
-              <div
-                key={index}
-                className="p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-              >
-                {topic}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">
-            Domains & Applications
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        {/* Research Focus */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="mb-24 text-center"
+        >
+          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium text-blue-600 bg-blue-100 rounded-full dark:bg-blue-900/30 dark:text-blue-300">
+            Our Research Focus
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Advancing the Frontiers of Intelligent Systems
           </h2>
-          <p className="mb-6">
-            A big subset of our research projects have an applied flavor with
-            useful and immediate applications in industry. We often collaborate
-            with industry partners and other academic researchers for
-            problem-solving in specific domains.
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
+            We combine cutting-edge research with practical applications to
+            solve complex challenges in today's digital landscape.
           </p>
-        </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Industry Partners</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              "Scotia Bank",
-              "Troj AI Inc.",
-              "Loblaw Inc.",
-              "General Motors",
-              "Microsoft",
-              "Palitronica",
-            ].map((partner, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center p-4 border rounded-lg hover:bg-muted/50 transition-colors h-24"
-              >
-                <span className="text-center">{partner}</span>
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
+                <BrainCircuit className="w-7 h-7 text-blue-600 dark:text-blue-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">
+                Industrial Solutions
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                We develop novel algorithms and computational tools to solve
+                industrial problems in safety, security, and robustness of
+                automation processes.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6">
+                <ShieldCheck className="w-7 h-7 text-purple-600 dark:text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                Theoretical Foundations
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                We explore fundamental problems in AI and machine learning for
+                theoretical insights that drive innovation in our applied work.
+              </p>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Research Topics */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="mb-24"
+        >
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1 mb-4 text-sm font-medium text-blue-600 bg-blue-100 rounded-full dark:bg-blue-900/30 dark:text-blue-300">
+              Research Topics
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Areas of Expertise
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Our research spans across various domains, pushing the boundaries
+              of what's possible with intelligent systems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {researchTopics.map((topic, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="group bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-300 hover:shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {topic.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {topic.description}
+                </p>
+                <div className="mt-4 text-blue-600 dark:text-blue-400 flex items-center font-medium">
+                  Learn more
+                  <svg
+                    className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
+
+        {/* Industry Partners */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="mb-24"
+        >
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1 mb-4 text-sm font-medium text-blue-600 bg-blue-100 rounded-full dark:bg-blue-900/30 dark:text-blue-300">
+              Collaboration
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Industry Partners
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We collaborate with leading organizations to drive innovation and
+              create real-world impact.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800/80 rounded-2xl p-8 md:p-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {industryPartners.map((partner, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  whileHover={{ y: -5 }}
+                  className="bg-white dark:bg-gray-700/50 p-6 rounded-xl flex flex-col items-center justify-center h-32 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
+                >
+                  <span className="text-3xl mb-2">{partner.logo}</span>
+                  <span className="font-medium text-center text-gray-800 dark:text-gray-200">
+                    {partner.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Interested in collaborating with us?
+              </p>
+              <button className="px-6 py-2.5 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-medium rounded-full border border-blue-200 dark:border-blue-900 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors">
+                Partner With Us
+              </button>
+            </div>
+          </div>
+        </motion.section>
       </div>
     </div>
   );
