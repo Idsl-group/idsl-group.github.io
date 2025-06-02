@@ -21,7 +21,10 @@ type TeamMember = {
 export default function TeamPage() {
   const sections = [
     { title: "Faculty & Staff", key: "FacultyAndStaff" as const },
-    { title: "Postdoctoral Researchers", key: "Postdoc" as const },
+    {
+      title: "Postdoctoral Researchers and Research Associates",
+      key: "Postdoc" as const,
+    },
     { title: "PhD Students", key: "PhD" as const },
     { title: "MASc Students", key: "MASc" as const },
     { title: "MSc Students", key: "MSc" as const },

@@ -42,7 +42,7 @@ export const teamData = {
       imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
     },
   ],
-  Postdoc: [{ name: "Soniya" }],
+  Postdoc: [{ name: "Soniya" }, { name: "Pranav K Jha" }],
   PhD: [
     { name: "Ehsan Ur Rahman Mohammed" },
     {

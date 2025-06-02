@@ -183,7 +183,7 @@ export function SiteFooter() {
           </p>
         </motion.div>
         {/* Design and Tech Section */}
-        <motion.div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
+        {/* <motion.div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
           <div className="max-w-md mx-auto space-y-4">
             <span className="block text-xs text-gray-400 font-medium">
               Designed by
@@ -262,7 +262,7 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </footer>
   );
