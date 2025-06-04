@@ -1,7 +1,7 @@
 export const teamData = {
   FacultyAndStaff: [
     {
-      name: "Apurva Narayan",
+      name: "Dr. Apurva Narayan",
       role: "Principal Investigator",
       links: ["UBC Staff Directory", "UW Staff Directory"],
     },
