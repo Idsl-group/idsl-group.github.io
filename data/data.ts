@@ -41,8 +41,14 @@ export const teamData = {
       expertise: ["LLMs"],
       imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
     },
+    {
+      name: "Pranav K Jha",
+      role: "Research Associate",
+      expertise: ["LLMs", "AI in Drug Discovery", "Optimization"],
+      imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
+    },
   ],
-  Postdoc: [{ name: "Soniya" }, { name: "Pranav K Jha" }],
+  Postdoc: [{ name: "Soniya" }],
   PhD: [
     { name: "Ehsan Ur Rahman Mohammed" },
     {
