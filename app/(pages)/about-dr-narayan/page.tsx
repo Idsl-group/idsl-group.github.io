@@ -171,35 +171,43 @@ export default function AboutDrNarayan() {
           </section>
 
           {/* Education & Experience */}
-          <section className="mb-20">
+          <section className="mb-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
               className="grid md:grid-cols-2 gap-8"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                  <GraduationCap className="w-6 h-6 mr-2 text-blue-600" />
-                  Education
-                </h3>
-                <div className="space-y-6">
+              <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-800/50 hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center mb-8">
+                  <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4">
+                    <GraduationCap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Education
+                  </h3>
+                </div>
+                <div className="space-y-8">
                   {education.map((edu, index) => (
-                    <div key={index}>
+                    <div
+                      key={index}
+                      className="relative pl-4 border-l-2 border-blue-100 dark:border-blue-900/50"
+                    >
+                      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"></div>
                       <h4 className="font-semibold text-lg text-gray-900 dark:text-white">
                         {edu.degree} in {edu.fieldOfStudy}
                       </h4>
-                      <p className="text-blue-600 dark:text-blue-400">
+                      <p className="text-blue-600 dark:text-blue-400 font-medium">
                         {edu.institution}
                       </p>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
                         {edu.startYear} - {edu.endYear}
                       </p>
                       {edu.activitiesAndSocieties && (
                         <div className="mt-2">
                           <p className="text-sm text-gray-500 dark:text-gray-400">
-                            Activities: {edu.activitiesAndSocieties.join(", ")}
+                            {edu.activitiesAndSocieties.join(" • ")}
                           </p>
                         </div>
                       )}
@@ -208,12 +216,16 @@ export default function AboutDrNarayan() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                  <Briefcase className="w-6 h-6 mr-2 text-blue-600" />
-                  Experience
-                </h3>
-                <div className="space-y-6">
+              <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-800/50 hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center mb-8">
+                  <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg mr-4">
+                    <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Experience
+                  </h3>
+                </div>
+                <div className="space-y-8">
                   {experience
                     .filter(
                       (exp) =>
@@ -221,14 +233,18 @@ export default function AboutDrNarayan() {
                         exp.title.includes("Postdoctoral")
                     )
                     .map((exp, index) => (
-                      <div key={index}>
+                      <div
+                        key={index}
+                        className="relative pl-4 border-l-2 border-blue-100 dark:border-blue-900/50"
+                      >
+                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"></div>
                         <h4 className="font-semibold text-lg text-gray-900 dark:text-white">
                           {exp.title}
                         </h4>
-                        <p className="text-blue-600 dark:text-blue-400">
+                        <p className="text-blue-600 dark:text-blue-400 font-medium">
                           {exp.organization}
                         </p>
-                        <p className="text-gray-600 dark:text-gray-400">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">
                           {exp.startDate} - {exp.endDate} • {exp.duration}
                         </p>
                         {exp.location && (
@@ -237,7 +253,7 @@ export default function AboutDrNarayan() {
                           </p>
                         )}
                         {exp.description && (
-                          <p className="mt-2 text-gray-600 dark:text-gray-300">
+                          <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
                             {exp.description}
                           </p>
                         )}
