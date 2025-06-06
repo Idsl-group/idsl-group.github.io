@@ -54,7 +54,7 @@ export default function ResourcesPage() {
             </p>
             <div className="mt-6">
               <a
-                href="https://www.youtube.com/your-channel"
+                href="https://www.youtube.com/@waterlooai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition-colors"
@@ -76,7 +76,7 @@ export default function ResourcesPage() {
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white max-w-3xl mx-auto">
             Videos and presentations are available on our{" "}
             <a
-              href="https://www.youtube.com/your-channel"
+              href="https://www.youtube.com/@waterlooai"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-600 transition-colors"
