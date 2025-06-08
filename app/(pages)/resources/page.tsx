@@ -53,28 +53,29 @@ const pieData = [
   { name: "Group D", value: 200 },
 ];
 
+// Professional color palette for stakeholders
 const COLORS = [
-  "hsl(210, 100%, 60%)", // Blue
-  "hsl(340, 82%, 52%)", // Pink
-  "hsl(35, 100%, 55%)", // Orange
-  "hsl(120, 60%, 45%)", // Green
-  "hsl(280, 60%, 55%)", // Purple
-  "hsl(45, 100%, 51%)", // Yellow
+  "hsl(214, 82%, 51%)", // Corporate Blue
+  "hsl(201, 96%, 32%)", // Deep Teal
+  "hsl(32, 95%, 44%)", // Burnt Orange
+  "hsl(0, 60%, 45%)", // Burgundy
+  "hsl(261, 51%, 51%)", // Royal Purple
+  "hsl(0, 0%, 40%)", // Charcoal Gray
 ];
 
 const gradientColors = {
   lineGradient: [
-    { offset: "0%", color: "hsl(210, 100%, 60%)" },
-    { offset: "50%", color: "hsl(340, 82%, 52%)" },
-    { offset: "100%", color: "hsl(35, 100%, 55%)" },
+    { offset: "0%", color: "hsl(214, 82%, 51%)" },
+    { offset: "50%", color: "hsl(201, 96%, 32%)" },
+    { offset: "100%", color: "hsl(32, 95%, 44%)" },
   ],
   barGradient: [
-    { offset: "0%", color: "hsl(210, 100%, 60%)" },
-    { offset: "100%", color: "hsl(280, 60%, 55%)" },
+    { offset: "0%", color: "hsl(214, 82%, 51%)" },
+    { offset: "100%", color: "hsl(201, 96%, 32%)" },
   ],
   areaGradient: [
-    { offset: "0%", color: "hsl(210, 100%, 60%)" },
-    { offset: "100%", color: "hsl(210, 100%, 60%, 0.1)" },
+    { offset: "0%", color: "hsl(214, 82%, 51%, 0.8)" },
+    { offset: "100%", color: "hsl(214, 82%, 51%, 0.1)" },
   ],
 };
 
@@ -398,12 +399,12 @@ export default function ResourcesPage() {
                           <stop
                             offset="0%"
                             stopColor={COLORS[index % COLORS.length]}
-                            stopOpacity={0.8}
+                            stopOpacity={0.9}
                           />
                           <stop
                             offset="100%"
-                            stopColor={COLORS[(index + 2) % COLORS.length]}
-                            stopOpacity={0.8}
+                            stopColor={COLORS[(index + 1) % COLORS.length]}
+                            stopOpacity={0.7}
                           />
                         </linearGradient>
                       ))}
@@ -486,6 +487,7 @@ export default function ResourcesPage() {
                           fill={COLORS[index % COLORS.length]}
                           stroke="hsl(var(--background))"
                           strokeWidth={2}
+                          opacity={0.9}
                         />
                       ))}
                     </Pie>
