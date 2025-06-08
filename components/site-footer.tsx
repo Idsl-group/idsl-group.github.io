@@ -38,16 +38,23 @@ export function SiteFooter() {
   return (
     <footer className="w-full bg-gray-900 text-gray-300 border-t border-gray-800">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <motion.div
-          variants={footerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* About Section */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4">IDSL</h3>
+          <motion.div variants={itemVariants} className="flex flex-col">
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="relative w-8 h-8">
+                <Image
+                  src="/logo.png"
+                  alt="IDSL Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
+                IDSL
+              </span>
+            </div>
             <p className="text-sm leading-relaxed">
               Intelligent Data Science Lab
               <br />
@@ -170,7 +177,7 @@ export function SiteFooter() {
               ))}
             </nav>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Copyright */}
         <motion.div
