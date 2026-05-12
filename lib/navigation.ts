@@ -13,7 +13,7 @@ export const navigationConfig: NavItem[] = [
   },
   {
     title: "About",
-    href: "#",
+    href: "/about-dr-narayan",
     description: "About IDSL",
     subItems: [
       {
@@ -25,7 +25,7 @@ export const navigationConfig: NavItem[] = [
   },
   {
     title: "Research",
-    href: "#",
+    href: "/research-areas",
     description: "Research",
     subItems: [
       {

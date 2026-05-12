@@ -27,59 +27,50 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function PagesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
-              <div className="container flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
-                <div className="flex items-center space-x-4">
-                  <Link href="/" className="flex items-center space-x-2 group">
-                    <Image
-                      src="/logo.png"
-                      alt="IDSL Logo"
-                      width={30}
-                      height={30}
-                      className="hidden lg:block rounded-full"
-                    />
-                    <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
-                      IDSL
-                    </span>
-                  </Link>
-                  <nav className="hidden lg:flex items-center space-x-4">
-                    <DesktopNav />
-                  </nav>
-                  <div className="lg:hidden">
-                    <MobileNav />
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <SimpleThemeToggle />
-                </div>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div className="relative flex min-h-screen flex-col">
+        <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
+          <div className="container flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
+            <div className="flex items-center space-x-4">
+              <Link href="/" className="flex items-center space-x-2 group">
+                <Image
+                  src="/logo.png"
+                  alt="IDSL Logo"
+                  width={30}
+                  height={30}
+                  className="hidden lg:block rounded-full"
+                />
+                <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
+                  IDSL
+                </span>
+              </Link>
+              <nav className="hidden lg:flex items-center space-x-4">
+                <DesktopNav />
+              </nav>
+              <div className="lg:hidden">
+                <MobileNav />
               </div>
-            </header>
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <SimpleThemeToggle />
+            </div>
           </div>
-        </ThemeProvider>
-      </body>
-    </html>
+        </header>
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+      </div>
+    </ThemeProvider>
   );
 }

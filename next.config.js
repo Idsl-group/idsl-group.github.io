@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  turbopack: {},
   images: {
+    unoptimized: true,
+    qualities: [100, 75],
     remotePatterns: [
       {
         protocol: "https",
@@ -41,6 +46,9 @@ const nextConfig = {
     }
     return config;
   },
+  // GitHub Pages requires this for proper routing
+  basePath: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
 };
 
 module.exports = nextConfig;

@@ -12,7 +12,11 @@ export default function DesktopNav() {
 
   const navItemVariants = {
     hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0, transition: { type: "tween", duration: 0.3 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "tween" as const, duration: 0.3 },
+    },
   };
 
   return (

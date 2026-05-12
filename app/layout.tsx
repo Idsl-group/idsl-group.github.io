@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pranav-k-jha.github.io/IDSL-1"),
   title: "Intelligent Data Science Lab",
   description:
     "Empowering the next generation of Cyber Physical Systems through the power of Data and AI",
@@ -37,7 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "relative flex min-h-screen w-full flex-col justify-center scroll-smooth bg-background font-sans antialiased"
+          "relative flex min-h-screen w-full flex-col justify-center scroll-smooth bg-background font-sans antialiased",
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>

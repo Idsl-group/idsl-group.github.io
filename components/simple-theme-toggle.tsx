@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -27,7 +27,7 @@ export function SimpleThemeToggle({
         "relative flex h-10 w-20 items-center rounded-full border-none outline-none focus:ring-2 focus:ring-blue-400/70 shadow-lg transition-all duration-300",
         "bg-gradient-to-r from-[#38bdf8] via-[#2563eb] to-[#1e40af] dark:from-[#0a1931] dark:via-[#2563eb] dark:to-[#38bdf8]",
         "hover:scale-105 active:scale-95",
-        className
+        className,
       )}
       style={{
         boxShadow: isDark
@@ -41,7 +41,7 @@ export function SimpleThemeToggle({
           "absolute top-1 left-1 h-8 w-8 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center",
           "bg-white/90 dark:bg-[#112240]/90",
           "ring-2 ring-blue-200 dark:ring-blue-700",
-          isDark ? "translate-x-10" : "translate-x-0"
+          isDark ? "translate-x-10" : "translate-x-0",
         )}
         style={{
           boxShadow: isDark
@@ -53,7 +53,7 @@ export function SimpleThemeToggle({
           className={cn(
             "transition-transform duration-500 ease-in-out",
             isDark ? "rotate-0 opacity-100" : "-rotate-90 opacity-0",
-            "absolute"
+            "absolute",
           )}
         >
           <Moon className="h-5 w-5 text-blue-400 drop-shadow" />
@@ -62,7 +62,7 @@ export function SimpleThemeToggle({
           className={cn(
             "transition-transform duration-500 ease-in-out",
             isDark ? "rotate-90 opacity-0" : "rotate-0 opacity-100",
-            "absolute"
+            "absolute",
           )}
         >
           <Sun className="h-5 w-5 text-yellow-400 drop-shadow" />

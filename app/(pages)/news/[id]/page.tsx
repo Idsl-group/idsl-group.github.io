@@ -1,10 +1,8 @@
 // app/(pages)/news/[id]/page.tsx
-"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams } from "next/navigation";
 
 const newsData = {
   "1": {
@@ -23,8 +21,19 @@ const newsData = {
   },
 };
 
-export default function NewsDetailPage() {
-  const params = useParams();
+export async function generateStaticParams() {
+  return Object.keys(newsData).map((id) => ({
+    id,
+  }));
+}
+
+interface NewsPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function NewsDetailPage({ params }: NewsPageProps) {
   const newsItem = newsData[params.id as keyof typeof newsData];
 
   if (!newsItem) {
