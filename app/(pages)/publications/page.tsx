@@ -1,29 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { teamData } from "@/data/data";
+import { fetchORCIDPublications, type Publication } from "@/lib/orcid";
 import Image from "next/image";
-
-type Publication = {
-  id: number;
-  type: "Journal" | "Conference";
-  title: string;
-  venue?: string;
-  pages?: string;
-  year: number;
-};
 
 export default function PublicationsPage() {
   const [activeFilter, setActiveFilter] = useState<
     "all" | "journal" | "conference"
   >("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [publications, setPublications] = useState<Publication[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Get publications and sort by year (newest first)
-  const publications: Publication[] = teamData.publications
-    .flat()
-    .reverse() as Publication[];
+  // Fetch publications from ORCID on component mount
+  useEffect(() => {
+    const loadPublications = async () => {
+      try {
+        setLoading(true);
+        const orcidPublications = await fetchORCIDPublications();
+        setPublications(orcidPublications);
+      } catch (error) {
+        console.error("Failed to load publications:", error);
+        setPublications([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPublications();
+  }, []);
 
   // Filter publications based on active filter and search query
   const filteredPublications = publications.filter((pub) => {
@@ -49,8 +55,18 @@ export default function PublicationsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Header Image */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-gray-900">
+      {/* Loading State */}
+      {loading ? (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-gray-600 dark:text-gray-400">Loading publications...</p>
+          </div>
+        </div>
+      ) : (
+        <>
+          {/* Hero Section with Header Image */}
+          <section className="relative h-[50vh] flex items-center justify-center bg-gray-900">
         {/* Header Image Background */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -258,6 +274,8 @@ export default function PublicationsPage() {
           </motion.div>
         </div>
       </div>
+        </>
+      )}
     </div>
   );
 }

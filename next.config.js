@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 const owner = process.env.GITHUB_REPOSITORY_OWNER || "";
 const repo =
   typeof process.env.GITHUB_REPOSITORY === "string"
@@ -9,10 +8,28 @@ const repo =
 const isUserPagesRepo =
   Boolean(owner && repo) &&
   repo.toLowerCase() === `${owner.toLowerCase()}.github.io`;
-const basePath =
-  isGithubActions && repo && !isUserPagesRepo ? `/${repo}` : "";
+
+/** Explicit `/repo` from CI (deploy.yml). Ignored for <owner>.github.io user-site repos (served at domain root). */
+const explicitPagesBase = (process.env.GITHUB_PAGES_BASE_PATH || "").trim();
+let basePath = "";
+if (isUserPagesRepo) {
+  basePath = "";
+} else if (explicitPagesBase && explicitPagesBase !== "/") {
+  basePath = explicitPagesBase.startsWith("/")
+    ? explicitPagesBase
+    : `/${explicitPagesBase}`;
+} else if (
+  process.env.GITHUB_ACTIONS === "true" &&
+  repo &&
+  !isUserPagesRepo
+) {
+  basePath = `/${repo}`;
+}
+
 const ghOrigin =
-  isGithubActions && owner ? `https://${owner}.github.io` : "";
+  process.env.GITHUB_ACTIONS === "true" && owner
+    ? `https://${owner}.github.io`
+    : "";
 
 const nextConfig = {
   output: 'export',
