@@ -36,7 +36,7 @@ export default function DesktopNav() {
         >
           <Link
             href={item.href}
-            className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors"
+            className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
             {item.title}
             {item.subItems && (
@@ -80,20 +80,20 @@ function DropdownMenu({
       transition={{ duration: 0.2 }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-lg z-50 overflow-hidden"
+      className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 rounded-xl shadow-lg z-50 overflow-hidden"
     >
       {items?.map((subItem) => (
         <Link
           key={subItem.href}
           href={subItem.href}
-          className="block px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          className="block px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
         >
           <div className="flex flex-col">
-            <span className="font-medium text-sm text-neutral-800 dark:text-neutral-100">
+            <span className="font-medium text-sm text-gray-900 dark:text-white">
               {subItem.title}
             </span>
             {subItem.description && (
-              <span className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+              <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 {subItem.description}
               </span>
             )}

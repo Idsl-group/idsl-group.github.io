@@ -37,8 +37,8 @@ export default function MobileNav() {
           damping: 15,
         }}
         className={cn(
-          "border-b border-gray-200 dark:border-gray-800 last:border-b-0",
-          depth > 0 ? "pl-4" : ""
+          "border-b border-blue-200 dark:border-blue-800 last:border-b-0",
+          depth > 0 ? "pl-4" : "",
         )}
       >
         <motion.div
@@ -49,8 +49,8 @@ export default function MobileNav() {
           whileTap={{ scale: 0.98 }}
           className={cn(
             "flex items-center justify-between p-4 group",
-            "hover:bg-primary/5 transition-colors duration-300",
-            depth === 0 ? "text-lg font-semibold" : "text-base"
+            "hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors duration-300",
+            depth === 0 ? "text-lg font-semibold" : "text-base",
           )}
         >
           {hasSubItems ? (
@@ -66,8 +66,8 @@ export default function MobileNav() {
                 href={item.href === "#" ? "" : item.href}
                 className={cn(
                   "flex-grow",
-                  "hover:text-primary",
-                  depth === 0 ? "font-semibold" : "font-normal"
+                  "hover:text-blue-600 dark:hover:text-blue-400",
+                  depth === 0 ? "font-semibold" : "font-normal",
                 )}
               >
                 {item.title}
@@ -81,7 +81,7 @@ export default function MobileNav() {
               className={cn(
                 "p-2 rounded-full ml-2",
                 "hover:bg-primary/10 active:bg-primary/20",
-                "transition-colors duration-300"
+                "transition-colors duration-300",
               )}
               whileTap={{ scale: 0.9 }}
               animate={{ rotate: isActive ? 180 : 0 }}
@@ -90,7 +90,7 @@ export default function MobileNav() {
               <ChevronDown
                 className={cn(
                   "h-6 w-6 text-gray-600 dark:text-gray-400",
-                  "group-hover:text-primary transition-colors"
+                  "group-hover:text-primary transition-colors",
                 )}
               />
             </motion.button>
@@ -133,9 +133,9 @@ export default function MobileNav() {
                         className={cn(
                           "block p-4 pl-8 text-sm",
                           "text-gray-700 dark:text-gray-300",
-                          "hover:bg-primary/10 transition-colors duration-300",
-                          "border-t border-gray-200 dark:border-gray-800",
-                          "cursor-pointer"
+                          "hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors duration-300",
+                          "border-t border-blue-200 dark:border-blue-800",
+                          "cursor-pointer",
                         )}
                       >
                         <div className="flex justify-between items-center">
@@ -154,8 +154,8 @@ export default function MobileNav() {
                           className={cn(
                             "block p-4 pl-8 text-sm",
                             "text-gray-700 dark:text-gray-300",
-                            "hover:bg-primary/10 transition-colors duration-300",
-                            "border-t border-gray-200 dark:border-gray-800"
+                            "hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors duration-300",
+                            "border-t border-blue-200 dark:border-blue-800",
                           )}
                         >
                           <div className="flex justify-between items-center">
@@ -226,8 +226,8 @@ export default function MobileNav() {
                 delay: 0.2,
               }}
               className={cn(
-                "p-6 border-t border-gray-200 dark:border-gray-800",
-                "flex justify-between items-center"
+                "p-6 border-t border-blue-200 dark:border-blue-800",
+                "flex justify-between items-center",
               )}
             ></motion.div>
           </motion.div>
