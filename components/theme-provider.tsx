@@ -34,19 +34,21 @@ export function ThemeProvider({
 
   React.useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem("theme") as Theme;
-    if (stored) {
-      setTheme(stored);
-    } else if (enableSystem) {
-      const system = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-      setTheme(system);
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme") as Theme;
+      if (stored) {
+        setTheme(stored);
+      } else if (enableSystem) {
+        const system = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        setTheme(system);
+      }
     }
   }, [enableSystem]);
 
   const resolvedTheme = React.useMemo(() => {
-    if (theme === "system" && enableSystem) {
+    if (theme === "system" && enableSystem && typeof window !== "undefined") {
       return window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
@@ -55,6 +57,8 @@ export function ThemeProvider({
   }, [theme, enableSystem]);
 
   React.useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const root = window.document.documentElement;
 
     if (disableTransitionOnChange) {
