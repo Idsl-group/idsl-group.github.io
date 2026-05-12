@@ -2,27 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-const newsData = {
-  "1": {
-    id: "1",
-    title:
-      "Starting our AI for Social Good Seminar Series with inaugural speaker 'Prof. Milind Tambe', Harvard",
-    date: "May 1, 2025",
-    content: [
-      "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and the International Center for Applied Systems Science for Sustainable Development. Our first inaugural speaker is Prof. Milind Tambe, Harvard University, USA.",
-      "Talk details coming soon...",
-    ],
-    speakerBio: `Milind Tambe is Gordon McKay Professor of Computer Science and Director of Center for Research on Computation and Society at Harvard University; concurrently, he is also Principal Scientist and Director for "AI for Social Good" at Google Deepmind. Prof. Tambe and his team have developed pioneering AI systems that deliver real-world impact in public health (e.g., maternal and child health), public safety, and wildlife conservation. He is recipient of the AAAI Award for Artificial Intelligence for the Benefit of Humanity, AAAI Feigenbaum Prize, IJCAI John McCarthy Award, AAAI Robert S. Engelmore Memorial Lecture Award, AAMAS ACM Autonomous Agents Research Award, INFORMS Wagner prize for excellence in Operations Research practice, Military Operations Research Society Rist Prize, Columbus Fellowship Foundation Homeland security award and commendations and certificates of appreciation from the US Coast Guard, the Federal Air Marshals Service and airport police at the city of Los Angeles. He is a fellow of AAAI and ACM.`,
-    image:
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&auto=format&fit=crop",
-    tags: ["Seminar", "AI for Good"],
-  },
-};
+import { news } from "@/data/data";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export async function generateStaticParams() {
-  return Object.keys(newsData).map((id) => ({
-    id,
+  return news.map((item) => ({
+    id: item.id.toString(),
   }));
 }
 
@@ -32,7 +18,7 @@ interface NewsPageProps {
 
 export default async function NewsDetailPage({ params }: NewsPageProps) {
   const { id } = await params;
-  const newsItem = newsData[id as keyof typeof newsData];
+  const newsItem = news.find((item) => item.id.toString() === id);
 
   if (!newsItem) {
     return (
@@ -122,26 +108,28 @@ export default async function NewsDetailPage({ params }: NewsPageProps) {
             </h1>
 
             <div className="prose dark:prose-invert max-w-none">
-              {newsItem.content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="mb-4 text-gray-700 dark:text-gray-300"
-                >
-                  {paragraph}
-                </p>
-              ))}
-
-              {newsItem.speakerBio && (
-                <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    Speaker Bio
-                  </h2>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    {newsItem.speakerBio}
-                  </p>
-                </div>
-              )}
+              <p className="mb-4 text-gray-700 dark:text-gray-300">
+                {newsItem.content}
+              </p>
             </div>
+
+            {newsItem.externalLink && (
+              <div className="mt-8">
+                <Button
+                  asChild
+                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  <a
+                    href={newsItem.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Read Full Article
+                  </a>
+                </Button>
+              </div>
+            )}
           </div>
         </article>
       </main>

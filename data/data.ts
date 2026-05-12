@@ -2,17 +2,19 @@
 const calculateDuration = (startDate: string, endDate?: string) => {
   const start = new Date(startDate);
   const end = endDate === "Present" ? new Date() : new Date(endDate || "");
-  
-  const months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+
+  const months =
+    (end.getFullYear() - start.getFullYear()) * 12 +
+    (end.getMonth() - start.getMonth());
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
-  
+
   if (years === 0) {
-    return `${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
+    return `${remainingMonths} month${remainingMonths !== 1 ? "s" : ""}`;
   } else if (remainingMonths === 0) {
-    return `${years} year${years !== 1 ? 's' : ''}`;
+    return `${years} year${years !== 1 ? "s" : ""}`;
   } else {
-    return `${years} yr${years !== 1 ? 's' : ''} ${remainingMonths} mo${remainingMonths !== 1 ? 's' : ''}`;
+    return `${years} yr${years !== 1 ? "s" : ""} ${remainingMonths} mo${remainingMonths !== 1 ? "s" : ""}`;
   }
 };
 
@@ -872,9 +874,22 @@ export const news = [
       "Starting our AI for Social Good Seminar Series with inaugural speaker 'Prof. Milind Tambe', Harvard",
     date: "May 1, 2025",
     content:
-      "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and the International Center for Applied Systems Science for Sustainable Development. Our first inaugural speaker is Prof. Milind Tambe, Harvard University, USA.",
+      "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and International Center for Applied Systems Science for Sustainable Development. Our first inaugural speaker is Prof. Milind Tambe, Harvard University, USA.",
     image:
       "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&auto=format&fit=crop",
     tags: ["Seminar", "AI for Good"],
+  },
+  {
+    id: 2,
+    title:
+      "Securing the human behind the wheel: Western Engineering researchers advance cybersecurity for semi-autonomous vehicles",
+    date: "May 12, 2025",
+    content:
+      "Western Engineering researchers are advancing cybersecurity for semi-autonomous vehicles with a new approach that focuses on securing the human element behind the wheel. The research addresses critical safety concerns as vehicles become increasingly automated.",
+    image:
+      "https://images.unsplash.com/photo-1558628269-3b8c4c1b9a?w=1600&auto=format&fit=crop",
+    tags: ["Research", "Cybersecurity", "Autonomous Vehicles"],
+    externalLink:
+      "https://www.eng.uwo.ca/media/news/2026/Securing-the-human-behind-the-wheel-Western-Engineering-researchers-advance-cybersecurity-for-semi-autonomous-vehicles.html",
   },
 ];
