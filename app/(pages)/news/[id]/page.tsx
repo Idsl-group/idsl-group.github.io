@@ -3,8 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { news } from "@/data/data";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
 
 export async function generateStaticParams() {
   return news.map((item) => ({
@@ -87,7 +85,7 @@ export default async function NewsDetailPage({ params }: NewsPageProps) {
           {/* Article Content */}
           <div className="p-6 md:p-8">
             <div className="flex flex-wrap gap-2 mb-6">
-              {newsItem.tags.map((tag) => (
+              {newsItem.tags.map((tag: string) => (
                 <span
                   key={tag}
                   className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
@@ -113,21 +111,30 @@ export default async function NewsDetailPage({ params }: NewsPageProps) {
               </p>
             </div>
 
-            {newsItem.externalLink && (
-              <div className="mt-8">
-                <Button
-                  asChild
-                  className="bg-blue-600 hover:bg-blue-700 text-white"
+            {newsItem.url && (
+              <div className="mt-6">
+                <a
+                  href={newsItem.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  <a
-                    href={newsItem.externalLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  Read Full Article
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Read Full Article
-                  </a>
-                </Button>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
               </div>
             )}
           </div>
