@@ -8,15 +8,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { GradientMotionSpan } from "@/components/ui/gradient-motion-span";
+import { 
+  BookOpen, 
+  Users, 
+  Award, 
+  TrendingUp,
+  Calendar,
+  ArrowRight,
+  Sparkles
+} from "lucide-react";
 
-// Animation variants
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 export default function HomePage() {
@@ -25,107 +44,186 @@ export default function HomePage() {
       title: "Data Analytics",
       description: "Advanced analytics for complex data challenges",
       image:
-        "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Data analytics dashboard
+        "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
       href: "/research/data-analytics",
+      icon: "📊",
     },
     {
       title: "Software Engineering",
       description: "Innovative approaches to software development",
       image:
-        "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Developer coding
+        "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg",
       href: "/research/software-engineering",
+      icon: "💻",
     },
     {
       title: "Machine Learning",
       description: "Cutting-edge ML models and algorithms",
       image:
-        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // AI and neural network visualization
+        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
       href: "/research/machine-learning",
+      icon: "🤖",
     },
     {
       title: "Trustworthy AI",
       description: "Ensuring safety and reliability in AI systems",
       image:
-        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Security and trust visualization
+        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg",
       href: "/research/trustworthy-ai",
+      icon: "🔒",
     },
+  ];
+
+  const newsItems = [
+    {
+      id: 1,
+      title: "Starting our AI for Social Good Seminar Series with inaugural Prof. Milind Tambe, Harvard",
+      date: "May 1, 2025",
+      category: "Seminar",
+      excerpt: "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and the International Center for Applied Systems Science for Sustainable Development.",
+      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+    },
+    {
+      id: 2,
+      title: "New Publication: Advances in Safety-Critical Software Systems",
+      date: "April 15, 2025",
+      category: "Publication",
+      excerpt: "Our latest research on ensuring safety and reliability in autonomous systems has been published in IEEE Transactions on Software Engineering.",
+      image: "https://images.pexels.com/photos/1181243/pexels-photo-1181243.jpeg",
+    },
+    {
+      id: 3,
+      title: "IDSL Welcomes New PhD Students for Fall 2025",
+      date: "March 20, 2025",
+      category: "Team",
+      excerpt: "We are excited to welcome three new PhD students joining our lab this fall, specializing in machine learning and trustworthy AI.",
+      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
+    },
+  ];
+
+  const stats = [
+    { label: "Publications", value: "50+", icon: BookOpen },
+    { label: "Team Members", value: "15+", icon: Users },
+    { label: "Research Grants", value: "8", icon: Award },
+    { label: "Industry Partners", value: "12", icon: TrendingUp },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <header className="relative py-20 md:py-32 overflow-hidden">
-        {/* Background Image + Overlay */}
+      <header className="relative py-24 md:py-36 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
             src="https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg"
-            alt="Space-themed digital data visualization with stars and connections"
+            alt="Space-themed digital data visualization"
             fill
             className="object-cover"
             priority
             quality={100}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,...your_blur_data..."
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80 dark:from-gray-900/90 dark:to-gray-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-indigo-900/85 to-purple-900/90 dark:from-gray-900/95 dark:to-gray-900/95" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOGM5Ljk0MSAwIDE4LTguMDU5IDE4LTE4cy04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNHMxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-30" />
         </div>
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
-            >
-              <span className="block text-blue-100">Welcome to</span>
-              <GradientMotionSpan>
-                INTELLIGENT DATA SCIENCE LAB
-              </GradientMotionSpan>
-            </motion.h1>
-
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-10 max-w-3xl mx-auto"
-            >
-              We develop novel algorithms and machine learning models to solve
-              complex challenges in data science and AI.
-            </motion.p>
-
+          <div className="max-w-5xl mx-auto text-center">
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
+              variants={staggerContainer}
             >
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 transition"
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+                <Sparkles className="w-4 h-4 text-yellow-300" />
+                <span className="text-sm font-medium text-white">Advancing AI & Data Science</span>
+              </motion.div>
+
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
               >
-                <Link href="/publications">Explore Our Research</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white text-blue-700 dark:text-blue-200 hover:bg-white/10 hover:text-blue-300 dark:hover:border-white"
+                Welcome to
+                <GradientMotionSpan className="block mt-2">
+                  INTELLIGENT DATA SCIENCE LAB
+                </GradientMotionSpan>
+              </motion.h1>
+
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-10 max-w-3xl mx-auto leading-relaxed"
               >
-                <Link href="/team">Meet Our Team</Link>
-              </Button>
+                We develop novel algorithms and machine learning models to solve
+                complex challenges in data science, AI, and safety-critical systems.
+              </motion.p>
+
+              <motion.div
+                variants={fadeInUp}
+                className="flex flex-col sm:flex-row justify-center gap-4"
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-blue-700 hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
+                >
+                  <Link href="/publications">
+                    Explore Our Research
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10 backdrop-blur-sm"
+                >
+                  <Link href="/team">Meet Our Team</Link>
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </header>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+                  <stat.icon className="w-6 h-6" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
       {/* Research Domains */}
-      <section className="py-20 bg-white dark:bg-gray-950">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               IDSL Research
             </h2>
@@ -133,36 +231,51 @@ export default function HomePage() {
               Our research bridges together intelligent systems, data science,
               software engineering, and decision making under uncertainty.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {researchDomains.map((domain, index) => (
-              <Card
+              <motion.div
                 key={domain.href}
-                className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={domain.image}
-                    alt={domain.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    priority={index < 2}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
-                    {domain.title}
-                  </h3>
-                </div>
-                <CardContent className="p-4">
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {domain.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <Link href={domain.href}>
+                  <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group cursor-pointer border-gray-200 dark:border-gray-800">
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={domain.image}
+                        alt={domain.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        priority={index < 2}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="text-3xl mb-2">{domain.icon}</div>
+                        <h3 className="text-xl font-bold text-white">
+                          {domain.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <CardContent className="p-4">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
+                        {domain.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -170,175 +283,59 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-              Research Themes
-            </h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                We are witnessing exponential advancements in development and
-                deployment of IoT systems, smart infrastructures, and our
-                dependency on these systems. The overall vision of IDSL is to
-                develop tools that will help resolve software issues much
-                faster, and advance toward better system safety, security, and
-                resiliency.
-              </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                Automated reasoning of these systems play a key role in
-                understanding system behavior, verification, run-time
-                monitoring, anomaly detection, and intrusion detection.
-                Computational research in the domain of data driven software
-                engineering gets complicated with the amount of data that one
-                needs to process to reach an outcome.
-              </p>
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
-                <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-3">
-                  Our Focus
-                </h3>
-                <p className="text-blue-700 dark:text-blue-200">
-                  IDSL conducts data mining, software engineering, and machine
-                  learning research with a focus on safety-critical software
-                  systems to ensure that modern day safety-critical systems are
-                  safe, secure, and resilient.
-                </p>
-              </div>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mt-8">
-                We often collaborate with industry partners and other academic
-                researchers for problem-solving in specific domains. For a list
-                of our projects and collaborators, please visit our Research
-                page.
-              </p>
-            </div>
-            <div className="mt-10 text-center">
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-gray-800"
-              >
-                <Link href="/publications">Learn More About Our Research</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Recruitment Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h2
-              className="text-3xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              Join Our Research Team
-            </motion.h2>
-
             <motion.div
-              className="prose prose-lg text-gray-600 dark:text-gray-300 mb-8 text-left mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <p className="mb-4">
-                Please see our{" "}
-                <a
-                  href="/publications"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  publications list
-                </a>{" "}
-                for more information on our research. Our team members and some
-                examples of current and past projects are also available on our{" "}
-                <a
-                  href="/team"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  team page
-                </a>
-                . We upload our presentations and workshops to the{" "}
-                <a
-                  href="/resources"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  resources page
-                </a>
-                .
-              </p>
-
-              <p className="mb-6">
-                Our group is recruiting year-round for postdocs, MASc and PhD
-                students, visiting students and undergraduate students. All
-                admitted students will receive a stipend.
-              </p>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                  How to Apply
-                </h3>
-                <p className="mb-4">
-                  If you are interested in pursuing research or graduate
-                  studies, please email{" "}
-                  <a
-                    href="mailto:apurva.narayan@uwaterloo.ca"
-                    className="text-blue-600 dark:text-blue-400 hover:underline"
-                  >
-                    Dr. Apurva Narayan
-                  </a>{" "}
-                  with the following documents:
+              <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+                Research Themes
+              </h2>
+              <div className="prose dark:prose-invert max-w-none">
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                  We are witnessing exponential advancements in development and
+                  deployment of IoT systems, smart infrastructures, and our
+                  dependency on these systems. The overall vision of IDSL is to
+                  develop tools that will help resolve software issues much
+                  faster, and advance toward better system safety, security, and
+                  resiliency.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>CV</li>
-                  <li>Research Statement</li>
-                  <li>Sample work (if applicable)</li>
-                </ul>
-                <div className="mt-6">
-                  <Button asChild>
-                    <a href="mailto:apurva.narayan@uwaterloo.ca">
-                      Contact Dr. Narayan
-                    </a>
-                  </Button>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                  Automated reasoning of these systems play a key role in
+                  understanding system behavior, verification, run-time
+                  monitoring, anomaly detection, and intrusion detection.
+                  Computational research in the domain of data driven software
+                  engineering gets complicated with the amount of data that one
+                  needs to process to reach an outcome.
+                </p>
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-xl border-l-4 border-blue-500">
+                  <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-3 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5" />
+                    Our Focus
+                  </h3>
+                  <p className="text-blue-700 dark:text-blue-200">
+                    IDSL conducts data mining, software engineering, and machine
+                    learning research with a focus on safety-critical software
+                    systems to ensure that modern day safety-critical systems are
+                    safe, secure, and resilient.
+                  </p>
                 </div>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mt-8">
+                  We often collaborate with industry partners and other academic
+                  researchers for problem-solving in specific domains. For a list
+                  of our projects and collaborators, please visit our Research
+                  page.
+                </p>
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-      {/* Highlights Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-100 dark:border-blue-800/50"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-100 dark:bg-blue-800/50 text-blue-800 dark:text-blue-200 rounded-lg px-3 py-1 text-sm font-medium">
-                  Highlights
-                </div>
-                <div className="ml-3 text-sm text-blue-700 dark:text-blue-300">
-                  July 10, 2024
-                </div>
-              </div>
-              <div className="mt-2">
-                <p className="text-gray-900 dark:text-white">
-                  The Banff International Research Station will host the{" "}
-                  <span className="font-semibold">
-                    Climate Change Scenarios and Financial Risk
-                  </span>{" "}
-                  Online workshop at the UBC Okanagan campus in Kelowna, BC,
-                  from May 1 to May 6, 2022.
-                </p>
-                <p className="mt-4">
-                  <Link href="https://www.birs.ca/events/2022/5-day-workshops/22w5201">
-                    <Button>View Event</Button>
-                  </Link>
-                </p>
+              <div className="mt-10 text-center">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-gray-800"
+                >
+                  <Link href="/publications">Learn More About Our Research</Link>
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -346,39 +343,169 @@ export default function HomePage() {
       </section>
 
       {/* News Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="flex items-center justify-between mb-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                  Latest News
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Stay updated with our latest research and activities
+                </p>
+              </div>
+              <Button asChild variant="outline" className="hidden sm:flex">
+                <Link href="/news">
+                  View All News
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {newsItems.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group border-gray-200 dark:border-gray-800 h-full">
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-900 dark:text-white">
+                          {item.category}
+                        </Badge>
+                      </div>
+                    </div>
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                        <Calendar className="w-4 h-4" />
+                        <time dateTime={item.date}>{item.date}</time>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-3 mb-4">
+                        {item.excerpt}
+                      </p>
+                      <Link
+                        href="#"
+                        className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                      >
+                        Read more
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center sm:hidden">
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/news">
+                  View All News
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Recruitment Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              className="space-y-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              className="text-center"
             >
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                News
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+                Join Our Research Team
               </h2>
 
-              <article className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
-                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                  <time dateTime="2025-05-01">May 1, 2025</time>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  Starting our AI for Social Good Seminar Series with inaugural
-                  &ldquo;Prof. Milind Tambe&rdquo;, Harvard
-                </h3>
-                <div className="prose prose-gray dark:prose-invert">
-                  <p>
-                    We are thrilled to launch our AI for Social Good Seminar
-                    Series, led by Western University and supported by
-                    University of Waterloo, UBC, and the International Center
-                    for Applied Systems Science for Sustainable Development. Our
-                    first inaugural speaker is Prof. Milind Tambe, Harvard
-                    University, USA.
-                  </p>
-                </div>
-              </article>
+              <div className="prose prose-lg text-gray-600 dark:text-gray-300 mb-8 text-left mx-auto">
+                <p className="mb-4">
+                  Please see our{" "}
+                  <Link
+                    href="/publications"
+                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  >
+                    publications list
+                  </Link>{" "}
+                  for more information on our research. Our team members and some
+                  examples of current and past projects are also available on our{" "}
+                  <Link
+                    href="/team"
+                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  >
+                    team page
+                  </Link>
+                  . We upload our presentations and workshops to the{" "}
+                  <Link
+                    href="/resources"
+                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  >
+                    resources page
+                  </Link>
+                  .
+                </p>
+
+                <p className="mb-6">
+                  Our group is recruiting year-round for postdocs, MASc and PhD
+                  students, visiting students and undergraduate students. All
+                  admitted students will receive a stipend.
+                </p>
+
+                <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="text-xl text-gray-900 dark:text-white">
+                      How to Apply
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="mb-4 text-gray-700 dark:text-gray-300">
+                      If you are interested in pursuing research or graduate
+                      studies, please email{" "}
+                      <a
+                        href="mailto:apurva.narayan@uwaterloo.ca"
+                        className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                      >
+                        Dr. Apurva Narayan
+                      </a>{" "}
+                      with the following documents:
+                    </p>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+                      <li>CV</li>
+                      <li>Research Statement</li>
+                      <li>Sample work (if applicable)</li>
+                    </ul>
+                    <Button asChild size="lg" className="w-full sm:w-auto">
+                      <a href="mailto:apurva.narayan@uwaterloo.ca">
+                        Contact Dr. Narayan
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             </motion.div>
           </div>
         </div>
