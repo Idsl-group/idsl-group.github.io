@@ -415,13 +415,18 @@ export default function HomePage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         quality={75}
                       />
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-900 dark:text-white">
-                          {item.tags[0]}
-                        </Badge>
-                      </div>
                     </div>
                     <CardContent className="p-6">
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                       <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
                         <Calendar className="w-4 h-4" />
                         <time dateTime={item.date}>{item.date}</time>
