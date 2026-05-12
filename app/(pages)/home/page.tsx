@@ -244,57 +244,129 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
                 Research Themes
               </h2>
-              <div className="prose dark:prose-invert max-w-none">
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                  We are witnessing exponential advancements in development and
-                  deployment of IoT systems, smart infrastructures, and our
-                  dependency on these systems. The overall vision of IDSL is to
-                  develop tools that will help resolve software issues much
-                  faster, and advance toward better system safety, security, and
-                  resiliency.
-                </p>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                  Automated reasoning of these systems play a key role in
-                  understanding system behavior, verification, run-time
-                  monitoring, anomaly detection, and intrusion detection.
-                  Computational research in the domain of data driven software
-                  engineering gets complicated with the amount of data that one
-                  needs to process to reach an outcome.
-                </p>
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-xl border-l-4 border-blue-500">
-                  <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-3 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5" />
-                    Our Focus
-                  </h3>
-                  <p className="text-blue-700 dark:text-blue-200">
-                    IDSL conducts data mining, software engineering, and machine
-                    learning research with a focus on safety-critical software
-                    systems to ensure that modern day safety-critical systems are
-                    safe, secure, and resilient.
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mr-4">
+                      1
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      IoT & Smart Systems
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Exponential advancements in development and deployment of IoT systems, smart infrastructures, and our dependency on these systems.
                   </p>
-                </div>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mt-8">
-                  We often collaborate with industry partners and other academic
-                  researchers for problem-solving in specific domains. For a list
-                  of our projects and collaborators, please visit our Research
-                  page.
-                </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mr-4">
+                      2
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      Safety & Resiliency
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Developing tools to help resolve software issues faster and advance toward better system safety, security, and resiliency.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mr-4">
+                      3
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      Automated Reasoning
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Key role in understanding system behavior, verification, run-time monitoring, anomaly detection, and intrusion detection.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mr-4">
+                      4
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      Data-Driven Engineering
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Computational research in data-driven software engineering gets complex with the amount of data needed to reach outcomes.
+                  </p>
+                </motion.div>
               </div>
-              <div className="mt-10 text-center">
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-800 dark:to-indigo-800 rounded-2xl p-8 text-white text-center"
+              >
+                <div className="flex items-center justify-center mb-4">
+                  <Sparkles className="w-6 h-6 text-yellow-300 mr-2" />
+                  <h3 className="text-2xl font-bold">Our Focus</h3>
+                </div>
+                <p className="text-blue-100 dark:text-blue-200 text-lg leading-relaxed max-w-2xl mx-auto">
+                  IDSL conducts data mining, software engineering, and machine learning research with a focus on safety-critical software systems to ensure that modern day safety-critical systems are safe, secure, and resilient.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
+                className="mt-8 text-center"
+              >
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  We often collaborate with industry partners and other academic researchers for problem-solving in specific domains.
+                </p>
                 <Button
                   asChild
                   size="lg"
-                  variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-gray-800"
+                  className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all"
                 >
                   <Link href="/publications">Learn More About Our Research</Link>
                 </Button>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
