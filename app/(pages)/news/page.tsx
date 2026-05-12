@@ -82,21 +82,20 @@ export default function NewsPage() {
                   />
                 </div>
                 <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
                     <time dateTime={new Date(item.date).toISOString()}>
                       {item.date}
                     </time>
-                    <span className="mx-2">•</span>
-                    <div className="flex space-x-2">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
                     {item.title}
