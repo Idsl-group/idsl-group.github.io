@@ -14,10 +14,6 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { GradientMotionSpan } from "@/components/ui/gradient-motion-span";
 import { 
-  BookOpen, 
-  Users, 
-  Award, 
-  TrendingUp,
   Calendar,
   ArrowRight,
   Sparkles
@@ -101,120 +97,89 @@ export default function HomePage() {
     },
   ];
 
-  const stats = [
-    { label: "Publications", value: "50+", icon: BookOpen },
-    { label: "Team Members", value: "15+", icon: Users },
-    { label: "Research Grants", value: "8", icon: Award },
-    { label: "Industry Partners", value: "12", icon: TrendingUp },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <header className="relative py-24 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+      <header className="relative bg-white dark:bg-gray-900">
+        {/* Banner Image with Text Overlay */}
+        <div className="relative w-full">
           <Image
-            src="https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg"
-            alt="Space-themed digital data visualization"
-            fill
-            className="object-cover"
+            src="/banner_bg.jpg"
+            alt="IDSL Banner"
+            width={1920}
+            height={600}
+            className="w-full h-auto"
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-indigo-900/85 to-purple-900/90 dark:from-gray-900/95 dark:to-gray-900/95" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOGM5Ljk0MSAwIDE4LTguMDU5IDE4LTE4cy04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNHMxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-30" />
-        </div>
-
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-                <Sparkles className="w-4 h-4 text-yellow-300" />
-                <span className="text-sm font-medium text-white">Advancing AI & Data Science</span>
-              </motion.div>
-
-              <motion.h1
-                variants={fadeInUp}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-              >
-                Welcome to
-                <GradientMotionSpan className="block mt-2">
-                  INTELLIGENT DATA SCIENCE LAB
-                </GradientMotionSpan>
-              </motion.h1>
-
-              <motion.p
-                variants={fadeInUp}
-                className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-10 max-w-3xl mx-auto leading-relaxed"
-              >
-                We develop novel algorithms and machine learning models to solve
-                complex challenges in data science, AI, and safety-critical systems.
-              </motion.p>
-
+          
+          {/* Text Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
+            <div className="container px-4 sm:px-6 lg:px-8 h-full flex items-center">
               <motion.div
-                variants={fadeInUp}
-                className="flex flex-col sm:flex-row justify-center gap-4"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="max-w-2xl"
               >
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-white text-blue-700 hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6"
                 >
-                  <Link href="/publications">
-                    Explore Our Research
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 backdrop-blur-sm"
+                  <Sparkles className="w-4 h-4 text-yellow-300" />
+                  <span className="text-sm font-medium text-white">Advancing AI & Data Science</span>
+                </motion.div>
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
                 >
-                  <Link href="/team">Meet Our Team</Link>
-                </Button>
+                  Intelligent Data Science Lab
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-lg text-gray-200 mb-6 leading-relaxed"
+                >
+                  University of Western Ontario
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex flex-col sm:flex-row gap-3"
+                >
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
+                  >
+                    <Link href="/publications">
+                      Explore Our Research
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-transparent border-2 border-white text-white hover:bg-white/10"
+                  >
+                    <Link href="/team">Meet Our Team</Link>
+                  </Button>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
-                  <stat.icon className="w-6 h-6" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
       {/* Research Domains */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
