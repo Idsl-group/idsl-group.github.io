@@ -51,11 +51,6 @@ export const navigationConfig: NavItem[] = [
     description: "Opportunities",
   },
   {
-    title: "Resources",
-    href: "/resources",
-    description: "Resources",
-  },
-  {
     title: "News",
     href: "/news",
     description: "News",
