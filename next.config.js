@@ -1,8 +1,28 @@
 /** @type {import('next').NextConfig} */
+
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+const owner = process.env.GITHUB_REPOSITORY_OWNER || "";
+const repo =
+  typeof process.env.GITHUB_REPOSITORY === "string"
+    ? process.env.GITHUB_REPOSITORY.split("/")[1] || ""
+    : "";
+const isUserPagesRepo =
+  Boolean(owner && repo) &&
+  repo.toLowerCase() === `${owner.toLowerCase()}.github.io`;
+const basePath =
+  isGithubActions && repo && !isUserPagesRepo ? `/${repo}` : "";
+const ghOrigin =
+  isGithubActions && owner ? `https://${owner}.github.io` : "";
+
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
   turbopack: {},
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SITE_ORIGIN: ghOrigin,
+  },
   images: {
     unoptimized: true,
     qualities: [100, 75],
@@ -46,9 +66,6 @@ const nextConfig = {
     }
     return config;
   },
-  // GitHub Pages base path removed for proper routing
-  // basePath: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
 };
 
 module.exports = nextConfig;

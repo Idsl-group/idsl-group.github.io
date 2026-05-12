@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { navigationConfig } from "@/lib/navigation";
+import { publicFile } from "@/lib/site";
 import { SiNextdotjs, SiTailwindcss, SiVercel } from "react-icons/si";
 
 const footerVariants = {
@@ -44,7 +45,7 @@ export function SiteFooter() {
             <div className="flex items-center space-x-2 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="/logo.png"
+                  src={publicFile("/logo.png")}
                   alt="IDSL Logo"
                   fill
                   className="object-contain"
@@ -196,7 +197,7 @@ export function SiteFooter() {
               Designed by
               <span className="inline-flex items-center align-middle ml-2">
                 <Image
-                  src="/profile-1.jpeg"
+                  src={publicFile("/profile-1.jpeg")}
                   alt="Pranav K Jha"
                   width={20}
                   height={20}

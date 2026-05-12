@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { publicFile } from "@/lib/site";
 import { Inter } from "next/font/google";
 
 // Option 1: Inter - Clean, modern, highly readable
@@ -20,7 +21,7 @@ export default function Header({}: Props) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/header-background.jpg"
+          src={publicFile("/header-background.jpg")}
           alt="Header Background"
           layout="fill"
           objectFit="cover"

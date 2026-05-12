@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { teamData } from "@/data/data";
+import { publicFile } from "@/lib/site";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -106,7 +108,7 @@ export default function AboutDrNarayan() {
                 variant="outline"
                 className="border-blue-50 text-blue-700 dark:border-blue-500 dark:text-blue-500 hover:bg-blue-50/10 transition"
               >
-                <a href="/publications">View Research</a>
+                <Link href="/publications">View Research</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -159,7 +161,7 @@ export default function AboutDrNarayan() {
                 </div>
                 <div className="relative h-64 md:h-auto">
                   <Image
-                    src="/profile-1.png"
+                    src={publicFile("/profile-1.png")}
                     alt="Dr. Apurva Narayan"
                     fill
                     className="rounded-xl object-cover shadow-lg"

@@ -7,6 +7,7 @@ import MobileNav from "@/components/mobile-nav";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import Link from "next/link";
+import { publicFile } from "@/lib/site";
 import { SiteFooter } from "@/components/site-footer";
 import { SimpleThemeToggle } from "@/components/simple-theme-toggle";
 import Image from "next/image";
@@ -20,11 +21,6 @@ export const metadata: Metadata = {
   title: "IDSL",
   description:
     "Empowering the next generation of Cyber Physical Systems through the power of Data and AI",
-  icons: {
-    icon: [{ url: "/logo.png" }],
-    shortcut: ["/logo.png"],
-    apple: ["/logo.png"],
-  },
 };
 
 export default function PagesLayout({
@@ -45,7 +41,7 @@ export default function PagesLayout({
             <div className="flex items-center space-x-4">
               <Link href="/" className="flex items-center space-x-2 group">
                 <Image
-                  src="/logo.png"
+                  src={publicFile("/logo.png")}
                   alt="IDSL Logo"
                   width={30}
                   height={30}

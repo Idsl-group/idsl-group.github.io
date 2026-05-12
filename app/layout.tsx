@@ -3,22 +3,25 @@ import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { publicFile, siteMetadataBase } from "@/lib/site";
+
+const logoPath = publicFile("/logo.png");
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pranav-k-jha.github.io/IDSL-1"),
+  metadataBase: siteMetadataBase(),
   title: "Intelligent Data Science Lab",
   description:
     "Empowering the next generation of Cyber Physical Systems through the power of Data and AI",
   icons: {
-    icon: [{ url: "/logo.png" }],
-    shortcut: ["/logo.png"],
-    apple: ["/logo.png"],
+    icon: [{ url: logoPath }],
+    shortcut: [logoPath],
+    apple: [logoPath],
   },
   openGraph: {
     title: "Intelligent Data Science Lab",
     description:
       "Empowering the next generation of Cyber Physical Systems through the power of Data and AI",
-    images: [{ url: "/logo.png" }],
+    images: [{ url: logoPath }],
   },
 };
 
