@@ -59,7 +59,7 @@ export default function HomePage() {
       image:
         "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
       href: "/research/machine-learning",
-      icon: "🤖",
+      icon: "🎯",
     },
     {
       title: "Trustworthy AI",
@@ -190,31 +190,46 @@ export default function HomePage() {
                 transition={{ delay: index * 0.05, duration: 0.3, ease: "easeOut" }}
               >
                 <Link href={domain.href}>
-                  <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group cursor-pointer border-gray-200 dark:border-gray-800">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={domain.image}
-                        alt={domain.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                        quality={80}
-                        priority={index < 2}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="text-3xl mb-2">{domain.icon}</div>
-                        <h3 className="text-xl font-bold text-white">
-                          {domain.title}
-                        </h3>
-                      </div>
+                  <div className="group relative h-80 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-5 dark:opacity-10">
+                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOGM5Ljk0MSAwIDE4LTguMDU5IDE4LTE4cy04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNHMxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] bg-blue-500" />
                     </div>
-                    <CardContent className="p-4">
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col p-6">
+                      {/* Icon */}
+                      <motion.div
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-5xl mb-4"
+                      >
+                        {domain.icon}
+                      </motion.div>
+                      
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {domain.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                         {domain.description}
                       </p>
-                    </CardContent>
-                  </Card>
+                      
+                      {/* Arrow indicator */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-blue-600 dark:text-blue-400 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Learn more
+                        </span>
+                        <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
+                    </div>
+                    
+                    {/* Gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </div>
                 </Link>
               </motion.div>
             ))}
