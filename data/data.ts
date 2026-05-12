@@ -41,19 +41,6 @@ export const teamData = {
       expertise: ["LLMs"],
       imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
     },
-    {
-      name: "Pranav K Jha",
-      role: "Research Associate",
-      expertise: [
-        "LLM Fine-Tuning",
-        "LLM Deployment and Inference",
-        "LLM Optimization Techniques (LoRA, QLoRA, PEFT)",
-        "LLM Integration with Databases",
-        "Database Optimization for AI Workloads",
-        "Privacy-Preserving Data Access for LLMs",
-      ],
-      imageUrl: "https://avatars.githubusercontent.com/u/40297601?v=4",
-    },
   ],
   Postdoc: [{ name: "Soniya" }],
   PhD: [
