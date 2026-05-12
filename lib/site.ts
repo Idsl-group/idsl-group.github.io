@@ -12,3 +12,13 @@ export function siteMetadataBase(): URL {
   if (origin) return new URL(`${origin}/`);
   return new URL("http://localhost:3000");
 }
+
+/** Absolute public URL for a route (matches trailingSlash-style paths on the live site). */
+export function sitePageUrl(pathname: string): string {
+  const base = siteMetadataBase();
+  if (pathname === "/" || pathname === "") {
+    return base.href.endsWith("/") ? base.href : `${base.href}/`;
+  }
+  const slug = `${pathname.replace(/^\/+|\/+$/g, "")}/`;
+  return new URL(slug, base).href;
+}
