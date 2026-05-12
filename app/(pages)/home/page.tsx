@@ -14,11 +14,7 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { GradientMotionSpan } from "@/components/ui/gradient-motion-span";
 import { news } from "@/data/data";
-import { 
-  Calendar,
-  ArrowRight,
-  Sparkles
-} from "lucide-react";
+import { Calendar, ArrowRight, Sparkles } from "lucide-react";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -40,8 +36,7 @@ export default function HomePage() {
     {
       title: "Data Analytics",
       description: "Advanced analytics for complex data challenges",
-      image:
-        "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
+      image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
       href: "/research/data-analytics",
       icon: "📊",
     },
@@ -74,83 +69,76 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <header className="relative bg-white dark:bg-gray-900">
-        {/* Banner Image with Text Overlay */}
-        <div className="relative w-full">
+      <header className="relative py-20 md:py-32 overflow-hidden">
+        {/* Background Image + Overlay */}
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/banner.jpeg"
             alt="IDSL Banner"
-            width={1920}
-            height={600}
-            className="w-full h-auto"
+            fill
+            className="object-cover"
             priority
             quality={85}
             sizes="100vw"
           />
-          
-          {/* Text Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
-            <div className="container px-4 sm:px-6 lg:px-8 h-full flex items-center">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="max-w-2xl"
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80 dark:from-gray-900/90 dark:to-gray-900/90" />
+        </div>
+
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
+            >
+              <span className="block text-blue-100">Welcome to</span>
+              <GradientMotionSpan>
+                INTELLIGENT DATA SCIENCE LAB
+              </GradientMotionSpan>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-6 leading-relaxed font-semibold tracking-wide uppercase"
+            >
+              UNIVERSITY OF WESTERN ONTARIO
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-10 max-w-3xl mx-auto"
+            >
+              We develop novel algorithms and machine learning models to solve
+              complex challenges in data science and AI.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row justify-center gap-4"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-blue-700 hover:bg-blue-50 transition shadow-lg"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
-                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6"
-                >
-                  <Sparkles className="w-4 h-4 text-yellow-300" />
-                  <span className="text-sm font-medium text-white">Advancing AI & Data Science</span>
-                </motion.div>
-
-                <motion.h1
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
-                  className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
-                >
-                  Intelligent Data Science Lab
-                </motion.h1>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-                  className="text-lg text-gray-200 mb-6 leading-relaxed font-semibold tracking-wide uppercase"
-                >
-                  UNIVERSITY OF WESTERN ONTARIO
-                </motion.p>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
-                  className="flex flex-col sm:flex-row gap-3"
-                >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                  >
-                    <Link href="/publications">
-                      Explore Our Research
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-transparent border-2 border-white text-white hover:bg-white/10"
-                  >
-                    <Link href="/team">Meet Our Team</Link>
-                  </Button>
-                </motion.div>
-              </motion.div>
-            </div>
+                <Link href="/publications">Explore Our Research</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white text-white bg-white/10 hover:bg-white/20 transition"
+              >
+                <Link href="/team">Meet Our Team</Link>
+              </Button>
+            </motion.div>
           </div>
         </div>
       </header>
@@ -187,7 +175,11 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.05, duration: 0.3, ease: "easeOut" }}
+                transition={{
+                  delay: index * 0.05,
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
               >
                 <Link href={domain.href}>
                   <div className="group relative h-80 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
@@ -195,7 +187,7 @@ export default function HomePage() {
                     <div className="absolute inset-0 opacity-5 dark:opacity-10">
                       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOGM5Ljk0MSAwIDE4LTguMDU5IDE4LTE4cy04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNHMxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] bg-blue-500" />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="relative h-full flex flex-col p-6">
                       {/* Icon */}
@@ -207,17 +199,17 @@ export default function HomePage() {
                       >
                         {domain.icon}
                       </motion.div>
-                      
+
                       {/* Title */}
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {domain.title}
                       </h3>
-                      
+
                       {/* Description */}
                       <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                         {domain.description}
                       </p>
-                      
+
                       {/* Arrow indicator */}
                       <div className="flex items-center justify-between">
                         <span className="text-blue-600 dark:text-blue-400 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -226,7 +218,7 @@ export default function HomePage() {
                         <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
                       </div>
                     </div>
-                    
+
                     {/* Gradient overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
@@ -250,7 +242,7 @@ export default function HomePage() {
               <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
                 Research Themes
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -268,7 +260,9 @@ export default function HomePage() {
                     </h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Exponential advancements in development and deployment of IoT systems, smart infrastructures, and our dependency on these systems.
+                    Exponential advancements in development and deployment of
+                    IoT systems, smart infrastructures, and our dependency on
+                    these systems.
                   </p>
                 </motion.div>
 
@@ -288,7 +282,9 @@ export default function HomePage() {
                     </h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Developing tools to help resolve software issues faster and advance toward better system safety, security, and resiliency.
+                    Developing tools to help resolve software issues faster and
+                    advance toward better system safety, security, and
+                    resiliency.
                   </p>
                 </motion.div>
 
@@ -308,7 +304,9 @@ export default function HomePage() {
                     </h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Key role in understanding system behavior, verification, run-time monitoring, anomaly detection, and intrusion detection.
+                    Key role in understanding system behavior, verification,
+                    run-time monitoring, anomaly detection, and intrusion
+                    detection.
                   </p>
                 </motion.div>
 
@@ -328,7 +326,9 @@ export default function HomePage() {
                     </h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Computational research in data-driven software engineering gets complex with the amount of data needed to reach outcomes.
+                    Computational research in data-driven software engineering
+                    gets complex with the amount of data needed to reach
+                    outcomes.
                   </p>
                 </motion.div>
               </div>
@@ -345,7 +345,10 @@ export default function HomePage() {
                   <h3 className="text-2xl font-bold">Our Focus</h3>
                 </div>
                 <p className="text-blue-100 dark:text-blue-200 text-lg leading-relaxed max-w-2xl mx-auto">
-                  IDSL conducts data mining, software engineering, and machine learning research with a focus on safety-critical software systems to ensure that modern day safety-critical systems are safe, secure, and resilient.
+                  IDSL conducts data mining, software engineering, and machine
+                  learning research with a focus on safety-critical software
+                  systems to ensure that modern day safety-critical systems are
+                  safe, secure, and resilient.
                 </p>
               </motion.div>
 
@@ -357,14 +360,17 @@ export default function HomePage() {
                 className="mt-8 text-center"
               >
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  We often collaborate with industry partners and other academic researchers for problem-solving in specific domains.
+                  We often collaborate with industry partners and other academic
+                  researchers for problem-solving in specific domains.
                 </p>
                 <Button
                   asChild
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Link href="/publications">Learn More About Our Research</Link>
+                  <Link href="/publications">
+                    Learn More About Our Research
+                  </Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -484,8 +490,9 @@ export default function HomePage() {
                   >
                     publications list
                   </Link>{" "}
-                  for more information on our research. Our team members and some
-                  examples of current and past projects are also available on our{" "}
+                  for more information on our research. Our team members and
+                  some examples of current and past projects are also available
+                  on our{" "}
                   <Link
                     href="/team"
                     className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
