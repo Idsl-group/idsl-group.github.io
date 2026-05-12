@@ -73,8 +73,8 @@ export default function HomePage() {
         {/* Background Image + Overlay */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/banner.jpeg"
-            alt="IDSL Banner"
+            src="https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg"
+            alt="Space-themed digital data visualization with stars and connections"
             fill
             className="object-cover"
             priority
