@@ -1,9 +1,27 @@
+// Helper function to calculate duration automatically
+const calculateDuration = (startDate: string, endDate?: string) => {
+  const start = new Date(startDate);
+  const end = endDate === "Present" ? new Date() : new Date(endDate || "");
+  
+  const months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+  
+  if (years === 0) {
+    return `${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
+  } else if (remainingMonths === 0) {
+    return `${years} year${years !== 1 ? 's' : ''}`;
+  } else {
+    return `${years} yr${years !== 1 ? 's' : ''} ${remainingMonths} mo${remainingMonths !== 1 ? 's' : ''}`;
+  }
+};
+
 export const teamData = {
   FacultyAndStaff: [
     {
       name: "Dr. Apurva Narayan",
-      role: "Principal Investigator",
-      links: ["UBC Staff Directory", "UW Staff Directory"],
+      role: "Associate Professor",
+      links: ["UBC Staff Directory", "Western University Staff Directory"],
     },
     {
       name: "Vaibhav Mukundan",
@@ -156,14 +174,34 @@ export const teamData = {
   ],
   experience: [
     {
+      title: "Associate Professor",
+      organization: "Western University",
+      employmentType: "Permanent Full-time",
+      location: "London, Ontario, Canada",
+      onSite: true,
+      startDate: "Jul 2025",
+      endDate: "Present",
+      duration: calculateDuration("Jul 2025", "Present"),
+      skills: [
+        "Machine Learning",
+        "Computer Science",
+        "Cybersecurity",
+        "Consulting",
+        "Artificial Intelligence",
+        "University Lecturing",
+        "Algorithms",
+        "Data Analysis",
+      ],
+    },
+    {
       title: "Assistant Professor",
       organization: "Western University",
       employmentType: "Permanent Full-time",
       location: "London, Ontario, Canada",
       onSite: true,
       startDate: "Jul 2022",
-      endDate: "Present",
-      duration: "2 yrs 11 mos",
+      endDate: "Jul 2025",
+      duration: calculateDuration("Jul 2022", "Jul 2025"),
       skills: [
         "Machine Learning",
         "Computer Science",
@@ -182,14 +220,14 @@ export const teamData = {
       location: "BC, Canada",
       startDate: "Jul 2022",
       endDate: "Present",
-      duration: "2 yrs 11 mos",
+      duration: calculateDuration("Jul 2022", "Present"),
     },
     {
       title: "Assistant Professor",
       organization: "The University of British Columbia",
       startDate: "Jul 2018",
       endDate: "Jul 2022",
-      duration: "4 yrs 1 mo",
+      duration: calculateDuration("Jul 2018", "Jul 2022"),
       location: "British Columbia, Canada",
     },
     {
@@ -197,7 +235,7 @@ export const teamData = {
       organization: "University of Waterloo",
       startDate: "Oct 2018",
       endDate: "Present",
-      duration: "6 yrs 8 mos",
+      duration: calculateDuration("Oct 2018", "Present"),
       location: "Waterloo, Ontario, Canada",
     },
     {
@@ -205,7 +243,7 @@ export const teamData = {
       organization: "University of Waterloo",
       startDate: "Dec 2015",
       endDate: "Jun 2018",
-      duration: "2 yrs 7 mos",
+      duration: calculateDuration("Dec 2015", "Jun 2018"),
       location: "Waterloo, ON",
       description:
         "Research in Artificial Intelligence; Machine Learning & Deep Learning; Theoretical Neuroscience; Stochastic Optimization; Multidisciplinary Design Optimization under Uncertainty; safety-critical real time systems.",
@@ -215,7 +253,7 @@ export const teamData = {
       organization: "University of Waterloo",
       startDate: "Sep 2010",
       endDate: "Sep 2015",
-      duration: "5 yrs 1 mo",
+      duration: calculateDuration("Sep 2010", "Sep 2015"),
       location: "Waterloo, ON",
       description:
         "Developed multidisciplinary design optimization framework for planning and operation of systems under uncertainty using statistical and AI tools.",
@@ -238,7 +276,9 @@ export const teamData = {
         },
         {
           course: "SYDE 223 - Data Structure and Algorithms",
-          date: "Jan 2011 - Apr 2011",
+          startDate: "Jan 2011",
+          endDate: "Apr 2011",
+          duration: calculateDuration("Jan 2011", "Apr 2011"),
         },
       ],
     },
@@ -247,7 +287,7 @@ export const teamData = {
       organization: "S2E - MITACS",
       startDate: "2013",
       endDate: "2013",
-      duration: "Less than a year",
+      duration: calculateDuration("2013", "2013"),
       description:
         "Developed optimization model for planning of microgrids using stochastic programming. Created a web interface using PHP/MySQL and AMPL for configuration analysis.",
     },
@@ -256,7 +296,7 @@ export const teamData = {
       organization: "Schlumberger Technologies",
       startDate: "Aug 2008",
       endDate: "Aug 2010",
-      duration: "2 yrs 1 mo",
+      duration: calculateDuration("Aug 2008", "Aug 2010"),
       location: "Pune Area, India",
       description:
         "Worked on a global project for sustaining electrical components for Schlumberger tools. Focused on redesigning tools to comply with ROHS and WEEE environmental standards.",
