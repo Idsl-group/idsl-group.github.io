@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/idsl-group/_next/static/chunks/0t6loe64luz8_.js","/idsl-group/_next/static/chunks/0d3shmwh5_nmn.js","/idsl-group/_next/static/chunks/0-e~b8z.jiio1.js","/idsl-group/_next/static/chunks/0yu0jzy9mzzec.js","/idsl-group/_next/static/chunks/0svl7uncowlkg.js","/idsl-group/_next/static/chunks/0qvqnyd-w6g.t.js","/idsl-group/_next/static/chunks/0trpehpdd.jj0.js"],""]
+3:I[97367,["/idsl-group/_next/static/chunks/0t6loe64luz8_.js","/idsl-group/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center","children":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"text-4xl font-bold text-gray-900 dark:text-white mb-4","children":"Article Not Found"}],["$","$L2",null,{"href":"/news","className":"text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300","children":"← Back to News"}]]}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"I_sMgaL8sKv9C534a65kZ"}
+5:null
