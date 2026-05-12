@@ -46,9 +46,9 @@ const nextConfig = {
     }
     return config;
   },
-  // GitHub Pages requires this for proper routing
-  basePath: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
+  // GitHub Pages base path removed for proper routing
+  // basePath: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/IDSL-1' : '',
 };
 
 module.exports = nextConfig;
