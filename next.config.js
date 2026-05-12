@@ -9,7 +9,7 @@ const isUserPagesRepo =
   Boolean(owner && repo) &&
   repo.toLowerCase() === `${owner.toLowerCase()}.github.io`;
 
-/** Explicit `/repo` from CI (deploy.yml). Ignored for <owner>.github.io user-site repos (served at domain root). */
+/** Optional override, e.g. local test: GITHUB_PAGES_BASE_PATH=/my-repo npm run build */
 const explicitPagesBase = (process.env.GITHUB_PAGES_BASE_PATH || "").trim();
 let basePath = "";
 if (isUserPagesRepo) {

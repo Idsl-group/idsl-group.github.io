@@ -29,8 +29,6 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          # Must match GitHub Pages project URL: https://<owner>.github.io/<repo>/
-          GITHUB_PAGES_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

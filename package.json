@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
-    "deploy": "npm run build && gh-pages -d out -b gh-pages --repo=https://github.com/pranav-k-jha/IDSL.git"
+    "deploy": "npm run build && gh-pages -d out -b gh-pages --repo=https://github.com/idsl-group/idsl-group.github.io.git"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
