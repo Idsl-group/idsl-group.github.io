@@ -77,7 +77,6 @@ export default function HomePage() {
       <header className="relative bg-white dark:bg-gray-900">
         {/* Banner Image with Text Overlay */}
         <div className="relative w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-indigo-900/20 to-blue-900/20 z-10" />
           <Image
             src="/banner.jpeg"
             alt="IDSL Banner"
@@ -102,17 +101,17 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6"
+                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6"
                 >
-                  <Sparkles className="w-4 h-4 text-blue-300" />
-                  <span className="text-sm font-medium text-blue-100">Advancing AI & Data Science</span>
+                  <Sparkles className="w-4 h-4 text-yellow-300" />
+                  <span className="text-sm font-medium text-white">Advancing AI & Data Science</span>
                 </motion.div>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
-                  className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white via-blue-100 to-indigo-100 bg-clip-text text-transparent leading-tight mb-4"
+                  className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
                 >
                   Intelligent Data Science Lab
                 </motion.h1>
@@ -121,7 +120,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-                  className="text-lg bg-gradient-to-r from-blue-200 via-indigo-200 to-blue-200 bg-clip-text text-transparent mb-6 leading-relaxed font-semibold tracking-wide uppercase"
+                  className="text-lg text-gray-200 mb-6 leading-relaxed font-semibold tracking-wide uppercase"
                 >
                   UNIVERSITY OF WESTERN ONTARIO
                 </motion.p>
@@ -135,7 +134,7 @@ export default function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg border-0"
+                    className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
                   >
                     <Link href="/publications">
                       Explore Our Research
@@ -145,7 +144,7 @@ export default function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-transparent border-2 border-blue-300 text-blue-100 hover:bg-blue-600/20 hover:border-blue-200"
+                    className="bg-transparent border-2 border-white text-white hover:bg-white/10"
                   >
                     <Link href="/team">Meet Our Team</Link>
                   </Button>
