@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { GradientMotionSpan } from "@/components/ui/gradient-motion-span";
+import { news } from "@/data/data";
 import { 
   Calendar,
   ArrowRight,
@@ -70,33 +71,6 @@ export default function HomePage() {
     },
   ];
 
-  const newsItems = [
-    {
-      id: 1,
-      title: "Starting our AI for Social Good Seminar Series with inaugural Prof. Milind Tambe, Harvard",
-      date: "May 1, 2025",
-      category: "Seminar",
-      excerpt: "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and the International Center for Applied Systems Science for Sustainable Development.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
-    },
-    {
-      id: 2,
-      title: "New Publication: Advances in Safety-Critical Software Systems",
-      date: "April 15, 2025",
-      category: "Publication",
-      excerpt: "Our latest research on ensuring safety and reliability in autonomous systems has been published in IEEE Transactions on Software Engineering.",
-      image: "https://images.pexels.com/photos/1181243/pexels-photo-1181243.jpeg",
-    },
-    {
-      id: 3,
-      title: "IDSL Welcomes New PhD Students for Fall 2025",
-      date: "March 20, 2025",
-      category: "Team",
-      excerpt: "We are excited to welcome three new PhD students joining our lab this fall, specializing in machine learning and trustworthy AI.",
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -104,28 +78,29 @@ export default function HomePage() {
         {/* Banner Image with Text Overlay */}
         <div className="relative w-full">
           <Image
-            src="/banner_bg.jpg"
+            src="/banner.jpeg"
             alt="IDSL Banner"
             width={1920}
             height={600}
             className="w-full h-auto"
             priority
-            quality={100}
+            quality={85}
+            sizes="100vw"
           />
           
           {/* Text Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
             <div className="container px-4 sm:px-6 lg:px-8 h-full flex items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className="max-w-2xl"
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
                   className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6"
                 >
                   <Sparkles className="w-4 h-4 text-yellow-300" />
@@ -133,27 +108,27 @@ export default function HomePage() {
                 </motion.div>
 
                 <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
+                  transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
                   className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
                 >
                   Intelligent Data Science Lab
                 </motion.h1>
 
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
                   className="text-lg text-gray-200 mb-6 leading-relaxed"
                 >
                   University of Western Ontario
                 </motion.p>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
                   className="flex flex-col sm:flex-row gap-3"
                 >
                   <Button
@@ -186,7 +161,8 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -201,16 +177,17 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {researchDomains.map((domain, index) => (
               <motion.div
                 key={domain.href}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.05, duration: 0.3, ease: "easeOut" }}
               >
                 <Link href={domain.href}>
                   <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group cursor-pointer border-gray-200 dark:border-gray-800">
@@ -221,6 +198,7 @@ export default function HomePage() {
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        quality={80}
                         priority={index < 2}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -334,7 +312,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {newsItems.map((item, index) => (
+              {news.slice(0, 3).map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -349,10 +327,12 @@ export default function HomePage() {
                         alt={item.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={75}
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-900 dark:text-white">
-                          {item.category}
+                          {item.tags[0]}
                         </Badge>
                       </div>
                     </div>
@@ -365,10 +345,10 @@ export default function HomePage() {
                         {item.title}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-3 mb-4">
-                        {item.excerpt}
+                        {item.content}
                       </p>
                       <Link
-                        href="#"
+                        href={`/news/${item.id}`}
                         className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
                       >
                         Read more

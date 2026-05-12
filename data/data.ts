@@ -824,3 +824,17 @@ export const teamData = {
     ],
   ],
 };
+
+export const news = [
+  {
+    id: 1,
+    title:
+      "Starting our AI for Social Good Seminar Series with inaugural speaker 'Prof. Milind Tambe', Harvard",
+    date: "May 1, 2025",
+    content:
+      "We are thrilled to launch our AI for Social Good Seminar Series, led by Western University and supported by University of Waterloo, UBC, and the International Center for Applied Systems Science for Sustainable Development. Our first inaugural speaker is Prof. Milind Tambe, Harvard University, USA.",
+    image:
+      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&auto=format&fit=crop",
+    tags: ["Seminar", "AI for Good"],
+  },
+];
