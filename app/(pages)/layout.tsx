@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 import DesktopNav from "@/components/desktop-nav";
 import MobileNav from "@/components/mobile-nav";
-import { ThemeProvider } from "@/components/theme-provider";
+import ThemeProvider from "@/components/theme-provider";
 
 import Link from "next/link";
 import { publicFile } from "@/lib/site";

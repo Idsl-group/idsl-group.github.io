@@ -22,7 +22,7 @@ const ThemeContext = React.createContext<{
   resolvedTheme: "system",
 });
 
-export function ThemeProvider({
+export default function ThemeProvider({
   children,
   attribute = "class",
   defaultTheme = "system",
@@ -33,18 +33,21 @@ export function ThemeProvider({
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    setMounted(true);
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("theme") as Theme;
-      if (stored) {
-        setTheme(stored);
-      } else if (enableSystem) {
-        const system = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const storedTheme =
+      typeof window !== "undefined"
+        ? (localStorage.getItem("theme") as Theme)
+        : null;
+
+    const systemTheme =
+      typeof window !== "undefined" && enableSystem
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
-          : "light";
-        setTheme(system);
-      }
-    }
+          : "light"
+        : null;
+
+    const initialTheme = storedTheme || systemTheme || defaultTheme;
+    setTheme(initialTheme);
+    setMounted(true);
   }, [enableSystem]);
 
   const resolvedTheme = React.useMemo(() => {
@@ -96,4 +99,10 @@ export function ThemeProvider({
   );
 }
 
-export const useTheme = () => React.useContext(ThemeContext);
+export const useTheme = () => {
+  const context = React.useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
+};
