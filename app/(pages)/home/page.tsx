@@ -102,7 +102,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-6 leading-relaxed font-semibold tracking-wide uppercase"
+              className="text-lg md:text-xl text-blue-100 dark:text-blue-200 mb-6 leading-relaxed tracking-wide uppercase"
             >
               UNIVERSITY OF WESTERN ONTARIO
             </motion.p>
