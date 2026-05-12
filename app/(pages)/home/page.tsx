@@ -81,7 +81,7 @@ export default function HomePage() {
             quality={85}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80 dark:from-gray-900/90 dark:to-gray-900/90" />
         </div>
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
