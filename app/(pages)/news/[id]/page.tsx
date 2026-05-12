@@ -1,6 +1,5 @@
 // app/(pages)/news/[id]/page.tsx
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -28,13 +27,12 @@ export async function generateStaticParams() {
 }
 
 interface NewsPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
-export default function NewsDetailPage({ params }: NewsPageProps) {
-  const newsItem = newsData[params.id as keyof typeof newsData];
+export default async function NewsDetailPage({ params }: NewsPageProps) {
+  const { id } = await params;
+  const newsItem = newsData[id as keyof typeof newsData];
 
   if (!newsItem) {
     return (
@@ -87,12 +85,7 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <motion.article
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden"
-        >
+        <article className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
           {/* Featured Image */}
           <div className="relative h-64 md:h-96 bg-gray-200 dark:bg-gray-700 overflow-hidden">
             <Image
@@ -102,11 +95,6 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 80vw"
               priority
-              onError={(e) => {
-                // Hide the image if it fails to load
-                const target = e.target as HTMLImageElement;
-                target.style.display = "none";
-              }}
             />
           </div>
 
@@ -155,7 +143,7 @@ export default function NewsDetailPage({ params }: NewsPageProps) {
               )}
             </div>
           </div>
-        </motion.article>
+        </article>
       </main>
 
       {/* Back to News Link */}
