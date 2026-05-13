@@ -1,9 +1,11 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { teamData } from "@/data/data";
 import Image from "next/image";
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 type TeamMember = {
   name: string;
@@ -19,6 +21,26 @@ type TeamMember = {
 };
 
 export default function TeamPage() {
+  const [collapsedSections, setCollapsedSections] = useState<
+    Record<string, boolean>
+  >({
+    FacultyAndStaff: true,
+    Postdoc: true,
+    PhD: true,
+    MASc: true,
+    MSc: true,
+    Undergraduate: true,
+    Alumni: true,
+    ScholarshipsAndAwards: true,
+  });
+
+  const toggleSection = (key: string) => {
+    setCollapsedSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   const sections = [
     { title: "Faculty & Staff", key: "FacultyAndStaff" as const },
     {
@@ -179,24 +201,50 @@ export default function TeamPage() {
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="space-y-16">
+        <div className="space-y-8">
           {sections.map((section) => {
             const members = teamData[section.key] as TeamMember[];
             if (!members || members.length === 0) return null;
 
+            const isCollapsed = collapsedSections[section.key];
+
             return (
-              <section key={section.key} className="space-y-6">
-                <div className="border-b pb-2">
-                  <h2 className="text-2xl font-semibold">{section.title}</h2>
+              <section key={section.key} className="space-y-4">
+                <div
+                  className="border-b pb-4 cursor-pointer relative hover:bg-accent/50 transition-colors px-2 -mx-2 rounded"
+                  onClick={() => toggleSection(section.key)}
+                >
+                  <h2 className="text-2xl font-semibold text-center">
+                    {section.title}
+                  </h2>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                    {isCollapsed ? (
+                      <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                    ) : (
+                      <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                    )}
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {section.key === "ScholarshipsAndAwards"
-                    ? (members as any[]).map((member, i) =>
-                        renderAward(member, i)
-                      )
-                    : members.map((member, i) => renderMember(member, i))}
-                </div>
+                <AnimatePresence>
+                  {!isCollapsed && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {section.key === "ScholarshipsAndAwards"
+                          ? (members as any[]).map((member, i) =>
+                              renderAward(member, i),
+                            )
+                          : members.map((member, i) => renderMember(member, i))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </section>
             );
           })}
