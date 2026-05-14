@@ -63,7 +63,7 @@ export default function AboutDrNarayan() {
         {/* Header Image Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            src="/banner-bg.jpg"
             alt="Abstract technology background with blue digital particles"
             fill
             className="object-cover object-center"
@@ -106,7 +106,7 @@ export default function AboutDrNarayan() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-blue-50 text-blue-700 dark:border-blue-500 dark:text-blue-500 hover:bg-blue-50/10 transition"
+                className="border-blue-50 text-blue-700 dark:border-blue-500 dark:text-blue-500 hover:bg-blue-50/10 hover:text-blue-200 dark:hover:text-blue-200 transition"
               >
                 <Link href="/publications">View Research</Link>
               </Button>
@@ -232,7 +232,7 @@ export default function AboutDrNarayan() {
                     .filter(
                       (exp) =>
                         exp.title.includes("Professor") ||
-                        exp.title.includes("Postdoctoral")
+                        exp.title.includes("Postdoctoral"),
                     )
                     .map((exp, index) => (
                       <div
